@@ -1,0 +1,13 @@
+name: YAML Lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install yamllint
+      run: sudo apt-get install yamllint
+    - name: Lint YAML files
+      run: find . -name '*.yaml' -exec yamllint {} \;
