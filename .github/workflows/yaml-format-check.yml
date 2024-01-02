@@ -12,7 +12,7 @@ jobs:
         files: 'source/**/*.md'
         ignore: node_modules
         version: 0.28.1
-          #config: markdownlint-config.json
+        config: markdownlint-config.json
       #- name: Install yamllint
       #run: sudo apt-get install yamllint
       #- name: Lint YAML files
