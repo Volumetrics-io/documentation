@@ -1,0 +1,347 @@
+:root {
+    --font-stack: system-ui, sans-serif;
+    --paper: white;
+    --track: #eee;
+    --ink: black;
+    --accent: rebeccapurple;
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --paper: #111;
+        --track: #181818;
+        --ink: #f8f8f8;
+        --accent: moccasin;
+    }
+}
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-stack);
+    font-size: 1rem;
+    line-height: 1.6;
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 100%;
+    text-wrap: balance
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 120%;
+    text-wrap: balance
+}
+
+h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 130%;
+    text-wrap: balance
+}
+
+a:not(.card, .button, .cta, .option, .sourceLine),
+a:link:not(.card, .button, .cta, .option, .sourceLine) {
+    color: var(--color-text);
+    display: inline;
+    font-variation-settings: wght 600;
+    font-weight: 600;
+    overflow-wrap: break-word;
+    text-decoration: underline;
+    text-decoration-color: var(--color-cta);
+    text-decoration-skip-ink: all;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    transition: all .2s;
+    word-wrap: break-word;
+    --color-border: var(--color-border-static);
+    --color-text: var(--color-text)
+}
+
+a:hover:not(.card, .button, .cta, .option, .sourceLine) {
+    color: var(--color-cta-hover);
+    text-decoration-color: var(--color-cta-hover);
+    text-decoration-thickness: 4px;
+    text-underline-offset: 2px
+}
+
+a:active:not(.card, .button, .cta, .option, .sourceLine) {
+    color: var(--color-cta-active);
+    text-decoration-color: var(--color-cta-active)
+}
+
+a:focus:not(.card, .button, .cta, .option, .sourceLine) {
+    color: var(--color-cta-active);
+    outline: none;
+    text-decoration-color: var(--color-button-ring)
+}
+
+:focus:not(:focus-visible) {
+    --color-inner: clear
+}
+
+aside {
+    width: calc(100% - 4rem);
+    padding: 2rem;
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: calc(100% - 4rem);
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+pre {
+    background: var(--track);
+    font-size: .9rem;
+    margin: 0 auto 1rem;
+    margin-bottom: 1rem;
+    max-width: calc(100% - 4rem);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 2rem;
+    white-space: pre-wrap;
+}
+
+table {
+    background-color: var(--color-paper-light);
+    background-image: url(/static/assets/specks_dark_button.png), url(/static/assets/specks_light_button.png);
+    background-repeat: repeat;
+    background-size: 200px 200px, 400px 400px;
+    border: 2px solid var(--color-border-static);
+    border-radius: 1rem;
+    display: block;
+    margin: 2rem auto;
+    width: 100%
+}
+
+tr {
+    border-bottom: 1px solid var(--color-border-static);
+    display: table;
+    table-layout: fixed;
+    white-space: nowrap;
+    width: 100%
+}
+
+th,
+td {
+    overflow: hidden;
+    padding: .5rem 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+tbody>tr:last-child {
+    border-bottom: none
+}
+
+th:first-of-type {
+    border-top-left-radius: 10px
+}
+
+th:last-of-type {
+    border-top-right-radius: 10px
+}
+
+tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 10px
+}
+
+tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 10px
+}
+
+blockquote {
+    border-left: 2px solid #e6e6e6;
+    color: #606060;
+    margin: 1em 0 1em 1.7em;
+    padding-left: 1em
+}
+
+code {
+    font-family: monospace
+}
+
+p>code {
+    background: var(--color-paper-card);
+    border-radius: var(--border-radius-small);
+    margin: 0;
+    padding: 0 .5rem
+}
+
+.sourceCode {
+    line-height: 1.6
+}
+
+.ascii {
+    line-height: 1
+}
+
+span.smallcaps {
+    font-variant: small-caps
+}
+
+div.columns {
+    display: flex;
+    gap: min(4vw, 1.5em)
+}
+
+div.column {
+    flex: auto;
+    overflow-x: auto
+}
+
+div.hanging-indent {
+    margin-left: 1.5em;
+    text-indent: -1.5em
+}
+
+ul.task-list[class] {
+    list-style: none
+}
+
+ul.task-list li input[type="checkbox"] {
+    font-size: inherit;
+    margin: 0 .8em .2em -1.6em;
+    vertical-align: middle;
+    width: .8em
+}
+
+.display.math {
+    display: block;
+    margin: .5rem auto;
+    text-align: center
+}
+
+pre>code.sourceCode {
+    position: relative;
+    white-space: pre
+}
+
+pre>code.sourceCode>span {
+    display: inline-block;
+    line-height: 1.25
+}
+
+pre>code.sourceCode>span:empty {
+    height: 1.2em
+}
+
+code.sourceCode>span {
+    color: inherit;
+    text-decoration: inherit
+}
+
+code span.at {
+    color: #7d9029
+}
+
+code span.bu {
+    color: green
+}
+
+code span.cn {
+    color: #800
+}
+
+code span.co {
+    color: #60a0b0;
+    font-style: italic
+}
+
+code span.do {
+    color: #ba2121;
+    font-style: italic
+}
+
+code span.dt {
+    color: #902000
+}
+
+code span.fu {
+    color: #06287e
+}
+
+code span.im {
+    color: green;
+    font-weight: 700
+}
+
+code span.op {
+    color: #666
+}
+
+code span.ot {
+    color: #007020
+}
+
+code span.pp {
+    color: #bc7a00
+}
+
+code span.ss {
+    color: #b68
+}
+
+code span.va {
+    color: #19177c
+}
+
+code span.al,
+code span.er {
+    color: red;
+    font-weight: 700
+}
+
+code span.an,
+code span.cv,
+code span.in,
+code span.wa {
+    color: #60a0b0;
+    font-style: italic;
+    font-weight: 700
+}
+
+code span.bn,
+code span.dv,
+code span.fl {
+    color: #40a070
+}
+
+code span.cf,
+code span.kw {
+    color: #007020;
+    font-weight: 700
+}
+
+code span.ch,
+code span.sc,
+code span.st,
+code span.vs {
+    color: #4070a0
+}
+
+@media (max-width: 1100px) {}
+
+@media (max-width: 672px) {}

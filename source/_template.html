@@ -1,0 +1,73 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- Title -->
+    <title>$site-name$$if(title)$ — &lt;$title$&gt;$endif$</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- SEO -->
+    <meta name="description" content="$description$" />
+
+    <!-- Basic Open Graph -->
+    <meta content="<$title$>" itemProp="name" class="next-head" />
+    <meta content="$description$" itemProp="description" class="next-head" />
+
+    <!-- Generic Open Graph -->
+    <meta property="og:type" content="article" class="next-head" />
+    <meta content="<$title$>" property="og:title" class="next-head" />
+    <meta content="$page-url$" property="og:url" class="next-head" />
+    <meta content="$description$" property="og:description" class="next-head" />
+    <meta content="$site-name$" property="og:site_name" class="next-head" />
+
+    <!-- <script defer data-domain="volumetrics.io" src="https://plausible.io/js/script.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="/static/styles/style.css" />
+
+    <style>
+        [data-slug="$title$"] {
+            color: red !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <aside>
+        <a href="/"><img src="/static/favicon.png" alt="logo" width="32" height="32" /></a>
+        <ul>
+            $for(docs)$
+            <li><a href='/docs/$docs.slug$/' data-slug="$docs.slug$">&lt;$docs.slug$&gt;</a></li>
+            $endfor$
+        </ul>
+        <!-- <footer>
+            © $current-year$ Volumetrics, Inc.
+        </footer> -->
+    </aside>
+
+    <main>
+        $body$
+
+        $if(list)$
+        $for(docs)$
+        <div>
+            <h2><a href='/docs/$docs.slug$/'>&lt;$docs.slug$&gt;</a></h2>
+            <p>$docs.description$</p>
+        </div>
+        $endfor$
+        $endif$
+
+
+    </main>
+
+</body>
+
+</html>
