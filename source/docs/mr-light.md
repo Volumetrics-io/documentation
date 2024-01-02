@@ -1,5 +1,5 @@
 ---
-title: "<mr-light>"
+title: "&lt;mr-light&gt;"
 description: "<mr-light> creates a light source in the mr.js scene."
 ---
 # &lt;mr-light&gt;

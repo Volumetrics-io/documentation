@@ -1,5 +1,5 @@
 ---
-title: "<mr-entity>"
+title: "&lt;mr-entity&gt;"
 description: "<mr-entity> is the most fundamental mr.js element. It is an empty entity and contains no default properties of it's own."
 ---
 # &lt;mr-entity&gt;

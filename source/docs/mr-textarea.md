@@ -1,5 +1,5 @@
 ---
-title: "<mr-textarea>"
+title: "&lt;mr-textarea&gt;"
 description: "The <mr-textare> tag creates a large text input field in the interface of an <mr-panel>. Unlike the <mr-textfield> tag, it allows for line breaks."
 ---
 # &lt;mr-textarea&gt;

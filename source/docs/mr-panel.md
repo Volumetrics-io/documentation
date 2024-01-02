@@ -1,5 +1,5 @@
 ---
-title: "<mr-panel>"
+title: "&lt;mr-panel&gt;"
 description: "The <mr-panel> tag creates a 2.5D UI panel. "
 ---
 # &lt;mr-panel&gt;

@@ -1,5 +1,5 @@
 ---
-title: "<mr-a>"
+title: "&lt;mr-a&gt;"
 description: "The <mr-a> tag embeds a hyperlink in the interface of an <mr-panel>."
 ---
 # &lt;mr-a&gt;

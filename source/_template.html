@@ -34,7 +34,7 @@
 
     <style>
         [data-slug="$title$"] {
-            color: red !important;
+            color: var(--accent) !important;
         }
     </style>
 
@@ -42,12 +42,12 @@
 
 <body>
     <aside>
-        <a href="/"><img src="/static/favicon.png" alt="logo" width="32" height="32" /></a>
-        <ul>
-            $for(docs)$
-            <li><a href='/docs/$docs.slug$/' data-slug="$docs.slug$">&lt;$docs.slug$&gt;</a></li>
-            $endfor$
-        </ul>
+        <a href="/" style="margin-bottom: 3rem;">[MRJS logo]</a>
+        $for(docs)$
+        <div>
+            <a href='/docs/$docs.slug$/' data-slug="$docs.slug$">$docs.title$</a>
+        </div>
+        $endfor$
         <!-- <footer>
             © $current-year$ Volumetrics, Inc.
         </footer> -->

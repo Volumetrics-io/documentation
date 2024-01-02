@@ -1,5 +1,5 @@
 ---
-title: "<mr-textfield>"
+title: "&lt;mr-textfield&gt;"
 description: "The <mr-textfield> tag creates a text input field in the interface of an <mr-panel>."
 ---
 # &lt;mr-textfield&gt;

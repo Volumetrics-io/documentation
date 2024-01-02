@@ -11,7 +11,7 @@
         --paper: #111;
         --track: #181818;
         --ink: #f8f8f8;
-        --accent: moccasin;
+        --accent: hotpink;
     }
 }
 
@@ -31,7 +31,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     display: grid;
-    grid-template-columns: 15rem 1fr;
+    grid-template-columns: 12rem 1fr;
     width: 100vw;
     height: 100vh;
 }
@@ -59,45 +59,26 @@ h3 {
 
 a:not(.card, .button, .cta, .option, .sourceLine),
 a:link:not(.card, .button, .cta, .option, .sourceLine) {
-    color: var(--color-text);
-    display: inline;
-    font-variation-settings: wght 600;
+    color: var(--ink);
     font-weight: 600;
-    overflow-wrap: break-word;
     text-decoration: underline;
-    text-decoration-color: var(--color-cta);
+    text-decoration-color: var(--track);
     text-decoration-skip-ink: all;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
     text-underline-offset: 2px;
     transition: all .2s;
-    word-wrap: break-word;
-    --color-border: var(--color-border-static);
-    --color-text: var(--color-text)
 }
 
 a:hover:not(.card, .button, .cta, .option, .sourceLine) {
-    color: var(--color-cta-hover);
-    text-decoration-color: var(--color-cta-hover);
-    text-decoration-thickness: 4px;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 3px;
     text-underline-offset: 2px
 }
 
-a:active:not(.card, .button, .cta, .option, .sourceLine) {
-    color: var(--color-cta-active);
-    text-decoration-color: var(--color-cta-active)
-}
-
-a:focus:not(.card, .button, .cta, .option, .sourceLine) {
-    color: var(--color-cta-active);
-    outline: none;
-    text-decoration-color: var(--color-button-ring)
-}
-
-:focus:not(:focus-visible) {
-    --color-inner: clear
-}
-
 aside {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5rem;
     width: calc(100% - 4rem);
     padding: 2rem;
 }
@@ -114,7 +95,7 @@ main {
 
 pre {
     background: var(--track);
-    font-size: .9rem;
+    /* font-size: .9rem; */
     margin: 0 auto 1rem;
     margin-bottom: 1rem;
     max-width: calc(100% - 4rem);
@@ -122,14 +103,14 @@ pre {
     overflow-y: hidden;
     padding: 2rem;
     white-space: pre-wrap;
+    width: 100%;
 }
 
 table {
-    background-color: var(--color-paper-light);
-    background-image: url(/static/assets/specks_dark_button.png), url(/static/assets/specks_light_button.png);
+    background-color: var(--track);
     background-repeat: repeat;
     background-size: 200px 200px, 400px 400px;
-    border: 2px solid var(--color-border-static);
+    border: 2px solid var(--ink);
     border-radius: 1rem;
     display: block;
     margin: 2rem auto;
@@ -137,7 +118,7 @@ table {
 }
 
 tr {
-    border-bottom: 1px solid var(--color-border-static);
+    border-bottom: 1px solid var(--ink);
     display: table;
     table-layout: fixed;
     white-space: nowrap;
@@ -173,30 +154,34 @@ tr:last-of-type td:last-of-type {
 }
 
 blockquote {
-    border-left: 2px solid #e6e6e6;
-    color: #606060;
+    border-left: 2px solid var(--accent);
+    color: var(--accent);
     margin: 1em 0 1em 1.7em;
     padding-left: 1em
 }
 
 code {
+    font-size: 90%;
     font-family: monospace
 }
 
 p>code {
-    background: var(--color-paper-card);
-    border-radius: var(--border-radius-small);
+    background: var(--track);
+    border-radius: 0.5rem;
     margin: 0;
-    padding: 0 .5rem
+    padding: 0 .5rem;
+    color: var(--accent)
+    /* line-height: 1.6; */
+
 }
 
-.sourceCode {
+/* .sourceCode {
     line-height: 1.6
 }
 
 .ascii {
     line-height: 1
-}
+} */
 
 span.smallcaps {
     font-variant: small-caps
@@ -228,13 +213,13 @@ ul.task-list li input[type="checkbox"] {
     width: .8em
 }
 
-.display.math {
+/* .display.math {
     display: block;
     margin: .5rem auto;
     text-align: center
-}
+} */
 
-pre>code.sourceCode {
+/* pre>code.sourceCode {
     position: relative;
     white-space: pre
 }
@@ -249,6 +234,25 @@ pre>code.sourceCode>span:empty {
 }
 
 code.sourceCode>span {
+    color: inherit;
+    text-decoration: inherit
+} */
+
+pre>code {
+    position: relative;
+    white-space: pre;
+}
+
+pre>code>span {
+    display: inline-block;
+    line-height: 1.25
+}
+
+pre>code>span:empty {
+    height: 1.2em
+}
+
+code>span {
     color: inherit;
     text-decoration: inherit
 }

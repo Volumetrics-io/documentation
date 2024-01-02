@@ -1,5 +1,5 @@
 ---
-title: "<mr-button>"
+title: "&lt;mr-button>&gt;"
 description: "The <mr-button> tag embeds a button in the interface of an <mr-panel>."
 ---
 # &lt;mr-button&gt;

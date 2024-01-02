@@ -1,5 +1,5 @@
 ---
-title: "<mr-img>"
+title: "&lt;mr-img&gt;"
 description: "The <mr-img> tag is used to embed an image in an mrjs page."
 ---
 # &lt;mr-img&gt;

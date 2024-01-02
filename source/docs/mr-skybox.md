@@ -1,5 +1,5 @@
 ---
-title: "<mr-skybox>"
+title: "&lt;mr-skybox&gt;"
 description: "<mr-skybox> creates a skybox that can be enabled or disabled, toggling between MR and VR."
 ---
 # &lt;mr-skybox&gt;

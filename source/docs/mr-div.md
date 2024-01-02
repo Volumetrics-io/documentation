@@ -1,5 +1,5 @@
 ---
-title: "<mr-div>"
+title: "&lt;mr-div&gt;"
 description: "The <mr-div> tag defines a division or section in an <mr-panel>."
 ---
 # &lt;mr-div&gt;

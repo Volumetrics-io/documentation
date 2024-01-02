@@ -1,5 +1,5 @@
 ---
-title: "<mr-text>"
+title: "&lt;mr-text&gt;"
 description: "The <mr-text> tag embeds text into an <mr-panel>."
 ---
 # &lt;mr-text&gt;

@@ -1,5 +1,5 @@
 ---
-title: "<mr-model>"
+title: "&lt;mr-model&gt;"
 description: "<mr-model> is used to load 3D model files."
 ---
 # &lt;mr-model&gt;

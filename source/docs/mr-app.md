@@ -1,5 +1,5 @@
 ---
-title: "<mr-app>"
+title: "&lt;mr-app&gt;"
 description: "The <mr-app> tag initializes an mr.js app."
 ---
 # &lt;mr-app&gt;
