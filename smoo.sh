@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# TODO: responsive sidebar / hamburger
+# TODO: MRJS logo
+# TODO: docs/ route or flatten structure
+
 site_name="MRJS"
 
 if [ "$LOCAL" = "true" ]; then
@@ -68,6 +72,9 @@ do
     base_file=$(basename -- "$file")
     slug=${base_file%.*}
 
+    title=$(perl -ne 'print $1 if /^title:\s*"(.*)"/' "$file")
+    description=$(perl -ne 'print $1 if /^description:\s*"(.*)"/' "$file")
+
     page_url="${base_url}/docs/${slug}/"
     mkdir -p "${outputDir}/docs/${slug}"
 
@@ -79,6 +86,7 @@ do
         -V page-url="$page_url" \
         -V base-url="$base_url" \
         --metadata title="$slug" \
+        --metadata description="$description" \
         --metadata-file="${outputDir}/docs/docs.yaml" \
         --highlight-style pygments \
         -s -p \

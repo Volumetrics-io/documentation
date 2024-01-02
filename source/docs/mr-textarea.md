@@ -10,13 +10,13 @@ The `<mr-textare>` creates a large text input field in the UI of an `<mr-panel>`
 
 ```html
 <mr-app>
-  <mr-panel id="panel">
-    <mr-textarea id="input">
-    This is a text area
-    
-    it allows for much larger text input for things like message, documents, or code!
-    </mr-textarea>
-  </mr-panel>
+    <mr-panel id="panel">
+        <mr-textarea id="input">
+        This is a text area.
+
+        It allows for much larger text input for things like message, documents, or code!
+        </mr-textarea>
+    </mr-panel>
 </mr-app>
 ```
 

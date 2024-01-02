@@ -9,26 +9,26 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- Title -->
-    <title>MRJS — &lt;mr-panel&gt;</title>
+    <title>mr-panel</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- SEO -->
-    <meta name="description" content="The <mr-panel> tag creates a 2.5D
-UI panel." />
+    <meta name="description" content="The &lt;mr-panel&gt; tag creates a
+2.5D UI panel. " />
 
     <!-- Basic Open Graph -->
-    <meta content="<mr-panel>" itemProp="name" class="next-head" />
-    <meta content="The <mr-panel> tag creates a 2.5D UI
-panel." itemProp="description" class="next-head" />
+    <meta content="mr-panel" itemProp="name" class="next-head" />
+    <meta content="The &lt;mr-panel&gt; tag creates a 2.5D UI panel.
+" itemProp="description" class="next-head" />
 
     <!-- Generic Open Graph -->
     <meta property="og:type" content="article" class="next-head" />
-    <meta content="<mr-panel>" property="og:title" class="next-head" />
+    <meta content="mr-panel" property="og:title" class="next-head" />
     <meta content="https://docs.mrjs.io/docs/mr-panel/" property="og:url" class="next-head" />
-    <meta content="The <mr-panel> tag creates a 2.5D UI
-panel." property="og:description" class="next-head" />
+    <meta content="The &lt;mr-panel&gt; tag creates a 2.5D UI panel.
+" property="og:description" class="next-head" />
     <meta content="MRJS" property="og:site_name" class="next-head" />
 
     <!-- <script defer data-domain="volumetrics.io" src="https://plausible.io/js/script.js"></script> -->
@@ -38,6 +38,7 @@ panel." property="og:description" class="next-head" />
     <style>
         [data-slug="mr-panel"] {
             color: var(--accent) !important;
+            font-weight: 600;
         }
     </style>
 
@@ -53,7 +54,7 @@ panel." property="og:description" class="next-head" />
             <a href='/docs/mr-app/' data-slug="mr-app">&lt;mr-app&gt;</a>
         </div>
                 <div>
-            <a href='/docs/mr-button/' data-slug="mr-button">&lt;mr-button&gt;&gt;</a>
+            <a href='/docs/mr-button/' data-slug="mr-button">&lt;mr-button&gt;</a>
         </div>
                 <div>
             <a href='/docs/mr-div/' data-slug="mr-div">&lt;mr-div&gt;</a>
@@ -101,19 +102,19 @@ panel." property="og:description" class="next-head" />
         app</strong></p>
         <h2 id="example">Example</h2>
         <div class="sourceCode" id="cb1"><pre
-        class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a> <span class="dt">&lt;</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;</span><span class="kw">mr-panel</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;...&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     ...</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   ...</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a> <span class="dt">&lt;/</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span></code></pre></div>
+        class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-panel</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;…&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        …</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    …</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span></code></pre></div>
         <h2 id="definition-and-usage">Definition and Usage</h2>
         <p>calling <code>&lt;mr-panel&gt;</code> tag initializes and
         manages 2D UI, such as images, text, and buttons.</p>
         <div class="sourceCode" id="cb2"><pre
         class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">mr-text</span><span class="dt">&gt;</span>Hello World!<span class="dt">&lt;/</span><span class="kw">mr-text</span><span class="dt">&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">mr-img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;...&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">mr-img</span><span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-text</span><span class="dt">&gt;</span>Hello World!<span class="dt">&lt;/</span><span class="kw">mr-text</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;…&quot;</span> <span class="er">alt</span><span class="ot">=</span><span class="st">&quot;…&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">mr-img</span><span class="dt">&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span></code></pre></div>
         <p>[example img]</p>
         <h2 id="spatial-responsive-design">Spatial Responsive
@@ -132,9 +133,9 @@ panel." property="og:description" class="next-head" />
         <code>&lt;mr-model&gt;</code>tag.</p>
         <div class="sourceCode" id="cb3"><pre
         class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">mr-div</span><span class="dt">&gt;</span> <span class="co">&lt;!-- wrap non-2D elements in an mr-div to anchor them to the panel --&gt;</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-model</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;...&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">mr-model</span><span class="dt">&gt;</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">mr-div</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-div</span><span class="dt">&gt;</span> <span class="co">&lt;!-- wrap non-2D elements in an mr-div to anchor them to the panel --&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">mr-model</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;…&quot;</span><span class="dt">&gt;&lt;/</span><span class="kw">mr-model</span><span class="dt">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">mr-div</span><span class="dt">&gt;</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span></code></pre></div>
         <p>[example gif]</p>
 

@@ -9,26 +9,26 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`.
 ## Example
 
 ```html
- <style>
- .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1vw;
-    grid-auto-rows: minmax(100px, auto);
- }
- 
- .blue {
-   background-color: blue;
-   grid-row: 1 / 3;
-   grid-column: 1 / -1;
- }
- <style>
- 
- <mr-app>
-   <mr-panel class="container">
-     <mr-div class="blue"></mr-div>
-   </mr-panel>
- </mr-app>
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1vw;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .blue {
+        background-color: blue;
+        grid-row: 1 / 3;
+        grid-column: 1 / -1;
+    }
+</style>
+
+<mr-app>
+    <mr-panel class="container">
+        <mr-div class="blue"></mr-div>
+    </mr-panel>
+</mr-app>
 ```
 
 \[example img\]
@@ -38,17 +38,17 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`.
 `<mr-div>` behaves exactly like a `<div>` tag. It can receive CSS, data-attributes, etc.
 
 ```html
- <mr-div class="blue"></mr-div>
+<mr-div class="blue"></mr-div>
 ```
 
 you can then apply CSS
 
 ```css
 .blue {
-   background-color: blue;
-   grid-row: 1 / 3;
-   grid-column: 1 / -1;
- }
+    background-color: blue;
+    grid-row: 1 / 3;
+    grid-column: 1 / -1;
+}
 ```
 
 ## Anchoring 3D elements
@@ -57,7 +57,7 @@ you can then apply CSS
 
 ```html
 <mr-div>
-  <mr-model src="..."></mr-model>
+    <mr-model src="…"></mr-model>
 </mr-div>
 ```
 

@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- Title -->
-    <title>$site-name$$if(title)$ — &lt;$title$&gt;$endif$</title>
+    <title>$title$</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
@@ -18,12 +18,12 @@
     <meta name="description" content="$description$" />
 
     <!-- Basic Open Graph -->
-    <meta content="<$title$>" itemProp="name" class="next-head" />
+    <meta content="$title$" itemProp="name" class="next-head" />
     <meta content="$description$" itemProp="description" class="next-head" />
 
     <!-- Generic Open Graph -->
     <meta property="og:type" content="article" class="next-head" />
-    <meta content="<$title$>" property="og:title" class="next-head" />
+    <meta content="$title$" property="og:title" class="next-head" />
     <meta content="$page-url$" property="og:url" class="next-head" />
     <meta content="$description$" property="og:description" class="next-head" />
     <meta content="$site-name$" property="og:site_name" class="next-head" />
@@ -35,6 +35,7 @@
     <style>
         [data-slug="$title$"] {
             color: var(--accent) !important;
+            font-weight: 600;
         }
     </style>
 

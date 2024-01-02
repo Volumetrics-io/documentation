@@ -10,10 +10,10 @@ description: "<mr-light> creates a light source in the mr.js scene."
 
 ```html
 <mr-app>
-  <mr-light color="red" intensity="10" data-position="0 1 1"></mr-light>
-  <mr-panel>
-    <mr-text> this white panel is tinted red by the light.</mr-text>
-  </mr-panel>
+    <mr-light color="red" intensity="10" data-position="0 1 1"></mr-light>
+    <mr-panel>
+        <mr-text> this white panel is tinted red by the light.</mr-text>
+    </mr-panel>
 </mr-app>
 ```
 

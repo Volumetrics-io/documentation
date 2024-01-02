@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the `mrjs` documentation"
+title: "MRJS documentation"
 description: "TODO"
 preview: "static/opengraph.jpg"
 list: true

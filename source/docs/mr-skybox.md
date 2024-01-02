@@ -10,7 +10,7 @@ description: "<mr-skybox> creates a skybox that can be enabled or disabled, togg
 
 ```html
 <mr-app>
-  <mr-skybox src="..."></mr-skybox>
+    <mr-skybox src="…"></mr-skybox>
 </mr-app>
 ```
 

@@ -1,9 +1,23 @@
 :root {
     --font-stack: system-ui, sans-serif;
     --paper: white;
-    --track: #eee;
-    --ink: black;
-    --accent: rebeccapurple;
+    --track: #f8f8f8;
+    --ink: #242424;
+    --accent: #7311d4;
+
+    --code-chevrons: #3e434a;
+    --code-keywords: #07a267;
+    --color-property: #1a66c2;
+    --color-operator: #3e434a;
+    --color-strings: #1d60c4;
+    --color-builtin: var(--ink);
+    --color-function: #6a26e6;
+    --color-integers: #d121c8;
+    --color-attribute: #d121c8;
+    --color-colors: #d121c8;
+    --color-comments: #5e6770;
+    --color-separator: #c45e6f;
+    --color-import: violet;
 }
 
 @media (prefers-color-scheme:dark) {
@@ -12,17 +26,51 @@
         --track: #181818;
         --ink: #f8f8f8;
         --accent: hotpink;
+
+        --code-chevrons: #adbac7;
+        --code-keywords: #8ddb8c;
+        --color-property: #85a8ff;
+        --color-operator: #adbac7;
+        --color-strings: #96eaff;
+        --color-builtin: var(--ink);
+        --color-function: #cc99ff;
+        --color-integers: #ffcd4f;
+        --color-attribute: #ffd774;
+        --color-colors: #ffcd4f;
+        --color-comments: #768390;
+        --color-separator: pink;
+        --color-import: violet;
     }
 }
 
-*,
+html,
+body,
+aside,
+main,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+span {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: inherit;
+}
+
+/* *,
 *:before,
 *:after {
     padding: 0;
     margin: 0;
     border: none;
     box-sizing: inherit;
-}
+} */
 
 body {
     background-color: var(--paper);
@@ -60,7 +108,6 @@ h3 {
 a:not(.card, .button, .cta, .option, .sourceLine),
 a:link:not(.card, .button, .cta, .option, .sourceLine) {
     color: var(--ink);
-    font-weight: 600;
     text-decoration: underline;
     text-decoration-color: var(--track);
     text-decoration-skip-ink: all;
@@ -95,13 +142,14 @@ main {
 
 pre {
     background: var(--track);
+    border-radius: 1rem;
     /* font-size: .9rem; */
     margin: 0 auto 1rem;
     margin-bottom: 1rem;
     max-width: calc(100% - 4rem);
     overflow-x: scroll;
     overflow-y: hidden;
-    padding: 2rem;
+    padding: 1.25rem 2rem 1.5rem;
     white-space: pre-wrap;
     width: 100%;
 }
@@ -171,7 +219,7 @@ p>code {
     margin: 0;
     padding: 0 .5rem;
     color: var(--accent)
-    /* line-height: 1.6; */
+        /* line-height: 1.6; */
 
 }
 
@@ -257,20 +305,28 @@ code>span {
     text-decoration: inherit
 }
 
+/* attributes like .style.opacity */
 code span.at {
-    color: #7d9029
+    /* color: #7d9029; */
+    color: var(--color-attribute);
 }
 
+/* built-in objects like Math or document */
 code span.bu {
-    color: green
+    color: var(--color-builtin);
+    /* color: green */
 }
 
+/* CSS color? */
 code span.cn {
-    color: #800
+    color: var(--color-colors);
+    /* color: #800 */
 }
 
+/* Comments */
 code span.co {
-    color: #60a0b0;
+    color: var(--color-comments);
+    /* color: #60a0b0; */
     font-style: italic
 }
 
@@ -279,25 +335,34 @@ code span.do {
     font-style: italic
 }
 
+/* The < and > mostly */
 code span.dt {
-    color: #902000
+    color: var(--code-chevrons)
 }
 
 code span.fu {
-    color: #06287e
+    color: var(--color-function);
+    /* color: #06287e */
 }
 
+/* Import like @font-face */
 code span.im {
-    color: green;
+    color: var(--color-import);
+    /* color: green; */
     font-weight: 700
 }
 
+/* Mostly . it seems  */
 code span.op {
-    color: #666
+    color: var(--color-operator);
+    /* color: #666 */
 }
 
+/* Operators like = */
 code span.ot {
-    color: #007020
+    color: var(--color-operator);
+    /* color: #007020; */
+
 }
 
 code span.pp {
@@ -305,16 +370,19 @@ code span.pp {
 }
 
 code span.ss {
-    color: #b68
+    color: var(--color-separator);
+    /* color: #b68 */
 }
 
 code span.va {
     color: #19177c
 }
 
+/* Properties like href */
 code span.al,
 code span.er {
-    color: red;
+    /* color: red; */
+    color: var(--color-property);
     font-weight: 700
 }
 
@@ -330,20 +398,25 @@ code span.wa {
 code span.bn,
 code span.dv,
 code span.fl {
-    color: #40a070
+    color: var(--color-integers);
+    /* color: #40a070 */
 }
 
+/* Keywords */
 code span.cf,
 code span.kw {
-    color: #007020;
+    /* color: #007020; */
+    color: var(--code-keywords);
     font-weight: 700
 }
 
+/* Strings like "hello" */
 code span.ch,
 code span.sc,
 code span.st,
 code span.vs {
-    color: #4070a0
+    /* color: #4070a0; */
+    color: var(--color-strings);
 }
 
 @media (max-width: 1100px) {}

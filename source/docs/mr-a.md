@@ -10,9 +10,9 @@ The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 
 ```html
 <mr-app>
-  <mr-panel id="panel">
-    <mr-a href="https://volumetrics.io">volumetrics</mr-a>
-  </mr-panel>
+    <mr-panel id="panel">
+        <mr-a href="https://volumetrics.io">volumetrics</mr-a>
+    </mr-panel>
 </mr-app>
 ```
 
@@ -30,7 +30,7 @@ Like it's HTML equivalent, `<mr-a>` can be used to wrap other elements, making t
 
 ```html
 <mr-a href="https://volumetrics.io">
-  <mr-img src="..."></mr-img>
+    <mr-img src="…"></mr-img>
 </mr-a>
 ```
 

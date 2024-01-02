@@ -9,7 +9,7 @@ The `<mr-img>` tag is used to embed an image in an `mrjs` page.
 ## Example
 
 ```html
- <mr-img src="./images/puppy.jpg" alt="A puppy on a sofa"></mr-img>
+<mr-img src="./images/puppy.jpg" alt="A puppy on a sofa"></mr-img>
 ```
 
 ## Definition and Usage

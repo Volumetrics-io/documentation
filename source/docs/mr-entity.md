@@ -10,8 +10,8 @@ description: "<mr-entity> is the most fundamental mr.js element. It is an empty 
 
 ```html
 <mr-entity data-rotation="0 0 45">
-  <mr-model src="..." data-position="-1 0 0"></mr-model>
-  <mr-model src="..."></mr-model>
+    <mr-model src="…" data-position="-1 0 0"></mr-model>
+    <mr-model src="…"></mr-model>
 </mr-entity>
 ```
 

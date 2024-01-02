@@ -6,7 +6,7 @@ docs:
   - title: "&lt;mr-app&gt;"
     description: "The <mr-app> tag initializes an mr.js app."
     slug: "mr-app"
-  - title: "&lt;mr-button>&gt;"
+  - title: "&lt;mr-button&gt;"
     description: "The <mr-button> tag embeds a button in the interface of an <mr-panel>."
     slug: "mr-button"
   - title: "&lt;mr-div&gt;"

@@ -9,9 +9,9 @@ The `<mr-app>` tag initializes and mr.js app.
 ## Example
 
 ```html
- <mr-app>
-   ...
- </mr-app>
+<mr-app>
+    …
+</mr-app>
 ```
 
 ## Definition and Usage

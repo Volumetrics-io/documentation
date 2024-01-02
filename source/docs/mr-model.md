@@ -10,7 +10,7 @@ description: "<mr-model> is used to load 3D model files."
 
 ```html
 <mr-app>
-  <mr-model src="..."></mr-model>
+    <mr-model src="…"></mr-model>
 </mr-app>
 ```
 

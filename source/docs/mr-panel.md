@@ -11,12 +11,12 @@ The `<mr-panel>` tag creates a 2.5D UI panel.
 ## Example
 
 ```html
- <mr-app>
-   <mr-panel class="...">
-     ...
-   </mr-panel>
-   ...
- </mr-app>
+<mr-app>
+    <mr-panel class="…">
+        …
+    </mr-panel>
+    …
+</mr-app>
 ```
 
 ## Definition and Usage
@@ -25,8 +25,8 @@ calling `<mr-panel>` tag initializes and manages 2D UI, such as images, text, an
 
 ```html
 <mr-panel>
-  <mr-text>Hello World!</mr-text>
-  <mr-img src="..."></mr-img>
+    <mr-text>Hello World!</mr-text>
+    <mr-img src="…" alt="…"></mr-img>
 </mr-panel>
 ```
 
@@ -48,9 +48,9 @@ mr.js supports 2.5D UI, adding a bit of depth to buttons, and incorporating 3D c
 
 ```html
 <mr-panel>
-  <mr-div> <!-- wrap non-2D elements in an mr-div to anchor them to the panel -->
-    <mr-model src="..."></mr-model>
-  </mr-div>
+    <mr-div> <!-- wrap non-2D elements in an mr-div to anchor them to the panel -->
+        <mr-model src="…"></mr-model>
+    </mr-div>
 </mr-panel>
 ```
 
