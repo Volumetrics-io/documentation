@@ -12,4 +12,4 @@ jobs:
       with:
         files: 'source'
         ignore_files: 'source/docs/sample.md'
-        config_file: markdownlint-config.json
+        config_file: .markdownlint.yaml
