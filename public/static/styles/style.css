@@ -3,7 +3,7 @@
     --paper: white;
     --track: #f8f8f8;
     --ink: #242424;
-    --faded: #686868;
+    --faded: #888888;
     --accent: #7311d4;
 
     --code-chevrons: #3e434a;
@@ -26,7 +26,7 @@
         --paper: #111;
         --track: #181818;
         --ink: #f8f8f8;
-        --faded: #a0a0a0;
+        --faded: #888888;
         --accent: hotpink;
 
         --code-chevrons: #adbac7;
@@ -112,16 +112,18 @@ a:link:not(.card, .button, .cta, .option, .sourceLine) {
     /* color: var(--ink); */
     color: currentColor;
     text-decoration: underline;
-    text-decoration-color: var(--track);
+    text-decoration-color: var(--faded);
     text-decoration-skip-ink: all;
+    text-decoration-style: dotted;
     text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-    transition: all .2s;
+    text-underline-offset: 3px;
+    /* transition: all .2s; */
 }
 
 a:hover:not(.card, .button, .cta, .option, .sourceLine) {
-    text-decoration-color: currentColor;
-    text-decoration-thickness: 3px;
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
     text-underline-offset: 2px
 }
 
