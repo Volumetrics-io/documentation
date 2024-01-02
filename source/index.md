@@ -2,7 +2,7 @@
 title: "MRJS documentation"
 description: "TODO"
 preview: "static/opengraph.jpg"
-list: true
+list: hi
 ---
 # `mrjs` documentation
 
