@@ -1,0 +1,31 @@
+# from - https://github.com/DavidAnson/markdownlint
+# schema - https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+# uses default styling of the cli 
+defaults: True
+extends: null
+
+# MD013/line-length : Line length : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md013.md
+MD013: False
+  # Number of characters
+  # line_length: 180
+  # Number of characters for headings
+  # heading_line_length: 180
+  # Number of characters for code blocks
+  # code_block_line_length: 180
+  # Include code blocks
+  # code_blocks: true
+  # Include tables
+  # tables: true
+  # Include headings
+  # headings: true
+  # Strict length checking
+  # strict: false
+  # Stern length checking
+  # stern: false
+
+# MD025/single-title/single-h1 : Multiple top-level headings in the same document : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md025.md
+MD025: False
+
+# MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md036.md
+MD036: False
