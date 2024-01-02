@@ -10,4 +10,4 @@ jobs:
     - name: Install yamllint
       run: sudo apt-get install yamllint
     - name: Lint YAML files
-      run: find . -name '*.yaml' -exec yamllint {} \;
+      run: find . \( -name '*.yaml' -o -name '*.yml' \) -exec yamllint {} \;
