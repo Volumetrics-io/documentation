@@ -81,7 +81,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     display: grid;
-    grid-template-columns: 12rem 1fr;
+    grid-template-columns: 10rem 1fr;
     width: 100vw;
     height: 100vh;
 }
@@ -144,6 +144,12 @@ main {
     max-width: calc(100% - 4rem);
     padding: 2rem;
     overflow-x: hidden;
+}
+
+main > * {
+    margin: 0 auto 0 auto;
+    max-width: 48rem;
+    width: 100%;
 }
 
 pre {
@@ -210,8 +216,8 @@ tr:last-of-type td:last-of-type {
 blockquote {
     border-left: 2px solid var(--accent);
     color: var(--accent);
-    margin: 1em 0 1em 1.7em;
-    padding-left: 1em
+    /* margin: 1em 0 1em 1.7em; */
+    padding-left: 1rem
 }
 
 code {
