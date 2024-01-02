@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- Title -->
-    <title>$title$</title>
+    <title>$if(istag)$<$endif$$title$$if(istag)$>$endif$</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
@@ -43,10 +43,12 @@
 
 <body>
     <aside>
-        <a href="/" style="margin-bottom: 3rem;">[MRJS logo]</a>
+        <a href="/" style="margin-bottom: 2rem;">[MRJS logo]</a>
         $for(docs)$
         <div>
-            <a href='/docs/$docs.slug$/' data-slug="$docs.slug$">$docs.title$</a>
+            <a href='/$docs.slug$/' data-slug="$docs.slug$">
+                $if(docs.istag)$&lt;$endif$$docs.title$$if(docs.istag)$&gt;$endif$
+            </a>
         </div>
         $endfor$
         <!-- <footer>
@@ -60,7 +62,7 @@
         $if(list)$
         $for(docs)$
         <div>
-            <h2><a href='/docs/$docs.slug$/'>&lt;$docs.slug$&gt;</a></h2>
+            <p><a style="color: var(--accent)" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
             <p>$docs.description$</p>
         </div>
         $endfor$

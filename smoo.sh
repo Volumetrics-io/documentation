@@ -2,7 +2,7 @@
 
 # TODO: responsive sidebar / hamburger
 # TODO: MRJS logo
-# TODO: docs/ route or flatten structure
+# X: docs/ route or flatten structure
 
 site_name="MRJS"
 
@@ -37,7 +37,7 @@ docs:
 "
 
 # Generate the blog posts
-mkdir -p "$outputDir/docs/"
+# mkdir -p "$outputDir/docs/"
 
 # Store the list of folders in an array in reverse order
 mdFiles=($(ls -f "$docsDir"/*.md))
@@ -52,18 +52,24 @@ do
         # Extract metadata from markdown (YAML front matter)
         title=$(perl -ne 'print $1 if /^title:\s*"(.*)"/' "$file")
         description=$(perl -ne 'print $1 if /^description:\s*"(.*)"/' "$file")
+        istag=$(perl -ne 'print $1 if /^istag:\s*(true)/' "$file")
 
 #         # Generate the tile for the blog index page
         docsYAML+="  - title: \"$title\"
     description: \"$description\"
     slug: \"$slug\"
 "
+        # echo "$istag"
+        if [ "$istag" == "true" ]; then
+            docsYAML+="    istag: true
+"
+        fi
 
         echo "✊ Extracted metadata for page $(tput bold)$slug$(tput sgr0)"
 done
 
 docsYAML+="---"
-echo -e "$docsYAML" > "${outputDir}/docs/docs.yaml"
+echo -e "$docsYAML" > "${outputDir}/docs.yaml"
 
 # Now that we have all we need to create the actual pages
 for file in "${mdFiles[@]}"
@@ -75,8 +81,8 @@ do
     title=$(perl -ne 'print $1 if /^title:\s*"(.*)"/' "$file")
     description=$(perl -ne 'print $1 if /^description:\s*"(.*)"/' "$file")
 
-    page_url="${base_url}/docs/${slug}/"
-    mkdir -p "${outputDir}/docs/${slug}"
+    page_url="${base_url}/${slug}/"
+    mkdir -p "${outputDir}/${slug}"
 
     # Convert the markdown to HTML
     pandoc $file \
@@ -85,12 +91,12 @@ do
         -V site-name="$site_name" \
         -V page-url="$page_url" \
         -V base-url="$base_url" \
-        --metadata title="$slug" \
+        --metadata title="$title" \
         --metadata description="$description" \
-        --metadata-file="${outputDir}/docs/docs.yaml" \
+        --metadata-file="${outputDir}/docs.yaml" \
         --highlight-style pygments \
         -s -p \
-        -o "${outputDir}/docs/${slug}/index.html"
+        -o "${outputDir}/${slug}/index.html"
 
     echo "🌟 Generated docs page for $(tput bold)$slug$(tput sgr0)"
 done
@@ -101,7 +107,7 @@ pandoc "${templateDir}/index.md" \
     -V site-name="$site_name" \
     -V base-url="$base_url" \
     -V page-url="${base_url}" \
-    --metadata-file="${outputDir}/docs/docs.yaml" \
+    --metadata-file="${outputDir}/docs.yaml" \
     --highlight-style pygments \
     -s -p \
     -o "${outputDir}/index.html"
