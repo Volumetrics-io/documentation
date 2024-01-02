@@ -3,6 +3,7 @@
     --paper: white;
     --track: #f8f8f8;
     --ink: #242424;
+    --faded: #686868;
     --accent: #7311d4;
 
     --code-chevrons: #3e434a;
@@ -25,6 +26,7 @@
         --paper: #111;
         --track: #181818;
         --ink: #f8f8f8;
+        --faded: #a0a0a0;
         --accent: hotpink;
 
         --code-chevrons: #adbac7;
@@ -107,7 +109,8 @@ h3 {
 
 a:not(.card, .button, .cta, .option, .sourceLine),
 a:link:not(.card, .button, .cta, .option, .sourceLine) {
-    color: var(--ink);
+    /* color: var(--ink); */
+    color: currentColor;
     text-decoration: underline;
     text-decoration-color: var(--track);
     text-decoration-skip-ink: all;
@@ -128,6 +131,7 @@ aside {
     gap: 0.5rem;
     width: calc(100% - 4rem);
     padding: 2rem;
+    color: var(--faded);
 }
 
 main {

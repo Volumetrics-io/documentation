@@ -45,7 +45,7 @@
     <aside>
         <a href="/" style="margin-bottom: 2rem;">[MRJS logo]</a>
         $for(docs)$
-        <div>
+        <div class="sidebar-entry">
             <a href='/$docs.slug$/' data-slug="$docs.slug$">
                 $if(docs.istag)$&lt;$endif$$docs.title$$if(docs.istag)$&gt;$endif$
             </a>
@@ -62,7 +62,7 @@
         $if(list)$
         $for(docs)$
         <div>
-            <p><a style="color: var(--accent)" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
+            <p><a style="color: var(--accent); font-weight: 700;" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
             <p>$docs.description$</p>
         </div>
         $endfor$
