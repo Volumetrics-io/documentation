@@ -1,19 +1,15 @@
 name: YAML Lint
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  lint:
+  markdownlint:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: articulate/actions-markdownlint@v1
+    - name: Run markdownlint
+      uses: nosborn/github-action-markdown-cli@v3.3.0
       with:
-        files: 'source/**/*.md'
-        ignore: node_modules
-        version: 0.28.1
-        config: markdownlint-config.json
-      #- name: Install yamllint
-      #run: sudo apt-get install yamllint
-      #- name: Lint YAML files
-      #run: find . \( -name '*.yaml' -o -name '*.yml' \) -exec yamllint {} \;
+        files: 'source'
+        ignore_files: 'source/docs/sample.md'
+        config_file: markdownlint-config.json
