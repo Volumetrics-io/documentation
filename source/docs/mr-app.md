@@ -17,7 +17,7 @@ The `<mr-app>` tag initializes and mr.js app.
 
 ## Definition and Usage
 
-calling `<mr-app>` tag initializes mr.js and manages the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking. 
+calling `<mr-app>` tag initializes mr.js and manages the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking.
 
 The `<mr-app>` tag has three optional attributes:
 

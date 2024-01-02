@@ -5,7 +5,7 @@ istag: true
 ---
 # &lt;mr-panel&gt;
 
-The `<mr-panel>` tag creates a 2.5D UI panel. 
+The `<mr-panel>` tag creates a 2.5D UI panel.
 
 **Currently limited to one UI panel per app**
 
@@ -22,7 +22,7 @@ The `<mr-panel>` tag creates a 2.5D UI panel.
 
 ## Definition and Usage
 
-calling `<mr-panel>` tag initializes and manages 2D UI, such as images, text, and buttons. 
+calling `<mr-panel>` tag initializes and manages 2D UI, such as images, text, and buttons.
 
 ```html
 <mr-panel>
