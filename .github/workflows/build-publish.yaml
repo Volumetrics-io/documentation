@@ -1,0 +1,33 @@
+name: to `build` branch and publish
+
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - name: Checkout Main Branch
+      uses: actions/checkout@v3
+      with:
+        ref: 'main'
+
+    - name: Set up Pandoc
+      run: sudo apt-get install pandoc
+
+    - name: Run smoo.sh
+      run: |
+        # run smoosh
+        ./smoo.sh
+
+    - name: Push Changes to Build Branch
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git checkout -b build || git checkout build
+        git add ./public/*
+        git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at ${GITHUB_SHA}"
+        git push origin build --force --verbose
