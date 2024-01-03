@@ -16,30 +16,29 @@ on:
 #         ref: 'build'
 #         fetch-depth: 0  # Fetches all history for all branches and tags - including main.
 
-#     - name: Set up Pandoc
-#       run: sudo apt-get install pandoc
+   
 
-#     - name: check location
-#       run: ls -al
+    # - name: check location
+    #   run: ls -al
 
-#     # - name: Run smooth (needs Pandoc) on Repository Files
-#     #   run: ./smoo.sh
-#     #     # Run Pandoc commands here
-#     #     # Example: pandoc -s input.md -o output.html
+    # # - name: Run smooth (needs Pandoc) on Repository Files
+    # #   run: ./smoo.sh
+    # #     # Run Pandoc commands here
+    # #     # Example: pandoc -s input.md -o output.html
 
-#     - name: update build branch for files
-#       run: |
-#         git config user.name 'github-actions[bot]'
-#         git config user.email 'github-actions[bot]@users.noreply.github.com'
-#         git merge origin/main
-#         # run smoosh
-#         ./smoo.sh
-#         # commit changes and push to build
-#         git add .
-#         git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at ${GITHUB_SHA}"
-#         git push origin build --force
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.MRJS_AND_DOCS_REPO_PAT }}
+    # - name: update build branch for files
+    #   run: |
+    #     git config user.name 'github-actions[bot]'
+    #     git config user.email 'github-actions[bot]@users.noreply.github.com'
+    #     git merge origin/main
+    #     # run smoosh
+    #     ./smoo.sh
+    #     # commit changes and push to build
+    #     git add .
+    #     git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at ${GITHUB_SHA}"
+    #     git push origin build --force
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.MRJS_AND_DOCS_REPO_PAT }}
 
 jobs:
   build:
@@ -51,19 +50,19 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Run Custom Script
+    - name: Set up Pandoc
+      run: sudo apt-get install pandoc
+
+    - name: Run smoo.sh
       run: |
-        # Add your commands here
-        echo "Processing code..."
-        # Example: run a script
-        # ./your-script.sh
+        # run smoosh
+        ./smoo.sh
 
     - name: Push Changes to Build Branch
       run: |
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         git checkout -b build || git checkout build
-        echo "hi" > hi.txt
         git add .
-        git commit -m "Processed code"
+        git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at ${GITHUB_SHA}"
         git push origin build --force --verbose
