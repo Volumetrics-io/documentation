@@ -28,9 +28,10 @@ jobs:
 
     - name: Push to Build Branch
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        commit_message=$'👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at '"${GITHUB_SHA}"
         git checkout -b build
         git add .
-        git commit -m "Update build branch with Pandoc output"
+        git commit -m "Update build branch with smoo.sh output"
         git push origin build --force
