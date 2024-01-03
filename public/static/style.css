@@ -3,8 +3,9 @@
     --paper: white;
     --track: #f8f8f8;
     --ink: #242424;
-    --faded: #888888;
+    --faded: #666;
     --accent: #7311d4;
+    --border: #00000011;
 
     --code-chevrons: #3e434a;
     --code-keywords: #07a267;
@@ -24,10 +25,11 @@
 @media (prefers-color-scheme:dark) {
     :root {
         --paper: #111;
-        --track: #222;
+        --track: #000;
         --ink: #f8f8f8;
         --faded: #888888;
         --accent: hotpink;
+        --border: #FFFFFF22;
 
         --code-chevrons: #adbac7;
         --code-keywords: #8ddb8c;
@@ -134,7 +136,8 @@ aside {
     width: calc(100% - 4rem);
     padding: 2rem;
     color: var(--faded);
-    border-right: 1px solid var(--track);
+    /* border-right: 1px solid var(--border); */
+    background-color: var(--track);
 }
 
 main {

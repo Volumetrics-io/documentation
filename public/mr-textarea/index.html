@@ -1,0 +1,160 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- Title -->
+    <title><mr-textarea></title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- SEO -->
+    <meta name="description" content="The &lt;mr-textare&gt; tag creates
+a large text input field in the interface of an &lt;mr-panel&gt;. Unlike
+the &lt;mr-textfield&gt; tag, it allows for line breaks." />
+
+    <!-- Basic Open Graph -->
+    <meta content="mr-textarea" itemProp="name" class="next-head" />
+    <meta content="The &lt;mr-textare&gt; tag creates a large text input
+field in the interface of an &lt;mr-panel&gt;. Unlike the
+&lt;mr-textfield&gt; tag, it allows for line
+breaks." itemProp="description" class="next-head" />
+
+    <!-- Generic Open Graph -->
+    <meta property="og:type" content="article" class="next-head" />
+    <meta content="mr-textarea" property="og:title" class="next-head" />
+    <meta content="https://docs.mrjs.io/mr-textarea/" property="og:url" class="next-head" />
+    <meta content="The &lt;mr-textare&gt; tag creates a large text input
+field in the interface of an &lt;mr-panel&gt;. Unlike the
+&lt;mr-textfield&gt; tag, it allows for line
+breaks." property="og:description" class="next-head" />
+    <meta content="MRJS" property="og:site_name" class="next-head" />
+
+    <!-- <script defer data-domain="volumetrics.io" src="https://plausible.io/js/script.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    <style>
+        [data-slug="mr-textarea"] {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+    <aside>
+        <a href="/" style="margin-bottom: 1rem; margin-left: -0.4rem;">
+            <img src="/static/mrjs.webp" alt="a pink bowtie" width="80" height="80"/>
+        </a>
+                <div class="sidebar-entry">
+            <a href='/mr-a/' data-slug="mr-a">
+                &lt;mr-a&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-app/' data-slug="mr-app">
+                &lt;mr-app&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-button/' data-slug="mr-button">
+                &lt;mr-button&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-div/' data-slug="mr-div">
+                &lt;mr-div&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-entity/' data-slug="mr-entity">
+                &lt;mr-entity&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-img/' data-slug="mr-img">
+                &lt;mr-img&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-light/' data-slug="mr-light">
+                &lt;mr-light&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-model/' data-slug="mr-model">
+                &lt;mr-model&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-panel/' data-slug="mr-panel">
+                &lt;mr-panel&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-skybox/' data-slug="mr-skybox">
+                &lt;mr-skybox&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-textarea/' data-slug="mr-textarea">
+                &lt;mr-textarea&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-textfield/' data-slug="mr-textfield">
+                &lt;mr-textfield&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-text/' data-slug="mr-text">
+                &lt;mr-text&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/sample/' data-slug="sample">
+                Sample page
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/volumetrics/' data-slug="volumetrics">
+                Volumetrics
+            </a>
+        </div>
+                <!-- <footer>
+            © 2024 Volumetrics, Inc.
+        </footer> -->
+    </aside>
+
+    <main>
+        <h1 id="mr-textarea">&lt;mr-textarea&gt;</h1>
+        <p>The <code>&lt;mr-textare&gt;</code> creates a large text
+        input field in the UI of an <code>&lt;mr-panel&gt;</code>.
+        unlike <code>&lt;mr-textfield&gt;</code> It allows for line
+        breaks.</p>
+        <h2 id="example">Example</h2>
+        <div class="sourceCode" id="cb1"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-panel</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;panel&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">mr-textarea</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;input&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        This is a text area.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        It allows for much larger text input for things like message, documents, or code!</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">mr-textarea</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span></code></pre></div>
+        <p>[example img]</p>
+
+            </main>
+
+</body>
+
+</html>

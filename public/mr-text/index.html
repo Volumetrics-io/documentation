@@ -1,0 +1,210 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- Title -->
+    <title><mr-text></title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+
+    <!-- SEO -->
+    <meta name="description" content="The &lt;mr-text&gt; tag embeds
+text into an &lt;mr-panel&gt;." />
+
+    <!-- Basic Open Graph -->
+    <meta content="mr-text" itemProp="name" class="next-head" />
+    <meta content="The &lt;mr-text&gt; tag embeds text into an
+&lt;mr-panel&gt;." itemProp="description" class="next-head" />
+
+    <!-- Generic Open Graph -->
+    <meta property="og:type" content="article" class="next-head" />
+    <meta content="mr-text" property="og:title" class="next-head" />
+    <meta content="https://docs.mrjs.io/mr-text/" property="og:url" class="next-head" />
+    <meta content="The &lt;mr-text&gt; tag embeds text into an
+&lt;mr-panel&gt;." property="og:description" class="next-head" />
+    <meta content="MRJS" property="og:site_name" class="next-head" />
+
+    <!-- <script defer data-domain="volumetrics.io" src="https://plausible.io/js/script.js"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    <style>
+        [data-slug="mr-text"] {
+            color: var(--accent) !important;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+    <aside>
+        <a href="/" style="margin-bottom: 1rem; margin-left: -0.4rem;">
+            <img src="/static/mrjs.webp" alt="a pink bowtie" width="80" height="80"/>
+        </a>
+                <div class="sidebar-entry">
+            <a href='/mr-a/' data-slug="mr-a">
+                &lt;mr-a&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-app/' data-slug="mr-app">
+                &lt;mr-app&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-button/' data-slug="mr-button">
+                &lt;mr-button&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-div/' data-slug="mr-div">
+                &lt;mr-div&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-entity/' data-slug="mr-entity">
+                &lt;mr-entity&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-img/' data-slug="mr-img">
+                &lt;mr-img&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-light/' data-slug="mr-light">
+                &lt;mr-light&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-model/' data-slug="mr-model">
+                &lt;mr-model&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-panel/' data-slug="mr-panel">
+                &lt;mr-panel&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-skybox/' data-slug="mr-skybox">
+                &lt;mr-skybox&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-textarea/' data-slug="mr-textarea">
+                &lt;mr-textarea&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-textfield/' data-slug="mr-textfield">
+                &lt;mr-textfield&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/mr-text/' data-slug="mr-text">
+                &lt;mr-text&gt;
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/sample/' data-slug="sample">
+                Sample page
+            </a>
+        </div>
+                <div class="sidebar-entry">
+            <a href='/volumetrics/' data-slug="volumetrics">
+                Volumetrics
+            </a>
+        </div>
+                <!-- <footer>
+            © 2024 Volumetrics, Inc.
+        </footer> -->
+    </aside>
+
+    <main>
+        <h1 id="mr-text">&lt;mr-text&gt;</h1>
+        <p>The <code>&lt;mr-text&gt;</code>embeds text into an
+        <code>&lt;mr-panel&gt;</code>.</p>
+        <h2 id="example">Example</h2>
+        <div class="sourceCode" id="cb1"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-panel</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;container&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">mr-text</span><span class="dt">&gt;</span>Hello World!<span class="dt">&lt;/</span><span class="kw">mr-text</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span></code></pre></div>
+        <p>[example img]</p>
+        <h2 id="definition-and-usage">Definition and Usage</h2>
+        <p><code>&lt;mr-text&gt;</code> supports custom fonts and has
+        growing support CSS styling:</p>
+        <div class="sourceCode" id="cb2"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-text</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;title&quot;</span><span class="dt">&gt;</span>mr.js<span class="dt">&lt;/</span><span class="kw">mr-text</span><span class="dt">&gt;</span></span></code></pre></div>
+        <div class="sourceCode" id="cb3"><pre
+        class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.title</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span>: <span class="st">&#39;Roboto&#39;</span><span class="op">;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span>: <span class="dv">6</span><span class="dt">vw</span><span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">line-height</span>: <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="fu">rgba(</span><span class="dv">24</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">24</span><span class="op">,</span> <span class="dv">0.75</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <h2 id="custom-fonts">Custom Fonts</h2>
+        <p>Custom fonts are supported but must be loaded manually in css
+        using <code>@font-face</code></p>
+        <div class="sourceCode" id="cb4"><pre
+        class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">@font-face</span> {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-family</span>: <span class="st">&#39;Roboto&#39;</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    src: <span class="fu">url(</span><span class="st">&#39;./assets/fonts/Roboto-Regular.ttf&#39;</span><span class="fu">)</span> <span class="fu">format(</span><span class="st">&#39;truetype&#39;</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+        <h2 id="supported-properties">Supported Properties</h2>
+        <ul>
+        <li>font-family
+        <ul>
+        <li>font fallbacks not currently supported</li>
+        </ul></li>
+        <li>font-size</li>
+        <li>color</li>
+        <li>line-height</li>
+        <li>white-space</li>
+        <li>vertical-align</li>
+        <li>text-align</li>
+        </ul>
+        <h2 id="troika">Troika</h2>
+        <p>mr-text is made possible through Troika-Three-Text and can be
+        manipulated with JavaScript like any other THREE.js.</p>
+        <h3 id="video-texture-example">video texture example</h3>
+        <div class="sourceCode" id="cb5"><pre
+        class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">video</span> <span class="er">id</span><span class="ot">=</span><span class="st">&quot;video&quot;</span><span class="dt">&gt;</span>…<span class="dt">&lt;/</span><span class="kw">video</span><span class="dt">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">mr-panel</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;container&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">mr-text</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;title&quot;</span><span class="dt">&gt;</span>mr.js<span class="dt">&lt;/</span><span class="kw">mr-text</span><span class="dt">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">mr-panel</span><span class="dt">&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">mr-app</span><span class="dt">&gt;</span></span></code></pre></div>
+        <div class="sourceCode" id="cb6"><pre
+        class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> video <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>( <span class="st">&#39;video&#39;</span> )<span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> text <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&#39;.title&#39;</span>) </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>video<span class="op">.</span><span class="fu">play</span>()<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>video<span class="op">.</span><span class="fu">addEventListener</span>( <span class="st">&#39;play&#39;</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">currentTime</span> <span class="op">=</span> <span class="dv">3</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> texture <span class="op">=</span> <span class="kw">new</span> THREE<span class="op">.</span><span class="fu">VideoTexture</span>( video )<span class="op">;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>texture<span class="op">.</span><span class="at">colorSpace</span> <span class="op">=</span> THREE<span class="op">.</span><span class="at">SRGBColorSpace</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> material <span class="op">=</span> <span class="kw">new</span> THREE<span class="op">.</span><span class="fu">MeshLambertMaterial</span>({ <span class="dt">color</span><span class="op">:</span> <span class="bn">0xffffff</span><span class="op">,</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                                               <span class="dt">map</span><span class="op">:</span> texture })<span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>text<span class="op">.</span><span class="at">textObj</span><span class="op">.</span><span class="at">material</span> <span class="op">=</span> material</span></code></pre></div>
+
+            </main>
+
+</body>
+
+</html>
