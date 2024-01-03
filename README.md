@@ -4,10 +4,10 @@ Public documentation page
 
 You will need `pandoc` installed.
 
-Then just run smoo.sh locally, passing the LOCAL=true environement variable
+Then just run smoo.sh locally.
 
 ```sh
-LOCAL=true ./smoo.sh
+./smoo.sh
 ```
 
 The website will be built in the `/public` folder.

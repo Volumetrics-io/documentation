@@ -2,7 +2,6 @@
 
 # TODO: responsive sidebar / hamburger
 # TODO: MRJS logo
-# X: docs/ route or flatten structure
 
 site_name="MRJS"
 
@@ -22,10 +21,10 @@ start_time=$(date +%s.%N)
 #run main action
 mkdir -p "$outputDir"
 rm -rf "${outputDir}"/*
-echo -e "🧹 Cleaned up $(tput bold)/$outputDir/$(tput sgr0) folder"
+echo -e "🧹 Cleaned up /$outputDir/ folder"
 if [[ "$assetDir" ]]; then
     rsync -a "$assetDir" "${outputDir}/"
-    echo "📦️ Copied $(tput bold)/$assetDir/$(tput sgr0) assets folder"
+    echo "📦️ Copied /$assetDir/ assets folder"
 fi
 # routeList="$(<$routeFile)"
 OLDIFS="$IFS"
@@ -35,9 +34,6 @@ IFS=$'\n'
 docsYAML="---
 docs:
 "
-
-# Generate the blog posts
-# mkdir -p "$outputDir/docs/"
 
 # Store the list of folders in an array in reverse order
 mdFiles=($(ls -f "$docsDir"/*.md))
@@ -65,7 +61,7 @@ do
 "
         fi
 
-        echo "✊ Extracted metadata for page $(tput bold)$slug$(tput sgr0)"
+        echo "✊ Extracted metadata for page $slug"
 done
 
 docsYAML+="---"
@@ -98,7 +94,7 @@ do
         -s -p \
         -o "${outputDir}/${slug}/index.html"
 
-    echo "🌟 Generated docs page for $(tput bold)$slug$(tput sgr0)"
+    echo "🌟 Generated docs page for $slug"
 done
 
 pandoc "${templateDir}/index.md" \
