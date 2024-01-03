@@ -1,0 +1,36 @@
+name: to `build` branch and publish
+
+on:
+  push:
+    #branches:
+    #  - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Main Branch
+      uses: actions/checkout@v2
+      with:
+        ref: 'main'
+
+    - name: Set up Pandoc
+      run: sudo apt-get install pandoc
+
+    - name: check location
+      run: ls -al
+
+    - name: Run smooth (needs Pandoc) on Repository Files
+      run: ./smoo.sh
+        # Run Pandoc commands here
+        # Example: pandoc -s input.md -o output.html
+
+    - name: Push to Build Branch
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout -b build
+        git add .
+        git commit -m "Update build branch with Pandoc output"
+        git push origin build --force
