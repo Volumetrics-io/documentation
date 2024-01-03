@@ -31,9 +31,9 @@ jobs:
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
         commit_message=$'👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at '"${GITHUB_SHA}"
-        git checkout -b build
+        git checkout build
         git add .
-        git commit -m "Update build branch with smoo.sh output"
+        git commit -m "${commit_message}"
         git push origin build --force
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
