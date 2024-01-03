@@ -22,17 +22,21 @@ jobs:
     - name: check location
       run: ls -al
 
-    - name: Run smooth (needs Pandoc) on Repository Files
-      run: ./smoo.sh
-        # Run Pandoc commands here
-        # Example: pandoc -s input.md -o output.html
+    # - name: Run smooth (needs Pandoc) on Repository Files
+    #   run: ./smoo.sh
+    #     # Run Pandoc commands here
+    #     # Example: pandoc -s input.md -o output.html
 
-    - name: Push to Build Branch
+    - name: update build branch for files
       run: |
         git config user.name 'github-actions[bot]'
         git config user.email 'github-actions[bot]@users.noreply.github.com'
-        commit_message=$'👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at '"${GITHUB_SHA}"
         git checkout build
+        git merge main
+        # run smoosh
+        ./smoo.sh
+        # commit changes and push to build
+        commit_message=$'👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at '"${GITHUB_SHA}"
         git add .
         git commit -m "${commit_message}"
         git push origin build --force
