@@ -36,7 +36,7 @@ jobs:
         ./smoo.sh
         # commit changes and push to build
         git add .
-        git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at '"${GITHUB_SHA}"
+        git commit -m "👷 Documentation - Auto Generate Build and Publish 👷\n\nChanges at ${GITHUB_SHA}"
         git push origin build --force
       env:
         GITHUB_TOKEN: ${{ secrets.MRJS_AND_DOCS_REPO_PAT }}
