@@ -35,3 +35,5 @@ jobs:
         git add .
         git commit -m "Update build branch with smoo.sh output"
         git push origin build --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
