@@ -11,7 +11,9 @@ jobs:
       uses: nosborn/github-action-markdown-cli@v3.3.0
       with:
         files: 'source'
-        ignore_files: |
-          source/docs/sample.md
-          source/js-api/**/*.md
+        ignore_files: source/js-api/**/*.md
         config_file: .markdownlint.yaml
+
+
+#          source/docs/sample.md
+          
