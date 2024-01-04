@@ -1,4 +1,4 @@
-name: YAML Lint
+name: Markdown Format Check
 
 on: [push]
 
