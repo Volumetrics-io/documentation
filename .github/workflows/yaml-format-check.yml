@@ -10,6 +10,6 @@ jobs:
     - name: Run markdownlint
       uses: nosborn/github-action-markdown-cli@v3.3.0
       with:
-        files: 'source'
-        ignore_files: 'source/docs/sample.md,source/js-api/**/*.md'
+        files: 'source/docs'
+        ignore_files: 'source/docs/sample.md'
         config_file: .markdownlint.yaml
