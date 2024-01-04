@@ -12,6 +12,6 @@ jobs:
       with:
         files: 'source'
         ignore_files: |
-          'source/docs/sample.md'
-          'source/js-api/**/*.md'
+          source/docs/sample.md
+          source/js-api/**/*.md
         config_file: .markdownlint.yaml
