@@ -42,9 +42,12 @@
 </head>
 
 <body>
-    <aside>
-        <a href="/" style="margin-bottom: 1rem; margin-left: -0.4rem;">
-            <img src="/static/mrjs.webp" alt="a pink bowtie" width="80" height="80"/>
+    <div id="dim_layer"></div>
+
+    <aside id="sidebar">
+        <a href="/" style="margin-bottom: 1rem;">
+            <span style="color: var(--accent); font-weight: 700; font-size: 1.5rem;">MRJS</span>
+            <!-- <img src="/static/mrjs.webp" alt="a pink bowtie" width="80" height="80" /> -->
         </a>
         $for(docs)$
         <div class="sidebar-entry">
@@ -58,18 +61,102 @@
         </footer> -->
     </aside>
 
-    <main>
-        $body$
+    <label id="hamburger">
+        <svg id="hamburgerSVG" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line id="hamburgerLineTop" x1="4" y1="4" x2="20" y2="4" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line id="hamburgerLineBottom" x1="4" y1="20" x2="20" y2="20" stroke="var(--ink)"
+                stroke-width="2" stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line x1="4" y1="12" x2="20" y2="12" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
+            </line>
+        </svg>
+    </label>
 
-        $if(list)$
-        $for(docs)$
-        <div>
-            <p><a style="color: var(--accent); font-weight: 700;" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
-            <p>$docs.description$</p>
+
+    <main>
+        <div class="markdown">
+            $body$
+
+            $if(list)$
+            $for(docs)$
+            <div>
+                <p><a style="color: var(--accent); font-weight: 700;" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
+                <p>$docs.description$</p>
+            </div>
+            $endfor$
+            $endif$
         </div>
-        $endfor$
-        $endif$
     </main>
+
+    <script type="text/javascript">
+        let hamburger_button = document.getElementById("hamburger");
+        let menu_mobile_container = document.getElementById("sidebar");
+        let dim_layer = document.getElementById("dim_layer");
+        let isOpened = false;
+
+        const hide_sidebar = () => {
+            menu_mobile_container.style.transform = "translateX(0%)";
+            dim_layer.style.opacity = 0;
+            setTimeout(() => {
+                dim_layer.style.display = "none";
+            }, 300);
+            isOpened = false;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_open")
+                .forEach((i) => i.beginElement());
+        };
+
+        const show_sidebar = () => {
+            menu_mobile_container.style.transform = "translateX(100%)";
+            dim_layer.style.opacity = 1;
+            dim_layer.style.display = "block";
+            isOpened = true;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_close")
+                .forEach((i) => i.beginElement());
+        };
+
+        dim_layer.addEventListener("click", hide_sidebar);
+        hamburger_button.addEventListener(
+            "click",
+            function () {
+                if (isOpened) {
+                    hide_sidebar();
+                } else {
+                    show_sidebar();
+                }
+                document.getElementById("hamburger").classList.toggle("open");
+            },
+            false
+        );
+        window.addEventListener("resize", () => {
+            if (isOpened) {
+                hide_sidebar();
+            }
+        });
+    </script>
+
 
 </body>
 

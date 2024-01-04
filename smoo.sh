@@ -26,7 +26,6 @@ if [[ "$assetDir" ]]; then
     rsync -a "$assetDir" "${outputDir}/"
     echo "📦️ Copied /$assetDir/ assets folder"
 fi
-# routeList="$(<$routeFile)"
 OLDIFS="$IFS"
 IFS=$'\n'
 
