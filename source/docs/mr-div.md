@@ -1,8 +1,3 @@
----
-title: "mr-div"
-description: "The <mr-div> tag defines a division or section in an <mr-panel>."
-istag: true
----
 # &lt;mr-div&gt;
 
 The `<mr-div>`defines a division or section in an `<mr-panel>`.

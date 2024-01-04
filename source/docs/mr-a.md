@@ -1,8 +1,3 @@
----
-title: "mr-a"
-description: "The <mr-a> tag embeds a hyperlink in the interface of an <mr-panel>."
-istag: true
----
 # &lt;mr-a&gt;
 
 The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.

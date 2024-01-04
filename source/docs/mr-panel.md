@@ -1,8 +1,3 @@
----
-title: "mr-panel"
-description: "The <mr-panel> tag creates a 2.5D UI panel."
-istag: true
----
 # &lt;mr-panel&gt;
 
 The `<mr-panel>` tag creates a 2.5D UI panel.

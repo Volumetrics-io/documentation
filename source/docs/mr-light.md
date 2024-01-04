@@ -1,8 +1,3 @@
----
-title: "mr-light"
-description: "<mr-light> creates a light source in the mr.js scene."
-istag: true
----
 # &lt;mr-light&gt;
 
 `<mr-light>` creates a light source in the mr.js scene.

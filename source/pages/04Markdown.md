@@ -1,7 +1,3 @@
----
-title: "Sample page"
-description: "Another sample page"
----
 # Sample Markdown
 
 - [Sample Markdown](#sample-markdown)

@@ -1,8 +1,3 @@
----
-title: "mr-app"
-description: "The <mr-app> tag initializes an mr.js app."
-istag: true
----
 # &lt;mr-app&gt;
 
 The `<mr-app>` tag initializes and mr.js app.

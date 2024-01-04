@@ -1,8 +1,3 @@
----
-title: "mr-button"
-description: "The <mr-button> tag embeds a button in the interface of an <mr-panel>."
-istag: true
----
 # &lt;mr-button&gt;
 
 The `<mr-button>`embeds a button in the UI of an `<mr-panel>`.

@@ -6,7 +6,7 @@
     --faded: #666;
     --accent: #7311d4;
     --border: #00000011;
-    --layer: rgba(255, 255, 255, 0.5);
+    --layer: rgba(180, 180, 180, 0.5);
     --sidebar-width: 16rem;
 
     --code-chevrons: #3e434a;
@@ -26,13 +26,13 @@
 
 @media (prefers-color-scheme:dark) {
     :root {
-        --paper: #111;
+        --paper: #181818;
         --track: #000;
         --ink: #f8f8f8;
         --faded: #888888;
-        --accent: hotpink;
+        --accent: #af8fff;
         --border: #FFFFFF22;
-        --layer: rgba(0, 0, 0, 0.5);
+        --layer: rgba(80, 80, 80, 0.5);
 
         --code-chevrons: #adbac7;
         --code-keywords: #8ddb8c;
@@ -145,7 +145,7 @@ a:hover:not(.card, .button, .cta, .option, .sourceLine) {
 aside {
     display: flex;
     flex-flow: column nowrap;
-    gap: 0.5rem;
+    gap: 2rem;
     /* width: calc(100% - 4rem);
     padding: 2rem; */
     color: var(--faded);
@@ -164,6 +164,20 @@ aside {
     top: 0;
     left: 0;
     z-index: 999;
+}
+
+details {
+    /* margin-bottom: 1rem; */
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+summary {
+    font-size: 90%;
+    font-weight: bold;
+    color: var(--accent);
+    cursor: pointer;
 }
 
 #hamburger {

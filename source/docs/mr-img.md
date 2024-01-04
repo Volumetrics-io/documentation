@@ -1,8 +1,3 @@
----
-title: "mr-img"
-description: "The <mr-img> tag is used to embed an image in an mrjs page."
-istag: true
----
 # &lt;mr-img&gt;
 
 The `<mr-img>` tag is used to embed an image in an `mrjs` page.

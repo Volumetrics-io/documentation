@@ -1,8 +1,3 @@
----
-title: "mr-textfield"
-description: "The <mr-textfield> tag creates a text input field in the interface of an <mr-panel>."
-istag: true
----
 # &lt;mr-textfield&gt;
 
 The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
