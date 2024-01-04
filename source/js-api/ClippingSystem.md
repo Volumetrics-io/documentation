@@ -11,10 +11,10 @@ This system supports 3D clipping following threejs's clipping planes setup.
     * [.ClippingSystem](#ClippingSystem+ClippingSystem)
         * [new exports.ClippingSystem()](#new_ClippingSystem+ClippingSystem_new)
     * [.update(deltaTime, frame)](#ClippingSystem+update)
+    * [.updatePlanes(entity)](#ClippingSystem+updatePlanes)
     * [.applyClipping(object, clipping)](#ClippingSystem+applyClipping)
     * [.addClippingPlanes(entity)](#ClippingSystem+addClippingPlanes)
     * [.onNewEntity(entity)](#ClippingSystem+onNewEntity)
-    * [.updatePlanes(entity)](#ClippingSystem+updatePlanes)
 
 <a name="ClippingSystem+ClippingSystem"></a>
 
@@ -36,6 +36,17 @@ The generic system update call. Updates the clipped view of every entity in this
 | --- | --- | --- |
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
+
+<a name="ClippingSystem+updatePlanes"></a>
+
+### clippingSystem.updatePlanes(entity)
+Updates the stored clipping planes to be based on the passed in entity.
+
+**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | given entity that will be used to create the clipping planes positioning. |
 
 <a name="ClippingSystem+applyClipping"></a>
 
@@ -71,15 +82,4 @@ When the system swaps to a new entity, this handles applying the clipping planes
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | given entity that will be clipped by the planes. |
-
-<a name="ClippingSystem+updatePlanes"></a>
-
-### clippingSystem.updatePlanes(entity)
-Updates the stored clipping planes to be based on the passed in entity.
-
-**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | <code>MREntity</code> | given entity that will be used to create the clipping planes positioning. |
 

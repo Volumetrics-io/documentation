@@ -92,7 +92,8 @@ Converts the dom string to a 3D numerical value
 <a name="MRDivEntity+updateStyle"></a>
 
 ### mrDivEntity.updateStyle()
-Updates the style for the UIPlane's border and background based on compStyle and inputted css elements.
+Updates the style for the UIPlane's border and background based on compStyle and inputted css
+elements.
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 <a name="MRDivEntity+setBorder"></a>
