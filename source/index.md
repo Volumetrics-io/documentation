@@ -1,9 +1,3 @@
----
-title: "MRJS documentation"
-description: "TODO"
-preview: "static/opengraph.jpg"
-list: true
----
 # `mrjs` documentation
 
 `mrjs` is an [open-source](https://github.com/Volumetrics-io/mrjs) spatial UI library

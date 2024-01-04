@@ -1,8 +1,3 @@
----
-title: "mr-model"
-description: "<mr-model> is used to load 3D model files."
-istag: true
----
 # &lt;mr-model&gt;
 
 `<mr-model>` is used to load 3D model files.

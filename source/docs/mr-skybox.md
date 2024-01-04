@@ -1,8 +1,3 @@
----
-title: "mr-skybox"
-description: "<mr-skybox> creates a skybox that can be enabled or disabled, toggling between MR and VR."
-istag: true
----
 # &lt;mr-skybox&gt;
 
 `<mr-skybox>` creates a skybox that can be enabled or disabled, toggling between MR and VR.

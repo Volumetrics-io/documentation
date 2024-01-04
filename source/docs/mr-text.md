@@ -1,8 +1,3 @@
----
-title: "mr-text"
-description: "The <mr-text> tag embeds text into an <mr-panel>."
-istag: true
----
 # &lt;mr-text&gt;
 
 The `<mr-text>`embeds text into an `<mr-panel>`.

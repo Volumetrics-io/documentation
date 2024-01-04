@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
 
     <!-- Title -->
-    <title>$if(istag)$<$endif$$title$$if(istag)$>$endif$</title>
+    <title>$title$</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
@@ -49,13 +49,39 @@
             <span style="color: var(--accent); font-weight: 700; font-size: 1.5rem;">MRJS</span>
             <!-- <img src="/static/mrjs.webp" alt="a pink bowtie" width="80" height="80" /> -->
         </a>
-        $for(docs)$
-        <div class="sidebar-entry">
-            <a href='/$docs.slug$/' data-slug="$docs.slug$">
-                $if(docs.istag)$&lt;$endif$$docs.title$$if(docs.istag)$&gt;$endif$
-            </a>
-        </div>
-        $endfor$
+
+        <details open>
+            <summary>Pages</summary>
+            $for(pages)$
+            <div class="sidebar-entry">
+                <a href='/$pages.title$/' data-slug="$pages.title$">
+                    $pages.title$
+                </a>
+            </div>
+            $endfor$
+        </details>
+
+        <details open>
+            <summary>Components</summary>
+            $for(docs)$
+            <div class="sidebar-entry">
+                <a href='/doc/$docs.title$/' data-slug="$docs.title$">
+                    $docs.title$
+                </a>
+            </div>
+            $endfor$
+        </details>
+
+        <details open>
+            <summary>JavaScript API</summary>
+            $for(api)$
+            <div class="sidebar-entry">
+                <a href='/api/$api.title$/' data-slug="$api.title$">
+                    $api.title$
+                </a>
+            </div>
+            $endfor$
+        </details>
         <!-- <footer>
             © $current-year$ Volumetrics, Inc.
         </footer> -->
@@ -75,8 +101,8 @@
                 <animate class="anim_open" attributeName="y2" values="12;4" dur="0.15s" begin="indefinite"
                     repeatCount="1" fill="freeze"></animate>
             </line>
-            <line id="hamburgerLineBottom" x1="4" y1="20" x2="20" y2="20" stroke="var(--ink)"
-                stroke-width="2" stroke-linecap="round">
+            <line id="hamburgerLineBottom" x1="4" y1="20" x2="20" y2="20" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
                 <animate class="anim_close" attributeName="y1" values="20;12" dur="0.15s" begin="indefinite"
                     repeatCount="1" fill="freeze"></animate>
                 <animate class="anim_close" attributeName="y2" values="20;12" dur="0.15s" begin="indefinite"
@@ -91,19 +117,9 @@
         </svg>
     </label>
 
-
     <main>
         <div class="markdown">
             $body$
-
-            $if(list)$
-            $for(docs)$
-            <div>
-                <p><a style="color: var(--accent); font-weight: 700;" href='/$docs.slug$/'>&lt;$docs.slug$&gt;</a></p>
-                <p>$docs.description$</p>
-            </div>
-            $endfor$
-            $endif$
         </div>
     </main>
 
@@ -156,7 +172,6 @@
             }
         });
     </script>
-
 
 </body>
 
