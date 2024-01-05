@@ -1,4 +1,9 @@
-# &lt;events&gt;
+---
+description: "An introduction to the Event system in mrjs"
+---
+# Events system
+
+TODO: add an intro for the event system. Mi risus quis suscipit pulvinar lorem at fermentum tempor dui. Proin nisl enim lectus velit dictumst vulputate amet at egestas. Velit elit elit cursus faucibus enim suscipit quis est a. Aliquet est aliqua velit nulla sed fermentum quis blandit ut.
 
 ## mr.js Events
 

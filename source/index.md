@@ -1,3 +1,6 @@
+---
+description: "An extendable WebComponents library for the Spatial Web"
+---
 # `mrjs` documentation
 
 `mrjs` is an [open-source](https://github.com/Volumetrics-io/mrjs) spatial UI library
