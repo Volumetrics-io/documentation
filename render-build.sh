@@ -44,6 +44,3 @@ pandoc --version
 echo "Running pre-build script"
 chmod +x ./smoo.sh
 ./smoo.sh
-
-# Add your static site build commands here
-# e.g., hugo, jekyll build, etc.
