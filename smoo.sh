@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # TODO: add edit links on every page ex: https://github.com/Volumetrics-io/documentation/edit/main/source/docs/mr-a.md
+# TODO: add edit links for js-api pages ex: https://github.com/Volumetrics-io/mrjs/edit/main/src/utils/CSS.js
+#       note - the edit links default to be from js-api/foldername where foldername is from ../main/src/foldername
+#       note - edgecase - the edit links for the items in js-api/src will come from .../main/src/.. instead of ../main/src/folder/..
 # TODO: fix code duplication https://chat.openai.com/share/71391d0b-a17f-429c-ba17-cd7c4881a86b
 
 OLDIFS="$IFS"
@@ -95,7 +98,7 @@ do
     title=${base_file%.*}
     title=$(echo "$title" | sed 's/^[0-9]*//')
     # description="mrjs documentation for $title"
-    
+
     page_url="${base_url}/${title}/"
     github_path="${github_base}/pages/${base_file}"
     mkdir -p "${outputDir}/${title}"
@@ -129,7 +132,7 @@ do
     # description="mrjs documentation for $title"
 
     github_path="${github_base}/docs/${base_file}"
-    
+
     page_url="${base_url}/doc/${title}/"
     mkdir -p "${outputDir}/doc/${title}"
 
