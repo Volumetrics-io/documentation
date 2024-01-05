@@ -20,7 +20,7 @@ Just serve this folder, or publish it to a CDN.
 2. Add the proper YAML data. Here's a boilerplate markdown:
 
 ```
----
+--- 
 title: "mr-a"
 description: "The <mr-a> tag embeds a hyperlink in the interface of an <mr-panel>."
 istag: true
