@@ -26,6 +26,10 @@ if [ ! -s "${PANDOC_DIR}/${PANDOC_TARBALL}" ]; then
     exit 1
 fi
 
+# List contents of the tarball
+echo "Inspecting contents of the tarball"
+tar -tzf "${PANDOC_DIR}/${PANDOC_TARBALL}"
+
 # Extract Pandoc
 echo "Extracting Pandoc to $BIN_DIR"
 tar -xzf "${PANDOC_DIR}/${PANDOC_TARBALL}" -C "$BIN_DIR" --strip-components 1
