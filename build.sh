@@ -32,7 +32,7 @@ tar -tzf "${PANDOC_DIR}/${PANDOC_TARBALL}"
 
 # Extract Pandoc
 echo "Extracting Pandoc to $BIN_DIR"
-tar -xzf "${PANDOC_DIR}/${PANDOC_TARBALL}" -C "$BIN_DIR" --strip-components 1
+tar -xzf "${PANDOC_DIR}/${PANDOC_TARBALL}" -C "$BIN_DIR" --strip-components 2
 
 # Make sure Pandoc is executable
 chmod +x "${BIN_DIR}/pandoc"
