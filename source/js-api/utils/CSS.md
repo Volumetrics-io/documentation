@@ -30,7 +30,7 @@ Useful as part of the layout system and css value handling (px<-->threejs).
 
 **Kind**: static method of [<code>CSS</code>](#CSS)  
 **Returns**: <code>number</code> - - the 3D representation of value.  
-
+ 
 | Param | Type | Description |
 | --- | --- | --- |
 | val | <code>number</code> | the 2D pixel space value to be converted to 3D space. |
