@@ -4,7 +4,7 @@
 set -e
 
 # Define the Pandoc version you need
-PANDOC_VERSION="3.1.3"  # Replace with your desired version
+PANDOC_VERSION="3.1.11"  # Replace with your desired version
 
 # Create a directory for local tools
 mkdir -p $HOME/local/bin
