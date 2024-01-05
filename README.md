@@ -2,9 +2,9 @@
 
 Public documentation page
 
-You will need `pandoc` installed. Check the version found in the dockerfile.
+You will need `pandoc` installed. Check the version found in the `render-build.sh` file.
 
-Then just run smoo.sh locally.
+To build locally, just run `smoo.sh`.
 
 ```sh
 ./smoo.sh
