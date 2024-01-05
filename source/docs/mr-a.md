@@ -1,7 +1,6 @@
 # &lt;mr-a&gt;
 
 The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
-hi
 
 ## Example
 
