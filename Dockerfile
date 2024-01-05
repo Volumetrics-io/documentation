@@ -1,3 +1,5 @@
+# IMPORTANT NOTE: this is used for our building with render.com, you can also manually use it locally, up to you.
+
 FROM ubuntu:latest
 
 # Update and install necessary packages

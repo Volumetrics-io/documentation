@@ -2,7 +2,7 @@
 
 Public documentation page
 
-You will need `pandoc` installed.
+You will need `pandoc` installed. Check the version found in the dockerfile.
 
 Then just run smoo.sh locally.
 

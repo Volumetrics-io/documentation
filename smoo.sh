@@ -1,11 +1,21 @@
 #!/bin/bash
 
+# TODO: add edit links on every page ex: https://github.com/Volumetrics-io/documentation/edit/main/source/docs/mr-a.md
+# TODO: add edit links for js-api pages ex: https://github.com/Volumetrics-io/mrjs/edit/main/src/utils/CSS.js
+#       note - the edit links default to be from js-api/foldername where foldername is from ../main/src/foldername
+#       note - edgecase - the edit links for the items in js-api/src will come from .../main/src/.. instead of ../main/src/folder/..
+# TODO: fix code duplication https://chat.openai.com/share/71391d0b-a17f-429c-ba17-cd7c4881a86b
+
+OLDIFS="$IFS"
+IFS=$'\n'
+
 if [ "$LOCAL" = "true" ]; then
     base_url="http://localhost:8000"
 else
     base_url="https://docs.mrjs.io"
 fi
-site_name="mrjs"
+github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
+site_name='mrjs'
 templateDir='source'
 templateHTML='source/_template.html'
 outputDir='public'
@@ -87,9 +97,10 @@ do
     base_file=$(basename -- "$file")
     title=${base_file%.*}
     title=$(echo "$title" | sed 's/^[0-9]*//')
-    description="mrjs documentation for $title"
-    
+    # description="mrjs documentation for $title"
+
     page_url="${base_url}/${title}/"
+    github_path="${github_base}/pages/${base_file}"
     mkdir -p "${outputDir}/${title}"
 
     # Convert the markdown to HTML
@@ -98,9 +109,12 @@ do
         --metadata current-year="$current_year" \
         --metadata site-name="$site_name" \
         --metadata page-url="$page_url" \
+        --metadata base-url="$base_url" \
+        --metadata github-path="$github_path" \
         --metadata title="$title" \
-        --metadata description="$description" \
+        --metadata title-prefix="$site_name" \
         --metadata-file="${outputDir}/docs.yaml" \
+        --lua-filter colgroups.lua \
         --highlight-style pygments \
         -s -p \
         -o "${outputDir}/${title}/index.html"
@@ -115,8 +129,10 @@ do
     base_file=$(basename -- "$file")
     title=${base_file%.*}
     title=$(echo "$title" | sed 's/^[0-9]*//')
-    description="mrjs documentation for $title"
-    
+    # description="mrjs documentation for $title"
+
+    github_path="${github_base}/docs/${base_file}"
+
     page_url="${base_url}/doc/${title}/"
     mkdir -p "${outputDir}/doc/${title}"
 
@@ -127,9 +143,12 @@ do
         --metadata current-year="$current_year" \
         --metadata site-name="$site_name" \
         --metadata page-url="$page_url" \
+        --metadata base-url="$base_url" \
+        --metadata github-path="$github_path" \
         --metadata title="$title" \
-        --metadata description="$description" \
+        --metadata title-prefix="$site_name" \
         --metadata-file="${outputDir}/docs.yaml" \
+        --lua-filter colgroups.lua \
         --highlight-style pygments \
         -s -p \
         -o "${outputDir}/doc/${title}/index.html"
@@ -144,8 +163,10 @@ do
     base_file=$(basename -- "$file")
     title=${base_file%.*}
     title=$(echo "$title" | sed 's/^[0-9]*//')
-    description="mrjs documentation for $title"
-    
+    # description="mrjs documentation for $title"
+
+    github_path="${github_base}/js-api/${base_file}"
+
     page_url="${base_url}/api/${title}/"
     mkdir -p "${outputDir}/api/${title}"
 
@@ -156,9 +177,12 @@ do
         --metadata current-year="$current_year" \
         --metadata site-name="$site_name" \
         --metadata page-url="$page_url" \
+        --metadata base-url="$base_url" \
+        --metadata github-path="$github_path" \
         --metadata title="$title" \
-        --metadata description="$description" \
+        --metadata title-prefix="$site_name" \
         --metadata-file="${outputDir}/docs.yaml" \
+        --lua-filter colgroups.lua \
         --highlight-style pygments \
         -s -p \
         -o "${outputDir}/api/${title}/index.html"
@@ -171,15 +195,17 @@ pandoc "${templateDir}/index.md" \
     --template $templateHTML \
     --metadata current-year="$current_year" \
     --metadata site-name="$site_name" \
-    --metadata page-url="${base_url}" \
+    --metadata page-url="$base_url" \
+    --metadata base-url="$base_url" \
+    --metadata github-path="${github_base}/index.md" \
     --metadata title="$site_name" \
-    --metadata description="mrjs Documentation" \
     --metadata-file="${outputDir}/docs.yaml" \
+    --lua-filter colgroups.lua \
     --highlight-style pygments \
     -s -p \
     -o "${outputDir}/index.html"
 
-# IFS="$OLDIFS"
+IFS="$OLDIFS"
 
 end_time=$(date +%s.%N)
 elapsed=$(perl -e "printf('%.2f', $end_time - $start_time)")

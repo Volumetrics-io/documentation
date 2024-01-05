@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="1" height="1"/>
+  </defs>
+  <style>
+    :root {
+      --ink: #242424;
+      --accent: #7311d4;
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --ink: #fff;
+        --accent: #9b74ff;
+      }
+    }
+  </style>
+  <path style="fill: var(--ink);" d="M 7.74 9 L 0 9 L 2.58 3 L 7.74 9 Z"/>
+  <path style="fill: var(--ink);" d="M 16 9 L 8.26 9 L 13.42 3 L 16 9 Z"/>
+  <path style="fill: var(--accent);" d="M 7.74 10 L 0 10 L 2.58 15 L 7.74 10 Z"/>
+  <path style="fill: var(--accent);" d="M 16 10 L 8.26 10 L 13.42 15 L 16 10 Z"/>
+</svg>
