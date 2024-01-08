@@ -3,6 +3,8 @@ description: "Javascript API"
 ---
 # Javascript API
 
+***
+
 <a name="ClippingGeometry"></a>
 
 ## ClippingGeometry
@@ -29,7 +31,9 @@ Constructor for the clipping geometry class. Sets the internal geometry object t
 | geometry | <code>object</code> | The geometry to be captured internally by `this.geometry`. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/datatypes/ClippingGeometry.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/datatypes/ClippingGeometry.js' target='_blank'>Suggest an edit on GitHub for src/datatypes/ClippingGeometry.js</a></div>
+
+***
 
 <a name="Physics"></a>
 
@@ -62,7 +66,9 @@ the Rapier COLLIDER_ENTITY_MAP
 
 **Kind**: static property of [<code>Physics</code>](#Physics)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Physics.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Physics.js' target='_blank'>Suggest an edit on GitHub for src/utils/Physics.js</a></div>
+
+***
 
 <a name="MathUtils"></a>
 
@@ -123,7 +129,9 @@ https://en.wikipedia.org/wiki/Degree_(angle) https://en.wikipedia.org/wiki/Radia
 | val | <code>number</code> | The number to be converted from radians to degrees |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/MathUtils.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/MathUtils.js' target='_blank'>Suggest an edit on GitHub for src/utils/MathUtils.js</a></div>
+
+***
 
 <a name="StringUtils"></a>
 
@@ -200,7 +208,9 @@ Converts a string to vector format where the numbers are pre-converted from a nu
 | val | <code>string</code> | the string to be converted to a vector. Must be of format 'x%' or 'x/y'. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/StringUtils.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/StringUtils.js' target='_blank'>Suggest an edit on GitHub for src/utils/StringUtils.js</a></div>
+
+***
 
 <a name="Geometry"></a>
 
@@ -224,7 +234,9 @@ This construction function creates the UIPlane that is used as the backdrop for 
 | smoothness | <code>number</code> | the expected smoothness value. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js' target='_blank'>Suggest an edit on GitHub for src/utils/Geometry.js</a></div>
+
+***
 
 <a name="Material"></a>
 
@@ -265,7 +277,9 @@ material of the first child hit.
 | material | <code>object</code> | a threejs material to be set for either the parent's direct material or (in the case of a group) the material of all children within the parent group. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Material.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Material.js' target='_blank'>Suggest an edit on GitHub for src/utils/Material.js</a></div>
+
+***
 
 <a name="Display"></a>
 
@@ -292,7 +306,9 @@ Checks whether the user is on mobile or not based on a large list of potential o
 **Kind**: static method of [<code>Display</code>](#Display)  
 **Returns**: <code>boolean</code> - - returns true if on any mobile devices.  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Display.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Display.js' target='_blank'>Suggest an edit on GitHub for src/utils/Display.js</a></div>
+
+***
 
 <a name="Model"></a>
 
@@ -383,7 +399,9 @@ The main loading function
 | extension | <code>string</code> | The extension of the file type. Current allowed extensions are `fbx`, `glb`, and `stl`. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Model.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Model.js' target='_blank'>Suggest an edit on GitHub for src/utils/Model.js</a></div>
+
+***
 
 <a name="CSS"></a>
 
@@ -423,7 +441,9 @@ Useful as part of the layout system and css value handling (px<-->threejs).
 | val | <code>number</code> | the 2D pixel space value to be converted to 3D space. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/CSS.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/CSS.js' target='_blank'>Suggest an edit on GitHub for src/utils/CSS.js</a></div>
+
+***
 
 <a name="Math3D"></a>
 
@@ -445,7 +465,9 @@ Computes the bounding sphere of an inputted three group object.
 | relativeTo | <code>THREE.group</code> | object that the group is relative to. For example if the group is an apple held in a character's hand, relativeTo would be the characters hand. When left as null, the bounding sphere defaults to the inputted groups original world matrix. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Math3D.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Math3D.js' target='_blank'>Suggest an edit on GitHub for src/utils/Math3D.js</a></div>
+
+***
 
 <a name="MRHand"></a>
 
@@ -578,7 +600,9 @@ Gets the expected cursor position of this hand based on the index finger and thu
 **Kind**: instance method of [<code>MRHand</code>](#MRHand)  
 **Returns**: <code>number</code> - - the resolved position of the cursor.  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRHand.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRHand.js' target='_blank'>Suggest an edit on GitHub for src/core/MRHand.js</a></div>
+
+***
 
 <a name="PhysicsSystem"></a>
 
@@ -769,7 +793,9 @@ Updates the debug renderer to either be on or off based on the 'this.debug' vari
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/PhysicsSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/PhysicsSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/PhysicsSystem.js</a></div>
+
+***
 
 <a name="MaskingSystem"></a>
 
@@ -818,7 +844,9 @@ Called when a new entity is added to the scene. Handles masking elements to thei
 | entity | <code>MREntity</code> | the entity being added. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaskingSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaskingSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/MaskingSystem.js</a></div>
+
+***
 
 <a name="LayoutSystem"></a>
 
@@ -879,7 +907,9 @@ Helper function for the update call. Sets the entity's appropriate 3D layout pos
 | entity | <code>MREntity</code> | the entity being updated. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/LayoutSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/LayoutSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/LayoutSystem.js</a></div>
+
+***
 
 <a name="ClippingSystem"></a>
 
@@ -967,7 +997,9 @@ When the system swaps to a new entity, this handles applying the clipping planes
 | entity | <code>MREntity</code> | given entity that will be clipped by the planes. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ClippingSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ClippingSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/ClippingSystem.js</a></div>
+
+***
 
 <a name="InstancingSystem"></a>
 
@@ -1030,7 +1062,9 @@ An option for default instancing. Places the given entity instancing it at a bun
 | entity | <code>MREntity</code> | the entity to be instanced in random locations |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/InstancingSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/InstancingSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/InstancingSystem.js</a></div>
+
+***
 
 <a name="ControlSystem"></a>
 
@@ -1123,7 +1157,9 @@ Raycast into the scene using the information from the event that called it.
 | event | <code>object</code> | the event being handled |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ControlSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ControlSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/ControlSystem.js</a></div>
+
+***
 
 <a name="StyleSystem"></a>
 
@@ -1172,7 +1208,9 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 | entity | <code>MREntity</code> | the entity being added. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/StyleSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/StyleSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/StyleSystem.js</a></div>
+
+***
 
 <a name="TextSystem"></a>
 
@@ -1340,7 +1378,9 @@ Based on the given font-face value in the passed cssString, tries to either use 
 | cssString | <code>string</code> | the css string to be parsed for the font-face css value. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/TextSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/TextSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/TextSystem.js</a></div>
+
+***
 
 <a name="SurfaceSystem"></a>
 
@@ -1404,7 +1444,9 @@ Places the surface based on the user's current pose position??? TODO
 | frame | <code>object</code> | TODO |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SurfaceSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SurfaceSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/SurfaceSystem.js</a></div>
+
+***
 
 <a name="MREntity"></a>
 
@@ -1612,7 +1654,9 @@ Runs the passed through function on this object and every child of this object.
 | callBack | <code>function</code> | the function to run recursively. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MREntity.js</a></div>
+
+***
 
 <a name="MRSystem"></a>
 
@@ -1752,7 +1796,9 @@ Handles the component and registry aspect of the even when an entity component d
 | event | <code>object</code> | the detach event |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRSystem.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/MRSystem.js</a></div>
+
+***
 
 <a name="MRApp"></a>
 
@@ -1926,7 +1972,9 @@ The disconnectedCallback function that runs whenever this entity component becom
 
 **Kind**: static method of [<code>MRApp</code>](#MRApp)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRApp.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRApp.js' target='_blank'>Suggest an edit on GitHub for src/core/MRApp.js</a></div>
+
+***
 
 <a name="SkyBox"></a>
 
@@ -1964,7 +2012,9 @@ On load event function - right now defaults to do nothing.
 
 **Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/SkyBox.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/SkyBox.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/SkyBox.js</a></div>
+
+***
 
 <a name="Panel"></a>
 
@@ -2066,7 +2116,9 @@ Handles what should happen when a scroll event is called. Updates items appropri
 | event | <code>object</code> | the scroll event |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Panel.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Panel.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Panel.js</a></div>
+
+***
 
 <a name="TextField"></a>
 
@@ -2118,7 +2170,9 @@ Updates the cursor position based on click and selection location.
 
 **Kind**: instance method of [<code>TextField</code>](#TextField)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextField.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextField.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/TextField.js</a></div>
+
+***
 
 <a name="Light"></a>
 
@@ -2161,7 +2215,9 @@ Callback function of MREntity - Updates the lights color and intensity as reques
 | mutation | <code>object</code> | the update/change/mutation to be handled. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Light.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Light.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Light.js</a></div>
+
+***
 
 <a name="TextArea"></a>
 
@@ -2213,7 +2269,9 @@ Updates the cursor position based on click and selection location.
 
 **Kind**: instance method of [<code>TextArea</code>](#TextArea)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextArea.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextArea.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/TextArea.js</a></div>
+
+***
 
 <a name="Model"></a>
 
@@ -2252,7 +2310,9 @@ On load event function - right now defaults to do nothing.
 
 **Kind**: instance method of [<code>Model</code>](#Model)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Model.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Model.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Model.js</a></div>
+
+***
 
 ## Classes
 
@@ -2281,7 +2341,9 @@ On load event function - right now defaults to do nothing.
 ## connected()
 **Kind**: global function  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/MRHyperlink.js</a></div>
+
+***
 
 <a name="Button"></a>
 
@@ -2291,7 +2353,9 @@ On load event function - right now defaults to do nothing.
 **Kind**: global class  
 **Extends**: <code>MRTextEntity</code>  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Button.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Button.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Button.js</a></div>
+
+***
 
 <a name="Surface"></a>
 
@@ -2385,7 +2449,9 @@ Handles when a surface should detach from /...? TODO
 
 **Kind**: instance method of [<code>Surface</code>](#Surface)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Surface.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Surface.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Surface.js</a></div>
+
+***
 
 <a name="Image"></a>
 
@@ -2471,7 +2537,9 @@ Calculates the texture UV transformation change based on the image's aspect rati
 | aspect | <code>number</code> | a given expected aspect ratio |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Image.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Image.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Image.js</a></div>
+
+***
 
 <a name="MRDivEntity"></a>
 
@@ -2584,7 +2652,9 @@ Sets the background based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MRDivEntity.js</a></div>
+
+***
 
 <a name="MRElement"></a>
 
@@ -2632,7 +2702,9 @@ Removing an entity as a sub-object of this entity.
 | entity | <code>object</code> | the entity to be removed. |
 
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRElement.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRElement.js' target='_blank'>Suggest an edit on GitHub for src/core/MRElement.js</a></div>
+
+***
 
 <a name="MRTextEntity"></a>
 
@@ -2675,7 +2747,9 @@ Callback function of MREntity - sets up the textObject of the text item.
 
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRTextEntity.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRTextEntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MRTextEntity.js</a></div>
+
+***
 
 ## Members
 
@@ -2719,5 +2793,7 @@ UI needs to be scaled down in XR, 1:1 scale is huuuuge
 
 **Kind**: global variable  
 
-[Suggest an edit on GitHub](https://github.com/volumetrics-io/mrjs/edit/main/src/global.js)
+<div align='center'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/global.js' target='_blank'>Suggest an edit on GitHub for src/global.js</a></div>
+
+***
 
