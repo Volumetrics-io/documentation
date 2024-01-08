@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# TODO: add edit links on every page ex: https://github.com/Volumetrics-io/documentation/edit/main/source/docs/mr-a.md
-# TODO: add edit links for js-api pages ex: https://github.com/Volumetrics-io/mrjs/edit/main/src/utils/CSS.js
-#       note - the edit links default to be from js-api/foldername where foldername is from ../main/src/foldername
-#       note - edgecase - the edit links for the items in js-api/src will come from .../main/src/.. instead of ../main/src/folder/..
-# TODO: fix code duplication https://chat.openai.com/share/71391d0b-a17f-429c-ba17-cd7c4881a86b
-
 OLDIFS="$IFS"
 IFS=$'\n'
 
@@ -22,9 +16,7 @@ outputDir='public'
 assetDir='source/static'
 pagesDir='source/pages'
 docsDir='source/docs'
-apiDir='source/js-api'
 current_year=$(date +"%Y")
-start_time=$(date +%s.%N)
 
 #run main action
 mkdir -p "$outputDir"
@@ -35,160 +27,109 @@ if [[ "$assetDir" ]]; then
     echo "📦️ Copied /$assetDir/ assets folder"
 fi
 
-# Add the top of the post list markdown file
-docsYAML="---
-"
-docsYAML+="pages:
-"
+# Function to process files
+extract_metadata() {
+    local directory=$1
+    # local files=($(ls -f "${directory}"/*.md))
+    local files=($(find "${directory}" -maxdepth 1 -name "*.md" -print | sort))
 
-# Store the list of folders in an array in reverse order
-pageFiles=($(ls -f "$pagesDir"/*.md))
+    for file in "${files[@]}"
+    do
+        # Extract the file name
+        local base_file=$(basename -- "$file")
 
-# Loop through the array
-for file in "${pageFiles[@]}"
-do
-        base_file=$(basename -- "$file")
-        title=${base_file%.*}
-        title=$(echo "$title" | sed 's/^[0-9]*//')
+        # Get the part before the .md extension
+        local title=${base_file%.*}
+
+        # Remove the leading numbers (used for sorting)
+        title=$(echo -e "$title" | sed 's/^[0-9]*//')
+
+        # Make the slug lowercase
+        local slug=${title,,}
+
+        # Replace spaces with "-" in the slug
+        slug=${slug// /-}
+
+        # Add the entry to the YAML doc
         docsYAML+="  - title: \"$title\"\n"
-        echo "🌏 Extracted metadata for page $title"
-done
+        docsYAML+="    slug: \"$slug\"\n"
 
-# Add the top of the post list markdown file
-docsYAML+="docs:
-"
+        echo -e "🔎 Extracted metadata for $title"
+    done
+}
 
-# Store the list of folders in an array in reverse order
-docFiles=($(ls -f "$docsDir"/*.md))
+# Function to process markdown files and convert them to HTML
+process_markdown() {
+    local source_dir=$1
+    local github_path_prefix=$2
+    local output_subdir=$3
+    # local files=($(ls -f "${source_dir}"/*.md))
+    local files=($(find "${source_dir}" -maxdepth 1 -name "*.md" -print | sort))
 
-# Loop through the array
-for file in "${docFiles[@]}"
-do
-        base_file=$(basename -- "$file")
-        title=${base_file%.*}
-        title=$(echo "$title" | sed 's/^[0-9]*//')
-        docsYAML+="  - title: \"$title\"\n"
-        echo "📝 Extracted metadata for Doc page $title"
-done
+    for file in "${files[@]}"
+    do
+        # Extract the file name
+        local base_file=$(basename -- "$file")
 
-docsYAML+="api:
-"
+        # Get the part before the .md extension
+        local title=${base_file%.*}
 
-# Store the list of folders in an array in reverse order
-apiFiles=($(ls -f "$apiDir"/*.md))
+        # Remove the leading numbers (used for sorting)
+        title=$(echo -e "$title" | sed 's/^[0-9]*//')
 
-# Loop through the array
-for file in "${apiFiles[@]}"
-do
-        base_file=$(basename -- "$file")
-        title=${base_file%.*}
-        title=$(echo "$title" | sed 's/^[0-9]*//')
-        docsYAML+="  - title: \"$title\"\n"
-        echo "📚 Extracted metadata for API page $title"
-done
+        # Make the slug lowercase
+        local slug=${title,,}
 
+        # Replace spaces with "-" in the slug
+        slug=${slug// /-}
+
+        # Set path variables and create the folder
+        local page_url="${base_url}/${output_subdir}/${slug}/"
+        local github_path="${github_base}/${github_path_prefix}/${base_file}"
+        mkdir -p "${outputDir}/${output_subdir}/${slug}"
+
+        # Convert the markdown to HTML
+        pandoc "$file" \
+            --template "$templateHTML" \
+            --metadata current-year="$current_year" \
+            --metadata site-name="$site_name" \
+            --metadata page-url="$page_url" \
+            --metadata base-url="$base_url" \
+            --metadata github-path="$github_path" \
+            --metadata title="$title" \
+            --metadata slug="$slug" \
+            --metadata title-prefix="$site_name" \
+            --metadata-file="${outputDir}/docs.yaml" \
+            --lua-filter colgroups.lua \
+            --highlight-style pygments \
+            -s -p \
+            -o "${outputDir}/${output_subdir}/${slug}/index.html"
+
+        echo -e "🌟 Generated page for $title"
+    done
+}
+
+# Initialize YAML header
+docsYAML="---\npages:\n"
+
+# Process page files
+extract_metadata "$pagesDir"
+
+# Add the docs header
+docsYAML+="docs:\n"
+
+# Process doc files
+extract_metadata "$docsDir"
+
+# Finalize and write to file
 docsYAML+="---"
 echo -e "$docsYAML" > "${outputDir}/docs.yaml"
 
-# mkdir -p "${outputDir}/pages/"
-for file in "${pageFiles[@]}"
-do
-    # Extract the file name
-    base_file=$(basename -- "$file")
-    title=${base_file%.*}
-    title=$(echo "$title" | sed 's/^[0-9]*//')
-    # description="mrjs documentation for $title"
+# Process page files
+process_markdown "$pagesDir" "pages" ""
 
-    page_url="${base_url}/${title}/"
-    github_path="${github_base}/pages/${base_file}"
-    mkdir -p "${outputDir}/${title}"
-
-    # Convert the markdown to HTML
-    pandoc $file \
-        --template $templateHTML \
-        --metadata current-year="$current_year" \
-        --metadata site-name="$site_name" \
-        --metadata page-url="$page_url" \
-        --metadata base-url="$base_url" \
-        --metadata github-path="$github_path" \
-        --metadata title="$title" \
-        --metadata title-prefix="$site_name" \
-        --metadata-file="${outputDir}/docs.yaml" \
-        --lua-filter colgroups.lua \
-        --highlight-style pygments \
-        -s -p \
-        -o "${outputDir}/${title}/index.html"
-
-    echo "⭐ Generated page for $title"
-done
-
-mkdir -p "${outputDir}/doc/"
-for file in "${docFiles[@]}"
-do
-    # Extract the file name
-    base_file=$(basename -- "$file")
-    title=${base_file%.*}
-    title=$(echo "$title" | sed 's/^[0-9]*//')
-    # description="mrjs documentation for $title"
-
-    github_path="${github_base}/docs/${base_file}"
-
-    page_url="${base_url}/doc/${title}/"
-    mkdir -p "${outputDir}/doc/${title}"
-
-    # -V base-url="$base_url" \
-    # Convert the markdown to HTML
-    pandoc $file \
-        --template $templateHTML \
-        --metadata current-year="$current_year" \
-        --metadata site-name="$site_name" \
-        --metadata page-url="$page_url" \
-        --metadata base-url="$base_url" \
-        --metadata github-path="$github_path" \
-        --metadata title="$title" \
-        --metadata title-prefix="$site_name" \
-        --metadata-file="${outputDir}/docs.yaml" \
-        --lua-filter colgroups.lua \
-        --highlight-style pygments \
-        -s -p \
-        -o "${outputDir}/doc/${title}/index.html"
-
-    echo "🌟 Generated docs page for $title"
-done
-
-mkdir -p "${outputDir}/api/"
-for file in "${apiFiles[@]}"
-do
-    # Extract the file name
-    base_file=$(basename -- "$file")
-    title=${base_file%.*}
-    title=$(echo "$title" | sed 's/^[0-9]*//')
-    # description="mrjs documentation for $title"
-
-    github_path="${github_base}/js-api/${base_file}"
-
-    page_url="${base_url}/api/${title}/"
-    mkdir -p "${outputDir}/api/${title}"
-
-    # -V base-url="$base_url" \
-    # Convert the markdown to HTML
-    pandoc $file \
-        --template $templateHTML \
-        --metadata current-year="$current_year" \
-        --metadata site-name="$site_name" \
-        --metadata page-url="$page_url" \
-        --metadata base-url="$base_url" \
-        --metadata github-path="$github_path" \
-        --metadata title="$title" \
-        --metadata title-prefix="$site_name" \
-        --metadata-file="${outputDir}/docs.yaml" \
-        --lua-filter colgroups.lua \
-        --highlight-style pygments \
-        -s -p \
-        -o "${outputDir}/api/${title}/index.html"
-
-    echo "✨ Generated API page for $title"
-done
+# Process doc files
+process_markdown "$docsDir" "docs" "doc"
 
 # --metadata base-url="$base_url" \
 pandoc "${templateDir}/index.md" \
@@ -199,6 +140,7 @@ pandoc "${templateDir}/index.md" \
     --metadata base-url="$base_url" \
     --metadata github-path="${github_base}/index.md" \
     --metadata title="$site_name" \
+    --metadata slug="" \
     --metadata-file="${outputDir}/docs.yaml" \
     --lua-filter colgroups.lua \
     --highlight-style pygments \
@@ -207,6 +149,4 @@ pandoc "${templateDir}/index.md" \
 
 IFS="$OLDIFS"
 
-end_time=$(date +%s.%N)
-elapsed=$(perl -e "printf('%.2f', $end_time - $start_time)")
-echo -e "🎀 Website smooshed in $elapsed seconds!\n"
+echo -e "🎀 Website smooshed!\n"
