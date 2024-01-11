@@ -260,7 +260,7 @@ main {
     padding: 0 5vw;
 }
 
-footer, [data-align="center"] {
+footer, .centered {
     display: block;
     margin-top: 1rem;
     padding-top: 2rem;

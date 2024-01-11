@@ -2794,6 +2794,3 @@ This construction function creates the UIPlane that is used as the backdrop for 
 
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js' target='_blank'>Suggest an edit on GitHub for src/utils/Geometry.js</a></div>
-
-<hr>
-
