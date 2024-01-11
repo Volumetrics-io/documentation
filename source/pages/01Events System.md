@@ -1,33 +1,39 @@
 ---
 description: "An introduction to the Event system in mrjs"
 ---
-# Events system
+# mr.js Events
 
-TODO: add an intro for the event system. Mi risus quis suscipit pulvinar lorem at fermentum tempor dui. Proin nisl enim lectus velit dictumst vulputate amet at egestas. Velit elit elit cursus faucibus enim suscipit quis est a. Aliquet est aliqua velit nulla sed fermentum quis blandit ut.
+---
 
-## mr.js Events
-
-### `enterXR`
+## `enterXR`
 
 Triggered when the XR session is initialized. this is useful for when dealing with XR exclusive features, such as hit testing, accessing the scene mesh or planes.
 
 origin: `mr-app`
 
-### `exitXR`
+---
+
+## `exitXR`
 
 Triggered when the session is ended. Useful for when you'd like to save XR state, or when app-specific content needs to be reconfigured for a 2D window.
 
 origin: `mr-app`
 
-### `new-entity`
+---
+
+## `new-entity`
 
 Triggered whenever an entity is created.
 
 origin: the created element
 
-## Interaction Events
+---
 
-### `selectstart`
+# Interaction Events
+
+---
+
+## `selectstart`
 
 Triggered via the controller trigger is pressed a pinch gesture is performed.
 
@@ -38,8 +44,9 @@ detail:
 - `handedness`: `left` or `right`
 - `position`: a THREE.js Vector3 of the pinch/controller position
 
+---
 
-### `selectmoved`
+## `selectmoved`
 
 Triggered when the controller trigger or pinch is held.
 
@@ -50,7 +57,9 @@ detail:
 - `handedness`: `left` or `right`
 - `position`: a THREE.js Vector3 of the pinch/controller position
 
-### `selectend`
+---
+
+## `selectend`
 
 Triggered when the controller trigger or pinch is released.
 
@@ -61,7 +70,9 @@ detail:
 - `handedness`: `left` or `right`
 - `position`: a THREE.js Vector3 of the pinch/controller position
 
-### `hover-start`
+---
+
+## `hover-start`
 
 Triggered when the cursor or the users finger begins hovering over an entity.
 
@@ -74,8 +85,9 @@ detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
+---
 
-### `hover-end`
+## `hover-end`
 
 Triggered when the cursor or the users finger stops hovering over an entity
 
@@ -83,7 +95,9 @@ the `hover` CSS class is removed to the entity when this event is triggered
 
 origin: the target element
 
-### `touch-start`
+---
+
+## `touch-start`
 
 Triggered whened the controller trigger is pulled, a pinch gesture occurs, or the user touches an entity.
 
@@ -94,7 +108,9 @@ detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
-### `touch`
+---
+
+## `touch`
 
 origin: the target element
 
@@ -104,8 +120,9 @@ detail:
 - `position`: a THREE.js Vector3 of the local hover position
 - `delta`: a THREE.js Vector3 of the delta between the the current local position and the last
 
+---
 
-### `touch-end`
+## `touch-end`
 
 Triggered whened the controller trigger or pinch is released, or the user stops touching an entity.
 

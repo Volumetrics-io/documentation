@@ -148,6 +148,17 @@ a.sidebar-entry:hover {
     background-color: var(--paper);
 }
 
+hr {
+    display: block;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    border-bottom: none;
+    /* background-color: var(--border); */
+    margin-top: 2rem;
+}
+
+
+
 
 #dim_layer {
     position: absolute;
@@ -249,13 +260,16 @@ main {
     padding: 0 5vw;
 }
 
-footer {
+footer, [data-align="center"] {
     display: block;
-    border-top: 1px solid var(--border);
     margin-top: 1rem;
     padding-top: 2rem;
     text-align: center;
     font-size: 90%;
+}
+
+footer {
+    border-top: 1px solid var(--border);
 }
 
 /* main>* {
