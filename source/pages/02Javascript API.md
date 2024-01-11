@@ -1842,6 +1842,7 @@ The skybox entity that allows users to give multiple images to pattern into the 
 * [SkyBox](#SkyBox) ⇐ <code>MREntity</code>
     * [.SkyBox](#SkyBox+SkyBox)
         * [new exports.SkyBox()](#new_SkyBox+SkyBox_new)
+    * [.onTextureLoaded(texture)](#SkyBox+onTextureLoaded)
     * [.connected()](#SkyBox+connected)
     * [.onLoad()](#SkyBox+onLoad)
 
@@ -1854,10 +1855,23 @@ The skybox entity that allows users to give multiple images to pattern into the 
 #### new exports.SkyBox()
 Constructor for skybox - defaults to the usual impl of an Entity.
 
+<a name="SkyBox+onTextureLoaded"></a>
+
+### skyBox.onTextureLoaded(texture)
+Callback function triggered when the texture is successfully loaded.
+             It sets the loaded texture as the background and notifies all registered callbacks.
+
+**Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| texture | <code>THREE.Texture</code> | The loaded texture. |
+
 <a name="SkyBox+connected"></a>
 
 ### skyBox.connected()
-Callback function of MREntity - handles setting up this Surface once it is connected to run as an entity component.
+Lifecycle method that is called when the entity is connected.
+             This method initializes and starts the texture loading process.
 
 **Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
 <a name="SkyBox+onLoad"></a>
