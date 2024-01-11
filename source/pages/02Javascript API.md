@@ -1231,6 +1231,61 @@ Helper function for the update call. Sets the entity's appropriate 3D layout pos
 
 <hr>
 
+<a name="AnimationSystem"></a>
+
+## AnimationSystem ⇐ <code>MRSystem</code>
+Handles specific needs for setting up the masking for all necessary items.
+
+**Kind**: global class  
+**Extends**: <code>MRSystem</code>  
+
+* [AnimationSystem](#AnimationSystem) ⇐ <code>MRSystem</code>
+    * [.AnimationSystem](#AnimationSystem+AnimationSystem)
+        * [new exports.AnimationSystem()](#new_AnimationSystem+AnimationSystem_new)
+    * [.update(deltaTime, frame)](#AnimationSystem+update)
+    * [.onNewEntity(entity)](#AnimationSystem+onNewEntity)
+
+<a name="AnimationSystem+AnimationSystem"></a>
+
+### animationSystem.AnimationSystem
+**Kind**: instance class of [<code>AnimationSystem</code>](#AnimationSystem)  
+<a name="new_AnimationSystem+AnimationSystem_new"></a>
+
+#### new exports.AnimationSystem()
+AnimationSystem's default constructor.
+
+<a name="AnimationSystem+update"></a>
+
+### animationSystem.update(deltaTime, frame)
+Updates each animation mixer in the registry. This function should be called
+     within the main animation loop of the application. It iterates through all the
+     animation mixers stored in the registry and updates them with the given deltaTime.
+     The deltaTime parameter is typically the time elapsed since the last frame
+     which is used to ensure smooth animation playback.
+
+**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | The time elapsed since the last update call, used to update the animation mixers. |
+| frame | <code>object</code> | Additional frame information, not used in the current implementation but can be utilized for future enhancements. |
+
+<a name="AnimationSystem+onNewEntity"></a>
+
+### animationSystem.onNewEntity(entity)
+Called when a new entity is added to the scene. Handles masking elements to their panel.
+
+**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnimationSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/AnimationSystem.js</a></div>
+
+<hr>
+
 <a name="ControlSystem"></a>
 
 ## ControlSystem ⇐ <code>MRSystem</code>
@@ -2794,3 +2849,6 @@ This construction function creates the UIPlane that is used as the backdrop for 
 
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js' target='_blank'>Suggest an edit on GitHub for src/utils/Geometry.js</a></div>
+
+<hr>
+
