@@ -196,7 +196,7 @@ aside {
     z-index: 999;
 }
 
-aside > section {
+aside>section {
     padding-bottom: 2rem;
     display: flex;
     flex-flow: column nowrap;
@@ -260,7 +260,8 @@ main {
     padding: 0 5vw;
 }
 
-footer, .centered {
+footer,
+.centered {
     display: block;
     margin-top: 1rem;
     padding-top: 2rem;
@@ -321,7 +322,8 @@ td {
     /* white-space: nowrap */
 }
 
-th:last-child, td:last-child {
+th:last-child,
+td:last-child {
     border-right: none;
 }
 
@@ -572,6 +574,42 @@ code span.vs {
     /* color: #4070a0; */
     color: var(--color-strings);
 }
+
+/* show the anchor links in headings if one hovers over the heading. */
+.anchor::before {
+    /* content: '🔗'; */
+    content: url(/static/link.svg);
+    /* content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='50' r='40' stroke='black' stroke-width='2' fill='red'/%3E%3Cpolyline points='20,20 40,25 60,40 80,120 120,140 200,180' style='fill:none;stroke:black;stroke-width:3'/%3E%3C/svg%3E "); */
+    display: inline-block;
+    font-size: 1rem;
+    opacity: 0.15;
+    margin-left: -1.5rem;
+    padding-right: 0.5rem;
+}
+
+.anchor:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+}
+
+h1:hover>.anchor::before,
+h2:hover>.anchor::before,
+h3:hover>.anchor::before,
+h4:hover>.anchor::before,
+h5:hover>.anchor::before,
+h6:hover>.anchor::before {
+    opacity: 1;
+}
+
+/* end: heading anchor links */
 
 @media only screen and (max-width: 64rem) {
     #sidebar {

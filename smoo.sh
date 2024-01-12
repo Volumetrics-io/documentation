@@ -101,6 +101,7 @@ process_markdown() {
             --metadata title-prefix="$site_name" \
             --metadata-file="${outputDir}/docs.yaml" \
             --lua-filter colgroups.lua \
+            --lua-filter anchorlinks.lua \
             --highlight-style pygments \
             -s -p \
             -o "${outputDir}/${output_subdir}/${slug}/index.html"
@@ -143,6 +144,7 @@ pandoc "${templateDir}/index.md" \
     --metadata slug="" \
     --metadata-file="${outputDir}/docs.yaml" \
     --lua-filter colgroups.lua \
+    --lua-filter anchorlinks.lua \
     --highlight-style pygments \
     -s -p \
     -o "${outputDir}/index.html"
