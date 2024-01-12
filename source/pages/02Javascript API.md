@@ -14,6 +14,7 @@ The default representation of an MRSystem to be expanded upon by actual details 
 * [MRSystem](#MRSystem)
     * [.MRSystem](#MRSystem+MRSystem)
         * [new exports.MRSystem(useComponents, frameRate)](#new_MRSystem+MRSystem_new)
+    * [.needsUpdate(deltaTime, frame)](#MRSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.__update(deltaTime, frame)](#MRSystem+__update)
     * [.update(deltaTime, frame)](#MRSystem+update)
     * [.onNewEntity(entity)](#MRSystem+onNewEntity)
@@ -38,6 +39,20 @@ Constructor for MRSystem. Sets up appropriate document event listeners, componen
 | --- | --- | --- | --- |
 | useComponents | <code>boolean</code> | <code>true</code> | Default to true. Determines whether comonents need to be maintained (attached/updated/detached) with the system. |
 | frameRate | <code>number</code> | <code></code> | Default to null. When set, used and updated as part of the System's update function. |
+
+<a name="MRSystem+needsUpdate"></a>
+
+### mrSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
+Checks if we need to run the generic system update call. Default implementation returns true if there are
+any items in the system's registry. Allows subclasses to override with their own implementation.
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="MRSystem+__update"></a>
 
@@ -404,6 +419,7 @@ attribute for more detailed control.
 * [PhysicsSystem](#PhysicsSystem) ⇐ <code>MRSystem</code>
     * [.PhysicsSystem](#PhysicsSystem+PhysicsSystem)
         * [new exports.PhysicsSystem()](#new_PhysicsSystem+PhysicsSystem_new)
+    * [.needsUpdate(deltaTime, frame)](#PhysicsSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#PhysicsSystem+update)
     * [.onContactStart(handle1, handle2)](#PhysicsSystem+onContactStart)
     * [.onContactEnd(handle1, handle2)](#PhysicsSystem+onContactEnd)
@@ -426,6 +442,20 @@ attribute for more detailed control.
 
 #### new exports.PhysicsSystem()
 PhysicsSystem's default constructor - sets up useful world and debug information alongside an initial `Rapier` event queue.
+
+<a name="PhysicsSystem+needsUpdate"></a>
+
+### physicsSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
+Checks if we need to run the generic system update call. Default implementation returns true if there are
+any items in the system's registry. Allows subclasses to override with their own implementation.
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="PhysicsSystem+update"></a>
 
@@ -739,6 +769,7 @@ This system supports interaction event information including mouse and controlle
 * [ControlSystem](#ControlSystem) ⇐ <code>MRSystem</code>
     * [.ControlSystem](#ControlSystem+ControlSystem)
         * [new exports.ControlSystem()](#new_ControlSystem+ControlSystem_new)
+    * [.needsUpdate(deltaTime, frame)](#ControlSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#ControlSystem+update)
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
@@ -754,6 +785,20 @@ This system supports interaction event information including mouse and controlle
 
 #### new exports.ControlSystem()
 ControlSystem's Default constructor that sets up the app's mouse information along with any relevant physics and cursor information.
+
+<a name="ControlSystem+needsUpdate"></a>
+
+### controlSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
+Checks if we need to run the generic system update call. Default implementation returns true if there are
+any items in the system's registry. Allows subclasses to override with their own implementation.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="ControlSystem+update"></a>
 
