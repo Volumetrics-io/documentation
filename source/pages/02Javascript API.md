@@ -160,244 +160,159 @@ Handles the component and registry aspect of the even when an entity component d
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/MRSystem.js</a></div>
 
 
-<a name="MRApp"></a>
+<a name="MRPlaneManager"></a>
 
-## MRApp ⇐ <code>MRElement</code>
-The engine handler for running MRjs as an App. `mr-app`
+## MRPlaneManager
+creates and manages the mr.js representation of XR planes.
+The resulting planes have RAPIER rigid bodies and THREE.js meshes that occlude virtual content by default
 
 **Kind**: global class  
-**Extends**: <code>MRElement</code>  
 
-* [MRApp](#MRApp) ⇐ <code>MRElement</code>
-    * _instance_
-        * [.MRApp](#MRApp+MRApp)
-            * [new exports.MRApp()](#new_MRApp+MRApp_new)
-        * [.mutatedAttribute(mutation)](#MRApp+mutatedAttribute)
-        * [.mutatedChildList(mutation)](#MRApp+mutatedChildList)
-        * [.mutationCallback(mutationList, observer)](#MRApp+mutationCallback)
-        * [.init()](#MRApp+init)
-        * [.initUser()](#MRApp+initUser)
-        * [.initLights(data)](#MRApp+initLights)
-        * [.denit()](#MRApp+denit)
-        * [.registerSystem(system)](#MRApp+registerSystem)
-        * [.unregisterSystem(system)](#MRApp+unregisterSystem)
-        * [.add(entity)](#MRApp+add)
-        * [.remove(entity)](#MRApp+remove)
-        * [.onWindowResize()](#MRApp+onWindowResize)
-        * [.render(timeStamp, frame)](#MRApp+render)
-    * _static_
-        * [.Connected()](#MRApp.Connected)
-        * [.Disconnected()](#MRApp.Disconnected)
+* [MRPlaneManager](#MRPlaneManager)
+    * [.MRPlaneManager](#MRPlaneManager+MRPlaneManager)
+        * [new exports.MRPlaneManager(scene, physicsWorld)](#new_MRPlaneManager+MRPlaneManager_new)
+    * [.initPhysicsBody(plane)](#MRPlaneManager+initPhysicsBody)
 
-<a name="MRApp+MRApp"></a>
+<a name="MRPlaneManager+MRPlaneManager"></a>
 
-### mrApp.MRApp
-**Kind**: instance class of [<code>MRApp</code>](#MRApp)  
-<a name="new_MRApp+MRApp_new"></a>
+### mrPlaneManager.MRPlaneManager
+**Kind**: instance class of [<code>MRPlaneManager</code>](#MRPlaneManager)  
+<a name="new_MRPlaneManager+MRPlaneManager_new"></a>
 
-#### new exports.MRApp()
-Constructs the base information of the app including system, camera, engine, xr, and rendering defaults.
+#### new exports.MRPlaneManager(scene, physicsWorld)
 
-<a name="MRApp+mutatedAttribute"></a>
+| Param |
+| --- |
+| scene | 
+| physicsWorld | 
 
-### mrApp.mutatedAttribute(mutation)
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+<a name="MRPlaneManager+initPhysicsBody"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | TODO |
+### mrPlaneManager.initPhysicsBody(plane)
+initializes the physics body of an MR Plane
 
-<a name="MRApp+mutatedChildList"></a>
+**Kind**: instance method of [<code>MRPlaneManager</code>](#MRPlaneManager)  
 
-### mrApp.mutatedChildList(mutation)
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+| Param |
+| --- |
+| plane | 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | TODO |
 
-<a name="MRApp+mutationCallback"></a>
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/managers/MRPlaneManager.js' target='_blank'>Suggest an edit on GitHub for src/core/managers/MRPlaneManager.js</a></div>
 
-### mrApp.mutationCallback(mutationList, observer)
-The mutationCallback function that runs whenever this entity component should be mutated.
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+<a name="MRDivEntity"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| mutationList | <code>object</code> | the list of update/change/mutation(s) to be handled. |
-| observer | <code>object</code> | w3 standard object that watches for changes on the HTMLElement |
+## MRDivEntity ⇐ <code>MREntity</code>
+The MREntity that is used to solely describe UI Elements. Defaults as the html `mr-div` representation. `mr-div`
 
-<a name="MRApp+init"></a>
+**Kind**: global class  
+**Extends**: <code>MREntity</code>  
 
-### mrApp.init()
-Initializes the engine state for the MRApp. This function is run whenever the MRApp is connected.
+* [MRDivEntity](#MRDivEntity) ⇐ <code>MREntity</code>
+    * [.MRDivEntity](#MRDivEntity+MRDivEntity)
+        * [new exports.MRDivEntity()](#new_MRDivEntity+MRDivEntity_new)
+    * [.height()](#MRDivEntity+height) ⇒ <code>number</code>
+    * [.width()](#MRDivEntity+width) ⇒ <code>number</code>
+    * [.add(entity)](#MRDivEntity+add)
+    * [.remove(entity)](#MRDivEntity+remove)
+    * [.connected()](#MRDivEntity+connected)
+    * [.updatePhysicsData()](#MRDivEntity+updatePhysicsData)
+    * [.domToThree(val)](#MRDivEntity+domToThree) ⇒ <code>number</code>
+    * [.updateStyle()](#MRDivEntity+updateStyle)
+    * [.setBorder()](#MRDivEntity+setBorder)
+    * [.setBackground()](#MRDivEntity+setBackground)
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp+initUser"></a>
+<a name="MRDivEntity+MRDivEntity"></a>
 
-### mrApp.initUser()
-Initializes the user information for the MRApp including appropriate HMD direction and camera information and the default scene anchor location.
+### mrDivEntity.MRDivEntity
+**Kind**: instance class of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="new_MRDivEntity+MRDivEntity_new"></a>
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp+initLights"></a>
+#### new exports.MRDivEntity()
+Constructor sets up the defaults for the background mesh, scaling, and world relevant elements.
 
-### mrApp.initLights(data)
-Initializes default lighting and shadows for the main scene.
+<a name="MRDivEntity+height"></a>
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+### mrDivEntity.height() ⇒ <code>number</code>
+Calculates the height of the Entity based on the viewing-client's shape. If in Mixed Reality, adjusts the value appropriately.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | <code>object</code> | the lights data (color, intensity, shadows, etc) |
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+**Returns**: <code>number</code> - - the resolved height  
+<a name="MRDivEntity+width"></a>
 
-<a name="MRApp+denit"></a>
+### mrDivEntity.width() ⇒ <code>number</code>
+Calculates the width of the Entity based on the viewing-client's shape. If in Mixed Reality, adjusts the value appropriately.
 
-### mrApp.denit()
-De-initializes rendering and MR
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+**Returns**: <code>number</code> - - the resolved width  
+<a name="MRDivEntity+add"></a>
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp+registerSystem"></a>
+### mrDivEntity.add(entity)
+Adding an entity as a sub-object of this panel (for example an mr-model, button, etc).
 
-### mrApp.registerSystem(system)
-Registers a new system addition to the MRApp engine.
-
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| system | <code>MRSystem</code> | the system to be added. |
-
-<a name="MRApp+unregisterSystem"></a>
-
-### mrApp.unregisterSystem(system)
-Unregisters a system from the MRApp engine.
-
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| system | <code>MRSystem</code> | the system to be removed. |
-
-<a name="MRApp+add"></a>
-
-### mrApp.add(entity)
-Adding an entity as an object in this MRApp engine's scene.
-
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="MRApp+remove"></a>
+<a name="MRDivEntity+remove"></a>
 
-### mrApp.remove(entity)
-Removing an entity as an object in this MRApp engine's scene.
+### mrDivEntity.remove(entity)
+Removing an entity as a sub-object of this panel (for example an mr-model, button, etc).
 
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | <code>MREntity</code> | the entity to be removed. |
-
-<a name="MRApp+onWindowResize"></a>
-
-### mrApp.onWindowResize()
-Handles what is necessary rendering, camera, and user-wise when the viewing window is resized.
-
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp+render"></a>
-
-### mrApp.render(timeStamp, frame)
-Default function header needed by threejs. The render function that is called during ever frame. Calls every systems' update function.
-
-**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| timeStamp | <code>number</code> | timeStamp of the current frame. |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
+| entity | <code>MREntity</code> | the entity to be removed added. |
 
-<a name="MRApp.Connected"></a>
+<a name="MRDivEntity+connected"></a>
 
-### MRApp.Connected()
-The connectedCallback function that runs whenever this entity component becomes connected to something else.
+### mrDivEntity.connected()
+Callback function of MREntity - connects the background geometry of this item to an actual UIPlane geometry.
 
-**Kind**: static method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp.Disconnected"></a>
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="MRDivEntity+updatePhysicsData"></a>
 
-### MRApp.Disconnected()
-The disconnectedCallback function that runs whenever this entity component becomes connected to something else.
+### mrDivEntity.updatePhysicsData()
+Updates the physics data for the current iteration. Calculates this.physics based on current stored object3D information.
 
-**Kind**: static method of [<code>MRApp</code>](#MRApp)  
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="MRDivEntity+domToThree"></a>
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRApp.js' target='_blank'>Suggest an edit on GitHub for src/core/MRApp.js</a></div>
+### mrDivEntity.domToThree(val) ⇒ <code>number</code>
+Converts the dom string to a 3D numerical value
 
-
-<a name="SurfaceSystem"></a>
-
-## SurfaceSystem ⇐ <code>MRSystem</code>
-Handles all items (3D and 2D) associated with an mr-surface including the surface itself.
-
-**Kind**: global class  
-**Extends**: <code>MRSystem</code>  
-
-* [SurfaceSystem](#SurfaceSystem) ⇐ <code>MRSystem</code>
-    * [.SurfaceSystem](#SurfaceSystem+SurfaceSystem)
-        * [new exports.SurfaceSystem()](#new_SurfaceSystem+SurfaceSystem_new)
-    * [.update(deltaTime, frame)](#SurfaceSystem+update)
-    * [.resetAllSurfaces()](#SurfaceSystem+resetAllSurfaces)
-    * [.lockWindow()](#SurfaceSystem+lockWindow)
-    * [.placeSurface(hitResults, frame)](#SurfaceSystem+placeSurface)
-
-<a name="SurfaceSystem+SurfaceSystem"></a>
-
-### surfaceSystem.SurfaceSystem
-**Kind**: instance class of [<code>SurfaceSystem</code>](#SurfaceSystem)  
-<a name="new_SurfaceSystem+SurfaceSystem_new"></a>
-
-#### new exports.SurfaceSystem()
-SurfaceSystem's default constructor including setting up /...? TODO - i need to understand what an mr-surface is first
-
-<a name="SurfaceSystem+update"></a>
-
-### surfaceSystem.update(deltaTime, frame)
-The generic system update call. // TODO - add better description here
-
-**Kind**: instance method of [<code>SurfaceSystem</code>](#SurfaceSystem)  
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+**Returns**: <code>number</code> - - the 3D numerical represenation of the dom css value  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
+| val | <code>string</code> | the dom css information includes items of the form `XXXpx`, `XXX%`, etc |
 
-<a name="SurfaceSystem+resetAllSurfaces"></a>
+<a name="MRDivEntity+updateStyle"></a>
 
-### surfaceSystem.resetAllSurfaces()
-Detaches all surfaces in this system and resets them
+### mrDivEntity.updateStyle()
+Updates the style for the UIPlane's border and background based on compStyle and inputted css
+elements.
 
-**Kind**: instance method of [<code>SurfaceSystem</code>](#SurfaceSystem)  
-<a name="SurfaceSystem+lockWindow"></a>
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="MRDivEntity+setBorder"></a>
 
-### surfaceSystem.lockWindow()
-Locks the window in place where it has been positioned after being moved.
+### mrDivEntity.setBorder()
+Sets the border of the UI based on compStyle and inputted css elements.
 
-**Kind**: instance method of [<code>SurfaceSystem</code>](#SurfaceSystem)  
-<a name="SurfaceSystem+placeSurface"></a>
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="MRDivEntity+setBackground"></a>
 
-### surfaceSystem.placeSurface(hitResults, frame)
-Places the surface based on the user's current pose position??? TODO
+### mrDivEntity.setBackground()
+Sets the background based on compStyle and inputted css elements.
 
-**Kind**: instance method of [<code>SurfaceSystem</code>](#SurfaceSystem)  
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| hitResults | <code>object</code> | TODO |
-| frame | <code>object</code> | TODO |
-
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SurfaceSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/SurfaceSystem.js</a></div>
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MRDivEntity.js</a></div>
 
 
 <a name="PhysicsSystem"></a>
@@ -867,458 +782,431 @@ Raycast into the scene using the information from the event that called it.
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ControlSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/ControlSystem.js</a></div>
 
 
-<a name="MREntity"></a>
+<a name="StyleSystem"></a>
 
-## MREntity ⇐ <code>MRElement</code>
-The default representation of an MRElement to be expanded upon by actual details ECS Entity items. `mr-entity`
+## StyleSystem ⇐ <code>MRSystem</code>
+Handles style updates for all items.
 
 **Kind**: global class  
-**Extends**: <code>MRElement</code>  
+**Extends**: <code>MRSystem</code>  
 
-* [MREntity](#MREntity) ⇐ <code>MRElement</code>
-    * [.MREntity](#MREntity+MREntity)
-        * [new exports.MREntity()](#new_MREntity+MREntity_new)
-    * [.width()](#MREntity+width) ⇒ <code>number</code>
-    * [.contentWidth()](#MREntity+contentWidth) ⇒ <code>number</code>
-    * [.height()](#MREntity+height) ⇒ <code>number</code>
-    * [.contentHeight()](#MREntity+contentHeight) ⇒ <code>number</code>
-    * [.updatePhysicsData()](#MREntity+updatePhysicsData)
-    * [.onHover(event)](#MREntity+onHover)
-    * [.onTouch(event)](#MREntity+onTouch)
-    * [.onScroll(event)](#MREntity+onScroll)
-    * [.connectedCallback()](#MREntity+connectedCallback)
-    * [.loadAttributes()](#MREntity+loadAttributes)
-    * [.connected()](#MREntity+connected)
-    * [.disconnected()](#MREntity+disconnected)
-    * [.disconnectedCallback()](#MREntity+disconnectedCallback)
-    * [.mutated(mutation)](#MREntity+mutated)
-    * [.mutationCallback(mutationList, observer)](#MREntity+mutationCallback)
-    * [.componentMutated(mutation)](#MREntity+componentMutated)
-    * [.add(entity)](#MREntity+add)
-    * [.remove(entity)](#MREntity+remove)
-    * [.traverse(callBack)](#MREntity+traverse)
+* [StyleSystem](#StyleSystem) ⇐ <code>MRSystem</code>
+    * [.StyleSystem](#StyleSystem+StyleSystem)
+        * [new exports.StyleSystem()](#new_StyleSystem+StyleSystem_new)
+    * [.update(deltaTime, frame)](#StyleSystem+update)
+    * [.onNewEntity(entity)](#StyleSystem+onNewEntity)
 
-<a name="MREntity+MREntity"></a>
+<a name="StyleSystem+StyleSystem"></a>
 
-### mrEntity.MREntity
-**Kind**: instance class of [<code>MREntity</code>](#MREntity)  
-<a name="new_MREntity+MREntity_new"></a>
+### styleSystem.StyleSystem
+**Kind**: instance class of [<code>StyleSystem</code>](#StyleSystem)  
+<a name="new_StyleSystem+StyleSystem_new"></a>
 
-#### new exports.MREntity()
-Constructor for the default Entity Component (MREntity).
-             Sets up the base object3D and useful Mixed Reality information including rendering, touching, and component basics.
+#### new exports.StyleSystem()
+StyleSystem's default constructor with a starting framerate of 1/30.
 
-<a name="MREntity+width"></a>
+<a name="StyleSystem+update"></a>
 
-### mrEntity.width() ⇒ <code>number</code>
-Calculates the width of the Entity based on the viewPort's shape. If in Mixed Reality, adjusts the value appropriately.
+### styleSystem.update(deltaTime, frame)
+The generic system update call. Handles updating all 3D items to match whatever style is expected whether that be a 2D setup or a 3D change.
 
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - the resolved width  
-<a name="MREntity+contentWidth"></a>
+**Kind**: instance method of [<code>StyleSystem</code>](#StyleSystem)  
 
-### mrEntity.contentWidth() ⇒ <code>number</code>
-The actual 3D value of the content's width.
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
 
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - width of the 3D object.  
-<a name="MREntity+height"></a>
+<a name="StyleSystem+onNewEntity"></a>
 
-### mrEntity.height() ⇒ <code>number</code>
-Calculates the height of the Entity based on the viewPort's shape. If in Mixed Reality, adjusts the value appropriately.
+### styleSystem.onNewEntity(entity)
+Called when a new entity is added to the scene. Adds said new entity to the style's system registry.
 
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
+**Kind**: instance method of [<code>StyleSystem</code>](#StyleSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/StyleSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/StyleSystem.js</a></div>
+
+
+<a name="MRHand"></a>
+
+## MRHand
+Class describing the MRHand object representing the UX of the hand object for MR interactions.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| pinch | <code>boolean</code> | Indicates if the hand is in a pinch gesture. |
+| jointPhysicsBodies | <code>object</code> | Physics bodies associated with the hand joints. |
+| identityPosition | <code>THREE.Vector3</code> | A reference position for the hand. |
+| tempJointPosition | <code>THREE.Vector3</code> | Temporary storage for a joint's position. |
+| tempJointOrientation | <code>THREE.Quaternion</code> | Temporary storage for a joint's orientation. |
+| controllerModelFactory | <code>XRControllerModelFactory</code> | Factory for creating controller models. |
+| handModelFactory | <code>XRHandModelFactory</code> | Factory for creating hand models. |
+| mesh | <code>THREE.Mesh</code> | The 3D mesh representing the hand. |
+| controller | <code>THREE.Object3D</code> | The controller object. |
+| grip | <code>THREE.Object3D</code> | The grip associated with the controller. |
+| hand | <code>THREE.Object3D</code> | The 3D object representing the hand. |
+| model | <code>THREE.Object3D</code> | The model of the hand. |
+
+
+* [MRHand](#MRHand)
+    * [.MRHand](#MRHand+MRHand)
+        * [new exports.MRHand(handedness, app)](#new_MRHand+MRHand_new)
+    * [.initPhysicsBodies(app)](#MRHand+initPhysicsBodies)
+    * [.update()](#MRHand+update)
+    * [.pinchMoved()](#MRHand+pinchMoved)
+    * [.updatePhysicsBodies()](#MRHand+updatePhysicsBodies)
+    * [.setMesh()](#MRHand+setMesh)
+    * [.onSelect(event)](#MRHand+onSelect)
+    * [.getJointOrientation(jointName)](#MRHand+getJointOrientation) ⇒ <code>THREE.Quaternion</code>
+    * [.getJointPosition(jointName)](#MRHand+getJointPosition) ⇒ <code>THREE.Vector3</code>
+    * [.getCursorPosition()](#MRHand+getCursorPosition) ⇒ <code>number</code>
+
+<a name="MRHand+MRHand"></a>
+
+### mrHand.MRHand
+**Kind**: instance class of [<code>MRHand</code>](#MRHand)  
+<a name="new_MRHand+MRHand_new"></a>
+
+#### new exports.MRHand(handedness, app)
+Constructor for the MRHand class object. Setups up all attributes for MRHand including physics, mouse/cursor information, hand tracking and state, and model
+information.
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handedness | <code>object</code> | enum for the `left`` or `right` hand. |
+| app | <code>object</code> | the current MRApp that contains the scene for the hand. |
+
+<a name="MRHand+initPhysicsBodies"></a>
+
+### mrHand.initPhysicsBodies(app)
+Initializes the physics bodies that the hand represents. Useful for collision detection and UX interactions in MR space.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| app | <code>object</code> | the current MRApp that contains the scene for the hand. |
+
+<a name="MRHand+update"></a>
+
+### mrHand.update()
+Update function for the Hand object. Updates the physics bodies and checks whether a pinch has happened or is in progress in any way.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+<a name="MRHand+pinchMoved"></a>
+
+### mrHand.pinchMoved()
+If a pinch happens, updates the MR cursor position while sending out an event that movement has occured from this hand.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+<a name="MRHand+updatePhysicsBodies"></a>
+
+### mrHand.updatePhysicsBodies()
+Update function for the physics associated with this hand. Runs for every joint in the system and moves all elements of the hand model.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+<a name="MRHand+setMesh"></a>
+
+### mrHand.setMesh()
+Handles the setMesh callback.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+<a name="MRHand+onSelect"></a>
+
+### mrHand.onSelect(event)
+Handles the onSelect event
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>event</code> | the on pinch event object |
+
+<a name="MRHand+getJointOrientation"></a>
+
+### mrHand.getJointOrientation(jointName) ⇒ <code>THREE.Quaternion</code>
+Gets the joint orientation of the named joint in the hand.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+**Returns**: <code>THREE.Quaternion</code> - - the quaternion representation or the joint orientation.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| jointName | <code>string</code> | the string name of the joint whose information is requested. |
+
+<a name="MRHand+getJointPosition"></a>
+
+### mrHand.getJointPosition(jointName) ⇒ <code>THREE.Vector3</code>
+Gets the joint position of the named joint in the hand.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+**Returns**: <code>THREE.Vector3</code> - - the position representation or the joint orientation.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| jointName | <code>string</code> | the string name of the joint whose information is requested. |
+
+<a name="MRHand+getCursorPosition"></a>
+
+### mrHand.getCursorPosition() ⇒ <code>number</code>
+Gets the expected cursor position of this hand based on the index finger and thumb's tip positions.
+
+**Kind**: instance method of [<code>MRHand</code>](#MRHand)  
+**Returns**: <code>number</code> - - the resolved position of the cursor.  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRHand.js' target='_blank'>Suggest an edit on GitHub for src/core/MRHand.js</a></div>
+
+
+<a name="SkyBox"></a>
+
+## SkyBox ⇐ <code>MREntity</code>
+The skybox entity that allows users to give multiple images to pattern into the 3D background space. `mr-skybox`
+
+**Kind**: global class  
+**Extends**: <code>MREntity</code>  
+
+* [SkyBox](#SkyBox) ⇐ <code>MREntity</code>
+    * [.SkyBox](#SkyBox+SkyBox)
+        * [new exports.SkyBox()](#new_SkyBox+SkyBox_new)
+    * [.onTextureLoaded(texture)](#SkyBox+onTextureLoaded)
+    * [.connected()](#SkyBox+connected)
+    * [.onLoad()](#SkyBox+onLoad)
+
+<a name="SkyBox+SkyBox"></a>
+
+### skyBox.SkyBox
+**Kind**: instance class of [<code>SkyBox</code>](#SkyBox)  
+<a name="new_SkyBox+SkyBox_new"></a>
+
+#### new exports.SkyBox()
+Constructor for skybox - defaults to the usual impl of an Entity.
+
+<a name="SkyBox+onTextureLoaded"></a>
+
+### skyBox.onTextureLoaded(texture)
+Callback function triggered when the texture is successfully loaded.
+             It sets the loaded texture as the background and notifies all registered callbacks.
+
+**Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| texture | <code>THREE.Texture</code> | The loaded texture. |
+
+<a name="SkyBox+connected"></a>
+
+### skyBox.connected()
+Lifecycle method that is called when the entity is connected.
+             This method initializes and starts the texture loading process.
+
+**Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
+<a name="SkyBox+onLoad"></a>
+
+### skyBox.onLoad()
+On load event function - right now defaults to do nothing.
+
+**Kind**: instance method of [<code>SkyBox</code>](#SkyBox)  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/SkyBox.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/SkyBox.js</a></div>
+
+
+<a name="Panel"></a>
+
+## Panel ⇐ <code>MRDivEntity</code>
+The main panel entity DOM used for webpages and UI elements in 3D space. `mr-panel`
+
+**Kind**: global class  
+**Extends**: <code>MRDivEntity</code>  
+
+* [Panel](#Panel) ⇐ <code>MRDivEntity</code>
+    * [.Panel](#Panel+Panel)
+        * [new exports.Panel()](#new_Panel+Panel_new)
+    * [.height()](#Panel+height) ⇒ <code>number</code>
+    * [.connected()](#Panel+connected)
+    * [.add(entity)](#Panel+add)
+    * [.remove(entity)](#Panel+remove)
+    * [.onTouch(event)](#Panel+onTouch)
+    * [.momentumScroll(distance, duration)](#Panel+momentumScroll)
+    * [.onScroll(event)](#Panel+onScroll)
+
+<a name="Panel+Panel"></a>
+
+### panel.Panel
+**Kind**: instance class of [<code>Panel</code>](#Panel)  
+<a name="new_Panel+Panel_new"></a>
+
+#### new exports.Panel()
+Constructor for the main Panel. Sets up all the relevant object3D and window information. Includes information necessary for proper scrolling usage.
+
+<a name="Panel+height"></a>
+
+### panel.height() ⇒ <code>number</code>
+Calculates the height of the Entity. If in Mixed Reality, adjusts the value appropriately.
+
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
 **Returns**: <code>number</code> - - the resolved height  
-<a name="MREntity+contentHeight"></a>
+<a name="Panel+connected"></a>
 
-### mrEntity.contentHeight() ⇒ <code>number</code>
-The actual 3D value of the content's height.
+### panel.connected()
+Callback function of MREntity - handles setting up this Panel once it is connected to run as an entity component.
+             Relevant tasks include setting up clipping and setting up for all necessary dispatchEvent connections including mutations and scrolling.
 
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - height of the 3D object.  
-<a name="MREntity+updatePhysicsData"></a>
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
+<a name="Panel+add"></a>
 
-### mrEntity.updatePhysicsData()
-Default base for updating the physics data for the current iteration.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+onHover"></a>
-
-### mrEntity.onHover(event)
-Handles the hover event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the hover event |
-
-<a name="MREntity+onTouch"></a>
-
-### mrEntity.onTouch(event)
-Handles the touch event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the touch event |
-
-<a name="MREntity+onScroll"></a>
-
-### mrEntity.onScroll(event)
-Handles the scroll event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the scroll event |
-
-<a name="MREntity+connectedCallback"></a>
-
-### mrEntity.connectedCallback()
-The connectedCallback function that runs whenever this entity component becomes connected to something else.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+loadAttributes"></a>
-
-### mrEntity.loadAttributes()
-Loads all attributes of this entity's stored dataset including components, attaching them, and their associated rotations and positions.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+connected"></a>
-
-### mrEntity.connected()
-Callback function of MREntity - does nothing. Is called by the connectedCallback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+disconnected"></a>
-
-### mrEntity.disconnected()
-Callback function of MREntity - does nothing. Is called by the disconnectedCallback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+disconnectedCallback"></a>
-
-### mrEntity.disconnectedCallback()
-The disconnectedCallback function that runs whenever this entity component becomes disconnected from something else.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+mutated"></a>
-
-### mrEntity.mutated(mutation)
-Callback function of MREntity - does nothing. Is called by mutation Callback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | the update/change/mutation to be handled. |
-
-<a name="MREntity+mutationCallback"></a>
-
-### mrEntity.mutationCallback(mutationList, observer)
-The mutationCallback function that runs whenever this entity component should be mutated.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutationList | <code>object</code> | the list of update/change/mutation(s) to be handled. |
-| observer | <code>object</code> | w3 standard object that watches for changes on the HTMLElement |
-
-<a name="MREntity+componentMutated"></a>
-
-### mrEntity.componentMutated(mutation)
-Helper function for the mutationCallback. Handles actually updating this entity component with all the associated dispatchEvents.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | the update/change/mutation to be handled. |
-
-<a name="MREntity+add"></a>
-
-### mrEntity.add(entity)
+### panel.add(entity)
 Adding an entity as a sub-object of this entity.
 
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | [<code>MREntity</code>](#MREntity) | the entity to be added. |
-
-<a name="MREntity+remove"></a>
-
-### mrEntity.remove(entity)
-Removing an entity as a sub-object of this entity.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | [<code>MREntity</code>](#MREntity) | the entity to be removed. |
-
-<a name="MREntity+traverse"></a>
-
-### mrEntity.traverse(callBack)
-Runs the passed through function on this object and every child of this object.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| callBack | <code>function</code> | the function to run recursively. |
-
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MREntity.js</a></div>
-
-
-<a name="TextArea"></a>
-
-## TextArea ⇐ <code>MRTextEntity</code>
-The text element that is used to represent normal paragraph user-entry text field items one would expect in a web-browser. `mr-textarea`
-
-**Kind**: global class  
-**Extends**: <code>MRTextEntity</code>  
-
-* [TextArea](#TextArea) ⇐ <code>MRTextEntity</code>
-    * [.TextArea](#TextArea+TextArea)
-        * [new exports.TextArea()](#new_TextArea+TextArea_new)
-    * [.connected()](#TextArea+connected)
-    * [.blur()](#TextArea+blur)
-    * [.focus()](#TextArea+focus)
-    * [.updateCursorPosition()](#TextArea+updateCursorPosition)
-
-<a name="TextArea+TextArea"></a>
-
-### textArea.TextArea
-**Kind**: instance class of [<code>TextArea</code>](#TextArea)  
-<a name="new_TextArea+TextArea_new"></a>
-
-#### new exports.TextArea()
-Constructor for the textArea entity component.
-
-<a name="TextArea+connected"></a>
-
-### textArea.connected()
-Callback function of MREntity - handles setting up this textarea once it is connected to run as an entity component.
-
-**Kind**: instance method of [<code>TextArea</code>](#TextArea)  
-<a name="TextArea+blur"></a>
-
-### textArea.blur()
-Blurs the inputted text value and cursor information
-
-**Kind**: instance method of [<code>TextArea</code>](#TextArea)  
-<a name="TextArea+focus"></a>
-
-### textArea.focus()
-Focuses the inputted text value and cursor information as if it is selected. Includes showing the cursor item.
-
-**Kind**: instance method of [<code>TextArea</code>](#TextArea)  
-<a name="TextArea+updateCursorPosition"></a>
-
-### textArea.updateCursorPosition()
-Updates the cursor position based on click and selection location.
-
-**Kind**: instance method of [<code>TextArea</code>](#TextArea)  
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextArea.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/TextArea.js</a></div>
-
-
-<a name="Light"></a>
-
-## Light ⇐ <code>MREntity</code>
-Represents lights in 3D space. `mr-light`
-
-**Kind**: global class  
-**Extends**: <code>MREntity</code>  
-
-* [Light](#Light) ⇐ <code>MREntity</code>
-    * [.Light](#Light+Light)
-        * [new exports.Light()](#new_Light+Light_new)
-    * [.connected()](#Light+connected)
-    * [.mutated(mutation)](#Light+mutated)
-
-<a name="Light+Light"></a>
-
-### light.Light
-**Kind**: instance class of [<code>Light</code>](#Light)  
-<a name="new_Light+Light_new"></a>
-
-#### new exports.Light()
-Constructs the base 3D object.
-
-<a name="Light+connected"></a>
-
-### light.connected()
-Callback function of MREntity - handles setting up this Light once it is connected to run as an entity component.
-
-**Kind**: instance method of [<code>Light</code>](#Light)  
-<a name="Light+mutated"></a>
-
-### light.mutated(mutation)
-Callback function of MREntity - Updates the lights color and intensity as requested.
-
-**Kind**: instance method of [<code>Light</code>](#Light)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | the update/change/mutation to be handled. |
-
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Light.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Light.js</a></div>
-
-
-<a name="TextField"></a>
-
-## TextField ⇐ <code>MRTextEntity</code>
-The text element that is used to represent normal user-entry text field items one would expect in a web-browser. Limits the one-line. `mr-textfield`
-
-**Kind**: global class  
-**Extends**: <code>MRTextEntity</code>  
-
-* [TextField](#TextField) ⇐ <code>MRTextEntity</code>
-    * [.TextField](#TextField+TextField)
-        * [new exports.TextField()](#new_TextField+TextField_new)
-    * [.connected()](#TextField+connected)
-    * [.blur()](#TextField+blur)
-    * [.focus()](#TextField+focus)
-    * [.updateCursorPosition()](#TextField+updateCursorPosition)
-
-<a name="TextField+TextField"></a>
-
-### textField.TextField
-**Kind**: instance class of [<code>TextField</code>](#TextField)  
-<a name="new_TextField+TextField_new"></a>
-
-#### new exports.TextField()
-Constructor for the textField entity component.
-
-<a name="TextField+connected"></a>
-
-### textField.connected()
-Callback function of MREntity - handles setting up this textfield once it is connected to run as an entity component.
-
-**Kind**: instance method of [<code>TextField</code>](#TextField)  
-<a name="TextField+blur"></a>
-
-### textField.blur()
-Blurs the inputted text value and cursor information
-
-**Kind**: instance method of [<code>TextField</code>](#TextField)  
-<a name="TextField+focus"></a>
-
-### textField.focus()
-Focuses the inputted text value and cursor information as if it is selected. Includes showing the cursor item.
-
-**Kind**: instance method of [<code>TextField</code>](#TextField)  
-<a name="TextField+updateCursorPosition"></a>
-
-### textField.updateCursorPosition()
-Updates the cursor position based on click and selection location.
-
-**Kind**: instance method of [<code>TextField</code>](#TextField)  
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/TextField.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/TextField.js</a></div>
-
-
-<a name="Surface"></a>
-
-## Surface ⇐ <code>MREntity</code>
-...TODO... how is this different than Panel in terms of use? i understand panel has more too it, but is this just a sprite? `mr-surface`
-
-**Kind**: global class  
-**Extends**: <code>MREntity</code>  
-
-* [Surface](#Surface) ⇐ <code>MREntity</code>
-    * [.Surface](#Surface+Surface)
-    * [.height()](#Surface+height) ⇒ <code>number</code>
-    * [.width()](#Surface+width) ⇒ <code>number</code>
-    * [.connected()](#Surface+connected)
-    * [.add(entity)](#Surface+add)
-    * [.remove(entity)](#Surface+remove)
-    * [.mutated(mutation)](#Surface+mutated)
-    * [.place()](#Surface+place)
-    * [.replace()](#Surface+replace)
-    * [.detach()](#Surface+detach)
-
-<a name="Surface+Surface"></a>
-
-### surface.Surface
-**Kind**: instance class of [<code>Surface</code>](#Surface)  
-<a name="Surface+height"></a>
-
-### surface.height() ⇒ <code>number</code>
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
-**Returns**: <code>number</code> - - the height of the current viewport  
-<a name="Surface+width"></a>
-
-### surface.width() ⇒ <code>number</code>
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
-**Returns**: <code>number</code> - - the width of the current viewport  
-<a name="Surface+connected"></a>
-
-### surface.connected()
-Callback function of MREntity - handles setting up this Surface once it is connected to run as an entity component.
-
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
-<a name="Surface+add"></a>
-
-### surface.add(entity)
-Adding an entity as a sub-object of this entity.
-
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="Surface+remove"></a>
+<a name="Panel+remove"></a>
 
-### surface.remove(entity)
-Removing an entity as a sub-object of this entity.
+### panel.remove(entity)
+Remove an entity as a sub-object of this entity.
 
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be removed. |
 
-<a name="Surface+mutated"></a>
+<a name="Panel+onTouch"></a>
 
-### surface.mutated(mutation)
-Callback function of MREntity - updates based on the changed attribute: orientation
+### panel.onTouch(event)
+Handles what should happen when a touch event is called. Updates items appropriately for scrolling on the panel.
+             Triggers to use the browser's own scrolling without a need to fake the scrolling itself.
 
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>object</code> | the touch event |
+
+<a name="Panel+momentumScroll"></a>
+
+### panel.momentumScroll(distance, duration)
+Helper function for the onTouch event function. Handles properly adjusting scroll for some momentum for a more natural feel.
+
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| distance | <code>number</code> | the distance left to scroll |
+| duration | <code>number</code> | the amount of time to do the scroll distance allowing for some movement instead of instant displacement. |
+
+<a name="Panel+onScroll"></a>
+
+### panel.onScroll(event)
+Handles what should happen when a scroll event is called. Updates items appropriately for scrolling on the panel.
+
+**Kind**: instance method of [<code>Panel</code>](#Panel)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>object</code> | the scroll event |
+
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Panel.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Panel.js</a></div>
+
+
+<a name="Image"></a>
+
+## Image ⇐ <code>MRDivEntity</code>
+Base html image represented in 3D space. `mr-image`
+
+**Kind**: global class  
+**Extends**: <code>MRDivEntity</code>  
+
+* [Image](#Image) ⇐ <code>MRDivEntity</code>
+    * [.Image](#Image+Image)
+        * [new exports.Image()](#new_Image+Image_new)
+    * [.width()](#Image+width) ⇒ <code>number</code>
+    * [.height()](#Image+height) ⇒ <code>number</code>
+    * [.connected()](#Image+connected)
+    * [.updateStyle()](#Image+updateStyle)
+    * [.mutated(mutation)](#Image+mutated)
+    * [.computeObjectFitDimensions()](#Image+computeObjectFitDimensions)
+    * [.cover(texture, aspect)](#Image+cover)
+
+<a name="Image+Image"></a>
+
+### image.Image
+**Kind**: instance class of [<code>Image</code>](#Image)  
+<a name="new_Image+Image_new"></a>
+
+#### new exports.Image()
+Constructs a base image entity using a UIPlane and other 3D elements as necessary.
+
+<a name="Image+width"></a>
+
+### image.width() ⇒ <code>number</code>
+Calculates the width of the img based on the img tag in the shadow root
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
+**Returns**: <code>number</code> - - the resolved width  
+<a name="Image+height"></a>
+
+### image.height() ⇒ <code>number</code>
+Calculates the height of the img based on the img tag in the shadow root
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
+**Returns**: <code>number</code> - - the resolved height  
+<a name="Image+connected"></a>
+
+### image.connected()
+Callback function of MREntity - handles setting up this Image and associated 3D geometry style (from css) once it is connected to run as an entity component.
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
+<a name="Image+updateStyle"></a>
+
+### image.updateStyle()
+Updates the style for the Image's border and background based on compStyle and inputted css elements.
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
+<a name="Image+mutated"></a>
+
+### image.mutated(mutation)
+Callback function of MREntity - Updates the image's cover,fill,etc based on the mutation request.
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | mutation | <code>object</code> | the update/change/mutation to be handled. |
 
-<a name="Surface+place"></a>
+<a name="Image+computeObjectFitDimensions"></a>
 
-### surface.place()
-Puts the surface into the scene and dispatches an event to confirm placement.
+### image.computeObjectFitDimensions()
+computes the width and height values considering the value of object-fit
 
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
-<a name="Surface+replace"></a>
+**Kind**: instance method of [<code>Image</code>](#Image)  
+<a name="Image+cover"></a>
 
-### surface.replace()
-Replaces /...? TODO
+### image.cover(texture, aspect)
+Calculates the texture UV transformation change based on the image's aspect ratio.
 
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
-<a name="Surface+detach"></a>
+**Kind**: instance method of [<code>Image</code>](#Image)  
 
-### surface.detach()
-Handles when a surface should detach from /...? TODO
+| Param | Type | Description |
+| --- | --- | --- |
+| texture | <code>object</code> | the texture to augment |
+| aspect | <code>number</code> | a given expected aspect ratio |
 
-**Kind**: instance method of [<code>Surface</code>](#Surface)  
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Surface.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Surface.js</a></div>
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/Image.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/Image.js</a></div>
 
 
 ## Classes
@@ -1351,111 +1239,61 @@ Handles when a surface should detach from /...? TODO
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/MRHyperlink.js</a></div>
 
 
-<a name="ClippingGeometry"></a>
+<a name="MRPlane"></a>
 
-## ClippingGeometry
-Geometry used in the clipping plane step. Separated out for clarity in the calculations.
+## MRPlane
+a name space representation of an MR Plane
 
 **Kind**: global class  
 
-* [ClippingGeometry](#ClippingGeometry)
-    * [.ClippingGeometry](#ClippingGeometry+ClippingGeometry)
-        * [new exports.ClippingGeometry(geometry)](#new_ClippingGeometry+ClippingGeometry_new)
-
-<a name="ClippingGeometry+ClippingGeometry"></a>
-
-### clippingGeometry.ClippingGeometry
-**Kind**: instance class of [<code>ClippingGeometry</code>](#ClippingGeometry)  
-<a name="new_ClippingGeometry+ClippingGeometry_new"></a>
-
-#### new exports.ClippingGeometry(geometry)
-Constructor for the clipping geometry class. Sets the internal geometry object to the geometry that is passed through.
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/datatypes/MRPlane.js' target='_blank'>Suggest an edit on GitHub for src/datatypes/MRPlane.js</a></div>
 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| geometry | <code>object</code> | The geometry to be captured internally by `this.geometry`. |
+## Members
+
+<dl>
+<dt><a href="#viewPortHeight">viewPortHeight</a> : <code>number</code></dt>
+<dd><p>the noted viewport height</p>
+</dd>
+<dt><a href="#viewPortWidth">viewPortWidth</a> : <code>number</code></dt>
+<dd><p>the noted viewport width</p>
+</dd>
+<dt><a href="#XRScale">XRScale</a> : <code>number</code></dt>
+<dd><p>UI needs to be scaled down in XR, 1:1 scale is huuuuge</p>
+</dd>
+</dl>
+
+<a name="viewPortHeight"></a>
+
+## viewPortHeight : <code>number</code>
+the noted viewport height
+
+**Kind**: global variable  
+<a name="viewPortWidth"></a>
+
+## viewPortWidth : <code>number</code>
+the noted viewport width
+
+**Kind**: global variable  
+<a name="XRScale"></a>
+
+## XRScale : <code>number</code>
+UI needs to be scaled down in XR, 1:1 scale is huuuuge
+
+**Kind**: global variable  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/global.js' target='_blank'>Suggest an edit on GitHub for src/global.js</a></div>
 
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/datatypes/ClippingGeometry.js' target='_blank'>Suggest an edit on GitHub for src/datatypes/ClippingGeometry.js</a></div>
+<a name="xr"></a>
 
-
-<a name="StringUtils"></a>
-
-## StringUtils : <code>object</code>
-Useful namespace for helping with String utility functions
+## xr : <code>object</code>
+Useful namespace for helping with xr utility functions.
+this is set within the MRApp to access various WebXR API features
 
 **Kind**: global namespace  
 
-* [StringUtils](#StringUtils) : <code>object</code>
-    * [.stringToJson(attrString)](#StringUtils.stringToJson) ⇒ <code>object</code>
-    * [.jsonToString(componentData)](#StringUtils.jsonToString) ⇒ <code>string</code>
-    * [.stringToVector(str)](#StringUtils.stringToVector) ⇒ <code>object</code>
-    * [.stringToDegVector(str)](#StringUtils.stringToDegVector) ⇒ <code>object</code>
-    * [.stringToDimensionValue(val)](#StringUtils.stringToDimensionValue) ⇒ <code>number</code>
-
-<a name="StringUtils.stringToJson"></a>
-
-### StringUtils.stringToJson(attrString) ⇒ <code>object</code>
-Converts and formats the inputted string to a json object.
-
-**Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
-**Returns**: <code>object</code> - - object in json form  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| attrString | <code>string</code> | the string to be formatted |
-
-<a name="StringUtils.jsonToString"></a>
-
-### StringUtils.jsonToString(componentData) ⇒ <code>string</code>
-Converts and formats the inputted json object into a string.
-
-**Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
-**Returns**: <code>string</code> - - the string representation of the json object  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| componentData | <code>object</code> | the json object to be formatted into a string |
-
-<a name="StringUtils.stringToVector"></a>
-
-### StringUtils.stringToVector(str) ⇒ <code>object</code>
-Converts a string to vector format.
-
-**Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
-**Returns**: <code>object</code> - - the vector version of the inputted string.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| str | <code>string</code> | the string to be converted to a vector. Must be of format 'xx xxx xx...'. |
-
-<a name="StringUtils.stringToDegVector"></a>
-
-### StringUtils.stringToDegVector(str) ⇒ <code>object</code>
-Converts a string to vector format where the numbers are pre-converted from radians to degrees.
-
-**Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
-**Returns**: <code>object</code> - - the vector version of the inputted string.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| str | <code>string</code> | the string to be converted to a vector. Must be of format 'xx xxx xx...'. |
-
-<a name="StringUtils.stringToDimensionValue"></a>
-
-### StringUtils.stringToDimensionValue(val) ⇒ <code>number</code>
-Converts a string to vector format where the numbers are pre-converted from a number to an appropriate representation
-
-**Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
-**Returns**: <code>number</code> - - the vector version of the inputted string.  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| val | <code>string</code> | the string to be converted to a vector. Must be of format 'x%' or 'x/y'. |
-
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/StringUtils.js' target='_blank'>Suggest an edit on GitHub for src/utils/StringUtils.js</a></div>
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/XR.js' target='_blank'>Suggest an edit on GitHub for src/utils/XR.js</a></div>
 
 
 <a name="Material"></a>
@@ -1570,10 +1408,17 @@ Useful namespace for helping with Physics utility functions
 **Kind**: global namespace  
 
 * [Physics](#Physics) : <code>object</code>
+    * [.CollisionGroups](#Physics.CollisionGroups)
     * [.RAPIER](#Physics.RAPIER)
     * [.INPUT_COLLIDER_HANDLE_NAMES](#Physics.INPUT_COLLIDER_HANDLE_NAMES)
     * [.COLLIDER_ENTITY_MAP](#Physics.COLLIDER_ENTITY_MAP)
 
+<a name="Physics.CollisionGroups"></a>
+
+### Physics.CollisionGroups
+the Rapier collision groups used throughout mr.js
+
+**Kind**: static property of [<code>Physics</code>](#Physics)  
 <a name="Physics.RAPIER"></a>
 
 ### Physics.RAPIER
