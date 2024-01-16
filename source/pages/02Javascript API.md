@@ -1135,6 +1135,7 @@ Base html image represented in 3D space. `mr-image`
         * [new exports.Image()](#new_Image+Image_new)
     * [.width()](#Image+width) ⇒ <code>number</code>
     * [.height()](#Image+height) ⇒ <code>number</code>
+    * [.borderRadii()](#Image+borderRadii) ⇒ <code>number</code>
     * [.connected()](#Image+connected)
     * [.updateStyle()](#Image+updateStyle)
     * [.mutated(mutation)](#Image+mutated)
@@ -1161,6 +1162,13 @@ Calculates the width of the img based on the img tag in the shadow root
 
 ### image.height() ⇒ <code>number</code>
 Calculates the height of the img based on the img tag in the shadow root
+
+**Kind**: instance method of [<code>Image</code>](#Image)  
+**Returns**: <code>number</code> - - the resolved height  
+<a name="Image+borderRadii"></a>
+
+### image.borderRadii() ⇒ <code>number</code>
+Calculates the border radius of the img based on the img tag in the shadow root
 
 **Kind**: instance method of [<code>Image</code>](#Image)  
 **Returns**: <code>number</code> - - the resolved height  
