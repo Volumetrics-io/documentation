@@ -1,14 +1,11 @@
----
-description: "An extendable WebComponents library for the Spatial Web"
----
-# MRJS
+# mrjs
 
-<!-- [![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE) -->
+[![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE)
 
 An extendable WebComponents library for the Spatial Web
  
 ## Overview
-
+ 
 mrjs is a Mixed Reality first, webXR UI library meant to bootstrap spatail web app development. It implements much of the foundational work so that developers can spend less time on the basics and more time on their app.
  
 ## Getting started
@@ -37,6 +34,16 @@ in headset testing:
 
 ```sh
 npm run server
+```
+
+documentation:
+
+check [docs.mrjs.io](https://docs.mrjs.io) for the full documentation or our [repo](https://github.com/Volumetrics-io/documentation).
+
+For local documentation or to check the local output when writing your own pr to see how it will update, run the below command. As a heads up, order of creation of docs depends on your operating system, so if when you run this the order looks different, no worries - in the repo itself our action will handle that for you and default to use the right version for these automatically generated docs.
+
+```sh
+npm run docs
 ```
 
 ## HTTPS Requirement
