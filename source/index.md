@@ -1,3 +1,6 @@
+---
+description: "An extendable WebComponents library for the Spatial Web"
+---
 # mrjs
 
 [![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE)
@@ -212,3 +215,4 @@ Example:
 ```
 
 Note: the mapping between components and systems is 1-to-1, and the naming convention (`data-comp-<name>` and `<Name>System`) is strictly enforced.
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/README.ms' target='_blank'>Suggest an edit on GitHub for README.md</a></div>
