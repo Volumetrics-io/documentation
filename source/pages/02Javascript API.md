@@ -66,8 +66,10 @@ The default representation of an MRSystem to be expanded upon by actual details 
 * [MRSystem](#MRSystem)
     * [.MRSystem](#MRSystem+MRSystem)
         * [new exports.MRSystem(useComponents, frameRate)](#new_MRSystem+MRSystem_new)
-    * [.needsUpdate(deltaTime, frame)](#MRSystem+needsUpdate) ⇒ <code>boolean</code>
-    * [.__update(deltaTime, frame)](#MRSystem+__update)
+    * [.alwaysNeedsSystemUpdate()](#MRSystem+alwaysNeedsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate)
+    * [._update(deltaTime, frame)](#MRSystem+_update)
     * [.update(deltaTime, frame)](#MRSystem+update)
     * [.onNewEntity(entity)](#MRSystem+onNewEntity)
     * [.attachedComponent(entity)](#MRSystem+attachedComponent)
@@ -92,23 +94,33 @@ Constructor for MRSystem. Sets up appropriate document event listeners, componen
 | useComponents | <code>boolean</code> | <code>true</code> | Default to true. Determines whether comonents need to be maintained (attached/updated/detached) with the system. |
 | frameRate | <code>number</code> | <code></code> | Default to null. When set, used and updated as part of the System's update function. |
 
-<a name="MRSystem+needsUpdate"></a>
+<a name="MRSystem+alwaysNeedsSystemUpdate"></a>
 
-### mrSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
-Checks if we need to run the generic system update call. Default implementation returns true if there are
-any items in the system's registry. Allows subclasses to override with their own implementation.
+### mrSystem.alwaysNeedsSystemUpdate() ⇒ <code>boolean</code>
+Checks if the system is setup to always run instead of being in a state that allows for toggling on and off.
+Useful for readability and to not need to check against undefined often.
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
+**Returns**: <code>boolean</code> - true if the internal _needsSystemUpdate is set to 'undefined', false otherwise.  
+<a name="MRSystem+needsSystemUpdate"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
+### mrSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run the generic system update call. Default implementation returns true if the needsSystemUpdate flag
+has been set to true or is in the alwaysNeedsSystemUpdate state. Allows subclasses to override with their own implementation.
 
-<a name="MRSystem+__update"></a>
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="MRSystem+needsSystemUpdate"></a>
 
-### mrSystem.\_\_update(deltaTime, frame)
+### mrSystem.needsSystemUpdate()
+Set the needsSystemUpdate parameter.
+undefined - means the system will always update every time the application loops.
+true/false - means the system will only run one iteration when set to true and then reset back to false waiting for the next trigger.
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+<a name="MRSystem+_update"></a>
+
+### mrSystem.\_update(deltaTime, frame)
 The actual system update call.
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
@@ -453,6 +465,7 @@ The MREntity that is used to solely describe UI Elements. Defaults as the html `
     * [.updatePhysicsData()](#MRDivEntity+updatePhysicsData)
     * [.domToThree(val)](#MRDivEntity+domToThree) ⇒ <code>number</code>
     * [.updateStyle()](#MRDivEntity+updateStyle)
+    * [.borderRadii()](#MRDivEntity+borderRadii) ⇒ <code>number</code>
     * [.setBorder()](#MRDivEntity+setBorder)
     * [.setBackground()](#MRDivEntity+setBackground)
 
@@ -528,10 +541,14 @@ Converts the dom string to a 3D numerical value
 <a name="MRDivEntity+updateStyle"></a>
 
 ### mrDivEntity.updateStyle()
-Updates the style for the UIPlane's border and background based on compStyle and inputted css
-elements.
+**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+<a name="MRDivEntity+borderRadii"></a>
+
+### mrDivEntity.borderRadii() ⇒ <code>number</code>
+Calculates the border radius of the img based on the img tag in the shadow root
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
+**Returns**: <code>number</code> - - the resolved height  
 <a name="MRDivEntity+setBorder"></a>
 
 ### mrDivEntity.setBorder()
@@ -560,6 +577,8 @@ System that allows for instancing of meshes based on a given entity where the in
 * [InstancingSystem](#InstancingSystem) ⇐ <code>MRSystem</code>
     * [.InstancingSystem](#InstancingSystem+InstancingSystem)
         * [new exports.InstancingSystem()](#new_InstancingSystem+InstancingSystem_new)
+    * [.needsSystemUpdate](#InstancingSystem+needsSystemUpdate)
+    * [.needsSystemUpdate()](#InstancingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#InstancingSystem+update)
     * [.attachedComponent(entity)](#InstancingSystem+attachedComponent)
     * [.random(entity)](#InstancingSystem+random)
@@ -573,6 +592,22 @@ System that allows for instancing of meshes based on a given entity where the in
 #### new exports.InstancingSystem()
 InstancingSystem's default constructor that sets up default instancing count, transformations, and mesh information.
 
+<a name="InstancingSystem+needsSystemUpdate"></a>
+
+### instancingSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>InstancingSystem</code>](#InstancingSystem)  
+<a name="InstancingSystem+needsSystemUpdate"></a>
+
+### instancingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>InstancingSystem</code>](#InstancingSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="InstancingSystem+update"></a>
 
 ### instancingSystem.update(deltaTime, frame)
@@ -633,7 +668,6 @@ attribute for more detailed control.
 * [PhysicsSystem](#PhysicsSystem) ⇐ <code>MRSystem</code>
     * [.PhysicsSystem](#PhysicsSystem+PhysicsSystem)
         * [new exports.PhysicsSystem()](#new_PhysicsSystem+PhysicsSystem_new)
-    * [.needsUpdate(deltaTime, frame)](#PhysicsSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#PhysicsSystem+update)
     * [.onContactStart(handle1, handle2)](#PhysicsSystem+onContactStart)
     * [.onContactEnd(handle1, handle2)](#PhysicsSystem+onContactEnd)
@@ -656,20 +690,6 @@ attribute for more detailed control.
 
 #### new exports.PhysicsSystem()
 PhysicsSystem's default constructor - sets up useful world and debug information alongside an initial `Rapier` event queue.
-
-<a name="PhysicsSystem+needsUpdate"></a>
-
-### physicsSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
-Checks if we need to run the generic system update call. Default implementation returns true if there are
-any items in the system's registry. Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="PhysicsSystem+update"></a>
 
@@ -833,7 +853,8 @@ Handles specific needs for setting up the masking for all necessary items.
 * [MaskingSystem](#MaskingSystem) ⇐ <code>MRSystem</code>
     * [.MaskingSystem](#MaskingSystem+MaskingSystem)
         * [new exports.MaskingSystem()](#new_MaskingSystem+MaskingSystem_new)
-    * [.needsUpdate(deltaTime, frame)](#MaskingSystem+needsUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate](#MaskingSystem+needsSystemUpdate)
+    * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#MaskingSystem+update)
     * [.onNewEntity(entity)](#MaskingSystem+onNewEntity)
 
@@ -846,20 +867,22 @@ Handles specific needs for setting up the masking for all necessary items.
 #### new exports.MaskingSystem()
 MaskingSystem's default constructor.
 
-<a name="MaskingSystem+needsUpdate"></a>
+<a name="MaskingSystem+needsSystemUpdate"></a>
 
-### maskingSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
-Checks if we need to run the generic system update call. Default implementation returns true if there are
-any items in the system's registry. Allows subclasses to override with their own implementation.
+### maskingSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>MaskingSystem</code>](#MaskingSystem)  
+<a name="MaskingSystem+needsSystemUpdate"></a>
+
+### maskingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
 
 **Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
-
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="MaskingSystem+update"></a>
 
 ### maskingSystem.update(deltaTime, frame)
@@ -900,6 +923,8 @@ This system supports 3D clipping following threejs's clipping planes setup.
 * [ClippingSystem](#ClippingSystem) ⇐ <code>MRSystem</code>
     * [.ClippingSystem](#ClippingSystem+ClippingSystem)
         * [new exports.ClippingSystem()](#new_ClippingSystem+ClippingSystem_new)
+    * [.needsSystemUpdate](#ClippingSystem+needsSystemUpdate)
+    * [.needsSystemUpdate()](#ClippingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#ClippingSystem+update)
     * [.updatePlanes(entity)](#ClippingSystem+updatePlanes)
     * [.applyClipping(object, clipping)](#ClippingSystem+applyClipping)
@@ -915,6 +940,22 @@ This system supports 3D clipping following threejs's clipping planes setup.
 #### new exports.ClippingSystem()
 ClippingSystem's default constructor that sets up coplanar points and the default clipping information.
 
+<a name="ClippingSystem+needsSystemUpdate"></a>
+
+### clippingSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>ClippingSystem</code>](#ClippingSystem)  
+<a name="ClippingSystem+needsSystemUpdate"></a>
+
+### clippingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="ClippingSystem+update"></a>
 
 ### clippingSystem.update(deltaTime, frame)
@@ -989,7 +1030,9 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
 * [TextSystem](#TextSystem) ⇐ <code>MRSystem</code>
     * [.TextSystem](#TextSystem+TextSystem)
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
+    * [.needsSystemUpdate](#TextSystem+needsSystemUpdate)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
+    * [.needsSystemUpdate()](#TextSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
     * [.addText(entity)](#TextSystem+addText)
@@ -1010,6 +1053,13 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
 #### new exports.TextSystem()
 TextSystem's default constructor
 
+<a name="TextSystem+needsSystemUpdate"></a>
+
+### textSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>TextSystem</code>](#TextSystem)  
 <a name="TextSystem+onNewEntity"></a>
 
 ### textSystem.onNewEntity(entity)
@@ -1021,6 +1071,15 @@ When a new entity is created, adds it to the physics registry and initializes th
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being set up |
 
+<a name="TextSystem+needsSystemUpdate"></a>
+
+### textSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="TextSystem+update"></a>
 
 ### textSystem.update(deltaTime, frame)
@@ -1159,7 +1218,9 @@ System that allows for setup and handling of changing layout.
 * [LayoutSystem](#LayoutSystem) ⇐ <code>MRSystem</code>
     * [.LayoutSystem](#LayoutSystem+LayoutSystem)
         * [new exports.LayoutSystem()](#new_LayoutSystem+LayoutSystem_new)
+    * [.needsSystemUpdate](#LayoutSystem+needsSystemUpdate)
     * [.onNewEntity(entity)](#LayoutSystem+onNewEntity)
+    * [.needsSystemUpdate()](#LayoutSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#LayoutSystem+update)
     * [.setLayoutPosition(entity)](#LayoutSystem+setLayoutPosition)
 
@@ -1172,6 +1233,13 @@ System that allows for setup and handling of changing layout.
 #### new exports.LayoutSystem()
 Constructor for the layout system. Uses the default System setup.
 
+<a name="LayoutSystem+needsSystemUpdate"></a>
+
+### layoutSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>LayoutSystem</code>](#LayoutSystem)  
 <a name="LayoutSystem+onNewEntity"></a>
 
 ### layoutSystem.onNewEntity(entity)
@@ -1183,6 +1251,15 @@ Called when a new entity is added to this system
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
 
+<a name="LayoutSystem+needsSystemUpdate"></a>
+
+### layoutSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>LayoutSystem</code>](#LayoutSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="LayoutSystem+update"></a>
 
 ### layoutSystem.update(deltaTime, frame)
@@ -1222,6 +1299,8 @@ Handles specific needs for setting up the masking for all necessary items.
 * [AnimationSystem](#AnimationSystem) ⇐ <code>MRSystem</code>
     * [.AnimationSystem](#AnimationSystem+AnimationSystem)
         * [new exports.AnimationSystem()](#new_AnimationSystem+AnimationSystem_new)
+    * [.needsSystemUpdate](#AnimationSystem+needsSystemUpdate)
+    * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#AnimationSystem+update)
     * [.onNewEntity(entity)](#AnimationSystem+onNewEntity)
 
@@ -1234,6 +1313,22 @@ Handles specific needs for setting up the masking for all necessary items.
 #### new exports.AnimationSystem()
 AnimationSystem's default constructor.
 
+<a name="AnimationSystem+needsSystemUpdate"></a>
+
+### animationSystem.needsSystemUpdate
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance property of [<code>AnimationSystem</code>](#AnimationSystem)  
+<a name="AnimationSystem+needsSystemUpdate"></a>
+
+### animationSystem.needsSystemUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
+systems registry that need to be run AND the default systemUpdateCheck is true
+(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="AnimationSystem+update"></a>
 
 ### animationSystem.update(deltaTime, frame)
@@ -1277,7 +1372,6 @@ This system supports interaction event information including mouse and controlle
 * [ControlSystem](#ControlSystem) ⇐ <code>MRSystem</code>
     * [.ControlSystem](#ControlSystem+ControlSystem)
         * [new exports.ControlSystem()](#new_ControlSystem+ControlSystem_new)
-    * [.needsUpdate(deltaTime, frame)](#ControlSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#ControlSystem+update)
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
@@ -1293,20 +1387,6 @@ This system supports interaction event information including mouse and controlle
 
 #### new exports.ControlSystem()
 ControlSystem's Default constructor that sets up the app's mouse information along with any relevant physics and cursor information.
-
-<a name="ControlSystem+needsUpdate"></a>
-
-### controlSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
-Checks if we need to run the generic system update call. Default implementation returns true if there are
-any items in the system's registry. Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="ControlSystem+update"></a>
 
@@ -1387,7 +1467,6 @@ creates and manages WebXR anchors in the MR scene.
 * [AnchorSystem](#AnchorSystem) ⇐ <code>MRSystem</code>
     * [.AnchorSystem](#AnchorSystem+AnchorSystem)
         * [new exports.AnchorSystem()](#new_AnchorSystem+AnchorSystem_new)
-    * [.needsUpdate(deltaTime, frame)](#AnchorSystem+needsUpdate) ⇒ <code>boolean</code>
     * [.update(deltaTime, frame)](#AnchorSystem+update)
     * [.attachedComponent(entity)](#AnchorSystem+attachedComponent)
     * [.updatedComponent(entity)](#AnchorSystem+updatedComponent)
@@ -1409,20 +1488,6 @@ creates and manages WebXR anchors in the MR scene.
 
 #### new exports.AnchorSystem()
 AnchorSystem's default constructor including setting up event listeners for XR initialization, user interaction, and the MRPlaneManager
-
-<a name="AnchorSystem+needsUpdate"></a>
-
-### anchorSystem.needsUpdate(deltaTime, frame) ⇒ <code>boolean</code>
-Checks if we need to run the generic system update call. Default implementation returns true if there are
-any items in the system's registry. Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>AnchorSystem</code>](#AnchorSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where an update is needed to be run this render call, false otherwise  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
 
 <a name="AnchorSystem+update"></a>
 
@@ -1615,213 +1680,6 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 
 <hr>
 
-<a name="MREntity"></a>
-
-## MREntity ⇐ <code>MRElement</code>
-The default representation of an MRElement to be expanded upon by actual details ECS Entity items. `mr-entity`
-
-**Kind**: global class  
-**Extends**: <code>MRElement</code>  
-
-* [MREntity](#MREntity) ⇐ <code>MRElement</code>
-    * [.MREntity](#MREntity+MREntity)
-        * [new exports.MREntity()](#new_MREntity+MREntity_new)
-    * [.width()](#MREntity+width) ⇒ <code>number</code>
-    * [.contentWidth()](#MREntity+contentWidth) ⇒ <code>number</code>
-    * [.height()](#MREntity+height) ⇒ <code>number</code>
-    * [.contentHeight()](#MREntity+contentHeight) ⇒ <code>number</code>
-    * [.updatePhysicsData()](#MREntity+updatePhysicsData)
-    * [.onHover(event)](#MREntity+onHover)
-    * [.onTouch(event)](#MREntity+onTouch)
-    * [.onScroll(event)](#MREntity+onScroll)
-    * [.connectedCallback()](#MREntity+connectedCallback)
-    * [.loadAttributes()](#MREntity+loadAttributes)
-    * [.connected()](#MREntity+connected)
-    * [.disconnected()](#MREntity+disconnected)
-    * [.disconnectedCallback()](#MREntity+disconnectedCallback)
-    * [.mutated(mutation)](#MREntity+mutated)
-    * [.mutationCallback(mutationList, observer)](#MREntity+mutationCallback)
-    * [.componentMutated(mutation)](#MREntity+componentMutated)
-    * [.add(entity)](#MREntity+add)
-    * [.remove(entity)](#MREntity+remove)
-    * [.traverse(callBack)](#MREntity+traverse)
-
-<a name="MREntity+MREntity"></a>
-
-### mrEntity.MREntity
-**Kind**: instance class of [<code>MREntity</code>](#MREntity)  
-<a name="new_MREntity+MREntity_new"></a>
-
-#### new exports.MREntity()
-Constructor for the default Entity Component (MREntity).
-             Sets up the base object3D and useful Mixed Reality information including rendering, touching, and component basics.
-
-<a name="MREntity+width"></a>
-
-### mrEntity.width() ⇒ <code>number</code>
-Calculates the width of the Entity based on the viewPort's shape. If in Mixed Reality, adjusts the value appropriately.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - the resolved width  
-<a name="MREntity+contentWidth"></a>
-
-### mrEntity.contentWidth() ⇒ <code>number</code>
-The actual 3D value of the content's width.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - width of the 3D object.  
-<a name="MREntity+height"></a>
-
-### mrEntity.height() ⇒ <code>number</code>
-Calculates the height of the Entity based on the viewPort's shape. If in Mixed Reality, adjusts the value appropriately.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - the resolved height  
-<a name="MREntity+contentHeight"></a>
-
-### mrEntity.contentHeight() ⇒ <code>number</code>
-The actual 3D value of the content's height.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - height of the 3D object.  
-<a name="MREntity+updatePhysicsData"></a>
-
-### mrEntity.updatePhysicsData()
-Default base for updating the physics data for the current iteration.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+onHover"></a>
-
-### mrEntity.onHover(event)
-Handles the hover event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the hover event |
-
-<a name="MREntity+onTouch"></a>
-
-### mrEntity.onTouch(event)
-Handles the touch event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the touch event |
-
-<a name="MREntity+onScroll"></a>
-
-### mrEntity.onScroll(event)
-Handles the scroll event
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | the scroll event |
-
-<a name="MREntity+connectedCallback"></a>
-
-### mrEntity.connectedCallback()
-The connectedCallback function that runs whenever this entity component becomes connected to something else.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+loadAttributes"></a>
-
-### mrEntity.loadAttributes()
-Loads all attributes of this entity's stored dataset including components, attaching them, and their associated rotations and positions.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+connected"></a>
-
-### mrEntity.connected()
-Callback function of MREntity - does nothing. Is called by the connectedCallback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+disconnected"></a>
-
-### mrEntity.disconnected()
-Callback function of MREntity - does nothing. Is called by the disconnectedCallback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+disconnectedCallback"></a>
-
-### mrEntity.disconnectedCallback()
-The disconnectedCallback function that runs whenever this entity component becomes disconnected from something else.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+mutated"></a>
-
-### mrEntity.mutated(mutation)
-Callback function of MREntity - does nothing. Is called by mutation Callback.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | the update/change/mutation to be handled. |
-
-<a name="MREntity+mutationCallback"></a>
-
-### mrEntity.mutationCallback(mutationList, observer)
-The mutationCallback function that runs whenever this entity component should be mutated.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutationList | <code>object</code> | the list of update/change/mutation(s) to be handled. |
-| observer | <code>object</code> | w3 standard object that watches for changes on the HTMLElement |
-
-<a name="MREntity+componentMutated"></a>
-
-### mrEntity.componentMutated(mutation)
-Helper function for the mutationCallback. Handles actually updating this entity component with all the associated dispatchEvents.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| mutation | <code>object</code> | the update/change/mutation to be handled. |
-
-<a name="MREntity+add"></a>
-
-### mrEntity.add(entity)
-Adding an entity as a sub-object of this entity.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | [<code>MREntity</code>](#MREntity) | the entity to be added. |
-
-<a name="MREntity+remove"></a>
-
-### mrEntity.remove(entity)
-Removing an entity as a sub-object of this entity.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | [<code>MREntity</code>](#MREntity) | the entity to be removed. |
-
-<a name="MREntity+traverse"></a>
-
-### mrEntity.traverse(callBack)
-Runs the passed through function on this object and every child of this object.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| callBack | <code>function</code> | the function to run recursively. |
-
-
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js' target='_blank'>Suggest an edit on GitHub for src/core/MREntity.js</a></div>
 
 <hr>
 
@@ -1836,10 +1694,11 @@ Base html image represented in 3D space. `mr-image`
 * [MRImage](#MRImage) ⇐ <code>MRDivEntity</code>
     * [.MRImage](#MRImage+MRImage)
         * [new exports.MRImage()](#new_MRImage+MRImage_new)
+    * [.needsStyleUpdate](#MRImage+needsStyleUpdate)
     * [.width()](#MRImage+width) ⇒ <code>number</code>
     * [.height()](#MRImage+height) ⇒ <code>number</code>
-    * [.borderRadii()](#MRImage+borderRadii) ⇒ <code>number</code>
     * [.connected()](#MRImage+connected)
+    * [.needsStyleUpdate()](#MRImage+needsStyleUpdate) ⇒ <code>boolean</code>
     * [.updateStyle()](#MRImage+updateStyle)
     * [.mutated(mutation)](#MRImage+mutated)
     * [.computeObjectFitDimensions()](#MRImage+computeObjectFitDimensions)
@@ -1854,6 +1713,13 @@ Base html image represented in 3D space. `mr-image`
 #### new exports.MRImage()
 Constructs a base image entity using a UIPlane and other 3D elements as necessary.
 
+<a name="MRImage+needsStyleUpdate"></a>
+
+### mrImage.needsStyleUpdate
+Since this class overrides the default `get` for the `needsStyleUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MREntity.needsStyleUpdate](https://docs.mrjs.io/javascript-api/#mrentity.needsstyleupdate) for default).
+
+**Kind**: instance property of [<code>MRImage</code>](#MRImage)  
 <a name="MRImage+width"></a>
 
 ### mrImage.width() ⇒ <code>number</code>
@@ -1868,23 +1734,26 @@ Calculates the height of the img based on the img tag in the shadow root
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
 **Returns**: <code>number</code> - - the resolved height  
-<a name="MRImage+borderRadii"></a>
-
-### mrImage.borderRadii() ⇒ <code>number</code>
-Calculates the border radius of the img based on the img tag in the shadow root
-
-**Kind**: instance method of [<code>MRImage</code>](#MRImage)  
-**Returns**: <code>number</code> - - the resolved height  
 <a name="MRImage+connected"></a>
 
 ### mrImage.connected()
 Callback function of MREntity - handles setting up this Image and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
+<a name="MRImage+needsStyleUpdate"></a>
+
+### mrImage.needsStyleUpdate() ⇒ <code>boolean</code>
+Getter to checks if we need the StyleSystem to run on this entity during the current iteration.
+This returns true if the width/height/borderradii of the image has changed or if the default implementation for the style update check returns true.
+(see [MREntity.needsStyleUpdate](https://docs.mrjs.io/javascript-api/#mrentity.needsstyleupdate) for default).
+
+**Kind**: instance method of [<code>MRImage</code>](#MRImage)  
+**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="MRImage+updateStyle"></a>
 
 ### mrImage.updateStyle()
-Updates the style for the Image's border and background based on compStyle and inputted css elements.
+Calls MRDivEntity's updateStyle implemnetation first then uses this version. Updates the style for the Image's border and background
+based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
 <a name="MRImage+mutated"></a>
