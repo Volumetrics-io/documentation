@@ -282,6 +282,8 @@ The engine handler for running MRjs as an App. `mr-app`
     * _instance_
         * [.MRApp](#MRApp+MRApp)
             * [new exports.MRApp()](#new_MRApp+MRApp_new)
+        * [.appWidth](#MRApp+appWidth)
+        * [.appHeight](#MRApp+appHeight)
         * [.mutatedAttribute(mutation)](#MRApp+mutatedAttribute)
         * [.mutatedChildList(mutation)](#MRApp+mutatedChildList)
         * [.mutationCallback(mutationList, observer)](#MRApp+mutationCallback)
@@ -308,6 +310,14 @@ The engine handler for running MRjs as an App. `mr-app`
 #### new exports.MRApp()
 Constructs the base information of the app including system, camera, engine, xr, and rendering defaults.
 
+<a name="MRApp+appWidth"></a>
+
+### mrApp.appWidth
+**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
+<a name="MRApp+appHeight"></a>
+
+### mrApp.appHeight
+**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
 <a name="MRApp+mutatedAttribute"></a>
 
 ### mrApp.mutatedAttribute(mutation)
