@@ -5,19 +5,20 @@
   </defs>
   <style>
     :root {
-      --ink: #242424;
-      --accent: #7311d4;
+      --accent: #9469ff;
+      --center: #7982ff;
+      --alt-accent: #56bbff;
     }
 
     @media (prefers-color-scheme:dark) {
       :root {
-        --ink: #fff;
-        --accent: #9b74ff;
+        --accent: #ba9eff;
+        --center: #d49fff;
+        --alt-accent: #ed9fff;
       }
     }
   </style>
-  <path style="fill: var(--ink);" d="M 7.74 9 L 0 9 L 2.58 3 L 7.74 9 Z"/>
-  <path style="fill: var(--ink);" d="M 16 9 L 8.26 9 L 13.42 3 L 16 9 Z"/>
-  <path style="fill: var(--accent);" d="M 7.74 10 L 0 10 L 2.58 15 L 7.74 10 Z"/>
-  <path style="fill: var(--accent);" d="M 16 10 L 8.26 10 L 13.42 15 L 16 10 Z"/>
+  <path d="M 6.3 8.6 C 6.8 7.7 7.4 6.9 8 6.3 C 8.6 6.9 9.2 7.7 9.7 8.6 C 9.2 9.3 8.6 10 8 10.7 C 7.4 10 6.8 9.3 6.3 8.6 Z" style="fill: var(--center);"/>
+  <path d="M 14.7 3.5 C 16.4 6.6 16.4 10.4 14.7 13.5 C 12.7 13.5 10.8 12.8 9.1 11.6 C 9.7 10.9 10.4 10.1 10.9 9.4 L 11.5 8.6 L 11 7.8 C 10.5 6.9 9.8 6 9.2 5.3 C 10.8 4.1 12.7 3.5 14.7 3.5 Z" style="fill: var(--alt-accent);"/>
+  <path d="M 1.2 13.5 C -0.4 10.4 -0.4 6.6 1.2 3.5 C 3.2 3.5 5.1 4.1 6.7 5.3 C 6.2 6 5.5 6.9 5 7.8 L 4.5 8.6 L 5.1 9.4 C 5.6 10.1 6.3 10.9 6.9 11.6 C 5.3 12.8 3.3 13.5 1.2 13.5 Z" style="fill: var(--accent);"/>
 </svg>

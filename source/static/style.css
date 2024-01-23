@@ -4,7 +4,10 @@
     --track: #f8f8f8;
     --ink: #242424;
     --faded: #666;
-    --accent: #7311d4;
+    /* --accent: #7311d4; */
+    --accent: #9469ff;
+    --center: #7982ff;
+    --alt-accent: #56bbff;
     --border: #00000011;
     --layer: rgba(180, 180, 180, 0.5);
     --sidebar-width: 14rem;
@@ -30,7 +33,11 @@
         --track: #000;
         --ink: #f8f8f8;
         --faded: #888888;
-        --accent: #af8fff;
+        --accent: #a07aff;
+        --center: #c985ff;
+        --alt-accent: #e982ff;
+        /* --accent: #af8fff;
+        --alt-accent: #82cdff; */
         --border: #FFFFFF22;
         --layer: rgba(80, 80, 80, 0.5);
 
@@ -173,23 +180,15 @@ hr {
 aside {
     display: flex;
     flex-flow: column nowrap;
-    /* gap: 2rem; */
-    /* width: calc(100% - 4rem);
-    padding: 2rem; */
     color: var(--faded);
-    /* border-right: 1px solid var(--border); */
     background-color: var(--track);
-
-    /* padding-bottom: 3rem; */
-    /* height: calc(100vh - 3rem); */
-    height: 100vh;
-
+    padding-top: 1rem;
+    height: calc(100vh - 1rem);
     width: var(--sidebar-width);
     transition: left 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: translateX(0%);
     overflow-y: auto;
     overflow-x: hidden;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -622,6 +621,11 @@ h6:hover>.anchor::before {
 
     main {
         padding-left: 0;
+    }
+
+    .markdown {
+        padding: 0 3rem;
+        width: calc(100% - 6rem);
     }
 }
 
