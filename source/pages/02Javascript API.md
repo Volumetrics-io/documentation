@@ -579,8 +579,8 @@ System that allows for instancing of meshes based on a given entity where the in
 * [InstancingSystem](#InstancingSystem) ⇐ <code>MRSystem</code>
     * [.InstancingSystem](#InstancingSystem+InstancingSystem)
         * [new exports.InstancingSystem()](#new_InstancingSystem+InstancingSystem_new)
-    * [.needsSystemUpdate](#InstancingSystem+needsSystemUpdate)
     * [.needsSystemUpdate()](#InstancingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#InstancingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#InstancingSystem+update)
     * [.attachedComponent(entity)](#InstancingSystem+attachedComponent)
     * [.random(entity)](#InstancingSystem+random)
@@ -596,13 +596,6 @@ InstancingSystem's default constructor that sets up default instancing count, tr
 
 <a name="InstancingSystem+needsSystemUpdate"></a>
 
-### instancingSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>InstancingSystem</code>](#InstancingSystem)  
-<a name="InstancingSystem+needsSystemUpdate"></a>
-
 ### instancingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
 Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
 systems registry that need to be run AND the default systemUpdateCheck is true
@@ -610,6 +603,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>InstancingSystem</code>](#InstancingSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="InstancingSystem+needsSystemUpdate"></a>
+
+### instancingSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>InstancingSystem</code>](#InstancingSystem)  
 <a name="InstancingSystem+update"></a>
 
 ### instancingSystem.update(deltaTime, frame)
@@ -933,8 +933,8 @@ Handles specific needs for setting up the masking for all necessary items.
 * [MaskingSystem](#MaskingSystem) ⇐ <code>MRSystem</code>
     * [.MaskingSystem](#MaskingSystem+MaskingSystem)
         * [new exports.MaskingSystem()](#new_MaskingSystem+MaskingSystem_new)
-    * [.needsSystemUpdate](#MaskingSystem+needsSystemUpdate)
     * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#MaskingSystem+update)
     * [.onNewEntity(entity)](#MaskingSystem+onNewEntity)
 
@@ -949,13 +949,6 @@ MaskingSystem's default constructor.
 
 <a name="MaskingSystem+needsSystemUpdate"></a>
 
-### maskingSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>MaskingSystem</code>](#MaskingSystem)  
-<a name="MaskingSystem+needsSystemUpdate"></a>
-
 ### maskingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
 Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
 systems registry that need to be run AND the default systemUpdateCheck is true
@@ -963,6 +956,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="MaskingSystem+needsSystemUpdate"></a>
+
+### maskingSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
 <a name="MaskingSystem+update"></a>
 
 ### maskingSystem.update(deltaTime, frame)
@@ -1003,8 +1003,8 @@ This system supports 3D clipping following threejs's clipping planes setup.
 * [ClippingSystem](#ClippingSystem) ⇐ <code>MRSystem</code>
     * [.ClippingSystem](#ClippingSystem+ClippingSystem)
         * [new exports.ClippingSystem()](#new_ClippingSystem+ClippingSystem_new)
-    * [.needsSystemUpdate](#ClippingSystem+needsSystemUpdate)
     * [.needsSystemUpdate()](#ClippingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#ClippingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#ClippingSystem+update)
     * [.updatePlanes(entity)](#ClippingSystem+updatePlanes)
     * [.applyClipping(object, clipping)](#ClippingSystem+applyClipping)
@@ -1022,13 +1022,6 @@ ClippingSystem's default constructor that sets up coplanar points and the defaul
 
 <a name="ClippingSystem+needsSystemUpdate"></a>
 
-### clippingSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>ClippingSystem</code>](#ClippingSystem)  
-<a name="ClippingSystem+needsSystemUpdate"></a>
-
 ### clippingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
 Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
 systems registry that need to be run AND the default systemUpdateCheck is true
@@ -1036,6 +1029,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="ClippingSystem+needsSystemUpdate"></a>
+
+### clippingSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
 <a name="ClippingSystem+update"></a>
 
 ### clippingSystem.update(deltaTime, frame)
@@ -1110,9 +1110,9 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
 * [TextSystem](#TextSystem) ⇐ <code>MRSystem</code>
     * [.TextSystem](#TextSystem+TextSystem)
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
-    * [.needsSystemUpdate](#TextSystem+needsSystemUpdate)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
     * [.needsSystemUpdate()](#TextSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#TextSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
     * [.addText(entity)](#TextSystem+addText)
@@ -1133,13 +1133,6 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
 #### new exports.TextSystem()
 TextSystem's default constructor
 
-<a name="TextSystem+needsSystemUpdate"></a>
-
-### textSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>TextSystem</code>](#TextSystem)  
 <a name="TextSystem+onNewEntity"></a>
 
 ### textSystem.onNewEntity(entity)
@@ -1160,6 +1153,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="TextSystem+needsSystemUpdate"></a>
+
+### textSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 <a name="TextSystem+update"></a>
 
 ### textSystem.update(deltaTime, frame)
@@ -1298,9 +1298,9 @@ System that allows for setup and handling of changing layout.
 * [LayoutSystem](#LayoutSystem) ⇐ <code>MRSystem</code>
     * [.LayoutSystem](#LayoutSystem+LayoutSystem)
         * [new exports.LayoutSystem()](#new_LayoutSystem+LayoutSystem_new)
-    * [.needsSystemUpdate](#LayoutSystem+needsSystemUpdate)
     * [.onNewEntity(entity)](#LayoutSystem+onNewEntity)
     * [.needsSystemUpdate()](#LayoutSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#LayoutSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#LayoutSystem+update)
     * [.setLayoutPosition(entity)](#LayoutSystem+setLayoutPosition)
 
@@ -1313,13 +1313,6 @@ System that allows for setup and handling of changing layout.
 #### new exports.LayoutSystem()
 Constructor for the layout system. Uses the default System setup.
 
-<a name="LayoutSystem+needsSystemUpdate"></a>
-
-### layoutSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>LayoutSystem</code>](#LayoutSystem)  
 <a name="LayoutSystem+onNewEntity"></a>
 
 ### layoutSystem.onNewEntity(entity)
@@ -1340,6 +1333,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>LayoutSystem</code>](#LayoutSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="LayoutSystem+needsSystemUpdate"></a>
+
+### layoutSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>LayoutSystem</code>](#LayoutSystem)  
 <a name="LayoutSystem+update"></a>
 
 ### layoutSystem.update(deltaTime, frame)
@@ -1379,8 +1379,8 @@ Handles specific needs for setting up the masking for all necessary items.
 * [AnimationSystem](#AnimationSystem) ⇐ <code>MRSystem</code>
     * [.AnimationSystem](#AnimationSystem+AnimationSystem)
         * [new exports.AnimationSystem()](#new_AnimationSystem+AnimationSystem_new)
-    * [.needsSystemUpdate](#AnimationSystem+needsSystemUpdate)
     * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate) ⇒ <code>boolean</code>
+    * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#AnimationSystem+update)
     * [.onNewEntity(entity)](#AnimationSystem+onNewEntity)
 
@@ -1395,13 +1395,6 @@ AnimationSystem's default constructor.
 
 <a name="AnimationSystem+needsSystemUpdate"></a>
 
-### animationSystem.needsSystemUpdate
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance property of [<code>AnimationSystem</code>](#AnimationSystem)  
-<a name="AnimationSystem+needsSystemUpdate"></a>
-
 ### animationSystem.needsSystemUpdate() ⇒ <code>boolean</code>
 Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
 systems registry that need to be run AND the default systemUpdateCheck is true
@@ -1409,6 +1402,13 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 **Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
+<a name="AnimationSystem+needsSystemUpdate"></a>
+
+### animationSystem.needsSystemUpdate()
+Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
+Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+
+**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
 <a name="AnimationSystem+update"></a>
 
 ### animationSystem.update(deltaTime, frame)
