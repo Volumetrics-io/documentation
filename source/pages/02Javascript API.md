@@ -1156,8 +1156,7 @@ When a new entity is created, adds it to the physics registry and initializes th
 
 ### textSystem.needsSystemUpdate() ⇒ <code>boolean</code>
 Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+systems registry that need to be run.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 **Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
@@ -1165,7 +1164,10 @@ systems registry that need to be run AND the default systemUpdateCheck is true
 
 ### textSystem.needsSystemUpdate()
 Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
+This function does nothing, but is needed for the pairing. TextSystem`s `needsSystemUpdate` solely depends on registry size
+instead of a boolean. This is required s.t. we can monitor and properly update the system when the text content has changed
+and not just the style itself. Since that is a per-entity check, needsSystemUpdate must always run on every entity with
+the needsStyleUpdate being the optimization determiner instead.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 <a name="TextSystem+update"></a>
