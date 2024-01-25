@@ -2261,6 +2261,11 @@ Constructor for the Button entity, does the default.
 
 <hr>
 
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRVolume.js' target='_blank'>Suggest an edit on GitHub for src/core/entities/MRVolume.js</a></div>
+
+<hr>
+
 ## Classes
 
 <dl>
@@ -3042,3 +3047,16 @@ initializes the physics body of an MR Plane
 
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/dataManagers/MRPlaneManager.js' target='_blank'>Suggest an edit on GitHub for src/dataManagers/MRPlaneManager.js</a></div>
+
+<hr>
+
+<a name="Water"></a>
+
+## Water
+References:
+	https://alex.vlachos.com/graphics/Vlachos-SIGGRAPH10-WaterFlow.pdf
+	http://graphicsrunner.blogspot.de/2010/08/water-using-flow-maps.html
+
+**Kind**: global class  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/extras/Water.js' target='_blank'>Suggest an edit on GitHub for src/extras/Water.js</a></div>
