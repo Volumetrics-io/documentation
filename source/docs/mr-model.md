@@ -18,8 +18,5 @@
 
 ## Supported file types
 
-* GLB/GLTF
-* STL
-* OBJ
-* USDZ
-* ?
+* Check the [allowed extensions](https://docs.mrjs.io/javascript-api/#model.loadmodelfilepath-extension-promise.three.mesh) from the Model.loadModel function
+* The current supported list is: `fbx`, `glb`, and `stl`
