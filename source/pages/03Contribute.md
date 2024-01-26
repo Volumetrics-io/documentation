@@ -28,7 +28,7 @@ Here's how to submit a pull request (PR):
 4. Run `npm install && npm run build` to get dependencies and `npm run server` to serve the test examples.
 5. Create a branch to work in (i.e., `git checkout -b mybranch`).
 6. Make changes to your fork of the repository, commit them, and push them (i.e., `git add -A . && git commit -m 'My Changes (fixes #1234)' && git push origin mybranch`).
-7. ~~If necessary, write unit tests.~~ (Coming!)
+7. If necessary, write unit tests. Model your tests after the [loadModelsTesting](https://github.com/Volumetrics-io/mrjs/blob/main/__tests__/loadModelsTesting.test.js) setup and make sure to place them in the [proper testing folder](https://github.com/Volumetrics-io/mrjs/tree/main/__tests__).
 8. [Submit a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to the `main` branch. If you head to the mrjs repository after running git push from earlier, you should see a pop up to submit a pull request.
 9. [Address review comments](https://stackoverflow.com/questions/9790448/how-to-update-a-pull-request-from-forked-repo) if any.
 
