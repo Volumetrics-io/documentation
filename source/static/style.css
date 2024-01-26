@@ -293,7 +293,7 @@ figure {
     margin: 1rem auto;
     /* max-width: var(--mwdth); */
     overflow: hidden;
-    background-color: #fff;
+    /* background-color: #fff; */
     width: 100%
 }
 
@@ -302,7 +302,7 @@ figure>video {
     display: block;
     height: auto;
     object-fit: cover;
-    width: 100%
+    max-width: 100%
 }
 
 figure>figcaption {

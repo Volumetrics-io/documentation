@@ -2,11 +2,19 @@
 description: "An extendable WebComponents library for the Spatial Web"
 ---
 ![The mrjs logo](https://docs.mrjs.io/static/mrjs_nopadding.svg)
+<<<<<<< HEAD
 
 An extensible WebComponents library for the Spatial Web
 
 [![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE)
 
+=======
+
+An extensible WebComponents library for the Spatial Web
+
+[![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE)
+ 
+>>>>>>> a829252 (add contribute giude)
 ## Overview
  
 mrjs is a mixed-reality-first, WebXR user interface library meant to bootstrap spatial web app development. It implements much of the foundational work so that developers can spend less time on the basics and more time on their app.
@@ -221,4 +229,7 @@ Example:
 ```
 
 Note: the mapping between components and systems is 1-to-1, and the naming convention (`data-comp-<name>` and `<Name>System`) is strictly enforced.
+<<<<<<< HEAD
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/README.md' target='_blank'>Suggest an edit on GitHub for README.md</a></div>
+=======
+>>>>>>> a829252 (add contribute giude)
