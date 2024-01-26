@@ -33,4 +33,4 @@ The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 ---
 ## Official Publishing
 
-Create a pr and once it gets merged into `main`, it will auto publish to the `build` branch from where the deployment runs.
+Create a pr and once it gets merged into `main`, it will auto publish to the url in the github repo description.
