@@ -27,7 +27,7 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same
 </mr-app>
 ```
 
-![mr-div-example-0](/static/mr-div-example-0.png)
+<!-- ![mr-div-example-0](/static/mr-div-example-0.png) -->
 
 ## Definition and Usage
 

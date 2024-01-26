@@ -20,7 +20,7 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 </script>
 ```
 
-\[TODO: example img\]
+<!-- \[TODO: example img\] -->
 
 ## Definition and Usage
 

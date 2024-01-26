@@ -35,9 +35,11 @@ The `<mr-app>` tag initializes and mr.js app.
 
 ![mr-app-example-1](/static/mr-app-example-1.png)
 
+> When the debug flag is enabled (`<mr-app debug="true">`), you can press and hold the `=` key on your keyboard to rotate the scene with left mouse drag and pan the scene with right mouse drag.
+
 ## Definition and Usage
 
-calling `<mr-app>` tag initializes mr.js and manages the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking.
+Calling `<mr-app>` tag initializes mr.js and manages the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking.
 
 The `<mr-app>` tag has three optional attributes:
 
