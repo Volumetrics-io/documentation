@@ -27,7 +27,7 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same
 </mr-app>
 ```
 
-![mr-div-example-0]("/assets/mr-div-example-0.png")
+![mr-div-example-0]("https://docs.mrjs.io/static/mr-div-example-0.png")
 
 ## Definition and Usage
 
@@ -57,4 +57,4 @@ you can then apply CSS
 </mr-div>
 ```
 
-![mr-div-example-1]("/assets/mr-div-example-1.gif")
+![mr-div-example-1]("https://docs.mrjs.io/static/mr-div-example-1.gif")
