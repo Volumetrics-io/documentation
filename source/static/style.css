@@ -281,12 +281,33 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-/* main>* {
-    margin: 0 auto 0 auto;
-    max-width: 48rem;
-    width: calc(100% - 10vw);
-    padding: 0 5vw;
+/* img {
+    width: 100%
 } */
+
+figure {
+    border-radius: 1rem;
+    /* box-shadow: var(--button-shadow); */
+    display: block;
+    height: fit-content;
+    margin: 1rem auto;
+    /* max-width: var(--mwdth); */
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%
+}
+
+figure>img,
+figure>video {
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%
+}
+
+figure>figcaption {
+    display: none;
+}
 
 pre {
     background: var(--track);
@@ -639,8 +660,8 @@ h6:hover>.anchor::before {
     }
 
     .markdown {
-        padding: 0 3rem;
-        width: calc(100% - 6rem);
+        padding: 0 1rem 0 3rem;
+        width: calc(100% - 4rem);
     }
 }
 
