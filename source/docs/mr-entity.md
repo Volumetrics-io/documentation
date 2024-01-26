@@ -11,7 +11,7 @@
 </mr-entity>
 ```
 
-\[example img\]
+\[TODO: example img\]
 
 ## Definition and Usage
 

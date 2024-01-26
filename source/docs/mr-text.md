@@ -12,7 +12,7 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
 </mr-app>
 ```
 
-\[example img\]
+\[TODO: example img\]
 
 ## Definition and Usage
 

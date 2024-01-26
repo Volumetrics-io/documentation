@@ -28,7 +28,7 @@ The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
 </script>
 ```
 
-\[example img\]
+\[TODO: example img\]
 
 ## Definition and Usage
 

@@ -29,11 +29,11 @@
 
 ### Homepage without Lights added to it
 
-![mr-light-example-0]("https://docs.mrjs.io/static/mr-light-example-0.png")
+![mr-light-example-0](/static/mr-light-example-0.png)
 
 ### Homepage with Lights added to it
 
-![mr-light-example-1]("https://docs.mrjs.io/static/mr-light-example-1.png")
+![mr-light-example-1](/static/mr-light-example-1.png)
 
 ## Definition and Usage
 

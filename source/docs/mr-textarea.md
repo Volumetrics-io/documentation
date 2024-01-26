@@ -16,4 +16,4 @@ The `<mr-textare>` creates a large text input field in the UI of an `<mr-panel>`
 </mr-app>
 ```
 
-\[example img\]
+\[TODO: example img\]

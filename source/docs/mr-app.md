@@ -29,11 +29,11 @@ The `<mr-app>` tag initializes and mr.js app.
 
 ### main view
 
-![mr-app-example-0](https://docs.mrjs.io/static/mr-app-example-0.png)
+![mr-app-example-0](/static/mr-app-example-0.png)
 
 ### `=` pressed and rotating
 
-![mr-app-example-1](https://docs.mrjs.io/static/mr-app-example-1.png)
+![mr-app-example-1](/static/mr-app-example-1.png)
 
 ## Definition and Usage
 
