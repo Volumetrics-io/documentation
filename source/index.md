@@ -221,3 +221,4 @@ Example:
 ```
 
 Note: the mapping between components and systems is 1-to-1, and the naming convention (`data-comp-<name>` and `<Name>System`) is strictly enforced.
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/README.md' target='_blank'>Suggest an edit on GitHub for README.md</a></div>
