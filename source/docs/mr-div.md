@@ -1,6 +1,6 @@
 # &lt;mr-div&gt;
 
-The `<mr-div>`defines a division or section in an `<mr-panel>`.
+The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same concept as `<mr-entity>` but is specific to items that are within an `<mr-panel>`. Think of this as items that are specific to the UI on the panel, 2D and 3D alike.
 
 ## Example
 
@@ -27,7 +27,7 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`.
 </mr-app>
 ```
 
-\[example img\]
+![mr-div-example-0]("https://docs.mrjs.io/static/mr-div-example-0.png")
 
 ## Definition and Usage
 
@@ -57,4 +57,4 @@ you can then apply CSS
 </mr-div>
 ```
 
-\[example gif\]
+![mr-div-example-1]("https://docs.mrjs.io/static/mr-div-example-1.gif")

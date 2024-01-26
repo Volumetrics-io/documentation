@@ -32,11 +32,11 @@ calling `<mr-panel>` tag initializes and manages 2D UI, such as images, text, an
 
 When viewed on a 2D screen, an `mr-panel` positions itself to fill the viewport, rendering itself and behaving like any 2D web app, responding to keyboard and mouse input or touch events.
 
-\[example gif\]
+![mr-panel-example-0]("https://docs.mrjs.io/static/mr-panel-example-0.png")
 
-in MR, the panel behaves like a floating touch screen, clipping any content that extends beyond it's boundaries.
+in MR, the panel behaves like a floating touch screen, clipping any content that extends beyond its boundaries.
 
-\[example gif\]
+![mr-panel-example-1]("https://docs.mrjs.io/static/mr-panel-example-1.png")
 
 ## 2.5D UI
 

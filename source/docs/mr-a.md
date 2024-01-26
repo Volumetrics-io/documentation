@@ -12,7 +12,7 @@ The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 </mr-app>
 ```
 
-\[example img\]
+![mr-a-example-0]("https://docs.mrjs.io/static/mr-a-example-0.png")
 
 ## Definition and Usage
 
@@ -30,4 +30,4 @@ Like it's HTML equivalent, `<mr-a>` can be used to wrap other elements, making t
 </mr-a>
 ```
 
-\[example img\]
+![mr-a-example-1]("https://docs.mrjs.io/static/mr-a-example-1.png")

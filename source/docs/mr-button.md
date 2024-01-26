@@ -1,6 +1,6 @@
 # &lt;mr-button&gt;
 
-The `<mr-button>`embeds a button in the UI of an `<mr-panel>`.
+The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 
 ## Example
 
