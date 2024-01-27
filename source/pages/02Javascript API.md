@@ -2027,6 +2027,7 @@ The skybox entity that allows users to give multiple images to pattern into the 
         * [new exports.MRSkyBox()](#new_MRSkyBox+MRSkyBox_new)
     * [.onTextureLoaded(texture)](#MRSkyBox+onTextureLoaded)
     * [.connected()](#MRSkyBox+connected)
+    * [.setOpacity()](#MRSkyBox+setOpacity)
     * [.onLoad()](#MRSkyBox+onLoad)
 
 <a name="MRSkyBox+MRSkyBox"></a>
@@ -2055,6 +2056,13 @@ Callback function triggered when the texture is successfully loaded.
 ### mrSkyBox.connected()
 Lifecycle method that is called when the entity is connected.
              This method initializes and starts the texture loading process.
+
+**Kind**: instance method of [<code>MRSkyBox</code>](#MRSkyBox)  
+<a name="MRSkyBox+setOpacity"></a>
+
+### mrSkyBox.setOpacity()
+Set the opacity of the skybox itself. Useful for blending between the outside and MR. Also
+useful for cases where you want to blend between different skybox versions.
 
 **Kind**: instance method of [<code>MRSkyBox</code>](#MRSkyBox)  
 <a name="MRSkyBox+onLoad"></a>
