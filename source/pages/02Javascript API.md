@@ -3052,6 +3052,11 @@ initializes the physics body of an MR Plane
 
 <hr>
 
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/extras/Refractor.js' target='_blank'>Suggest an edit on GitHub for src/extras/Refractor.js</a></div>
+
+<hr>
+
 <a name="Water"></a>
 
 ## Water
