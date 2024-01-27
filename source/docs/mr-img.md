@@ -5,8 +5,22 @@ The `<mr-img>` tag is used to embed an image in an `mrjs` page.
 ## Example
 
 ```html
-<mr-img src="./images/puppy.jpg" alt="A puppy on a sofa"></mr-img>
+<mr-app>
+    <mr-panel class="columns">
+
+        <mr-div>
+            …
+        </mr-div>
+
+        <mr-div>
+            <mr-img class="hero-image" src="./assets/humpback.jpg" alt="A Humpback whale coming out of the water"></mr-img>
+        </mr-div>
+
+    </mr-panel>
+</mr-app>
 ```
+
+![screenshot of an mrjs scene with text on the left and a humpback whale image on the right](/static/mr-img-example-0.png)
 
 ## Definition and Usage
 

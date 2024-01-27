@@ -139,7 +139,7 @@ pandoc "${templateDir}/index.md" \
     --metadata site-name="$site_name" \
     --metadata page-url="$base_url" \
     --metadata base-url="$base_url" \
-    --metadata github-path="${github_base}/index.md" \
+    --metadata github-path="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
     --metadata title="$site_name" \
     --metadata slug="" \
     --metadata-file="${outputDir}/docs.yaml" \

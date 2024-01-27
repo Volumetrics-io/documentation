@@ -7,20 +7,22 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 ```html
 <mr-app>
     <mr-panel id="panel">
-        <mr-button onclick="changeColor()">Click Me!</mr-button>
+        <mr-button onclick="changeColor()">Change color!</mr-button>
     </mr-panel>
 </mr-app>
 …
 <script>
-    let panel = document.getElementById('panel')
-    function changColor() {
-        let color = `#${Math.floor(Math.random() * 0xFFFFFF).toString(16).padStart(6, '0')}`;
-        panel.style.backgroundColor = color 
-    }
+const changeColor = () => {
+    let hue = Math.floor(Math.random() * 360);
+    let color = `hsl(${hue}, 100%, 60%)`;
+    document.querySelector("#panel").style.backgroundColor = color;
+};
+
 </script>
 ```
 
-<!-- \[TODO: example img\] -->
+<iframe height="300" style="width: 100%;" scrolling="no" title="mr-button" src="https://codepen.io/lobau/embed/mdoqLOd?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+
 
 ## Definition and Usage
 

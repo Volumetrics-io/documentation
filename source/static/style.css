@@ -398,7 +398,7 @@ code {
     font-family: monospace
 }
 
-p>code {
+p>code, li>code {
     background: var(--track);
     border-radius: 0.5rem;
     margin: 0;

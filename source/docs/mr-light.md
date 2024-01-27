@@ -2,7 +2,7 @@
 
 `<mr-light>` creates a light source in the mr.js scene.
 
-## Example
+## Simple example
 
 ```html
 <mr-app>
@@ -13,7 +13,22 @@
 </mr-app>
 ```
 
-## Example from homepage
+## Multiple lights
+
+```html
+<mr-app>
+    <mr-light color="#ff9900" intensity="8" data-position="0 0.15 0.15"></mr-light>
+    <mr-light color="RoyalBlue" intensity="8" data-position="0.15 -0.15 0.15"></mr-light>
+    <mr-light color="hsl(340, 100%, 30%)" intensity="8" data-position="-0.15 -0.05 0.15"></mr-light>
+    <mr-panel>
+        <mr-model id="logo" src="volumetrics.stl"></mr-model>
+    </mr-panel>
+</mr-app>
+```
+
+<iframe height="400" style="width: 100%;" scrolling="no" title="<mr-light>" src="https://codepen.io/lobau/embed/eYXeMBz?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+
+<!-- ## Example from homepage
 
 ```html
 <mr-app>
@@ -33,7 +48,7 @@
 
 ### Homepage with Lights added to it
 
-![mr-light-example-1](/static/mr-light-example-1.png)
+![mr-light-example-1](/static/mr-light-example-1.png) -->
 
 ## Definition and Usage
 

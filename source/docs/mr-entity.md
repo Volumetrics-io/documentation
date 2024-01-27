@@ -6,12 +6,12 @@
 
 ```html
 <mr-entity data-rotation="0 0 45">
-    <mr-model src="…" data-position="-1 0 0"></mr-model>
     <mr-model src="…"></mr-model>
+    <mr-model src="./koifish.glb"></mr-model>
 </mr-entity>
 ```
 
-\[TODO: example img\]
+![a swimming koi fish over a 3d layout](/static/mr-entity-example-0.gif)
 
 ## Definition and Usage
 

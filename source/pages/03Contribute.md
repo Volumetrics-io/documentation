@@ -3,9 +3,11 @@ description: "A guide to contribute to mrjs"
 ---
 # Contribute to `mrjs`
 
-As an open source project, there are a lot of opportunities to participate in mrjs. What are you interested in? Try a few!
+As an open source project, there are a lot of opportunities to participate in mrjs.
 
 All work happens directly on GitHub. Both core team members and external contributors send pull requests which go through the same review process.
+
+---
 
 ## Help reporting bugs
 
@@ -15,6 +17,8 @@ mrjs uses [GitHub](https://github.com/Volumetrics-io/mrjs/issues) to manage bug 
 2. Specify information about your browser and system (e.g., "Firefox Nightly on Fedora 39")
 3. Describe the problem in detail (i.e., what happened and what you expected would happen).
 4. If possible, provide a small test case with CodePen, a link to your application, and/or a screenshot. You can fork this [sample pen](https://codepen.io/lobau/pen/YzgEeQZ).
+
+---
 
 ## Contribute code to `mrjs`
 
@@ -34,10 +38,13 @@ Here's how to submit a pull request (PR):
 
 As per usual with open source, you would agree to license your contributions under the [MIT License](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE).
 
+---
 
 ## Provide feedback
 
 You can also use [the issue tracker](https://github.com/Volumetrics-io/mrjs/issues) to write feature requests, ideas, clarification, and anything else that help us improve mrjs.
+
+---
 
 ## Share your Work
 
@@ -47,11 +54,14 @@ You can also use [the issue tracker](https://github.com/Volumetrics-io/mrjs/issu
 4. Let us know about it so we can feature it [on our blog](https://volumetrics.io/posts/).
 5. For bonus points, write and publish a case study to explain how you built it.
 
+---
 
 ## How to get in touch
 
 - [Join us on Discord](https://discord.gg/ZsQarMJg)
 - [Join us on Mastodon](https://webxr.social/explore)
+
+---
 
 ## Code of conduct
 
