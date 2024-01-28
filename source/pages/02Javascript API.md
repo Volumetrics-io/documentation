@@ -1404,7 +1404,6 @@ Handles specific needs for setting up the masking for all necessary items.
     * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#AnimationSystem+update)
-    * [.onNewEntity(entity)](#AnimationSystem+onNewEntity)
 
 <a name="AnimationSystem+AnimationSystem"></a>
 
@@ -1446,17 +1445,6 @@ Updates each animation mixer in the registry. This function should be called
 | --- | --- | --- |
 | deltaTime | <code>number</code> | The time elapsed since the last update call, used to update the animation mixers. |
 | frame | <code>object</code> | Additional frame information, not used in the current implementation but can be utilized for future enhancements. |
-
-<a name="AnimationSystem+onNewEntity"></a>
-
-### animationSystem.onNewEntity(entity)
-Called when a new entity is added to the scene. Handles masking elements to their panel.
-
-**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | <code>MREntity</code> | the entity being added. |
 
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnimationSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/AnimationSystem.js</a></div>
