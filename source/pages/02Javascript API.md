@@ -1802,11 +1802,9 @@ Base html image represented in 3D space. `mr-image`
 * [MRImage](#MRImage) ⇐ <code>MRDivEntity</code>
     * [.MRImage](#MRImage+MRImage)
         * [new exports.MRImage()](#new_MRImage+MRImage_new)
-    * [.needsStyleUpdate](#MRImage+needsStyleUpdate)
     * [.width()](#MRImage+width) ⇒ <code>number</code>
     * [.height()](#MRImage+height) ⇒ <code>number</code>
     * [.connected()](#MRImage+connected)
-    * [.needsStyleUpdate()](#MRImage+needsStyleUpdate) ⇒ <code>boolean</code>
     * [.updateStyle()](#MRImage+updateStyle)
     * [.mutated(mutation)](#MRImage+mutated)
     * [.computeObjectFitDimensions()](#MRImage+computeObjectFitDimensions)
@@ -1821,13 +1819,6 @@ Base html image represented in 3D space. `mr-image`
 #### new exports.MRImage()
 Constructs a base image entity using a UIPlane and other 3D elements as necessary.
 
-<a name="MRImage+needsStyleUpdate"></a>
-
-### mrImage.needsStyleUpdate
-Since this class overrides the default `get` for the `needsStyleUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MREntity.needsStyleUpdate](https://docs.mrjs.io/javascript-api/#mrentity.needsstyleupdate) for default).
-
-**Kind**: instance property of [<code>MRImage</code>](#MRImage)  
 <a name="MRImage+width"></a>
 
 ### mrImage.width() ⇒ <code>number</code>
@@ -1848,15 +1839,6 @@ Calculates the height of the img based on the img tag in the shadow root
 Callback function of MREntity - handles setting up this Image and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
-<a name="MRImage+needsStyleUpdate"></a>
-
-### mrImage.needsStyleUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need the StyleSystem to run on this entity during the current iteration.
-This returns true if the width/height/borderradii of the image has changed or if the default implementation for the style update check returns true.
-(see [MREntity.needsStyleUpdate](https://docs.mrjs.io/javascript-api/#mrentity.needsstyleupdate) for default).
-
-**Kind**: instance method of [<code>MRImage</code>](#MRImage)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
 <a name="MRImage+updateStyle"></a>
 
 ### mrImage.updateStyle()
