@@ -2547,6 +2547,29 @@ UI needs to be scaled down in XR, 1:1 scale is huuuuge
 
 <hr>
 
+<a name="HTML"></a>
+
+## HTML : <code>object</code>
+Useful namespace for helping with HTML utility functions
+
+**Kind**: global namespace  
+<a name="HTML.resolvePath"></a>
+
+### HTML.resolvePath(path) ⇒ <code>string</code>
+Given the path returns an absolute path resolved so relative linking works as expected.
+
+**Kind**: static method of [<code>HTML</code>](#HTML)  
+**Returns**: <code>string</code> - a.href - the absolute path  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| path | <code>string</code> | either a relative or full path inputted to an element |
+
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/HTML.js' target='_blank'>Suggest an edit on GitHub for src/utils/HTML.js</a></div>
+
+<hr>
+
 <a name="StringUtils"></a>
 
 ## StringUtils : <code>object</code>
