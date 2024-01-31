@@ -1,4 +1,4 @@
-# &lt;ECS&gt;
+# ECS
 
 At the heart of mrjs is an architecture known as an Entity Component Systems (ECS). This is an efficient, modular, and scalable architecture popularized by the gaming industry. 
 

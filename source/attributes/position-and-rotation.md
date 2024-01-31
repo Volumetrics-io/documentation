@@ -1,4 +1,4 @@
-# &lt;Position & Rotation&gt;
+# Position & Rotation
 
 ```html
 <mr-entity data-position="1 2 -3" data-rotation="90 -30 180"></mr-entity>

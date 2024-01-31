@@ -1,4 +1,4 @@
-# &lt;data-comp-audio&gt;
+# data-comp-audio
 
 ```html
 <mr-entity data-comp-audio="src: path/to/file.wav; state: play; loop: true; distance: 1"></mr-entity>

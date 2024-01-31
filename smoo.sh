@@ -16,6 +16,7 @@ outputDir='public'
 assetDir='source/static'
 pagesDir='source/pages'
 docsDir='source/docs'
+attributesDir='source/attributes'
 current_year=$(date +"%Y")
 
 #run main action
@@ -124,6 +125,12 @@ docsYAML+="docs:\n"
 # Process doc files
 extract_metadata "$docsDir"
 
+# Add the attributes header
+docsYAML+="attributes:\n"
+
+# Process doc files
+extract_metadata "$attributesDir"
+
 # Finalize and write to file
 docsYAML+="---"
 echo -e "$docsYAML" > "${outputDir}/docs.yaml"
@@ -133,6 +140,9 @@ process_markdown "$pagesDir" "pages" ""
 
 # Process doc files
 process_markdown "$docsDir" "docs" "doc"
+
+# Process data attributes files
+process_markdown "$attributesDir" "attributes" "attributes"
 
 # --metadata base-url="$base_url" \
 pandoc "${templateDir}/index.md" \

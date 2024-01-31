@@ -1,4 +1,4 @@
-# &lt;data-comp-anchor&gt;
+# data-comp-anchor
 
 ```html
 <mr-entity data-comp-anchor="type: plane; label: table"></mr-entity>

@@ -98,6 +98,13 @@
             $endfor$
         </section>
 
+        <section>
+            <div class="section-title">Data attributes</div>
+            $for(attributes)$
+            <a class="sidebar-entry" href='/attributes/$attributes.slug$/' data-slug="$attributes.slug$">$attributes.title$</a>
+            $endfor$
+        </section>
+
         <!-- <footer>
             © $current-year$ Volumetrics, Inc.
         </footer> -->
