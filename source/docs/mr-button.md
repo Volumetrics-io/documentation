@@ -7,6 +7,7 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 <inline-repl>
     <code slot="html">
         <mr-app>
+            <mr-light color="white" intensity="3" data-position="0 0.25 0.25"></mr-light>
             <mr-panel id="panel">
                 <mr-button onclick="changeColor()">Change color!</mr-button>
             </mr-panel>

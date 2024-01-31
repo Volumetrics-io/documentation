@@ -7,8 +7,6 @@ As an open source project, there are a lot of opportunities to participate in mr
 
 All work happens directly on GitHub. Both core team members and external contributors send pull requests which go through the same review process.
 
----
-
 ## Help reporting bugs
 
 mrjs uses [GitHub](https://github.com/Volumetrics-io/mrjs/issues) to manage bug reports and feature requests. It helps developers keep track of what is broken and who might fix it. Users can help our effort by making their bug reports clear and specific. The better your bug report, the easier it is to identify the cause, and fix the bug.
@@ -17,8 +15,6 @@ mrjs uses [GitHub](https://github.com/Volumetrics-io/mrjs/issues) to manage bug 
 2. Specify information about your browser and system (e.g., "Firefox Nightly on Fedora 39")
 3. Describe the problem in detail (i.e., what happened and what you expected would happen).
 4. If possible, provide a small test case with CodePen, a link to your application, and/or a screenshot. You can fork this [sample pen](https://codepen.io/lobau/pen/YzgEeQZ).
-
----
 
 ## Contribute code to `mrjs`
 
@@ -38,30 +34,22 @@ Here's how to submit a pull request (PR):
 
 As per usual with open source, you would agree to license your contributions under the [MIT License](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE).
 
----
-
 ## Provide feedback
 
 You can also use [the issue tracker](https://github.com/Volumetrics-io/mrjs/issues) to write feature requests, ideas, clarification, and anything else that help us improve mrjs.
-
----
 
 ## Share your Work
 
 1. Create something awesome using mrjs.
 2. [Publish your work online](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Publishing_your_website), so everyone can learn from it.
-3. Share it on [Discord](https://discord.gg/ZsQarMJg) or with [Michael](https://webxr.social/@michael), [Laurent](https://webxr.social/@lobau) or [Hannah](https://webxr.social/@hanbollar) Mastodon.
+3. Share it on [Discord](https://discord.gg/2zxQnyN7) or with [Michael](https://volumetrics.social/@michael), [Laurent](https://volumetrics.social/@lobau) or [Hannah](https://volumetrics.social/@hanbollar) Mastodon.
 4. Let us know about it so we can feature it [on our blog](https://volumetrics.io/posts/).
 5. For bonus points, write and publish a case study to explain how you built it.
 
----
-
 ## How to get in touch
 
-- [Join us on Discord](https://discord.gg/ZsQarMJg)
+- [Join us on Discord](https://discord.gg/2zxQnyN7)
 - [Join us on Mastodon](https://webxr.social/explore)
-
----
 
 ## Code of conduct
 
