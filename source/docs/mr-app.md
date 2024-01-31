@@ -8,22 +8,57 @@ The `<mr-app>` component serves as the foundational building block of an applica
 
 ## Example
 
-```html
-<mr-app debug="true">
-    <!-- The 2D UI Panel -->
-    <mr-panel>
-        <mr-text class="title">Hello world!</mr-text>
-        <mr-text>This is an mr-app</mr-text>
+<inline-repl editor-height="400">
+  <code slot="html">
+    <mr-app>
+        <!-- Lighting the scene -->
+        <mr-light color="white" intensity="3" data-position="0 0.1 0.25"></mr-light>
+        <!-- The 2D UI Panel -->
+        <mr-panel>
+            <mr-text class="title">Hello world!</mr-text>
+            <mr-text>This is an mr-app</mr-text>
+            <!--wrap non-UI components in mr-div to anchor to UI-->
+            <mr-div style="width: 200px; height: 200px; z-index: 70;">
+                <mr-model id="logo" src="/static/sample/logo.stl" style="scale: 0.0025;"></mr-model>
+            </mr-div>
+        </mr-panel>
+    </mr-app>
+  </code>
+  <code slot="css">
+      mr-panel {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: Helvetica;
+        border-radius: unset;
+      }
+      mr-text {
+        letter-spacing: 1px;
+        line-height: 120%;
+        width: 200px;
+      }
+      .title {
+        font-size: 150%;
+        font-weight: bold;
+      }
+  </code>
+  <code slot="javascript">
+    let t = 0;
+    window.requestAnimationFrame(function rotate() {
+        t += 0.004;
+        let rx = -Math.cos(t) * 45;
+        let ry = Math.cos(t) * 90;
+        let rz = Math.cos(t) * 180;
+        document.querySelector("#logo").dataset.rotation = rx + " " + ry + " " + rz;
+        window.requestAnimationFrame(rotate);
+    });
+  </code>
+</inline-repl>
 
-        <!--wrap non-UI components in mr-div to anchor to UI-->
-        <mr-div style="width: 200px; height: 200px; z-index: 70;">
-            <mr-model id="logo" src="https://assets.codepen.io/686746/volumetrics.stl" style="scale: 0.0025;"></mr-model>
-        </mr-div>
-    </mr-panel>
-</mr-app>
-````
-
-<iframe height="400" style="width: 100%;" scrolling="no" title="[docs] mr-light" src="https://codepen.io/lobau/embed/mdoqxxv?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+<!-- <iframe height="400" style="width: 100%;" scrolling="no" title="[docs] mr-light" src="https://codepen.io/lobau/embed/mdoqxxv?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe> -->
 
 ## Definition and Usage
 

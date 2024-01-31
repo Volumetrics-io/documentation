@@ -4,24 +4,40 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 
 ## Example
 
-```html
-<mr-app>
-    <mr-panel id="panel">
-        <mr-button onclick="changeColor()">Change color!</mr-button>
-    </mr-panel>
-</mr-app>
-…
-<script>
-const changeColor = () => {
-    let hue = Math.floor(Math.random() * 360);
-    let color = `hsl(${hue}, 100%, 60%)`;
-    document.querySelector("#panel").style.backgroundColor = color;
-};
-
-</script>
-```
-
-<iframe height="300" style="width: 100%;" scrolling="no" title="mr-button" src="https://codepen.io/lobau/embed/mdoqLOd?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+<inline-repl>
+    <code slot="html">
+        <mr-app>
+            <mr-panel id="panel">
+                <mr-button onclick="changeColor()">Change color!</mr-button>
+            </mr-panel>
+        </mr-app>
+    </code>
+    <code slot="css">
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        mr-button {
+            font-family: system-ui;
+            background-color: white;
+            padding: 8px 16px;
+            font-size: 150%;
+            border-radius: 20px;
+        }
+    </code>
+    <code slot="javascript">
+        function changeColor() {
+            let hue = Math.floor(Math.random() * 360);
+            let color = 'hsl(' +  hue + ', 100%, 60%)';
+            document.querySelector("#panel").style.backgroundColor = color;
+        }
+        changeColor();
+    </code>
+</inline-repl>
 
 
 ## Definition and Usage

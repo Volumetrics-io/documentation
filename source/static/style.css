@@ -118,14 +118,24 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     line-height: 120%;
-    text-wrap: balance
+    text-wrap: balance;
+    margin-top: 3rem;
 }
 
 h3 {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 130%;
-    text-wrap: balance
+    text-wrap: balance;
+    margin-top: 2rem;
+}
+
+h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 130%;
+    text-wrap: balance;
+    margin-top: 1.5rem;
 }
 
 a:not(.sidebar-entry),
@@ -330,7 +340,7 @@ table {
     border: 2px solid var(--border);
     border-radius: 1rem;
     display: block;
-    margin: 2rem auto;
+    margin: 0 auto;
     width: 100%
 }
 
@@ -398,7 +408,8 @@ code {
     font-family: monospace
 }
 
-p>code, li>code {
+p>code,
+li>code {
     background: var(--track);
     border-radius: 0.5rem;
     margin: 0;
@@ -439,6 +450,11 @@ div.column {
 div.hanging-indent {
     margin-left: 1.5em;
     text-indent: -1.5em
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 ul.task-list[class] {
@@ -646,6 +662,13 @@ h6:hover>.anchor::before {
 
 /* end: heading anchor links */
 
+/* Inline REPL */
+
+inline-repl {
+    margin-left: -5vw;
+    width: calc(100% + 10vw);
+}
+
 @media only screen and (max-width: 64rem) {
     #sidebar {
         left: calc(var(--sidebar-width) * -1);
@@ -662,6 +685,11 @@ h6:hover>.anchor::before {
     .markdown {
         padding: 0 1rem 0 3rem;
         width: calc(100% - 4rem);
+    }
+
+    inline-repl {
+        margin-left: -2rem;
+        width: calc(100% + 2rem);
     }
 }
 
