@@ -749,6 +749,57 @@ AudioSystem's Default constructor that sets up the audio listener and loader
 
 <hr>
 
+<a name="SkyBoxSystem"></a>
+
+## SkyBoxSystem ⇐ <code>MRSystem</code>
+Handles skybox interactions and updates for all items.
+
+**Kind**: global class  
+**Extends**: <code>MRSystem</code>  
+
+* [SkyBoxSystem](#SkyBoxSystem) ⇐ <code>MRSystem</code>
+    * [.SkyBoxSystem](#SkyBoxSystem+SkyBoxSystem)
+        * [new exports.SkyBoxSystem()](#new_SkyBoxSystem+SkyBoxSystem_new)
+    * [.update(deltaTime, frame)](#SkyBoxSystem+update)
+    * [.onNewEntity(entity)](#SkyBoxSystem+onNewEntity)
+
+<a name="SkyBoxSystem+SkyBoxSystem"></a>
+
+### skyBoxSystem.SkyBoxSystem
+**Kind**: instance class of [<code>SkyBoxSystem</code>](#SkyBoxSystem)  
+<a name="new_SkyBoxSystem+SkyBoxSystem_new"></a>
+
+#### new exports.SkyBoxSystem()
+StyleSystem's default constructor with a starting framerate of 1/30.
+
+<a name="SkyBoxSystem+update"></a>
+
+### skyBoxSystem.update(deltaTime, frame)
+The generic system update call.
+
+**Kind**: instance method of [<code>SkyBoxSystem</code>](#SkyBoxSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
+
+<a name="SkyBoxSystem+onNewEntity"></a>
+
+### skyBoxSystem.onNewEntity(entity)
+Called when a new entity is added to the scene. Adds said new entity to the style's system registry.
+
+**Kind**: instance method of [<code>SkyBoxSystem</code>](#SkyBoxSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SkyBoxSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/SkyBoxSystem.js</a></div>
+
+<hr>
+
 <a name="PhysicsSystem"></a>
 
 ## PhysicsSystem ⇐ <code>MRSystem</code>
@@ -2658,6 +2709,35 @@ this is set within the MRApp to access various WebXR API features
 **Kind**: global namespace  
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/XR.js' target='_blank'>Suggest an edit on GitHub for src/utils/XR.js</a></div>
+
+<hr>
+
+<a name="JS"></a>
+
+## JS : <code>object</code>
+Useful namespace for helping with common needed JS quick functions
+
+**Kind**: global namespace  
+<a name="JS.isInstanceOfBaseClassOnly"></a>
+
+### JS.isInstanceOfBaseClassOnly(instance, BaseClass) ⇒ <code>object</code>
+Given the parent, grabs either the parent's direct material or (in the case of a group) the
+material of the first child hit.
+
+**Kind**: static method of [<code>JS</code>](#JS)  
+**Returns**: <code>object</code> - material - the grabbed material  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| instance | <code>object</code> | the object whole class is being checked |
+| BaseClass | <code>object</code> | the given name of the BaseClass being checked against. Not in quotes. |
+
+**Example**  
+```js
+JS.isInstanceOfBaseClassOnly(entity, MRDivEntity) would return true only on <mr-div> entities.
+```
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/JS.js' target='_blank'>Suggest an edit on GitHub for src/utils/JS.js</a></div>
 
 <hr>
 
