@@ -2997,6 +2997,17 @@ The main loading function
 
 <hr>
 
+<a name="app"></a>
+
+## app : <code>object</code>
+Useful namespace for helping with app utility functions.
+
+**Kind**: global namespace  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/app.js' target='_blank'>Suggest an edit on GitHub for src/utils/app.js</a></div>
+
+<hr>
+
 <a name="Geometry"></a>
 
 ## Geometry : <code>object</code>
