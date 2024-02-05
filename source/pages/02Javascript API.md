@@ -1517,7 +1517,6 @@ This system supports interaction event information including mouse and controlle
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
     * [.onMouseUp(event)](#ControlSystem+onMouseUp)
-    * [.removeCursor()](#ControlSystem+removeCursor)
     * [.pixelRayCast(event)](#ControlSystem+pixelRayCast) ⇒ <code>object</code>
 
 <a name="ControlSystem+ControlSystem"></a>
@@ -1574,12 +1573,6 @@ Handles the mouse up event
 | --- | --- | --- |
 | event | <code>event</code> | the mouse up event |
 
-<a name="ControlSystem+removeCursor"></a>
-
-### controlSystem.removeCursor()
-Handles the removeCursor callback.
-
-**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
 <a name="ControlSystem+pixelRayCast"></a>
 
 ### controlSystem.pixelRayCast(event) ⇒ <code>object</code>
