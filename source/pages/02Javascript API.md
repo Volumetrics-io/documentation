@@ -1590,6 +1590,18 @@ Raycast into the scene using the information from the event that called it.
 
 <hr>
 
+<a name="PanelManagementSystem"></a>
+
+## PanelManagementSystem ⇐ <code>MRSystem</code>
+A system that manages the screen relative position of UI panels
+
+**Kind**: global class  
+**Extends**: <code>MRSystem</code>  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/PanelSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/PanelSystem.js</a></div>
+
+<hr>
+
 <a name="AnchorSystem"></a>
 
 ## AnchorSystem ⇐ <code>MRSystem</code>
@@ -1935,12 +1947,10 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
 * [MRPanel](#MRPanel) ⇐ <code>MRDivEntity</code>
     * [.MRPanel](#MRPanel+MRPanel)
         * [new exports.MRPanel()](#new_MRPanel+MRPanel_new)
-    * [.height()](#MRPanel+height) ⇒ <code>number</code>
     * [.connected()](#MRPanel+connected)
     * [.add(entity)](#MRPanel+add)
     * [.remove(entity)](#MRPanel+remove)
     * [.onTouch(event)](#MRPanel+onTouch)
-    * [.momentumScroll(distance, duration)](#MRPanel+momentumScroll)
     * [.onScroll(event)](#MRPanel+onScroll)
 
 <a name="MRPanel+MRPanel"></a>
@@ -1952,13 +1962,6 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
 #### new exports.MRPanel()
 Constructor for the main Panel. Sets up all the relevant object3D and window information. Includes information necessary for proper scrolling usage.
 
-<a name="MRPanel+height"></a>
-
-### mrPanel.height() ⇒ <code>number</code>
-Calculates the height of the Entity. If in Mixed Reality, adjusts the value appropriately.
-
-**Kind**: instance method of [<code>MRPanel</code>](#MRPanel)  
-**Returns**: <code>number</code> - - the resolved height  
 <a name="MRPanel+connected"></a>
 
 ### mrPanel.connected()
@@ -1999,18 +2002,6 @@ Handles what should happen when a touch event is called. Updates items appropria
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>object</code> | the touch event |
-
-<a name="MRPanel+momentumScroll"></a>
-
-### mrPanel.momentumScroll(distance, duration)
-Helper function for the onTouch event function. Handles properly adjusting scroll for some momentum for a more natural feel.
-
-**Kind**: instance method of [<code>MRPanel</code>](#MRPanel)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| distance | <code>number</code> | the distance left to scroll |
-| duration | <code>number</code> | the amount of time to do the scroll distance allowing for some movement instead of instant displacement. |
 
 <a name="MRPanel+onScroll"></a>
 
