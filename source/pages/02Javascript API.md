@@ -1170,6 +1170,64 @@ When the system swaps to a new entity, this handles applying the clipping planes
 
 <hr>
 
+<a name="GeometryStyleSystem"></a>
+
+## GeometryStyleSystem ⇐ <code>MRSystem</code>
+Handles geometry updates for all items.
+
+**Kind**: global class  
+**Extends**: <code>MRSystem</code>  
+
+* [GeometryStyleSystem](#GeometryStyleSystem) ⇐ <code>MRSystem</code>
+    * [.GeometryStyleSystem](#GeometryStyleSystem+GeometryStyleSystem)
+        * [new exports.GeometryStyleSystem()](#new_GeometryStyleSystem+GeometryStyleSystem_new)
+    * [.update(deltaTime, frame)](#GeometryStyleSystem+update)
+    * [.onNewEntity(entity)](#GeometryStyleSystem+onNewEntity)
+    * [.setBorder()](#GeometryStyleSystem+setBorder)
+
+<a name="GeometryStyleSystem+GeometryStyleSystem"></a>
+
+### geometryStyleSystem.GeometryStyleSystem
+**Kind**: instance class of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
+<a name="new_GeometryStyleSystem+GeometryStyleSystem_new"></a>
+
+#### new exports.GeometryStyleSystem()
+StyleSystem's default constructor with a starting framerate of 1/30.
+
+<a name="GeometryStyleSystem+update"></a>
+
+### geometryStyleSystem.update(deltaTime, frame)
+The generic system update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+
+**Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
+| frame | <code>object</code> | given frame information to be used for any feature changes |
+
+<a name="GeometryStyleSystem+onNewEntity"></a>
+
+### geometryStyleSystem.onNewEntity(entity)
+Called when a new entity is added to the scene. Adds said new entity to the style's system registry.
+
+**Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+<a name="GeometryStyleSystem+setBorder"></a>
+
+### geometryStyleSystem.setBorder()
+Sets the border of the UI based on compStyle and inputted css elements.
+
+**Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
+
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/GeometryStyleSystem.js' target='_blank'>Suggest an edit on GitHub for src/core/componentSystems/GeometryStyleSystem.js</a></div>
+
+<hr>
+
 <a name="TextSystem"></a>
 
 ## TextSystem ⇐ <code>MRSystem</code>
@@ -2582,18 +2640,18 @@ UI needs to be scaled down in XR, 1:1 scale is huuuuge
 
 <hr>
 
-<a name="HTML"></a>
+<a name="html"></a>
 
-## HTML : <code>object</code>
-Useful namespace for helping with HTML utility functions
+## html : <code>object</code>
+Useful namespace for helping with html utility functions
 
 **Kind**: global namespace  
-<a name="HTML.resolvePath"></a>
+<a name="html.resolvePath"></a>
 
-### HTML.resolvePath(path) ⇒ <code>string</code>
+### html.resolvePath(path) ⇒ <code>string</code>
 Given the path returns an absolute path resolved so relative linking works as expected.
 
-**Kind**: static method of [<code>HTML</code>](#HTML)  
+**Kind**: static method of [<code>html</code>](#html)  
 **Returns**: <code>string</code> - a.href - the absolute path  
 
 | Param | Type | Description |
@@ -2613,15 +2671,15 @@ Useful namespace for helping with String utility functions
 **Kind**: global namespace  
 
 * [StringUtils](#StringUtils) : <code>object</code>
-    * [.stringToJson(attrString)](#StringUtils.stringToJson) ⇒ <code>object</code>
-    * [.jsonToString(componentData)](#StringUtils.jsonToString) ⇒ <code>string</code>
-    * [.stringToVector(str)](#StringUtils.stringToVector) ⇒ <code>object</code>
-    * [.stringToDegVector(str)](#StringUtils.stringToDegVector) ⇒ <code>object</code>
-    * [.stringToDimensionValue(val)](#StringUtils.stringToDimensionValue) ⇒ <code>number</code>
+    * [.stringUtils.stringToJson(attrString)](#StringUtils.stringUtils.stringToJson) ⇒ <code>object</code>
+    * [.stringUtils.jsonToString(componentData)](#StringUtils.stringUtils.jsonToString) ⇒ <code>string</code>
+    * [.stringUtils.stringToVector(str)](#StringUtils.stringUtils.stringToVector) ⇒ <code>object</code>
+    * [.stringUtils.stringToDegVector(str)](#StringUtils.stringUtils.stringToDegVector) ⇒ <code>object</code>
+    * [.stringUtils.stringToDimensionValue(val)](#StringUtils.stringUtils.stringToDimensionValue) ⇒ <code>number</code>
 
-<a name="StringUtils.stringToJson"></a>
+<a name="StringUtils.stringUtils.stringToJson"></a>
 
-### StringUtils.stringToJson(attrString) ⇒ <code>object</code>
+### StringUtils.stringUtils.stringToJson(attrString) ⇒ <code>object</code>
 Converts and formats the inputted string to a json object.
 
 **Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
@@ -2631,9 +2689,9 @@ Converts and formats the inputted string to a json object.
 | --- | --- | --- |
 | attrString | <code>string</code> | the string to be formatted |
 
-<a name="StringUtils.jsonToString"></a>
+<a name="StringUtils.stringUtils.jsonToString"></a>
 
-### StringUtils.jsonToString(componentData) ⇒ <code>string</code>
+### StringUtils.stringUtils.jsonToString(componentData) ⇒ <code>string</code>
 Converts and formats the inputted json object into a string.
 
 **Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
@@ -2643,9 +2701,9 @@ Converts and formats the inputted json object into a string.
 | --- | --- | --- |
 | componentData | <code>object</code> | the json object to be formatted into a string |
 
-<a name="StringUtils.stringToVector"></a>
+<a name="StringUtils.stringUtils.stringToVector"></a>
 
-### StringUtils.stringToVector(str) ⇒ <code>object</code>
+### StringUtils.stringUtils.stringToVector(str) ⇒ <code>object</code>
 Converts a string to vector format.
 
 **Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
@@ -2655,9 +2713,9 @@ Converts a string to vector format.
 | --- | --- | --- |
 | str | <code>string</code> | the string to be converted to a vector. Must be of format 'xx xxx xx...'. |
 
-<a name="StringUtils.stringToDegVector"></a>
+<a name="StringUtils.stringUtils.stringToDegVector"></a>
 
-### StringUtils.stringToDegVector(str) ⇒ <code>object</code>
+### StringUtils.stringUtils.stringToDegVector(str) ⇒ <code>object</code>
 Converts a string to vector format where the numbers are pre-converted from radians to degrees.
 
 **Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
@@ -2667,9 +2725,9 @@ Converts a string to vector format where the numbers are pre-converted from radi
 | --- | --- | --- |
 | str | <code>string</code> | the string to be converted to a vector. Must be of format 'xx xxx xx...'. |
 
-<a name="StringUtils.stringToDimensionValue"></a>
+<a name="StringUtils.stringUtils.stringToDimensionValue"></a>
 
-### StringUtils.stringToDimensionValue(val) ⇒ <code>number</code>
+### StringUtils.stringUtils.stringToDimensionValue(val) ⇒ <code>number</code>
 Converts a string to vector format where the numbers are pre-converted from a number to an appropriate representation
 
 **Kind**: static method of [<code>StringUtils</code>](#StringUtils)  
@@ -2696,19 +2754,19 @@ this is set within the MRApp to access various WebXR API features
 
 <hr>
 
-<a name="JS"></a>
+<a name="js"></a>
 
-## JS : <code>object</code>
+## js : <code>object</code>
 Useful namespace for helping with common needed JS quick functions
 
 **Kind**: global namespace  
-<a name="JS.isInstanceOfBaseClassOnly"></a>
+<a name="js.isInstanceOfBaseClassOnly"></a>
 
-### JS.isInstanceOfBaseClassOnly(instance, BaseClass) ⇒ <code>object</code>
+### js.isInstanceOfBaseClassOnly(instance, BaseClass) ⇒ <code>object</code>
 Given the parent, grabs either the parent's direct material or (in the case of a group) the
 material of the first child hit.
 
-**Kind**: static method of [<code>JS</code>](#JS)  
+**Kind**: static method of [<code>js</code>](#js)  
 **Returns**: <code>object</code> - material - the grabbed material  
 
 | Param | Type | Description |
@@ -2725,66 +2783,54 @@ JS.isInstanceOfBaseClassOnly(entity, MRDivEntity) would return true only on <mr-
 
 <hr>
 
-<a name="Display"></a>
+<a name="display"></a>
 
-## Display : <code>object</code>
+## display : <code>object</code>
 Useful namespace for helping with Display utility functions
 
 **Kind**: global namespace  
+<a name="display.VIRTUAL_DISPLAY_RESOLUTION"></a>
 
-* [Display](#Display) : <code>object</code>
-    * [.VIRTUAL_DISPLAY_RESOLUTION](#Display.VIRTUAL_DISPLAY_RESOLUTION)
-    * [.mobileCheckFunction()](#Display.mobileCheckFunction) ⇒ <code>boolean</code>
-
-<a name="Display.VIRTUAL_DISPLAY_RESOLUTION"></a>
-
-### Display.VIRTUAL\_DISPLAY\_RESOLUTION
+### display.VIRTUAL\_DISPLAY\_RESOLUTION
 Defaults to 1080;
 
-**Kind**: static property of [<code>Display</code>](#Display)  
-<a name="Display.mobileCheckFunction"></a>
-
-### Display.mobileCheckFunction() ⇒ <code>boolean</code>
-Checks whether the user is on mobile or not based on a large list of potential options.
-
-**Kind**: static method of [<code>Display</code>](#Display)  
-**Returns**: <code>boolean</code> - - returns true if on any mobile devices.  
+**Kind**: static property of [<code>display</code>](#display)  
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Display.js' target='_blank'>Suggest an edit on GitHub for src/utils/Display.js</a></div>
 
 <hr>
 
-<a name="Material"></a>
+<a name="material"></a>
 
-## Material : <code>object</code>
+## material : <code>object</code>
 Useful namespace for helping with Materials and threejs utility functions
 
 **Kind**: global namespace  
 
-* [Material](#Material) : <code>object</code>
-    * [.getObjectMaterial(parent)](#Material.getObjectMaterial) ⇒ <code>object</code>
-    * [.setObjectMaterial(parent, material)](#Material.setObjectMaterial) ⇒ <code>object</code>
+* [material](#material) : <code>object</code>
+    * [.getObjectMaterial(parent)](#material.getObjectMaterial) ⇒ <code>object</code>
+    * [.setObjectMaterial(parent, material)](#material.setObjectMaterial) ⇒ <code>object</code>
 
-<a name="Material.getObjectMaterial"></a>
+<a name="material.getObjectMaterial"></a>
 
-### Material.getObjectMaterial(parent) ⇒ <code>object</code>
+### material.getObjectMaterial(parent) ⇒ <code>object</code>
 Given the parent, grabs either the parent's direct material or (in the case of a group) the
 material of the first child hit.
 
-**Kind**: static method of [<code>Material</code>](#Material)  
+**Kind**: static method of [<code>material</code>](#material)  
 **Returns**: <code>object</code> - material - the grabbed material  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | parent | <code>object</code> | either a THREE.Group or a THREE.mesh/object |
 
-<a name="Material.setObjectMaterial"></a>
+<a name="material.setObjectMaterial"></a>
 
-### Material.setObjectMaterial(parent, material) ⇒ <code>object</code>
+### material.setObjectMaterial(parent, material) ⇒ <code>object</code>
 Given the parent, grabs either the parents direct material or (in the case of a group) the
 material of the first child hit.
 
-**Kind**: static method of [<code>Material</code>](#Material)  
+**Kind**: static method of [<code>material</code>](#material)  
 **Returns**: <code>object</code> - parent - the updated parent object  
 
 | Param | Type | Description |
@@ -2797,18 +2843,18 @@ material of the first child hit.
 
 <hr>
 
-<a name="Math3D"></a>
+<a name="math3D"></a>
 
-## Math3D : <code>object</code>
-Useful namespace for helping with Math3D and threejs utility functions
+## math3D : <code>object</code>
+Useful namespace for helping with math3D and threejs utility functions
 
 **Kind**: global namespace  
-<a name="Math3D.computeBoundingSphere"></a>
+<a name="math3D.computeBoundingSphere"></a>
 
-### Math3D.computeBoundingSphere(group, relativeTo) ⇒ <code>THREE.Sphere</code>
+### math3D.computeBoundingSphere(group, relativeTo) ⇒ <code>THREE.Sphere</code>
 Computes the bounding sphere of an inputted three group object.
 
-**Kind**: static method of [<code>Math3D</code>](#Math3D)  
+**Kind**: static method of [<code>math3D</code>](#math3D)  
 **Returns**: <code>THREE.Sphere</code> - - the resolved bounding sphere  
 
 | Param | Type | Description |
@@ -2821,24 +2867,24 @@ Computes the bounding sphere of an inputted three group object.
 
 <hr>
 
-<a name="MathUtils"></a>
+<a name="mathUtils"></a>
 
-## MathUtils : <code>object</code>
+## mathUtils : <code>object</code>
 Useful namespace for helping with Math utility functions
 
 **Kind**: global namespace  
 
-* [MathUtils](#MathUtils) : <code>object</code>
-    * [.roundTo(val, decimal)](#MathUtils.roundTo) ⇒ <code>number</code>
-    * [.roundVectorTo(vector, decimal)](#MathUtils.roundVectorTo)
-    * [.radToDeg(val)](#MathUtils.radToDeg) ⇒ <code>number</code>
+* [mathUtils](#mathUtils) : <code>object</code>
+    * [.roundTo(val, decimal)](#mathUtils.roundTo) ⇒ <code>number</code>
+    * [.roundVectorTo(vector, decimal)](#mathUtils.roundVectorTo)
+    * [.radToDeg(val)](#mathUtils.radToDeg) ⇒ <code>number</code>
 
-<a name="MathUtils.roundTo"></a>
+<a name="mathUtils.roundTo"></a>
 
-### MathUtils.roundTo(val, decimal) ⇒ <code>number</code>
+### mathUtils.roundTo(val, decimal) ⇒ <code>number</code>
 Rounds the inputted val to the nearest decimal place as denoted by the decimal parameter.
 
-**Kind**: static method of [<code>MathUtils</code>](#MathUtils)  
+**Kind**: static method of [<code>mathUtils</code>](#mathUtils)  
 **Returns**: <code>number</code> - - The rounded number to the requested decimal amount.  
 
 | Param | Type | Description |
@@ -2850,12 +2896,12 @@ Rounds the inputted val to the nearest decimal place as denoted by the decimal p
 ```js
 For example: roundTo(832.456, 10) = 832.4; roundTo(832.456, 1000) = 832.456; roundTo(832.456, 0.01) = 800;
 ```
-<a name="MathUtils.roundVectorTo"></a>
+<a name="mathUtils.roundVectorTo"></a>
 
-### MathUtils.roundVectorTo(vector, decimal)
+### mathUtils.roundVectorTo(vector, decimal)
 Rounds the inputted vector to the nearest decimal place as denoted by the decimal parameter.
 
-**Kind**: static method of [<code>MathUtils</code>](#MathUtils)  
+**Kind**: static method of [<code>mathUtils</code>](#mathUtils)  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2866,13 +2912,13 @@ Rounds the inputted vector to the nearest decimal place as denoted by the decima
 ```js
 For example: roundTo(<832.456, 92.10003, 23452.1>, 10) = <832.4, 92.1, 2342.1>;
 ```
-<a name="MathUtils.radToDeg"></a>
+<a name="mathUtils.radToDeg"></a>
 
-### MathUtils.radToDeg(val) ⇒ <code>number</code>
+### mathUtils.radToDeg(val) ⇒ <code>number</code>
 Performs the radian To Degree calculation commonly used in math.
 https://en.wikipedia.org/wiki/Degree_(angle) https://en.wikipedia.org/wiki/Radian
 
-**Kind**: static method of [<code>MathUtils</code>](#MathUtils)  
+**Kind**: static method of [<code>mathUtils</code>](#mathUtils)  
 **Returns**: <code>number</code> - - the calculated degree representation of val.  
 
 | Param | Type | Description |
@@ -2884,37 +2930,37 @@ https://en.wikipedia.org/wiki/Degree_(angle) https://en.wikipedia.org/wiki/Radia
 
 <hr>
 
-<a name="CSS"></a>
+<a name="css"></a>
 
-## CSS : <code>object</code>
+## css : <code>object</code>
 Useful namespace for helping with CSS utility functions
 
 **Kind**: global namespace  
 
-* [CSS](#CSS) : <code>object</code>
-    * [.threeToPx(val)](#CSS.threeToPx) ⇒ <code>number</code>
-    * [.pxToThree(val)](#CSS.pxToThree) ⇒ <code>number</code>
+* [css](#css) : <code>object</code>
+    * [.threeToPx(val)](#css.threeToPx) ⇒ <code>number</code>
+    * [.pxToThree(val)](#css.pxToThree) ⇒ <code>number</code>
 
-<a name="CSS.threeToPx"></a>
+<a name="css.threeToPx"></a>
 
-### CSS.threeToPx(val) ⇒ <code>number</code>
+### css.threeToPx(val) ⇒ <code>number</code>
 Converts 3D world positions to display positions based on global viewPort information.
              Useful as part of the layout system and css value handling (px<-->threejs).
 
-**Kind**: static method of [<code>CSS</code>](#CSS)  
+**Kind**: static method of [<code>css</code>](#css)  
 **Returns**: <code>number</code> - - the 2D pixel space representation of value.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | val | <code>number</code> | the 3D value to be converted to 2D pixel space |
 
-<a name="CSS.pxToThree"></a>
+<a name="css.pxToThree"></a>
 
-### CSS.pxToThree(val) ⇒ <code>number</code>
+### css.pxToThree(val) ⇒ <code>number</code>
 Converts display positions to 3D world positions to based on global viewPort information.
 Useful as part of the layout system and css value handling (px<-->threejs).
 
-**Kind**: static method of [<code>CSS</code>](#CSS)  
+**Kind**: static method of [<code>css</code>](#css)  
 **Returns**: <code>number</code> - - the 3D representation of value.  
 
 | Param | Type | Description |
@@ -2926,129 +2972,129 @@ Useful as part of the layout system and css value handling (px<-->threejs).
 
 <hr>
 
-<a name="Physics"></a>
+<a name="physics"></a>
 
-## Physics : <code>object</code>
-Useful namespace for helping with Physics utility functions
+## physics : <code>object</code>
+Useful namespace for helping with physics utility functions
 
 **Kind**: global namespace  
 
-* [Physics](#Physics) : <code>object</code>
-    * [.CollisionGroups](#Physics.CollisionGroups)
-    * [.RAPIER](#Physics.RAPIER)
-    * [.INPUT_COLLIDER_HANDLE_NAMES](#Physics.INPUT_COLLIDER_HANDLE_NAMES)
-    * [.COLLIDER_ENTITY_MAP](#Physics.COLLIDER_ENTITY_MAP)
+* [physics](#physics) : <code>object</code>
+    * [.CollisionGroups](#physics.CollisionGroups)
+    * [.RAPIER](#physics.RAPIER)
+    * [.INPUT_COLLIDER_HANDLE_NAMES](#physics.INPUT_COLLIDER_HANDLE_NAMES)
+    * [.COLLIDER_ENTITY_MAP](#physics.COLLIDER_ENTITY_MAP)
 
-<a name="Physics.CollisionGroups"></a>
+<a name="physics.CollisionGroups"></a>
 
-### Physics.CollisionGroups
+### physics.CollisionGroups
 the Rapier collision groups used throughout mr.js
 
-**Kind**: static property of [<code>Physics</code>](#Physics)  
-<a name="Physics.RAPIER"></a>
+**Kind**: static property of [<code>physics</code>](#physics)  
+<a name="physics.RAPIER"></a>
 
-### Physics.RAPIER
+### physics.RAPIER
 the RAPIER physics controller object
 
-**Kind**: static property of [<code>Physics</code>](#Physics)  
-<a name="Physics.INPUT_COLLIDER_HANDLE_NAMES"></a>
+**Kind**: static property of [<code>physics</code>](#physics)  
+<a name="physics.INPUT_COLLIDER_HANDLE_NAMES"></a>
 
-### Physics.INPUT\_COLLIDER\_HANDLE\_NAMES
+### physics.INPUT\_COLLIDER\_HANDLE\_NAMES
 the Rapier INPUT_COLLIDER_HANDLE_NAMES
 
-**Kind**: static property of [<code>Physics</code>](#Physics)  
-<a name="Physics.COLLIDER_ENTITY_MAP"></a>
+**Kind**: static property of [<code>physics</code>](#physics)  
+<a name="physics.COLLIDER_ENTITY_MAP"></a>
 
-### Physics.COLLIDER\_ENTITY\_MAP
+### physics.COLLIDER\_ENTITY\_MAP
 the Rapier COLLIDER_ENTITY_MAP
 
-**Kind**: static property of [<code>Physics</code>](#Physics)  
+**Kind**: static property of [<code>physics</code>](#physics)  
 
 <div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Physics.js' target='_blank'>Suggest an edit on GitHub for src/utils/Physics.js</a></div>
 
 <hr>
 
-<a name="Model"></a>
+<a name="model"></a>
 
-## Model : <code>object</code>
+## model : <code>object</code>
 Useful namespace for helping with Model utility functions
 
 **Kind**: global namespace  
 
-* [Model](#Model) : <code>object</code>
-    * [.loadDAE(filePath)](#Model.loadDAE) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
-    * [.loadFBX(filePath)](#Model.loadFBX) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
-    * [.loadGLTF(filePath)](#Model.loadGLTF) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
-    * [.loadSTL(filePath)](#Model.loadSTL) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
-    * [.loadUSDZ(filePath)](#Model.loadUSDZ) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
-    * [.loadModel(filePath, extension)](#Model.loadModel) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+* [model](#model) : <code>object</code>
+    * [.loadDAE(filePath)](#model.loadDAE) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+    * [.loadFBX(filePath)](#model.loadFBX) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+    * [.loadGLTF(filePath)](#model.loadGLTF) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+    * [.loadSTL(filePath)](#model.loadSTL) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+    * [.loadUSDZ(filePath)](#model.loadUSDZ) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+    * [.loadModel(filePath, extension)](#model.loadModel) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 
-<a name="Model.loadDAE"></a>
+<a name="model.loadDAE"></a>
 
-### Model.loadDAE(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadDAE(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 Loads Collada file
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 
-<a name="Model.loadFBX"></a>
+<a name="model.loadFBX"></a>
 
-### Model.loadFBX(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadFBX(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 Loads FBX file
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 
-<a name="Model.loadGLTF"></a>
+<a name="model.loadGLTF"></a>
 
-### Model.loadGLTF(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadGLTF(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 Loads GLTF/GLB file
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 
-<a name="Model.loadSTL"></a>
+<a name="model.loadSTL"></a>
 
-### Model.loadSTL(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadSTL(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 Loads stl file
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 
-<a name="Model.loadUSDZ"></a>
+<a name="model.loadUSDZ"></a>
 
-### Model.loadUSDZ(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadUSDZ(filePath) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 Loads USD/USDZ file
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 
-<a name="Model.loadModel"></a>
+<a name="model.loadModel"></a>
 
-### Model.loadModel(filePath, extension) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
+### model.loadModel(filePath, extension) ⇒ <code>Promise.&lt;THREE.Mesh&gt;</code>
 The main loading function
 
-**Kind**: static method of [<code>Model</code>](#Model)  
+**Kind**: static method of [<code>model</code>](#model)  
 **Returns**: <code>Promise.&lt;THREE.Mesh&gt;</code> - - the promise of the loaded mesh object.  
 
 | Param | Type | Description |
@@ -3068,22 +3114,22 @@ Useful namespace for helping with app utility functions.
 
 **Kind**: global namespace  
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/app.js' target='_blank'>Suggest an edit on GitHub for src/utils/app.js</a></div>
+<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/App.js' target='_blank'>Suggest an edit on GitHub for src/utils/App.js</a></div>
 
 <hr>
 
-<a name="Geometry"></a>
+<a name="geometry"></a>
 
-## Geometry : <code>object</code>
-Useful namespace for helping with Geometry utility functions
+## geometry : <code>object</code>
+Useful namespace for helping with geometry utility functions
 
 **Kind**: global namespace  
-<a name="Geometry.UIPlane"></a>
+<a name="geometry.UIPlane"></a>
 
-### Geometry.UIPlane(width, height, radius_corner, smoothness) ⇒ <code>THREE.BufferGeometry</code>
+### geometry.UIPlane(width, height, radius_corner, smoothness) ⇒ <code>THREE.BufferGeometry</code>
 This construction function creates the UIPlane that is used as the backdrop for most mrjs Panel divs.
 
-**Kind**: static method of [<code>Geometry</code>](#Geometry)  
+**Kind**: static method of [<code>geometry</code>](#geometry)  
 **Returns**: <code>THREE.BufferGeometry</code> - - The completed threejs plane object.  
 
 | Param | Type | Description |
