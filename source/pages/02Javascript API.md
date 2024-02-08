@@ -484,7 +484,6 @@ The MREntity that is used to solely describe UI Elements. Defaults as the html `
     * [.add(entity)](#MRDivEntity+add)
     * [.remove(entity)](#MRDivEntity+remove)
     * [.connected()](#MRDivEntity+connected)
-    * [.updatePhysicsData()](#MRDivEntity+updatePhysicsData)
     * [.domToThree(val)](#MRDivEntity+domToThree) ⇒ <code>number</code>
     * [.updateStyle()](#MRDivEntity+updateStyle)
     * [.borderRadii()](#MRDivEntity+borderRadii) ⇒ <code>number</code>
@@ -540,12 +539,6 @@ Removing an entity as a sub-object of this panel (for example an mr-model, butto
 
 ### mrDivEntity.connected()
 Callback function of MREntity - connects the background geometry of this item to an actual UIPlane geometry.
-
-**Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
-<a name="MRDivEntity+updatePhysicsData"></a>
-
-### mrDivEntity.updatePhysicsData()
-Updates the physics data for the current iteration. Calculates this.physics based on current stored object3D information.
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 <a name="MRDivEntity+domToThree"></a>
@@ -820,17 +813,15 @@ attribute for more detailed control.
     * [.PhysicsSystem](#PhysicsSystem+PhysicsSystem)
         * [new exports.PhysicsSystem()](#new_PhysicsSystem+PhysicsSystem_new)
     * [.update(deltaTime, frame)](#PhysicsSystem+update)
-    * [.onContactStart(handle1, handle2)](#PhysicsSystem+onContactStart)
-    * [.onContactEnd(handle1, handle2)](#PhysicsSystem+onContactEnd)
-    * [.touchStart(collider1, collider2, entity)](#PhysicsSystem+touchStart)
-    * [.touchEnd(entity)](#PhysicsSystem+touchEnd)
-    * [.hoverStart(collider1, collider2, entity)](#PhysicsSystem+hoverStart)
-    * [.hoverEnd(entity)](#PhysicsSystem+hoverEnd)
     * [.onNewEntity(entity)](#PhysicsSystem+onNewEntity)
     * [.initPhysicsBody(entity)](#PhysicsSystem+initPhysicsBody)
+    * [.initUIEntityBody(entity)](#PhysicsSystem+initUIEntityBody)
+    * [.initSimpleBody(entity)](#PhysicsSystem+initSimpleBody)
+    * [.initDetailedBody(entity)](#PhysicsSystem+initDetailedBody)
+    * [.initConvexMeshCollider(entity)](#PhysicsSystem+initConvexMeshCollider)
     * [.updateBody(entity)](#PhysicsSystem+updateBody)
-    * [.initColliderDesc(physicsData)](#PhysicsSystem+initColliderDesc) ⇒ <code>object</code>
-    * [.updateCollider(entity)](#PhysicsSystem+updateCollider)
+    * [.updateUIBody(entity)](#PhysicsSystem+updateUIBody)
+    * [.updateSimpleBody(entity)](#PhysicsSystem+updateSimpleBody)
     * [.updateDebugRenderer()](#PhysicsSystem+updateDebugRenderer)
 
 <a name="PhysicsSystem+PhysicsSystem"></a>
@@ -854,78 +845,6 @@ The generic system update call. Based on the captured physics events for the fra
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
 
-<a name="PhysicsSystem+onContactStart"></a>
-
-### physicsSystem.onContactStart(handle1, handle2)
-Handles the start of collisions between two different colliders.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| handle1 | <code>number</code> | the first collider |
-| handle2 | <code>number</code> | the second collider |
-
-<a name="PhysicsSystem+onContactEnd"></a>
-
-### physicsSystem.onContactEnd(handle1, handle2)
-Handles the end of collisions between two different colliders.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| handle1 | <code>number</code> | the first collider |
-| handle2 | <code>number</code> | the second collider |
-
-<a name="PhysicsSystem+touchStart"></a>
-
-### physicsSystem.touchStart(collider1, collider2, entity)
-Handles the start of touch between two different colliders and the current entity.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| collider1 | <code>number</code> | the first collider |
-| collider2 | <code>number</code> | the second collider |
-| entity | <code>MREntity</code> | the current entity |
-
-<a name="PhysicsSystem+touchEnd"></a>
-
-### physicsSystem.touchEnd(entity)
-Handles the end of touch for the current entity
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | <code>MREntity</code> | the current entity |
-
-<a name="PhysicsSystem+hoverStart"></a>
-
-### physicsSystem.hoverStart(collider1, collider2, entity)
-Handles the start of hovering over/around a specific entity.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| collider1 | <code>number</code> | the first collider |
-| collider2 | <code>number</code> | the second collider |
-| entity | <code>MREntity</code> | the current entity |
-
-<a name="PhysicsSystem+hoverEnd"></a>
-
-### physicsSystem.hoverEnd(entity)
-Handles the end of hovering over/around a specific entity.
-
-**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| entity | <code>MREntity</code> | the current entity |
-
 <a name="PhysicsSystem+onNewEntity"></a>
 
 ### physicsSystem.onNewEntity(entity)
@@ -948,6 +867,52 @@ Initializes the rigid body used by the physics part of the entity
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being updated |
 
+<a name="PhysicsSystem+initUIEntityBody"></a>
+
+### physicsSystem.initUIEntityBody(entity)
+Initializes the rigid body used by the physics for div or Model entity
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being updated |
+
+<a name="PhysicsSystem+initSimpleBody"></a>
+
+### physicsSystem.initSimpleBody(entity)
+Initializes a simple bounding box collider based on the visual bounds of the entity
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being updated |
+
+<a name="PhysicsSystem+initDetailedBody"></a>
+
+### physicsSystem.initDetailedBody(entity)
+Initializes a Rigid Body detailed convexMesh collider for the entity
+NOTE: not currently in use until we can sync it with animations
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being updated |
+
+<a name="PhysicsSystem+initConvexMeshCollider"></a>
+
+### physicsSystem.initConvexMeshCollider(entity)
+Initializes a convexMesh collider from a THREE.js geometry
+NOTE: not currently in use until we can sync it with animations
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being updated |
+
 <a name="PhysicsSystem+updateBody"></a>
 
 ### physicsSystem.updateBody(entity)
@@ -959,22 +924,21 @@ Updates the rigid body used by the physics part of the entity
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being updated |
 
-<a name="PhysicsSystem+initColliderDesc"></a>
+<a name="PhysicsSystem+updateUIBody"></a>
 
-### physicsSystem.initColliderDesc(physicsData) ⇒ <code>object</code>
-Initializes a collider based on the physics data.
+### physicsSystem.updateUIBody(entity)
+Updates the rigid body used by the physics part of the div entity
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-**Returns**: <code>object</code> - - the Rapier physics collider object  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| physicsData | <code>object</code> | data needed to be used to setup the collider interaction |
+| entity | <code>MREntity</code> | the entity being updated |
 
-<a name="PhysicsSystem+updateCollider"></a>
+<a name="PhysicsSystem+updateSimpleBody"></a>
 
-### physicsSystem.updateCollider(entity)
-Updates the collider used by the entity based on whether it's being used as a UI element, the main box element, etc.
+### physicsSystem.updateSimpleBody(entity)
+Updates the rigid body used by the physics part of the model entity
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
 
@@ -1572,6 +1536,12 @@ This system supports interaction event information including mouse and controlle
     * [.ControlSystem](#ControlSystem+ControlSystem)
         * [new exports.ControlSystem()](#new_ControlSystem+ControlSystem_new)
     * [.update(deltaTime, frame)](#ControlSystem+update)
+    * [.onContactStart(handle1, handle2)](#ControlSystem+onContactStart)
+    * [.onContactEnd(handle1, handle2)](#ControlSystem+onContactEnd)
+    * [.touchStart(collider1, collider2, entity)](#ControlSystem+touchStart)
+    * [.touchEnd(entity)](#ControlSystem+touchEnd)
+    * [.hoverStart(collider1, collider2, entity)](#ControlSystem+hoverStart)
+    * [.hoverEnd(entity)](#ControlSystem+hoverEnd)
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
     * [.onMouseUp(event)](#ControlSystem+onMouseUp)
@@ -1597,6 +1567,78 @@ The generic system update call. Updates the meshes and states for both the left 
 | --- | --- | --- |
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
+
+<a name="ControlSystem+onContactStart"></a>
+
+### controlSystem.onContactStart(handle1, handle2)
+Handles the start of collisions between two different colliders.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handle1 | <code>number</code> | the first collider |
+| handle2 | <code>number</code> | the second collider |
+
+<a name="ControlSystem+onContactEnd"></a>
+
+### controlSystem.onContactEnd(handle1, handle2)
+Handles the end of collisions between two different colliders.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| handle1 | <code>number</code> | the first collider |
+| handle2 | <code>number</code> | the second collider |
+
+<a name="ControlSystem+touchStart"></a>
+
+### controlSystem.touchStart(collider1, collider2, entity)
+Handles the start of touch between two different colliders and the current entity.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collider1 | <code>number</code> | the first collider |
+| collider2 | <code>number</code> | the second collider |
+| entity | <code>MREntity</code> | the current entity |
+
+<a name="ControlSystem+touchEnd"></a>
+
+### controlSystem.touchEnd(entity)
+Handles the end of touch for the current entity
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the current entity |
+
+<a name="ControlSystem+hoverStart"></a>
+
+### controlSystem.hoverStart(collider1, collider2, entity)
+Handles the start of hovering over/around a specific entity.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| collider1 | <code>number</code> | the first collider |
+| collider2 | <code>number</code> | the second collider |
+| entity | <code>MREntity</code> | the current entity |
+
+<a name="ControlSystem+hoverEnd"></a>
+
+### controlSystem.hoverEnd(entity)
+Handles the end of hovering over/around a specific entity.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the current entity |
 
 <a name="ControlSystem+mouseOver"></a>
 
