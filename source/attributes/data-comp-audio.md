@@ -4,26 +4,26 @@
 <mr-entity data-comp-audio="src: path/to/file.wav; state: play; loop: true; distance: 1"></mr-entity>
 ```
 
-Positional (AKA Spatial) Audio can be attached to an entity using `data-comp-audio`, it has 4 values:
+Positional (aka Spatial) Audio can be attached to an entity using `data-comp-audio`, it has 4 values:
 
-`src`
+## `src`
 
-the path to the audio file. 
+The path to the audio file. 
 
-`state`
+## `state`
 
-the current state of the audio playback
+The current state of the audio playback.
 
-values: `play`, `pause`, `stop` (default)
+Values: `play`, `pause`, `stop` (default)
 
-`loop`
+## `loop`
 
-whether or not the audio should be looped.
+Whether the audio should be looped.
 
-values: `true`, `false` (default)
+Values: `true`, `false` (default)
 
-`distance`
+## `distance`
 
-the distance at which the audio begins to disipate
+The distance at which the audio begins to dissipate.
 
-value: meters, default: 1.0
+Values: meters, default: 1.0
