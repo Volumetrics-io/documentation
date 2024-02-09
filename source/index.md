@@ -1,7 +1,7 @@
 ---
 description: "An extendable WebComponents library for the Spatial Web"
 ---
-![The MRjs logo](https://docs.mrjs.io/static/mrjs_nopadding.svg)
+![The mrjs logo](https://docs.mrjs.io/static/mrjs_nopadding.svg)
  
 An extensible library of Web Components for the spatial web.
 
