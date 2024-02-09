@@ -1,6 +1,6 @@
 # &lt;mr-light&gt;
 
-`<mr-light>` creates a light source in the mr.js scene.
+`<mr-light>` creates a light source in the MRjs scene.
 
 ## Simple example
 
@@ -15,18 +15,43 @@
 
 ## Multiple lights
 
-```html
-<mr-app>
-    <mr-light color="#ff9900" intensity="8" data-position="0 0.15 0.15"></mr-light>
-    <mr-light color="RoyalBlue" intensity="8" data-position="0.15 -0.15 0.15"></mr-light>
-    <mr-light color="hsl(340, 100%, 30%)" intensity="8" data-position="-0.15 -0.05 0.15"></mr-light>
-    <mr-panel>
-        <mr-model id="logo" src="volumetrics.stl"></mr-model>
-    </mr-panel>
-</mr-app>
-```
+<inline-repl render-height="300" editor-height="260">
+    <code slot="html">
+        <mr-app>
+            <mr-light color="OrangeRed" intensity="3" data-position="-0.2 0.25 0.15"></mr-light>
+            <mr-light color="RoyalBlue" intensity="3" data-position="0.2 -0.25 0.15"></mr-light>
+            <mr-panel>
+                <mr-model id="bowtie" src="/static/sample/bowtie.glb"></mr-model>
+            </mr-panel>
+        </mr-app> 
+    </code>
+    <code slot="css">
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #bowtie {
+            scale: 0.15;
+            z-index: 35
+        }
+    </code>
+    <code slot="javascript">
+        function rotate(timestamp) {
+            t = timestamp / 2000;
+            rotation = Math.cos(t) * 180;
+            document.querySelector("#bowtie").dataset.rotation = rotation + " 0 0";
+            window.requestAnimationFrame(rotate);
+        }
+        window.requestAnimationFrame(rotate);
+    </code>
+</inline-repl>
 
-<iframe height="400" style="width: 100%;" scrolling="no" title="<mr-light>" src="https://codepen.io/lobau/embed/eYXeMBz?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+
+<!-- <iframe height="400" style="width: 100%;" scrolling="no" title="<mr-light>" src="https://codepen.io/lobau/embed/eYXeMBz?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe> -->
 
 <!-- ## Example from homepage
 

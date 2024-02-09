@@ -105,7 +105,7 @@ process_markdown() {
             --lua-filter anchorlinks.lua \
             --highlight-style pygments \
             --wrap=none \
-            -f markdown-smart \
+            -f commonmark_x \
             -s -p \
             -o "${outputDir}/${output_subdir}/${slug}/index.html"
 
@@ -159,7 +159,7 @@ pandoc "${templateDir}/index.md" \
     --lua-filter anchorlinks.lua \
     --highlight-style pygments \
     --wrap=none \
-    -f markdown-smart \
+    -f commonmark_x \
     -s -p \
     -o "${outputDir}/index.html"
 

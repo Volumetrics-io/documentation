@@ -1,5 +1,5 @@
 ---
-description: "An introduction to the Event system in mrjs"
+description: "An introduction to the Event system in MRjs"
 ---
 # MRjs Events
 

@@ -7,7 +7,7 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
 <inline-repl>
     <code slot="html">
         <mr-app>
-            <mr-light color="white" intensity="3" data-position="0 0.25 0.25"></mr-light>
+            <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
             <mr-panel id="panel">
                 <mr-button onclick="changeColor()">Change color!</mr-button>
             </mr-panel>
@@ -33,7 +33,7 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
     <code slot="javascript">
         function changeColor() {
             let hue = Math.floor(Math.random() * 360);
-            let color = 'hsl(' +  hue + ', 100%, 60%)';
+            let color = 'hsl(' +  hue + ', 100%, 80%)';
             document.querySelector("#panel").style.backgroundColor = color;
         }
         changeColor();

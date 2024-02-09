@@ -19,7 +19,7 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
 `<mr-text>` supports custom fonts and has growing support CSS styling:
 
 ```html
-<mr-text class="title">mr.js</mr-text>
+<mr-text class="title">MRjs</mr-text>
 ```
 
 ```css
@@ -64,7 +64,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
 <video id="video">…</video>
 <mr-app>
     <mr-panel class="container">
-        <mr-text class="title">mr.js</mr-text>
+        <mr-text class="title">MRjs</mr-text>
     </mr-panel>
 </mr-app>
 ```

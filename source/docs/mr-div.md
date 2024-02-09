@@ -1,43 +1,51 @@
 # &lt;mr-div&gt;
 
-The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same concept as `<mr-entity>` but is specific to items that are within an `<mr-panel>`. Think of this as items that are specific to the UI on the panel, 2D and 3D alike.
+The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same concept as `<mr-entity>` but is specific to items that are within an `<mr-panel>`. Think of this as items that are specific to the interface on the panel, 2D and 3D alike.
 
 ## Example
 
-```html
-<style>
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1vw;
-        grid-auto-rows: minmax(100px, auto);
-    }
-
-    .blue {
-        background-color: blue;
-        grid-row: 1 / 3;
-        grid-column: 1 / -1;
-    }
-</style>
-
-<mr-app>
-    <mr-panel class="container">
-        <mr-div class="blue"></mr-div>
-    </mr-panel>
-</mr-app>
-```
-
-<!-- ![mr-div-example-0](/static/mr-div-example-0.png) -->
+<inline-repl render-width="360" editor-height="240">
+    <code slot="html">
+        <mr-app>
+            <mr-light color="white" intensity="0.45" data-position="-0.25 0 0.35"></mr-light>
+            <mr-panel class="container">
+                <mr-div class="purple"><mr-text>The purple section</mr-text></mr-div>
+                <mr-div class="blue"><mr-text>The blue section</mr-text></mr-div>
+            </mr-panel>
+        </mr-app> 
+    </code>
+    <code slot="css">
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        .purple {
+            background-color: MediumPurple;
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            padding: 10px;
+        }
+        .blue {
+            background-color: LightSkyBlue;
+            grid-row: 2 / 3;
+            grid-column: 1 / -1;
+            padding: 10px;
+        }
+    </code>
+</inline-repl>
 
 ## Definition and Usage
 
-`<mr-div>` behaves exactly like a `<div>` tag. It can receive CSS, data-attributes, etc.
+`<mr-div>` behaves exactly like a `<div>` tag. It can be styles using CSS, store data-attributes, etc.
 
 ```html
 <mr-div class="blue"></mr-div>
 ```
 
-you can then apply CSS
+You can then apply CSS
 
 ```css
 .blue {
@@ -51,10 +59,30 @@ you can then apply CSS
 
 `<mr-div>` can be used to anchor 3D elements inside an `<mr-panel>`
 
-```html
-<mr-div>
-    <mr-model src="…"></mr-model>
-</mr-div>
-```
-
-![mr-div-example-1](/static/mr-div-example-1.gif)
+<inline-repl render-height="300" editor-height="300">
+    <code slot="html">
+        <mr-app>
+            <mr-light color="white" intensity="0.5" data-position="0 0.1 0.35"></mr-light>
+            <mr-panel>
+                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
+                <mr-div style="width: 300px; height: 100px; z-index: 70;">
+                    <mr-model src="/static/sample/bowtie.glb" style="scale: 0.1"></mr-model>
+                </mr-div>
+                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
+            </mr-panel>
+        </mr-app>
+    </code>
+    <code slot="css">
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            padding: 10vw;
+            gap: 10px;
+            width: 100vw;
+            height: 100vh;
+            border-radius: unset;
+        }
+    </code>
+</inline-repl>

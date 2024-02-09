@@ -1,6 +1,6 @@
 # &lt;mr-app&gt;
 
-The `<mr-app>` component serves as the foundational building block of an application using mrjs.
+The `<mr-app>` component serves as the foundational building block of an application using MRjs.
 
 - It initializes the core functionalities like the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking.
 - It acts as the primary container for the entire application. All other custom elements, like for example `<mr-panel>`, `<mr-div>`, `<mr-img>`, or `<mr-button>`, should be nested within this root component to ensure they function correctly.
@@ -8,53 +8,52 @@ The `<mr-app>` component serves as the foundational building block of an applica
 
 ## Example
 
-<inline-repl editor-height="400">
+<inline-repl render-height="340" editor-height="340">
   <code slot="html">
     <mr-app>
-        <!-- Lighting the scene -->
-        <mr-light color="white" intensity="3" data-position="0 0.1 0.25"></mr-light>
-        <!-- The 2D UI Panel -->
+        <mr-light color="HotPink" intensity="0.35" data-position="0 0.2 0.2"></mr-light>
+        <mr-light color="DeepSkyBlue" intensity="0.35" data-position="-0.2 -0.2 0.2"></mr-light>
+        <mr-light color="Gold" intensity="0.35" data-position="0.3 0 0.2"></mr-light>
         <mr-panel>
             <mr-text class="title">Hello world!</mr-text>
             <mr-text>This is an mr-app</mr-text>
-            <!--wrap non-UI components in mr-div to anchor to UI-->
             <mr-div style="width: 200px; height: 200px; z-index: 70;">
-                <mr-model id="logo" src="/static/sample/logo.stl" style="scale: 0.0025;"></mr-model>
+                <mr-model id="logo" src="/static/sample/logo.glb" style="scale: 0.15;"></mr-model>
             </mr-div>
         </mr-panel>
-    </mr-app>
+    </mr-app> 
   </code>
   <code slot="css">
-      mr-panel {
+    mr-panel {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: center;
         width: 100vw;
         height: 100vh;
+        gap: 0.5rem;
         font-family: Helvetica;
         border-radius: unset;
-      }
-      mr-text {
+    }
+    mr-text {
         letter-spacing: 1px;
         line-height: 120%;
-        width: 200px;
-      }
-      .title {
+    }
+    .title {
         font-size: 150%;
         font-weight: bold;
-      }
+    }
   </code>
   <code slot="javascript">
-    let t = 0;
-    window.requestAnimationFrame(function rotate() {
-        t += 0.004;
-        let rx = -Math.cos(t) * 45;
+    function rotate(timestamp) {
+        t = timestamp / 2000;
+        let rx = -Math.cos(t) * 90;
         let ry = Math.cos(t) * 90;
         let rz = Math.cos(t) * 180;
         document.querySelector("#logo").dataset.rotation = rx + " " + ry + " " + rz;
         window.requestAnimationFrame(rotate);
-    });
+    };
+    window.requestAnimationFrame(rotate);
   </code>
 </inline-repl>
 

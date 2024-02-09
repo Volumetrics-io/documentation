@@ -19,9 +19,13 @@ class Repl extends HTMLElement {
         <div class="frame">
             <h1>Hello</h1>
         </div>`;
-        this.htmlContent = this.htmlContent.replace(/\u2018/g, '')
+
+        // console.log(this.htmlContent);
+        // this.htmlContent = this.htmlContent.replace(/\u2018/g, '')
         this.htmlContent = this.reindent(this.htmlContent);
-        this.htmlContent = this.format_html(this.htmlContent);
+        // this.htmlContent = this.format_html(this.htmlContent);
+        // this.htmlContent = html_beautify(this.htmlContent);
+        // this.htmlContent = this.formatHTML(this.htmlContent);
 
         // Processing CSS
         this.cssContent = cssSlot ? cssSlot.innerHTML : `
@@ -42,9 +46,6 @@ class Repl extends HTMLElement {
 
         // Processing JS
         this.jsContent = jsSlot ? jsSlot.innerHTML : ``;
-
-        console.log(this.jsContent);
-
         this.jsContent = this.jsContent.replace(/\u2018/g, '')
         this.jsContent = js_beautify(this.jsContent, {});
 
@@ -124,7 +125,7 @@ class Repl extends HTMLElement {
                 text-decoration: none;
                 border: none;
                 gap: 6px;
-                border-bottom: 3px solid transparent;
+                border-bottom: 3px solid var(--border);
             }
 
             .tabs:hover {
@@ -198,22 +199,43 @@ class Repl extends HTMLElement {
             
             <nav>
                 <button class="tabs" id="button_html">
-                    <img width="16" height="16" src="/static/ace/html.svg" alt="" />HTML
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <g style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px; stroke: rgb(255, 57, 61);">
+                            <path d="M 6 13 L 2 8 L 6 3"/>
+                            <path d="M 10 13 L 14 8 L 10 3"/>
+                        </g>
+                    </svg>
+                    HTML
                 </button>
                 <button class="tabs" id="button_css">
-                    <img width="16" height="16" src="/static/ace/css.svg" alt="" />CSS
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <g style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2px; stroke: rgb(84, 209, 255);">
+                            <path d="M 8 13.5 L 8 2.5"></path>
+                            <path d="M 2.5 8 L 13.5 8"></path>
+                            <path d="M 11.9 11.9 L 4.1 4.1"></path>
+                            <path d="M 4.1 11.9 L 11.9 4.1"></path>
+                        </g>
+                    </svg>
+                    CSS
                 </button>
                 <button class="tabs" id="button_js">
-                    <img width="16" height="16" src="/static/ace/javascript.svg" alt="" />JS
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <g style="stroke-linecap: round; stroke-linejoin: round; fill: none; stroke-width: 2px; stroke: rgb(249, 159, 0);">
+                            <path d="M 6 3 C 6 3 6 3 5 3 C 4.356 3 4 3.409 4 4 C 4 4.907 4 5.092 4 6 C 4 6.909 2 8 2 8 C 2 8 4 9.091 4 10 C 4 10.909 4 11.093 4 12 C 4 12.699 4.257 13 5 13 C 6 13 6 13 6 13"/>
+                            <path d="M 10 3 C 10 3 10 3 11 3 C 11.644 3 12 3.409 12 4 C 12 4.907 12 5.092 12 6 C 12 6.909 14 8 14 8 C 14 8 12 9.091 12 10 C 12 10.909 12 11.093 12 12 C 12 12.699 11.743 13 11 13 C 10 13 10 13 10 13"/>
+                        </g>
+                    </svg>
+                    JS
                 </button>
             </nav>
 
             <button class="tabs" id="button_refresh">
-                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
-                <path style="stroke: currentColor; fill: none; stroke-width: 47.5737px;" transform="matrix(0.03153, 0, 0, 0.03153, -16.953844, -10.868492)" d="M 949.991 598.284 A 157 157 0 1 1 793 443 L 793 443 A 157 157 0 1 0 949.991 598.284 Z" bx:shape="pie 793 600 157 157 89.374 360 1@26d8e6b8"></path>
-                <line style="stroke: currentColor; fill: none; stroke-width: 1.5px; fill: none; stroke-linecap: round;" x1="10" y1="7" x2="11" y2="4"></line>
-                <path style="stroke: currentColor; fill: none; stroke-width: 1.5px; stroke-linejoin: round; stroke-linecap: round;" d="M 12.99 8.055 C 13 6 12 5 11 4 L 14 4"></path>
-            </svg>
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <g style="stroke: var(--ink); stroke-linecap: round; fill: none; stroke-width: 1.5px;">
+                        <path d="M 13.8 9 C 13.7 9.6 13.2 11.3 12.2 12.2 C 10.1 14.6 6.2 14.6 3.8 12.2 C 1.4 9.8 1.4 6.2 3.8 3.8 C 6.2 1.4 9.8 1.4 12.2 3.8"/>
+                        <path d="M 10.2 5 L 13.2 5 L 13.2 2"/>
+                    </g>
+                </svg>
             </button>
             
             <!-- load ace and autocomplete tool -->
@@ -247,6 +269,7 @@ class Repl extends HTMLElement {
             mode.editor = ace.edit(this.shadowRoot.getElementById(mode.id), {
                 mode: `ace/mode/${mode.id}`,
                 value: this.reindent(mode.value),
+                value: mode.value,
                 autoScrollEditorIntoView: true,
                 showGutter: true,
                 highlightActiveLine: false,
@@ -258,7 +281,7 @@ class Repl extends HTMLElement {
                     getCompletions: (editor, session, pos, prefix, callback) => {
                         // note, won't fire if caret is at a word that does not have these letters
                         callback(null, [
-                            { value: 'mr-app', score: 1, meta: 'the foundational building block of an mrjs app' },
+                            { value: 'mr-app', score: 1, meta: 'the foundational building block of an MRjs app' },
                             { value: 'mr-a', score: 1, meta: 'a text link' },
                             { value: 'mr-button', score: 1, meta: 'a clickable button' },
                             { value: 'mr-div', score: 1, meta: 'a generic container' },
@@ -312,7 +335,7 @@ class Repl extends HTMLElement {
         this.selectedEditor = "html";
         this.selectEditor();
         this.updateTheme();
-        this.render();
+        // this.render();
     }
 
     selectEditor() {
@@ -375,25 +398,106 @@ class Repl extends HTMLElement {
         return lines.map(line => line.substring(minIndent)).join('\n');
     }
 
-    format_html(html) {
-        var tab = '  ';
-        var result = '';
-        var indent = '';
+    // format_html(html) {
+    //     var tab = '  ';
+    //     var result = '';
+    //     var indent = '';
 
-        html.split(/>\s*</).forEach(function (element) {
-            if (element.match(/^\/\w/)) {
-                indent = indent.substring(tab.length);
-            }
+    //     html.split(/>\s*</).forEach(function (element) {
+    //         if (element.match(/^\/\w/)) {
+    //             indent = indent.substring(tab.length);
+    //         }
 
-            result += indent + '<' + element + '>\r\n';
+    //         result += indent + '<' + element + '>\r\n';
 
-            if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
-                indent += tab;
-            }
-        });
+    //         if (element.match(/^<?\w[^>]*[^\/]$/)) {
+    //             indent += tab;
+    //         }
+    //     });
 
-        return result.substring(1, result.length - 3);
-    }
+    //     return result.substring(1, result.length - 3);
+    // }
+
+    // formatHTML(str) {
+    //     class HtmlParser {
+    //         constructor() {
+    //             this.stack = [];
+    //             this.result = '';
+    //         }
+
+    //         parse(string) {
+    //             if (!string) return;
+
+    //             const indexOpenTag = string.indexOf('<');
+    //             const indexCloseTag = string.lastIndexOf('>') + 1;
+    //             const indexNextStartTag = string.substring(indexCloseTag).indexOf('<') + indexCloseTag;
+
+    //             if (indexOpenTag === -1 && indexCloseTag === -1 && indexNextStartTag === -1) {
+    //                 // Text only
+    //                 this.handleTextNode(string);
+    //             } else if (indexOpenTag !== -1 && indexCloseTag > indexOpenTag && indexNextStartTag > indexCloseTag) {
+    //                 // Single element
+    //                 this.handleElement(string.substring(indexOpenTag, indexCloseTag));
+    //                 this.parse(string.substring(indexCloseTag, indexNextStartTag));
+    //             } else {
+    //                 // Multiple elements
+    //                 const subStringToParse = string.substring(indexOpenTag, indexNextStartTag);
+    //                 const nextStartTagPos = subStringToParse.indexOf('<');
+
+    //                 this.handleElement(subStringToParse.substring(0, nextStartTagPos));
+    //                 this.parse(subStringToParse.substring(nextStartTagPos));
+    //             }
+    //         }
+
+    //         handleTextNode(text) {
+    //             if (this.currentElement()) {
+    //                 this.addInnerHtml(` ${text}`);
+    //             } else {
+    //                 this.result += text;
+    //             }
+    //         }
+
+    //         handleElement(element) {
+    //             if (!this.currentElement()) {
+    //                 this.openNewElement(element);
+    //             } else {
+    //                 this.closeCurrentElement();
+    //                 this.openNewElement(element);
+    //             }
+    //         }
+
+    //         openNewElement(element) {
+    //             this.addInnerHtml(`\n${element}\n`);
+    //             this.stack.push({ name: element });
+    //         }
+
+    //         closeCurrentElement() {
+    //             const currentElementName = this.currentElement().name;
+    //             const lastStackEntry = this.stack[this.stack.length - 1];
+
+    //             if (lastStackEntry.name !== currentElementName) {
+    //                 throw new Error(`Error closing element "${currentElementName}", expecting closing of element "${lastStackEntry.name}"`);
+    //             }
+
+    //             this.addInnerHtml(`</${currentElementName}>`);
+    //             this.stack.pop();
+    //         }
+
+    //         addInnerHtml(innerHtml) {
+    //             if (this.currentElement()) {
+    //                 this.currentElement().innerHtml += innerHtml;
+    //             }
+    //         }
+
+    //         currentElement() {
+    //             return this.stack[this.stack.length - 1];
+    //         }
+    //     }
+
+    //     const htmlParser = new HtmlParser();
+    //     htmlParser.parse(str);
+    //     return htmlParser.result;
+    // }
 
     setTheme(scheme) {
         this.editors.forEach(mode => {
