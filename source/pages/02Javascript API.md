@@ -9,7 +9,7 @@ description: "Javascript API"
 <a name="MRElement"></a>
 
 ## MRElement ⇐ <code>HTMLElement</code>
-The first step in MR.js extending an HTMLElement. Used as a base for both `mr-app` and `mr-entity`.
+The first step in MRjs extending an HTMLElement. Used as a base for both `mr-app` and `mr-entity`.
 
 **Kind**: global class  
 **Extends**: <code>HTMLElement</code>  
@@ -3030,7 +3030,7 @@ Useful namespace for helping with physics utility functions
 <a name="physics.CollisionGroups"></a>
 
 ### physics.CollisionGroups
-the Rapier collision groups used throughout mr.js
+the Rapier collision groups used throughout MRjs
 
 **Kind**: static property of [<code>physics</code>](#physics)  
 <a name="physics.RAPIER"></a>
@@ -3189,7 +3189,7 @@ This construction function creates the UIPlane that is used as the backdrop for 
 <a name="MRPlaneManager"></a>
 
 ## MRPlaneManager
-creates and manages the mr.js representation of XR planes.
+creates and manages the MRjs representation of XR planes.
 The resulting planes have RAPIER rigid bodies and THREE.js meshes that occlude virtual content by default
 
 **Kind**: global class  
