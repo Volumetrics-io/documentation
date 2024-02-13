@@ -16,7 +16,7 @@ Handles geometry updates for all items.
         * [new exports.GeometryStyleSystem()](#new_GeometryStyleSystem+GeometryStyleSystem_new)
     * [.update(deltaTime, frame)](#GeometryStyleSystem+update)
     * [.onNewEntity(entity)](#GeometryStyleSystem+onNewEntity)
-    * [.setBorder()](#GeometryStyleSystem+setBorder)
+    * [.setUpdatedBorder()](#GeometryStyleSystem+setUpdatedBorder)
 
 <a name="GeometryStyleSystem+GeometryStyleSystem"></a>
 
@@ -50,9 +50,9 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
 
-<a name="GeometryStyleSystem+setBorder"></a>
+<a name="GeometryStyleSystem+setUpdatedBorder"></a>
 
-### geometryStyleSystem.setBorder()
+### geometryStyleSystem.setUpdatedBorder()
 Sets the border of the UI based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  

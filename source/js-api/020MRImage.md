@@ -18,7 +18,7 @@ Base html image represented in 3D space. `mr-image`
     * [.height()](#MRImage+height) ⇒ <code>number</code>
     * [.connected()](#MRImage+connected)
     * [.mutated(mutation)](#MRImage+mutated)
-    * [.computeObjectFitDimensions()](#MRImage+computeObjectFitDimensions)
+    * [.computeImageObject3DFitDimensions()](#MRImage+computeImageObject3DFitDimensions)
     * [.cover(texture, aspect)](#MRImage+cover)
 
 <a name="MRImage+MRImage"></a>
@@ -61,10 +61,10 @@ Callback function of MREntity - Updates the image's cover,fill,etc based on the 
 | --- | --- | --- |
 | mutation | <code>object</code> | the update/change/mutation to be handled. |
 
-<a name="MRImage+computeObjectFitDimensions"></a>
+<a name="MRImage+computeImageObject3DFitDimensions"></a>
 
-### mrImage.computeObjectFitDimensions()
-computes the width and height values considering the value of object-fit
+### mrImage.computeImageObject3DFitDimensions()
+computes the width and height values for the image considering the value of object-fit
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
 <a name="MRImage+cover"></a>
