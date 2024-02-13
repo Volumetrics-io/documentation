@@ -64,35 +64,3 @@ You can then apply CSS
     grid-column: 1 / -1;
 }
 ```
-
-## Anchoring 3D elements
-
-`<mr-div>` can be used to anchor 3D elements inside an `<mr-panel>`
-
-<inline-repl render-height="300" editor-height="300">
-    <code slot="html">
-        <mr-app>
-            <mr-light color="white" intensity="0.5" data-position="0 0.1 0.35"></mr-light>
-            <mr-panel>
-                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
-                <mr-div style="width: 300px; height: 100px; z-index: 70;">
-                    <mr-model src="/static/sample/bowtie.glb" style="scale: 0.1"></mr-model>
-                </mr-div>
-                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
-            </mr-panel>
-        </mr-app>
-    </code>
-    <code slot="css">
-        mr-panel {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            padding: 10vw;
-            gap: 10px;
-            width: 100vw;
-            height: 100vh;
-            border-radius: unset;
-        }
-    </code>
-</inline-repl>

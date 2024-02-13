@@ -8,7 +8,7 @@ The `<mr-app>` component serves as the foundational building block of an applica
 
 ## Example
 
-<inline-repl render-height="340" editor-height="340">
+<inline-repl render-height="340" editor-height="300">
   <code slot="html">
     <mr-app>
         <mr-light color="HotPink" intensity="0.35" data-position="0 0.2 0.2"></mr-light>
@@ -17,9 +17,7 @@ The `<mr-app>` component serves as the foundational building block of an applica
         <mr-panel>
             <mr-text class="title">Hello world!</mr-text>
             <mr-text>This is an mr-app</mr-text>
-            <mr-div style="width: 200px; height: 200px; z-index: 70;">
-                <mr-model id="logo" src="/static/sample/logo.glb" style="scale: 0.15;"></mr-model>
-            </mr-div>
+            <mr-model id="logo" src="/static/sample/logo.glb"></mr-model>
         </mr-panel>
     </mr-app> 
   </code>
@@ -42,6 +40,12 @@ The `<mr-app>` component serves as the foundational building block of an applica
     .title {
         font-size: 150%;
         font-weight: bold;
+    }
+    #logo {
+      width: 200px;
+      height: 200px;
+      z-index: 70;
+      scale: 0.15;
     }
   </code>
   <code slot="javascript">

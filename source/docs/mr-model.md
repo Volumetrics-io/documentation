@@ -42,3 +42,36 @@
 
 * Check out the [allowed extensions](https://docs.mrjs.io/javascript-api/#model.loadmodelfilepath-extension-promise.three.mesh) from the Model.loadModel function
 * The current supported list is: `fbx`, `glb`, and `stl`
+
+## Anchoring 3D elements
+
+3D elements can flow alongside with text inside an `<mr-panel>`
+
+<inline-repl render-height="300" editor-height="300">
+    <code slot="html">
+        <mr-app debug="true">
+            <mr-light color="white" intensity="0.5" data-position="0 0.1 0.35"></mr-light>
+            <mr-panel>
+                <mr-text>Amet sed pulvinar amet a mi est adipiscing rhoncus enim. Dui in nulla labore quis nibh consectetur tempor vulputate diam. Sed hendrerit risus gravida labore euismod quis sed pharetra ipsum.</mr-text>
+                <mr-model id="bowtie" src="/static/sample/bowtie.glb"></mr-model>
+                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
+            </mr-panel>
+        </mr-app>
+    </code>
+    <code slot="css">
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        #bowtie {
+            width: 100px;
+            height: 100px;
+            z-index: 70;
+            scale: 0.1;
+        }
+    </code>
+</inline-repl>

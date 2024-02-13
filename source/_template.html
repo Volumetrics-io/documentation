@@ -106,10 +106,20 @@
 
         <section>
             <details id="js-details">
-                <summary>Javascript API</summary>
-                <div class="section-title">JavaScript API</div>
+                <summary class="section-title">Javascript API</summary>
+                <!-- <div class="section-title">JavaScript API</div> -->
                 $for(js-api)$
                 <a class="sidebar-entry" href='/js-api/$js-api.slug$/' data-slug="$js-api.slug$">$js-api.title$</a>
+                $endfor$
+
+                <div class="section-title">API Extras</div>
+                $for(js-api-extras)$
+                <a class="sidebar-entry" href='/js-api-extras/$js-api-extras.slug$/' data-slug="$js-api-extras.slug$">$js-api-extras.title$</a>
+                $endfor$
+
+                <div class="section-title">API Utils</div>
+                $for(js-api-utils)$
+                <a class="sidebar-entry" href='/js-api-utils/$js-api-utils.slug$/' data-slug="$js-api-utils.slug$">$js-api-utils.title$</a>
                 $endfor$
             </details>
         </section>
