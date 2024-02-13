@@ -1,5 +1,6 @@
 ---
 title: MRButton
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRButton.js
 ---
 # MRButton
 
@@ -24,4 +25,3 @@ title: MRButton
 #### new exports.MRButton()
 Constructor for the Button entity, does the default.
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRButton.js' target='_blank'>Suggest an edit on GitHub for MRButton.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: AudioSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AudioSystem.js
 ---
 # AudioSystem
 
@@ -76,4 +77,3 @@ AudioSystem's Default constructor that sets up the audio listener and loader
 | entity | 
 | state | 
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AudioSystem.js' target='_blank'>Suggest an edit on GitHub for AudioSystem.js</a></div>

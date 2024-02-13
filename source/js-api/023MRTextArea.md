@@ -1,5 +1,6 @@
 ---
 title: MRTextArea
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRTextArea.js
 ---
 # MRTextArea
 
@@ -52,4 +53,3 @@ Focuses the inputted text value and cursor information as if it is selected. Inc
 Updates the cursor position based on click and selection location.
 
 **Kind**: instance method of [<code>MRTextArea</code>](#MRTextArea)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRTextArea.js' target='_blank'>Suggest an edit on GitHub for MRTextArea.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: AnimationSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnimationSystem.js
 ---
 # AnimationSystem
 
@@ -59,4 +60,3 @@ Updates each animation mixer in the registry. This function should be called
 | deltaTime | <code>number</code> | The time elapsed since the last update call, used to update the animation mixers. |
 | frame | <code>object</code> | Additional frame information, not used in the current implementation but can be utilized for future enhancements. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnimationSystem.js' target='_blank'>Suggest an edit on GitHub for AnimationSystem.js</a></div>

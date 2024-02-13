@@ -1,5 +1,6 @@
 ---
 title: LayoutSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/LayoutSystem.js
 ---
 # LayoutSystem
 
@@ -79,4 +80,3 @@ Helper function for the update call. Sets the entity's appropriate 3D layout pos
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being updated. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/LayoutSystem.js' target='_blank'>Suggest an edit on GitHub for LayoutSystem.js</a></div>

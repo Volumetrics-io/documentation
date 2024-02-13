@@ -1,5 +1,6 @@
 ---
 title: GeometryStyleSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/GeometryStyleSystem.js
 ---
 # GeometryStyleSystem
 
@@ -56,4 +57,3 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 Sets the border of the UI based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/GeometryStyleSystem.js' target='_blank'>Suggest an edit on GitHub for GeometryStyleSystem.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: Math3D
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Math3D.js
 ---
 # Math3D
 
@@ -22,4 +23,3 @@ Computes the bounding sphere of an inputted three group object.
 | group | <code>THREE.group</code> | the group to be enclosed in the bounding sphere. |
 | relativeTo | <code>THREE.group</code> | object that the group is relative to. For example if the group is an apple held in a character's hand, relativeTo would be the characters hand. When left as null, the bounding sphere defaults to the inputted groups original world matrix. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Math3D.js' target='_blank'>Suggest an edit on GitHub for Math3D.js</a></div>

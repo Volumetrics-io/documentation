@@ -1,5 +1,6 @@
 ---
 title: global
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/global.js
 ---
 # global
 
@@ -35,4 +36,3 @@ the noted viewport width
 UI needs to be scaled down in XR, 1:1 scale is huuuuge
 
 **Kind**: global variable  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/global.js' target='_blank'>Suggest an edit on GitHub for global.js</a></div>

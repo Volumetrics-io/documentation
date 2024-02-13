@@ -1,5 +1,6 @@
 ---
 title: InstancingSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/InstancingSystem.js
 ---
 # InstancingSystem
 
@@ -81,4 +82,3 @@ An option for default instancing. Places the given entity instancing it at a bun
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be instanced in random locations |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/InstancingSystem.js' target='_blank'>Suggest an edit on GitHub for InstancingSystem.js</a></div>

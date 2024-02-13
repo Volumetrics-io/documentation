@@ -1,5 +1,6 @@
 ---
 title: AnchorSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnchorSystem.js
 ---
 # AnchorSystem
 
@@ -189,4 +190,3 @@ multuplies an xr rigid transform by the provided quaternion
 | quaternion | 
 | xrRigidTransform | 
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/AnchorSystem.js' target='_blank'>Suggest an edit on GitHub for AnchorSystem.js</a></div>

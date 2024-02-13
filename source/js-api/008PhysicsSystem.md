@@ -1,5 +1,6 @@
 ---
 title: PhysicsSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/PhysicsSystem.js
 ---
 # PhysicsSystem
 
@@ -162,4 +163,3 @@ Updates the rigid body used by the physics part of the model entity
 Updates the debug renderer to either be on or off based on the 'this.debug' variable. Handles the drawing of the visual lines.
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/PhysicsSystem.js' target='_blank'>Suggest an edit on GitHub for PhysicsSystem.js</a></div>

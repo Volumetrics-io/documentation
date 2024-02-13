@@ -1,5 +1,6 @@
 ---
 title: MRElement
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRElement.js
 ---
 # MRElement
 
@@ -48,4 +49,3 @@ Removing an entity as a sub-object of this entity.
 | --- | --- | --- |
 | entity | <code>object</code> | the entity to be removed. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRElement.js' target='_blank'>Suggest an edit on GitHub for MRElement.js</a></div>

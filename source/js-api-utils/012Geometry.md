@@ -1,5 +1,6 @@
 ---
 title: Geometry
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js
 ---
 # Geometry
 
@@ -24,4 +25,3 @@ This construction function creates the UIPlane that is used as the backdrop for 
 | radius_corner | <code>number</code> | the expected radius value to curve the planes corners. |
 | smoothness | <code>number</code> | the expected smoothness value. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Geometry.js' target='_blank'>Suggest an edit on GitHub for Geometry.js</a></div>

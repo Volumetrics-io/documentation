@@ -1,5 +1,6 @@
 ---
 title: MRPanel
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRPanel.js
 ---
 # MRPanel
 
@@ -81,4 +82,3 @@ Handles what should happen when a scroll event is called. Updates items appropri
 | --- | --- | --- |
 | event | <code>object</code> | the scroll event |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRPanel.js' target='_blank'>Suggest an edit on GitHub for MRPanel.js</a></div>

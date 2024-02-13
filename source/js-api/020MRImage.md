@@ -1,5 +1,6 @@
 ---
 title: MRImage
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRImage.js
 ---
 # MRImage
 
@@ -79,4 +80,3 @@ Calculates the texture UV transformation change based on the image's aspect rati
 | texture | <code>object</code> | the texture to augment |
 | aspect | <code>number</code> | a given expected aspect ratio |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRImage.js' target='_blank'>Suggest an edit on GitHub for MRImage.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: MRDivEntity
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js
 ---
 # MRDivEntity
 
@@ -79,4 +80,3 @@ Calculates the border radius of the img based on the img tag in the shadow root
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  
 **Returns**: <code>number</code> - - the resolved height  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js' target='_blank'>Suggest an edit on GitHub for MRDivEntity.js</a></div>

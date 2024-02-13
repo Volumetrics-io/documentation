@@ -1,5 +1,6 @@
 ---
 title: Material
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Material.js
 ---
 # Material
 
@@ -41,4 +42,3 @@ material of the first child hit.
 | parent | <code>object</code> | either a THREE.Group or a THREE.mesh/object |
 | material | <code>object</code> | a threejs material to be set for either the parent's direct material or (in the case of a group) the material of all children within the parent group. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Material.js' target='_blank'>Suggest an edit on GitHub for Material.js</a></div>

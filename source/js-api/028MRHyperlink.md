@@ -1,5 +1,6 @@
 ---
 title: MRHyperlink
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js
 ---
 # MRHyperlink
 
@@ -29,4 +30,3 @@ title: MRHyperlink
 
 ## connected()
 **Kind**: global function  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js' target='_blank'>Suggest an edit on GitHub for MRHyperlink.js</a></div>

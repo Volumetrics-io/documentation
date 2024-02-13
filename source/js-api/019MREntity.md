@@ -1,5 +1,6 @@
 ---
 title: MREntity
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js
 ---
 # MREntity
 
@@ -287,4 +288,3 @@ Runs the passed through function on this object and every child of this object.
 | --- | --- | --- |
 | callBack | <code>function</code> | the function to run recursively. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MREntity.js' target='_blank'>Suggest an edit on GitHub for MREntity.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: SkyBoxSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SkyBoxSystem.js
 ---
 # SkyBoxSystem
 
@@ -49,4 +50,3 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/SkyBoxSystem.js' target='_blank'>Suggest an edit on GitHub for SkyBoxSystem.js</a></div>

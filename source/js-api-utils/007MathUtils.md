@@ -1,5 +1,6 @@
 ---
 title: MathUtils
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/MathUtils.js
 ---
 # MathUtils
 
@@ -61,4 +62,3 @@ https://en.wikipedia.org/wiki/Degree_(angle) https://en.wikipedia.org/wiki/Radia
 | --- | --- | --- |
 | val | <code>number</code> | The number to be converted from radians to degrees |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/MathUtils.js' target='_blank'>Suggest an edit on GitHub for MathUtils.js</a></div>

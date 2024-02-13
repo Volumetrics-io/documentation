@@ -1,5 +1,6 @@
 ---
 title: MRModel
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRModel.js
 ---
 # MRModel
 
@@ -71,4 +72,3 @@ Includes loading up the model and associated data.
 On load event function - right now defaults to do nothing.
 
 **Kind**: instance method of [<code>MRModel</code>](#MRModel)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRModel.js' target='_blank'>Suggest an edit on GitHub for MRModel.js</a></div>

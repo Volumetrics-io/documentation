@@ -1,5 +1,6 @@
 ---
 title: MRSkyBox
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRSkyBox.js
 ---
 # MRSkyBox
 
@@ -60,4 +61,3 @@ useful for cases where you want to blend between different skybox versions.
 On load event function - right now defaults to do nothing.
 
 **Kind**: instance method of [<code>MRSkyBox</code>](#MRSkyBox)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRSkyBox.js' target='_blank'>Suggest an edit on GitHub for MRSkyBox.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: Model
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Model.js
 ---
 # Model
 
@@ -91,4 +92,3 @@ The main loading function
 | filePath | <code>string</code> | The path to the file(s) needing to be loaded. For now this only supports the full path and the relative path directly to the file. |
 | extension | <code>string</code> | The extension of the file type. Current allowed extensions are `fbx`, `glb`, and `stl`. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Model.js' target='_blank'>Suggest an edit on GitHub for Model.js</a></div>

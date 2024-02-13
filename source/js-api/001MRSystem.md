@@ -1,5 +1,6 @@
 ---
 title: MRSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRSystem.js
 ---
 # MRSystem
 
@@ -175,4 +176,3 @@ Handles the component and registry aspect of the even when an entity component d
 | --- | --- | --- |
 | event | <code>object</code> | the detach event |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRSystem.js' target='_blank'>Suggest an edit on GitHub for MRSystem.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: MRPlaneManager
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/dataManagers/MRPlaneManager.js
 ---
 # MRPlaneManager
 
@@ -40,4 +41,3 @@ initializes the physics body of an MR Plane
 | --- |
 | plane | 
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/dataManagers/MRPlaneManager.js' target='_blank'>Suggest an edit on GitHub for MRPlaneManager.js</a></div>

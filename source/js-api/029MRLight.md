@@ -1,5 +1,6 @@
 ---
 title: MRLight
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRLight.js
 ---
 # MRLight
 
@@ -43,4 +44,3 @@ Callback function of MREntity - Updates the lights color and intensity as reques
 | --- | --- | --- |
 | mutation | <code>object</code> | the update/change/mutation to be handled. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRLight.js' target='_blank'>Suggest an edit on GitHub for MRLight.js</a></div>

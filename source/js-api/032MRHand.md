@@ -1,5 +1,6 @@
 ---
 title: MRHand
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/dataTypes/MRHand.js
 ---
 # MRHand
 
@@ -133,4 +134,3 @@ Gets the expected cursor position of this hand based on the index finger and thu
 
 **Kind**: instance method of [<code>MRHand</code>](#MRHand)  
 **Returns**: <code>number</code> - - the resolved position of the cursor.  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/dataTypes/MRHand.js' target='_blank'>Suggest an edit on GitHub for MRHand.js</a></div>

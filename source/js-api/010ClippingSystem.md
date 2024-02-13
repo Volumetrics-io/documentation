@@ -1,5 +1,6 @@
 ---
 title: ClippingSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ClippingSystem.js
 ---
 # ClippingSystem
 
@@ -106,4 +107,3 @@ When the system swaps to a new entity, this handles applying the clipping planes
 | --- | --- | --- |
 | entity | <code>MREntity</code> | given entity that will be clipped by the planes. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ClippingSystem.js' target='_blank'>Suggest an edit on GitHub for ClippingSystem.js</a></div>

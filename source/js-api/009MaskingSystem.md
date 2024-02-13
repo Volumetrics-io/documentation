@@ -1,5 +1,6 @@
 ---
 title: MaskingSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaskingSystem.js
 ---
 # MaskingSystem
 
@@ -67,4 +68,3 @@ Called when a new entity is added to the scene. Handles masking elements to thei
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaskingSystem.js' target='_blank'>Suggest an edit on GitHub for MaskingSystem.js</a></div>

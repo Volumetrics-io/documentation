@@ -1,5 +1,6 @@
 ---
 title: ControlSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ControlSystem.js
 ---
 # ControlSystem
 
@@ -164,4 +165,3 @@ Raycast into the scene using the information from the event that called it.
 | --- | --- | --- |
 | event | <code>object</code> | the event being handled |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/ControlSystem.js' target='_blank'>Suggest an edit on GitHub for ControlSystem.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: MaterialStyleSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaterialStyleSystem.js
 ---
 # MaterialStyleSystem
 
@@ -56,4 +57,3 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 Sets the background based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/MaterialStyleSystem.js' target='_blank'>Suggest an edit on GitHub for MaterialStyleSystem.js</a></div>

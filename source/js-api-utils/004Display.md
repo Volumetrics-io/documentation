@@ -1,5 +1,6 @@
 ---
 title: Display
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Display.js
 ---
 # Display
 
@@ -15,4 +16,3 @@ Useful namespace for helping with Display utility functions
 Defaults to 1080;
 
 **Kind**: static property of [<code>display</code>](#display)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Display.js' target='_blank'>Suggest an edit on GitHub for Display.js</a></div>

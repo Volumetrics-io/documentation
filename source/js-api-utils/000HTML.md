@@ -1,5 +1,6 @@
 ---
 title: HTML
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/HTML.js
 ---
 # HTML
 
@@ -21,4 +22,3 @@ Given the path returns an absolute path resolved so relative linking works as ex
 | --- | --- | --- |
 | path | <code>string</code> | either a relative or full path inputted to an element |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/HTML.js' target='_blank'>Suggest an edit on GitHub for HTML.js</a></div>

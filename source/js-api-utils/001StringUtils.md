@@ -1,5 +1,6 @@
 ---
 title: StringUtils
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/StringUtils.js
 ---
 # StringUtils
 
@@ -21,4 +22,3 @@ Converts and formats the inputted string to a json object.
 | --- | --- | --- |
 | attrString | <code>string</code> | the string to be formatted |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/StringUtils.js' target='_blank'>Suggest an edit on GitHub for StringUtils.js</a></div>

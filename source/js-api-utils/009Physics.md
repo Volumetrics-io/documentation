@@ -1,5 +1,6 @@
 ---
 title: Physics
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Physics.js
 ---
 # Physics
 
@@ -40,4 +41,3 @@ the Rapier INPUT_COLLIDER_HANDLE_NAMES
 the Rapier COLLIDER_ENTITY_MAP
 
 **Kind**: static property of [<code>physics</code>](#physics)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/utils/Physics.js' target='_blank'>Suggest an edit on GitHub for Physics.js</a></div>

@@ -1,5 +1,6 @@
 ---
 title: MRClippingGeometry
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/dataTypes/MRClippingGeometry.js
 ---
 # MRClippingGeometry
 
@@ -28,4 +29,3 @@ Constructor for the clipping geometry class. Sets the internal geometry object t
 | --- | --- | --- |
 | geometry | <code>object</code> | The geometry to be captured internally by `this.geometry`. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/dataTypes/MRClippingGeometry.js' target='_blank'>Suggest an edit on GitHub for MRClippingGeometry.js</a></div>

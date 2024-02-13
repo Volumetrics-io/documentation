@@ -1,5 +1,6 @@
 ---
 title: MRApp
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRApp.js
 ---
 # MRApp
 
@@ -184,4 +185,3 @@ The connectedCallback function that runs whenever this entity component becomes 
 The disconnectedCallback function that runs whenever this entity component becomes connected to something else.
 
 **Kind**: static method of [<code>MRApp</code>](#MRApp)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRApp.js' target='_blank'>Suggest an edit on GitHub for MRApp.js</a></div>

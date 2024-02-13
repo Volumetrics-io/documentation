@@ -1,5 +1,6 @@
 ---
 title: TextSystem
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/TextSystem.js
 ---
 # TextSystem
 
@@ -188,4 +189,3 @@ Based on the given font-face value in the passed cssString, tries to either use 
 | --- | --- | --- |
 | cssString | <code>string</code> | the css string to be parsed for the font-face css value. |
 
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/componentSystems/TextSystem.js' target='_blank'>Suggest an edit on GitHub for TextSystem.js</a></div>

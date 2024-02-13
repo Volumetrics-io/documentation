@@ -1,5 +1,6 @@
 ---
 title: MRTextField
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRTextField.js
 ---
 # MRTextField
 
@@ -52,4 +53,3 @@ Focuses the inputted text value and cursor information as if it is selected. Inc
 Updates the cursor position based on click and selection location.
 
 **Kind**: instance method of [<code>MRTextField</code>](#MRTextField)  
-<div class='centered'><a href='https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRTextField.js' target='_blank'>Suggest an edit on GitHub for MRTextField.js</a></div>
