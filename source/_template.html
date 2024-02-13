@@ -44,8 +44,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-html.min.js"></script>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.js"></script> -->
-
     <script type="module" src="/static/inline-repl.js"></script>
 
     <!-- Sidebar selection -->
@@ -101,9 +99,21 @@
         <section>
             <div class="section-title">Data attributes</div>
             $for(attributes)$
-            <a class="sidebar-entry" href='/attributes/$attributes.slug$/' data-slug="$attributes.slug$">$attributes.title$</a>
+            <a class="sidebar-entry" href='/attributes/$attributes.slug$/'
+                data-slug="$attributes.slug$">$attributes.title$</a>
             $endfor$
         </section>
+
+        <section>
+            <details id="js-details">
+                <summary>Javascript API</summary>
+                <div class="section-title">JavaScript API</div>
+                $for(js-api)$
+                <a class="sidebar-entry" href='/js-api/$js-api.slug$/' data-slug="$js-api.slug$">$js-api.title$</a>
+                $endfor$
+            </details>
+        </section>
+
 
         <!-- <footer>
             © $current-year$ Volumetrics, Inc.
@@ -146,16 +156,18 @@
 
             <footer>
                 <p>Found a typo or suggestion for the docs?</p>
-                <p><a href="$github-path$">Suggest an edit on GitHub</a></p>
+                <p><a href="$if(github-path)$$github-path$$else$$github-path-auto$$endif$">Suggest an edit on GitHub</a>
+                </p>
             </footer>
         </div>
 
     </main>
 
     <script type="text/javascript">
-        let hamburger_button = document.getElementById("hamburger");
-        let sidebar = document.getElementById("sidebar");
-        let dim_layer = document.getElementById("dim_layer");
+        let hamburger_button = document.getElementById('hamburger');
+        let sidebar = document.getElementById('sidebar');
+        let dim_layer = document.getElementById('dim_layer');
+        let js_details = document.getElementById('js-details')
         let isOpened = false;
 
         const hide_sidebar = () => {
@@ -203,12 +215,28 @@
             }
         });
 
+        // Remember if the javascript API <details> was opened
+        console.log(localStorage.getItem("js-details"));
+        if (localStorage.getItem("js-details")) {
+            // js_details.open = true;
+            js_details.setAttribute("open", true);
+        } else {
+            js_details.removeAttribute("open");
+        }
+        // js_details.open = localStorage.getItem("js-details") || true;
+
         // Remember the <aside> sidebar scroll position .
         let scrollTop = localStorage.getItem("sidebar-scroll") || 0;
         sidebar.scrollTop = parseInt(scrollTop, 10);
 
         window.onbeforeunload = (event) => {
             localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+            if (js_details.open) {
+                localStorage.setItem("js-details", true);
+            } else {
+                localStorage.removeItem("js-details");
+            }
+
         };
     </script>
 

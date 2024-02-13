@@ -1,5 +1,6 @@
 ---
 description: "An extendable WebComponents library for the Spatial Web"
+github-path: "https://github.com/Volumetrics-io/mrjs/edit/main/README.md"
 ---
 ![The mrjs logo](https://docs.mrjs.io/static/mrjs_nopadding.svg)
  
