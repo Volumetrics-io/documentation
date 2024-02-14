@@ -53,25 +53,11 @@ The `<mr-panel>` tag initializes and manages 2D interface elements, such as imag
     </slot>
 </inline-repl>
 
-
-<!-- ```html
-<mr-panel>
-    <mr-text>Hello World!</mr-text>
-    <mr-img src="…" alt="…"></mr-img>
-</mr-panel>
-```
-
-\[TODO: example img\] -->
-
 ## Spatial Responsive Design
 
 When viewed on a 2D screen, an `mr-panel` positions itself to fill the viewport, rendering itself and behaving like any 2D web app, responding to keyboard and mouse input or touch events.
 
-<!-- ![mr-panel-example-0](/static/mr-panel-example-0.png) -->
-
-in MR, the panel behaves like a floating touch screen, clipping any content that extends beyond its boundaries.
-
-<!-- ![mr-panel-example-1](/static/mr-panel-example-1.png) -->
+In mixed-reality, the panel behaves like a floating touch screen, clipping any content that extends beyond its boundaries.
 
 ## 2.5D UI
 
@@ -79,8 +65,7 @@ MRjs supports 2.5D UI, adding a bit of depth to buttons, and incorporating 3D co
 
 ```html
 <mr-panel>
-    <mr-div> <!-- wrap non-2D elements in an mr-div to anchor them to the panel -->
-        <mr-model src="…"></mr-model>
-    </mr-div>
+    <mr-model src="…"></mr-model>
+    <mr-button onclick="…">Click me</mr-button>
 </mr-panel>
 ```

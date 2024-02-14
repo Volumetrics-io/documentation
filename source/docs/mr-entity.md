@@ -13,8 +13,6 @@
 </mr-entity>
 ```
 
-<!-- ![a swimming koi fish over a 3d layout](/static/mr-entity-example-0.gif) -->
-
 ## Definition and Usage
 
 There are endless uses for `<mr-entity>`. The simplest of which is to group other elements together, such that they can be moved, rotated, scaled, and otherwise manipulated as a single entity.

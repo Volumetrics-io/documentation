@@ -52,9 +52,9 @@
         <mr-app debug="true">
             <mr-light color="white" intensity="0.5" data-position="0 0.1 0.35"></mr-light>
             <mr-panel>
-                <mr-text>Amet sed pulvinar amet a mi est adipiscing rhoncus enim. Dui in nulla labore quis nibh consectetur tempor vulputate diam. Sed hendrerit risus gravida labore euismod quis sed pharetra ipsum.</mr-text>
+                <mr-text>Amet sed pulvinar amet a mi est adipiscing rhoncus enim. Dui in nulla labore quis nibh consectetur tempor vulputate diam. Sed hendrerit risus gravida labore.</mr-text>
                 <mr-model id="bowtie" src="/static/sample/bowtie.glb"></mr-model>
-                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa de Graecis? Nam si ea sola voluptas esset, quae quasi saxum Tantalo semper impendet, tum superstitio, qua qui utuntur, benivolentiam.</mr-text>
+                <mr-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore disputandum putant. Sed ut iis bonis erigimur, quae expectamus, sic laetamur iis, quae et splendide dicta sint neque sint conversa.</mr-text>
             </mr-panel>
         </mr-app>
     </code>
@@ -66,6 +66,9 @@
             justify-content: center;
             gap: 10px;
             padding: 20px;
+        }
+        mr-text {
+            max-width: 600px;
         }
         #bowtie {
             width: 100px;

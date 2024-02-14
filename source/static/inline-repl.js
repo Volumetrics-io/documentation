@@ -20,12 +20,8 @@ class Repl extends HTMLElement {
             <h1>Hello</h1>
         </div>`;
 
-        // console.log(this.htmlContent);
-        // this.htmlContent = this.htmlContent.replace(/\u2018/g, '')
+        // Remove excessive indentation and trim
         this.htmlContent = this.reindent(this.htmlContent);
-        // this.htmlContent = this.format_html(this.htmlContent);
-        // this.htmlContent = html_beautify(this.htmlContent);
-        // this.htmlContent = this.formatHTML(this.htmlContent);
 
         // Processing CSS
         this.cssContent = cssSlot ? cssSlot.innerHTML : `
@@ -176,15 +172,34 @@ class Repl extends HTMLElement {
             #button_refresh {
                 position: absolute;
                 top: 1rem;
+                right: 3.5rem;
+                width: 2rem;
+                height: 2rem;
+                padding: 0.5rem;
+                border-radius: 50%;
+                top: ${this.renderHeight}px;
+                transform: translate(0%, -50%);
+                z-index: 9999;
+            }
+
+            #button_open {
+                position: absolute;
+                top: 1rem;
                 right: 1rem;
                 width: 2rem;
                 height: 2rem;
                 padding: 0.5rem;
                 border-radius: 50%;
+                top: ${this.renderHeight}px;
+                transform: translate(0%, -50%);
+                z-index: 9999;
             }
 
             @media only screen and (max-width: 600px) {
-
+                nav {
+                    left: 1rem;
+                    transform: translate(0%, -50%);
+                }
             }
 
             </style>
@@ -234,6 +249,16 @@ class Repl extends HTMLElement {
                     <g style="stroke: var(--ink); stroke-linecap: round; fill: none; stroke-width: 1.5px;">
                         <path d="M 13.8 9 C 13.7 9.6 13.2 11.3 12.2 12.2 C 10.1 14.6 6.2 14.6 3.8 12.2 C 1.4 9.8 1.4 6.2 3.8 3.8 C 6.2 1.4 9.8 1.4 12.2 3.8"/>
                         <path d="M 10.2 5 L 13.2 5 L 13.2 2"/>
+                    </g>
+                </svg>
+            </button>
+
+            <button class="tabs" id="button_open">
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <g style="stroke: var(--ink); stroke-linecap: round; fill: none; stroke-width: 1.5px;">  
+                        <path d="M 13 8.7 L 13 11 C 13 12.1 12.1 13 11 13 L 5 13 C 3.9 13 3 12.1 3 11 L 3 5 C 3 3.9 3.9 3 5 3 L 7.2 3"></path>
+                        <path d="M 13 6.3 L 13 3 L 9.7 3"></path>
+                        <polyline points="8 8 12.6 3.4"></polyline>
                     </g>
                 </svg>
             </button>
@@ -322,9 +347,35 @@ class Repl extends HTMLElement {
             })
         })
 
+        // Refresh button
         this.shadowRoot.querySelector("#button_refresh").addEventListener("click", () => {
             this.render();
         })
+
+        // Open in a new window
+        this.shadowRoot.querySelector("#button_open").addEventListener("click", () => {
+            let win = window.open('', '_blank');
+            // let win = window.open('', '_blank', 'width=400,height=400 top=200,left=600');
+            win.document.write(`<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+        <title>MRjs Example</title>
+        <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script>
+    </head>
+    <body>
+        ${this.editors[0].editor.getValue()}
+        <script>
+            ${this.editors[2].editor.getValue()}
+        </script>
+        <style>
+            ${this.editors[1].editor.getValue()}
+        </style>
+    </body>
+</html>`);
+        });
 
         // Add listener for changes in the color scheme
         this.themeListener = window.matchMedia('(prefers-color-scheme: dark)');
@@ -397,107 +448,6 @@ class Repl extends HTMLElement {
         // Adjust indentation and join the lines back together
         return lines.map(line => line.substring(minIndent)).join('\n');
     }
-
-    // format_html(html) {
-    //     var tab = '  ';
-    //     var result = '';
-    //     var indent = '';
-
-    //     html.split(/>\s*</).forEach(function (element) {
-    //         if (element.match(/^\/\w/)) {
-    //             indent = indent.substring(tab.length);
-    //         }
-
-    //         result += indent + '<' + element + '>\r\n';
-
-    //         if (element.match(/^<?\w[^>]*[^\/]$/)) {
-    //             indent += tab;
-    //         }
-    //     });
-
-    //     return result.substring(1, result.length - 3);
-    // }
-
-    // formatHTML(str) {
-    //     class HtmlParser {
-    //         constructor() {
-    //             this.stack = [];
-    //             this.result = '';
-    //         }
-
-    //         parse(string) {
-    //             if (!string) return;
-
-    //             const indexOpenTag = string.indexOf('<');
-    //             const indexCloseTag = string.lastIndexOf('>') + 1;
-    //             const indexNextStartTag = string.substring(indexCloseTag).indexOf('<') + indexCloseTag;
-
-    //             if (indexOpenTag === -1 && indexCloseTag === -1 && indexNextStartTag === -1) {
-    //                 // Text only
-    //                 this.handleTextNode(string);
-    //             } else if (indexOpenTag !== -1 && indexCloseTag > indexOpenTag && indexNextStartTag > indexCloseTag) {
-    //                 // Single element
-    //                 this.handleElement(string.substring(indexOpenTag, indexCloseTag));
-    //                 this.parse(string.substring(indexCloseTag, indexNextStartTag));
-    //             } else {
-    //                 // Multiple elements
-    //                 const subStringToParse = string.substring(indexOpenTag, indexNextStartTag);
-    //                 const nextStartTagPos = subStringToParse.indexOf('<');
-
-    //                 this.handleElement(subStringToParse.substring(0, nextStartTagPos));
-    //                 this.parse(subStringToParse.substring(nextStartTagPos));
-    //             }
-    //         }
-
-    //         handleTextNode(text) {
-    //             if (this.currentElement()) {
-    //                 this.addInnerHtml(` ${text}`);
-    //             } else {
-    //                 this.result += text;
-    //             }
-    //         }
-
-    //         handleElement(element) {
-    //             if (!this.currentElement()) {
-    //                 this.openNewElement(element);
-    //             } else {
-    //                 this.closeCurrentElement();
-    //                 this.openNewElement(element);
-    //             }
-    //         }
-
-    //         openNewElement(element) {
-    //             this.addInnerHtml(`\n${element}\n`);
-    //             this.stack.push({ name: element });
-    //         }
-
-    //         closeCurrentElement() {
-    //             const currentElementName = this.currentElement().name;
-    //             const lastStackEntry = this.stack[this.stack.length - 1];
-
-    //             if (lastStackEntry.name !== currentElementName) {
-    //                 throw new Error(`Error closing element "${currentElementName}", expecting closing of element "${lastStackEntry.name}"`);
-    //             }
-
-    //             this.addInnerHtml(`</${currentElementName}>`);
-    //             this.stack.pop();
-    //         }
-
-    //         addInnerHtml(innerHtml) {
-    //             if (this.currentElement()) {
-    //                 this.currentElement().innerHtml += innerHtml;
-    //             }
-    //         }
-
-    //         currentElement() {
-    //             return this.stack[this.stack.length - 1];
-    //         }
-    //     }
-
-    //     const htmlParser = new HtmlParser();
-    //     htmlParser.parse(str);
-    //     return htmlParser.result;
-    // }
 
     setTheme(scheme) {
         this.editors.forEach(mode => {
