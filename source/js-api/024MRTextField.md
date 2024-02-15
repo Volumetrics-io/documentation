@@ -17,7 +17,7 @@ The text element that is used to represent normal user-entry text field items on
         * [new exports.MRTextField()](#new_MRTextField+MRTextField_new)
     * [.connected()](#MRTextField+connected)
     * [.blur()](#MRTextField+blur)
-    * [.focus()](#MRTextField+focus)
+    * [.focusInput()](#MRTextField+focusInput)
     * [.updateCursorPosition()](#MRTextField+updateCursorPosition)
 
 <a name="MRTextField+MRTextField"></a>
@@ -41,9 +41,9 @@ Callback function of MREntity - handles setting up this textfield once it is con
 Blurs the inputted text value and cursor information
 
 **Kind**: instance method of [<code>MRTextField</code>](#MRTextField)  
-<a name="MRTextField+focus"></a>
+<a name="MRTextField+focusInput"></a>
 
-### mrTextField.focus()
+### mrTextField.focusInput()
 Focuses the inputted text value and cursor information as if it is selected. Includes showing the cursor item.
 
 **Kind**: instance method of [<code>MRTextField</code>](#MRTextField)  
