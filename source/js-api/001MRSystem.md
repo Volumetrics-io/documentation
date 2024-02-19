@@ -20,6 +20,7 @@ The default representation of an MRSystem to be expanded upon by actual details 
     * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate)
     * [._update(deltaTime, frame)](#MRSystem+_update)
     * [.update(deltaTime, frame)](#MRSystem+update)
+    * [.eventUpdate()](#MRSystem+eventUpdate)
     * [.onNewEntity(entity)](#MRSystem+onNewEntity)
     * [.attachedComponent(entity)](#MRSystem+attachedComponent)
     * [.updatedComponent(entity, oldData)](#MRSystem+updatedComponent)
@@ -98,6 +99,12 @@ The generic system update call.
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
 
+<a name="MRSystem+eventUpdate"></a>
+
+### mrSystem.eventUpdate()
+An event triggered update, called when any scene level events occur.
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 <a name="MRSystem+onNewEntity"></a>
 
 ### mrSystem.onNewEntity(entity)
