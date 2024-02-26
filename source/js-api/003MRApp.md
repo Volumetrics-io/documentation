@@ -22,7 +22,7 @@ The engine handler for running MRjs as an App. `mr-app`
         * [.mutatedChildList(mutation)](#MRApp+mutatedChildList)
         * [.mutationCallback(mutationList, observer)](#MRApp+mutationCallback)
         * [.init()](#MRApp+init)
-        * [.initUser()](#MRApp+initUser)
+        * [.initCamera()](#MRApp+initCamera)
         * [.initLights(data)](#MRApp+initLights)
         * [.denit()](#MRApp+denit)
         * [.registerSystem(system)](#MRApp+registerSystem)
@@ -88,9 +88,9 @@ The mutationCallback function that runs whenever this entity component should be
 Initializes the engine state for the MRApp. This function is run whenever the MRApp is connected.
 
 **Kind**: instance method of [<code>MRApp</code>](#MRApp)  
-<a name="MRApp+initUser"></a>
+<a name="MRApp+initCamera"></a>
 
-### mrApp.initUser()
+### mrApp.initCamera()
 Initializes the user information for the MRApp including appropriate HMD direction and camera information and the default scene anchor location.
 
 **Kind**: instance method of [<code>MRApp</code>](#MRApp)  
