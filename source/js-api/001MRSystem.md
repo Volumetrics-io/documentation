@@ -14,6 +14,8 @@ The default representation of an MRSystem to be expanded upon by actual details 
 * [MRSystem](#MRSystem)
     * [.MRSystem](#MRSystem+MRSystem)
         * [new exports.MRSystem(useComponents, frameRate)](#new_MRSystem+MRSystem_new)
+    * [.onRegister(app)](#MRSystem+onRegister)
+    * [.onUnregister(app)](#MRSystem+onUnregister)
     * [.alwaysNeedsSystemUpdate()](#MRSystem+alwaysNeedsSystemUpdate) ⇒ <code>boolean</code>
     * [.alwaysNeedsSystemUpdate()](#MRSystem+alwaysNeedsSystemUpdate)
     * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate) ⇒ <code>boolean</code>
@@ -43,6 +45,28 @@ Constructor for MRSystem. Sets up appropriate document event listeners, componen
 | --- | --- | --- | --- |
 | useComponents | <code>boolean</code> | <code>true</code> | Default to true. Determines whether comonents need to be maintained (attached/updated/detached) with the system. |
 | frameRate | <code>number</code> | <code></code> | Default to null. When set, used and updated as part of the System's update function. |
+
+<a name="MRSystem+onRegister"></a>
+
+### mrSystem.onRegister(app)
+Called when a new entity is added to the scene
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| app | <code>MRApp</code> | the app the system is registered to. |
+
+<a name="MRSystem+onUnregister"></a>
+
+### mrSystem.onUnregister(app)
+Called when the system is registered to an app is added.
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| app | <code>MRApp</code> | the app the system is registered to. |
 
 <a name="MRSystem+alwaysNeedsSystemUpdate"></a>
 
