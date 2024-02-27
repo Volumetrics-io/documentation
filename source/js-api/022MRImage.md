@@ -19,8 +19,7 @@ Base html image represented in 3D space. `mr-image`
     * [.height()](#MRImage+height) ⇒ <code>number</code>
     * [.connected()](#MRImage+connected)
     * [.mutated(mutation)](#MRImage+mutated)
-    * [.computeImageObject3DFitDimensions()](#MRImage+computeImageObject3DFitDimensions)
-    * [.cover(texture, aspect)](#MRImage+cover)
+    * [.computeObjectFitDimensions()](#MRImage+computeObjectFitDimensions)
 
 <a name="MRImage+MRImage"></a>
 
@@ -62,21 +61,9 @@ Callback function of MREntity - Updates the image's cover,fill,etc based on the 
 | --- | --- | --- |
 | mutation | <code>object</code> | the update/change/mutation to be handled. |
 
-<a name="MRImage+computeImageObject3DFitDimensions"></a>
+<a name="MRImage+computeObjectFitDimensions"></a>
 
-### mrImage.computeImageObject3DFitDimensions()
+### mrImage.computeObjectFitDimensions()
 computes the width and height values for the image considering the value of object-fit
 
 **Kind**: instance method of [<code>MRImage</code>](#MRImage)  
-<a name="MRImage+cover"></a>
-
-### mrImage.cover(texture, aspect)
-Calculates the texture UV transformation change based on the image's aspect ratio.
-
-**Kind**: instance method of [<code>MRImage</code>](#MRImage)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| texture | <code>object</code> | the texture to augment |
-| aspect | <code>number</code> | a given expected aspect ratio |
-
