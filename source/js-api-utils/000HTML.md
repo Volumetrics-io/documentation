@@ -20,5 +20,5 @@ Given the path returns an absolute path resolved so relative linking works as ex
 
 | Param | Type | Description |
 | --- | --- | --- |
-| path | <code>string</code> | either a relative or full path inputted to an element |
+| path | <code>string</code> | either a relative or full path inputted to an element. Additionally removes all queries from the end of the url, leaving the input as just the origin and its pathname. For ex: 'https://example.com/images/photo.png?version=2' becomes 'https://example.com/images/photo.png' |
 
