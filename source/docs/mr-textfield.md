@@ -44,6 +44,7 @@ The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
                 input.value = "that's not a color!";
             }
         }
+        setColor();
     </code>
 </inline-repl>
 
