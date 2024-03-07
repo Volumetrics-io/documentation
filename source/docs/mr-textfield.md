@@ -31,16 +31,17 @@ The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
         }
     </code>
     <code slot="javascript">
-        let input = document.getElementById('input')
+        let input = document.getElementById('input');
+        let panel = document.getElementById('panel');
         const regex = /^#(?:[0-9a-fA-F]{3}){1,2}$/;
 
         function setColor() {
-            let inputText = input.value
+            let inputText = input.value;
 
             if (regex.test(inputText)) {
-                panel.style.backgroundColor = color 
+                panel.style.backgroundColor = inputText;
             } else {
-                input.value = "that's not a color!"
+                input.value = "that's not a color!";
             }
         }
     </code>
