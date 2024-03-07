@@ -23,4 +23,4 @@ You can include `mr-app` with one or both of those visualization flags.
 
 ## `stats`
 
-[See more information in `<mr-app`](https://docs.mrjs.io/doc/mr-app/#stats) for how to use it properly.
+[See more information in `<mr-app>`](https://docs.mrjs.io/doc/mr-app/#stats) for how to use it properly.

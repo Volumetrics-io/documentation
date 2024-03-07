@@ -89,13 +89,19 @@ Specifies the global lighting conditions.
   - default: `5`
 
 ### `debug`
-Enables various debug features such as physics, stats monitoring. If the debug flag is present and set to `false`, certain stats are still visible.
+Enables various debug features such as physics directional lines, some color changes to show certain features being used, and 3D toggling in website mode.
 
+Physics directional lines:
+These are red/green/blue axes lines coming out of the origin (center position) of objects. They demonstrate the xyz directions associated with that object.
+
+3D toggling:
 > When the debug flag is enabled (`<mr-app debug="true">`), you can press and hold the `=+` key on your keyboard to:
 >
 > 1. rotate the scene with left mouse drag
 > 2. pan the scene with right mouse drag
 > 3. zoom with the mouse wheel
+>
+> Try it out below!
 
 <inline-repl>
     <code slot="html">
