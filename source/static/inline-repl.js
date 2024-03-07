@@ -363,7 +363,7 @@ class Repl extends HTMLElement {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
         <title>MRjs Example</title>
-        <script src="/dist/mr.js"></script>
+        <script src="./dist/mr.js"></script>
     </head>
     <body>
         ${this.editors[0].editor.getValue()}
@@ -408,7 +408,7 @@ class Repl extends HTMLElement {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <title>repl</title>
-      <script src="/dist/mr.js"></script>
+      <script src="./dist/mr.js"></script>
     </head>
     <body>
         ${this.editors[0].editor.getValue()}
