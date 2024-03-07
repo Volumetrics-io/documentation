@@ -62,5 +62,3 @@ mr-app {
     <mr-skybox src="file0.jpg,file1.jpg,file2.jpg,file3.jpg,file4.jpg,file5.jpg" pathToTextures="path/to/textures/"></mr-skybox>
 </mr-app>
 ```
-
-This can either directly be a single skybox file or a listing of files of the form 
