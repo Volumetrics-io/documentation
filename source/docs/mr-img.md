@@ -26,10 +26,10 @@ The `<mr-img>` tag is used to embed an image in an MRjs page.
         mr-img {
             max-width: 300px;
             border-radius: 30px;
+            object-fit: cover;
         }
     </code>
 </inline-repl>
-
 
 ## Definition and Usage
 
