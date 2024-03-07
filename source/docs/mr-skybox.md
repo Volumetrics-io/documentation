@@ -23,7 +23,7 @@
 
 If you set the background of <mr-app> in css it will load it up as a skybox into the scene.
 
-```html
+```css
 mr-app {
   background-image: url('/assets/textures/skybox_starmap_4k.jpg');
 }
