@@ -408,7 +408,7 @@ class Repl extends HTMLElement {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <title>repl</title>
-      <script src="https://cdn.jsdelivr.net/npm/mrjs@latest/dist/mr.js"></script>
+      <script src="/dist/mr.js"></script>
     </head>
     <body>
         ${this.editors[0].editor.getValue()}
