@@ -33,11 +33,9 @@ The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
     <code slot="javascript">
         function setColor() {
             let input = document.getElementById('input');
-            <!-- console.log(input); -->
             let panel = document.getElementById('panel');
             const regex = /^#(?:[0-9a-fA-F]{3}){1,2}$/;
             let inputText = input.value;
-            console.log(inputText);
             if (regex.test(inputText)) {
                 panel.style.backgroundColor = inputText;
             } else {
