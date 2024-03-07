@@ -17,14 +17,11 @@ The `<mr-img>` tag is used to embed an image in an MRjs page.
     <code slot="css">
         mr-panel {
             display: flex;
-            <!-- flex-flow: column nowrap; -->
+            flex-flow: column nowrap;
             align-items: center;
             justify-content: center;
-            padding: 10vw;
-            gap: 10px;
             width: 100vw;
             height: 100vh;
-            border-radius: unset;
         }
         mr-img {
             max-width: 300px;

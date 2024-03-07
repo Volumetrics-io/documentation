@@ -5,13 +5,23 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
 ## Example
 
 <inline-repl editor-height="280">
-    <slot slot="html">
+    <code slot="html">
         <mr-app>
             <mr-panel class="container">
                 <mr-text>Hello World!</mr-text>
             </mr-panel>
         </mr-app>
-    </slot>
+    </code>
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+    <code slot="css">
+    </code>
 </inline-repl>
 
 ## Definition and Usage
