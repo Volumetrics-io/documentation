@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## USED BY RENDER.COM AND ACTIONS IN THE MRJS REPO
+
 # Stop on the first sign of trouble
 set -e
 
