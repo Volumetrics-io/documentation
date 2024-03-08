@@ -1,0 +1,26 @@
+# Build MRjs and confirm everything passes
+name: check website build on linux
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - '**' # This allows the workflow to run on all branches for the build job
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+
+  check-website-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build the website
+      run: |
+        ./action-build.sh
