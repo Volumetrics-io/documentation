@@ -1,6 +1,6 @@
 # &lt;mr-a&gt;
 
-The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
+<!-- The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 
 ## Example
 
@@ -38,7 +38,7 @@ The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 
 The `<mr-a>` tag has two required attribute:
 
-* `href`: the hyperlink destination
+* `href`: the hyperlink destination -->
 
 ## Image links
 
