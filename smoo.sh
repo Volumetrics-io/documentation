@@ -52,7 +52,7 @@ extract_metadata() {
         title=$(echo -e "$title" | sed 's/^[0-9]*//')
 
         # Make the slug lowercase
-        local slug=${title,,}
+        local slug=$(echo -e "$title" | tr '[:upper:]' '[:lower:]')
 
         # Replace spaces with "-" in the slug
         slug=${slug// /-}
@@ -85,7 +85,7 @@ process_markdown() {
         title=$(echo -e "$title" | sed 's/^[0-9]*//')
 
         # Make the slug lowercase
-        local slug=${title,,}
+        local slug=$(echo -e "$title" | tr '[:upper:]' '[:lower:]')
 
         # Replace spaces with "-" in the slug
         slug=${slug// /-}
