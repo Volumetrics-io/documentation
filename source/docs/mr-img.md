@@ -23,6 +23,10 @@ The `<mr-img>` tag is used to embed an image in an MRjs page.
             width: 100vw;
             height: 100vh;
         }
+        mr-text {
+            position: absolute;
+            align-self:center;
+        }
         mr-img {
             max-width: 300px;
             border-radius: 30px;
