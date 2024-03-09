@@ -60,15 +60,12 @@ Like it's HTML equivalent, `<mr-a>` can be used to wrap other elements, making t
     </code>
     <code slot="css">
         mr-panel {
-          display: flex;
-          flex-flow: column nowrap;
-          align-items: center;
-          justify-content: center;
-          padding: 10vw;
-          gap: 10px;
-          width: 100vw;
-          height: 100vh;
-          border-radius: unset;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
         }
 
         mr-img {
