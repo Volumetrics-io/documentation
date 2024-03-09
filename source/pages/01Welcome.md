@@ -20,7 +20,14 @@ We have a small collection of inline debug tools that will expand over time. Che
 
 /blurb/ about 
 
-## Artist Experience
+... we like to tailor your starting experience to your background. Choose from the following options and let's get building!
+
+- [Curious Artist](#curious-artist)
+- [Knows HTML/CSS](#knows-html-css)
+- [Experienced Web Dev](#experienced-web-dev)
+- [Mixed Experience](#mixed-experience)
+
+### Curious Artist
 
 Tutorials:
 - ...
@@ -28,7 +35,7 @@ Tutorials:
 Examples:
 - ...
 
-## HTML/CSS Experience
+### Knows HTML/CSS
 
 Tutorials:
 - ...
@@ -36,13 +43,15 @@ Tutorials:
 Examples:
 - ...
 
-## Experienced Web Dev
+### Experienced Web Dev
 
 Checkout the [repo's readme](https://github.com/Volumetrics-io/mrjs) and start from there.
 
-## Mixed Experience
+### Mixed Experience
 
 Peruse through our Demos and find which may be a good starting point for you.
+
+## Ending?
 
 VVV need to end with something fun at the bottom here? a call to action?
 
