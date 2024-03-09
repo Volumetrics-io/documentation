@@ -316,9 +316,10 @@ class Repl extends HTMLElement {
                             { value: 'mr-model', score: 1, meta: 'a 3d model file' },
                             { value: 'mr-panel', score: 1, meta: 'a UI container' },
                             { value: 'mr-skybox', score: 1, meta: 'an environement around the scene' },
+                            { value: 'mr-text', score: 1, meta: 'a paragraph of text' },
                             { value: 'mr-textarea', score: 1, meta: 'a large text input field' },
                             { value: 'mr-textfield', score: 1, meta: 'a single-line text input field' },
-                            { value: 'mr-text', score: 1, meta: 'a paragraph of text' },
+                            { value: 'mr-video', score: 1, meta: 'an inline video' },
                             { value: 'mr-volume', score: 1, meta: 'a bound 3D volume' },
                         ]);
                     },
@@ -356,25 +357,7 @@ class Repl extends HTMLElement {
         this.shadowRoot.querySelector("#button_open").addEventListener("click", () => {
             let win = window.open('', '_blank');
             // let win = window.open('', '_blank', 'width=400,height=400 top=200,left=600');
-            win.document.write(`<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
-        <title>MRjs Example</title>
-        <script src="/static/dist/mr.js"></script>
-    </head>
-    <body>
-        ${this.editors[0].editor.getValue()}
-        <script>
-            ${this.editors[2].editor.getValue()}
-        </script>
-        <style>
-            ${this.editors[1].editor.getValue()}
-        </style>
-    </body>
-</html>`);
+            win.document.write(this.mainCode("MRjs Example"));
         });
 
         // Add listener for changes in the color scheme
@@ -387,6 +370,27 @@ class Repl extends HTMLElement {
         this.selectEditor();
         this.updateTheme();
         // this.render();
+    }
+
+    mainCode(title) {
+        return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>`+title+`</title>
+      <script src="/static/dist/mr.js"></script>
+    </head>
+    <body>
+        ${this.editors[0].editor.getValue()}
+        <script>
+            ${this.editors[2].editor.getValue()}
+        </script>
+        <style>
+            ${this.editors[1].editor.getValue()}
+        </style>
+      </body>
+    </html>`
     }
 
     selectEditor() {
@@ -402,25 +406,7 @@ class Repl extends HTMLElement {
     }
 
     render() {
-        this.shadowRoot.querySelector("#render").srcdoc = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <title>repl</title>
-      <script src="/static/dist/mr.js"></script>
-    </head>
-    <body>
-        ${this.editors[0].editor.getValue()}
-        <script>
-            ${this.editors[2].editor.getValue()}
-        </script>
-        <style>
-            ${this.editors[1].editor.getValue()}
-        </style>
-      </body>
-    </html>
-      `
+        this.shadowRoot.querySelector("#render").srcdoc = this.mainCode("repl");
     }
 
     reindent(code) {
