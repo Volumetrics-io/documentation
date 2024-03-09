@@ -60,19 +60,24 @@ Like it's HTML equivalent, `<mr-a>` can be used to wrap other elements, making t
     </code>
     <code slot="css">
         mr-panel {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            height: 100vh;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
+        }
+        mr-a {
+          height:100vh;
+          width:100vh;
         }
         mr-img {
           max-width: 300px;
+          height:100%;
           border-radius: 30px;
         }
         mr-img.hover {
-            border-radius: 20px;
+          border-radius: 20px;
         }
     </code>
 </inline-repl>
