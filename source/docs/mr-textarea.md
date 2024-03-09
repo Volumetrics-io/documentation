@@ -28,6 +28,7 @@ The `<mr-textare>` creates a large text input field in the UI of an `<mr-panel>`
         </mr-panel>
         </mr-app>
     </code>
+    <code slot="css">
         mr-panel {
             display: flex;
             flex-flow: column nowrap;
@@ -36,6 +37,5 @@ The `<mr-textare>` creates a large text input field in the UI of an `<mr-panel>`
             width: 100vw;
             height: 100vh;
         }
-    <code slot="css">
     </code>
 </inline-repl>
