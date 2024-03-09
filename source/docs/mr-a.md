@@ -67,7 +67,6 @@ Like it's HTML equivalent, `<mr-a>` can be used to wrap other elements, making t
             width: 100vw;
             height: 100vh;
         }
-
         mr-img {
           max-width: 300px;
           border-radius: 30px;
