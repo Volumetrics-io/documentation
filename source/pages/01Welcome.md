@@ -23,7 +23,7 @@ We have a small collection of inline debug tools that will expand over time. Che
 ... we like to tailor your starting experience to your background. Choose from the following options and let's get building!
 
 - [Curious Artist](#curious-artist)
-- [Knows HTML/CSS](#knows-html-css)
+- [Knows HTML/CSS](#knows-htmlcss)
 - [Experienced Web Dev](#experienced-web-dev)
 - [Mixed Experience](#mixed-experience)
 
