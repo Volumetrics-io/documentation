@@ -4,6 +4,25 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/component
 ---
 # MaskingSystem
 
+## Classes
+
+<dl>
+<dt><a href="#MaskingSystem">MaskingSystem</a> ⇐ <code>MRSystem</code></dt>
+<dd><p>Handles specific needs for setting up the masking for all necessary items.</p>
+</dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#setupMaskingMaterial">setupMaskingMaterial(material, shiftBit, boolean)</a></dt>
+<dd><p>Setting up a material for an object that maskes other elements</p>
+</dd>
+<dt><a href="#setupMaskedMaterial">setupMaskedMaterial(material, shiftBit)</a></dt>
+<dd><p>Setting up a material for an object that is masked by another element</p>
+</dd>
+</dl>
+
 <a name="MaskingSystem"></a>
 
 ## MaskingSystem ⇐ <code>MRSystem</code>
@@ -18,6 +37,7 @@ Handles specific needs for setting up the masking for all necessary items.
     * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
     * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#MaskingSystem+update)
+    * [.sync()](#MaskingSystem+sync)
     * [.onNewEntity(entity)](#MaskingSystem+onNewEntity)
 
 <a name="MaskingSystem+MaskingSystem"></a>
@@ -57,6 +77,12 @@ Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https:/
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
 
+<a name="MaskingSystem+sync"></a>
+
+### maskingSystem.sync()
+Copy the source world matrices to the objects writing to stencil buffer
+
+**Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
 <a name="MaskingSystem+onNewEntity"></a>
 
 ### maskingSystem.onNewEntity(entity)
@@ -67,4 +93,29 @@ Called when a new entity is added to the scene. Handles masking elements to thei
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
+
+<a name="setupMaskingMaterial"></a>
+
+## setupMaskingMaterial(material, shiftBit, boolean)
+Setting up a material for an object that maskes other elements
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| material | <code>THREE.Material</code> | 
+| shiftBit | <code>number</code> | 
+| boolean | <code>debug</code> | 
+
+<a name="setupMaskedMaterial"></a>
+
+## setupMaskedMaterial(material, shiftBit)
+Setting up a material for an object that is masked by another element
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| material | <code>THREE.Material</code> | 
+| shiftBit | <code>number</code> | 
 
