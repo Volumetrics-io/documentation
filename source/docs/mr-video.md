@@ -17,7 +17,11 @@ The `<mr-video>` tag has two required attributes:
     <code slot="html">
         <mr-app>
             <mr-panel>
-                <mr-video src="/static/sample/video.mp4" alt="A youtube video used as one of the intro videos for MRjs. The main tag line is as follows 'Spatial Development can be intimidating, but it doesn't have to be. mrjs enables you to break out from 2D to 3D, using the tools you already know how to use: HTML, CSS, and a little JavaScript.'"></mr-video>
+                <mr-video id="#video" src="/static/sample/video.mp4" alt="A youtube video used as one of the intro videos for MRjs. The main tag line is as follows 'Spatial Development can be intimidating, but it doesn't have to be. mrjs enables you to break out from 2D to 3D, using the tools you already know how to use: HTML, CSS, and a little JavaScript.'"></mr-video>
+            </mr-panel>
+            <mr-panel id="tabbar" data-position="0 0 0.001">
+                <mr-button onclick="playVideo()" class="col-1">Play</mr-button>
+                <mr-button onclick="stopVideo()" class="col-2">Stop</mr-button>
             </mr-panel>
         </mr-app>
     </code>
@@ -34,6 +38,15 @@ The `<mr-video>` tag has two required attributes:
             max-width: 300px;
             border-radius: 30px;
             object-fit: cover;
+        }
+    </code>
+    <code slot="javascript">
+        let vid = document.querySelector('#video');
+        function playVideo() {
+            vid.play();
+        }
+        function stopVideo() {
+            vid.pause();
         }
     </code>
 </inline-repl>
