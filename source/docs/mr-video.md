@@ -30,7 +30,7 @@ The `<mr-video>` tag has two required attributes:
             width: 100vw;
             height: 100vh;
         }
-        mr-img {
+        mr-video {
             max-width: 300px;
             border-radius: 30px;
             object-fit: cover;

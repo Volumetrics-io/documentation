@@ -16,6 +16,9 @@ Want to contribute? Follow the [guidelines doc](https://docs.mrjs.io/contribute/
 
 We have a small collection of inline debug tools that will expand over time. Check out our [debugging](https://docs.mrjs.io/debugging/) docs page to learn how to enable and use them.
 
+<!-- uncomment the below once we have more onboarding/tutorials -->
+<!--
+
 ## Getting Started
 
 /blurb/ about 
@@ -50,6 +53,9 @@ Checkout the [repo's readme](https://github.com/Volumetrics-io/mrjs) and start f
 ### Mixed Experience
 
 Peruse through our Demos and find which may be a good starting point for you.
+
+-->
+<!-- uncomment the above once we have more onboarding/tutorials -->
 
 ## Ending?
 
