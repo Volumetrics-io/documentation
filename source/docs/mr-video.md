@@ -24,7 +24,7 @@ The `<mr-video>` tag has two required attributes:
                 <mr-button onclick="stopVideo()" class="col-2">Stop</mr-button>
             </mr-panel>
         </mr-app>
-    </code>
+    </code> 
     <code slot="css">
         mr-panel {
           display: block;
