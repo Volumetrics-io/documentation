@@ -10,8 +10,8 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
             <mr-panel class="container">
                 <mr-text>Hello World!</mr-text>
             </mr-panel>
-        </mr-app>
-    </code>
+        </mr-app>   
+    <code slot="css">
         mr-panel {
             display: flex;
             flex-flow: column nowrap;
@@ -20,7 +20,6 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
             width: 100vw;
             height: 100vh;
         }
-    <code slot="css">
     </code>
 </inline-repl>
 
@@ -79,7 +78,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
                 <mr-text id="color_value">placeholder</mr-text>
             </mr-panel>
         </mr-app>
-    </code>
+    </code slot="css">
         mr-panel {
             display: flex;
             flex-flow: column nowrap;
@@ -95,7 +94,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
           font-size: 150%;
           border-radius: 20px;
         }
-    <code slot="css">
+    <code slot="javascript">
         // mr-text entity
         let color_value = document.querySelector('.color_value');
         function changeColor() {
