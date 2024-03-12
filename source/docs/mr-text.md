@@ -68,31 +68,44 @@ Custom fonts are supported but must be loaded manually in css using `@font-face`
 
 mr-text is made possible through Troika-Three-Text and can be manipulated with JavaScript like any other THREE.js.
 
-### video texture example
+### button changing text example
 
-```html
-<video id="video">…</video>
-<mr-app>
-    <mr-panel class="container">
-        <mr-text class="title">MRjs</mr-text>
-    </mr-panel>
-</mr-app>
-```
-
-```javascript
-let video = document.getElementById( 'video' );
-let text = document.querySelector('.title') 
-
-video.play();
-video.addEventListener( 'play', function () {
-    this.currentTime = 3;
-});
-
-let texture = new THREE.VideoTexture( video );
-texture.colorSpace = THREE.SRGBColorSpace
-
-let material = new THREE.MeshLambertMaterial({ color: 0xffffff, 
-                                               map: texture });
-
-text.textObj.material = material
-```
+<inline-repl editor-height="280">
+    <code slot="html">
+        <mr-app>
+            <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
+            <mr-panel id="panel">
+                <mr-button onclick="changeColor()">Change color!</mr-button>
+                <mr-text id="color_value">placeholder</mr-text>
+            </mr-panel>
+        </mr-app>
+    </code>
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        mr-button {
+          font-family: system-ui;
+          background-color: white;
+          padding: 8px 16px;
+          font-size: 150%;
+          border-radius: 20px;
+        }
+    <code slot="css">
+        // mr-text entity
+        let color_value = document.querySelector('.color_value');
+        function changeColor() {
+            // change the background color
+            let hue = Math.floor(Math.random() * 360);
+            let color = 'hsl(' + hue + ', 100%, 80%)';
+            document.querySelector("#panel").style.backgroundColor = color;
+            // change the text to show the background color
+            color_value.textObj.text = color;
+        }
+        changeColor();
+    </code>
+</inline-repl>

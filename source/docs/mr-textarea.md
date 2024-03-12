@@ -1,31 +1,19 @@
 # &lt;mr-textarea&gt;
 
-The `<mr-textare>` creates a large text input field in the UI of an `<mr-panel>`. unlike `<mr-textfield>` It allows for line breaks.
+The `<mr-textarea>` creates a large text input field in the UI of an `<mr-panel>`. Unlike `<mr-textfield>` It allows for line breaks.
 
 ## Example
-
-<!-- ```html
-<mr-app>
-    <mr-panel id="panel">
-        <mr-textarea id="input">
-        This is a text area.
-
-        It allows for much larger text input for things like message, documents, or code!
-        </mr-textarea>
-    </mr-panel>
-</mr-app>
-``` -->
 
 <inline-repl editor-height="280">
     <code slot="html">
         <mr-app>
-           <mr-panel id="panel">
-            <mr-textarea id="input">
-                This is a text area.
-
-                It allows for much larger text input for things like message, documents, or code!
-            </mr-textarea>
-        </mr-panel>
+            <mr-panel id="panel">
+                <mr-textarea id="input">
+                    This is a text area.
+                    <br/>
+                    It allows for much larger text input for things like message, documents, or code!
+                </mr-textarea>
+            </mr-panel>
         </mr-app>
     </code>
     <code slot="css">
