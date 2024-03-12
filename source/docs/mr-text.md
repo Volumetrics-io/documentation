@@ -74,8 +74,8 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
         <mr-app>
             <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
             <mr-panel id="panel">
-                <mr-button onclick="changeColor()">Change color!</mr-button>
-                <mr-text id="color_value">placeholder</mr-text>
+                <mr-button onclick="changeColor()">Push</mr-button>
+                <mr-text id="color_value">Press the above button to change the color!</mr-text>
             </mr-panel>
         </mr-app>
     </code>
@@ -97,8 +97,6 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
         }
     </code>
     <code slot="javascript">
-        // mr-text entity
-        let color_value = document.querySelector('.color_value');
         function changeColor() {
             // change the background color
             let hue = Math.floor(Math.random() * 360);
@@ -106,7 +104,14 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
             document.querySelector("#panel").style.backgroundColor = color;
             // change the text to show the background color
             console.log(color_value);
-            color_value.textObj.text = color;
+            // Create a new color object
+            var color = new THREE.Color();
+            // Set the color using HSL values
+            // h, s, and l are expected to be in the range of 0 to 1
+            color.setHSL(hue, 100, 80);
+            // Use the color for a material
+            var material = new THREE.MeshBasicMaterial({ color: color });
+            text.textObj.material = material;
             console.log(color);
         }
         changeColor();
