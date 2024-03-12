@@ -17,7 +17,7 @@ The `<mr-video>` tag has two required attributes:
     <code slot="html">
         <mr-app>
             <mr-panel>
-                <mr-video src="/static/samples/video.mp4" alt="A youtube video used as one of the intro videos for MRjs. The main tag line is as follows 'Spatial Development can be intimidating, but it doesn't have to be. mrjs enables you to break out from 2D to 3D, using the tools you already know how to use: HTML, CSS, and a little JavaScript.'"></mr-video>
+                <mr-video src="/static/sample/video.mp4" alt="A youtube video used as one of the intro videos for MRjs. The main tag line is as follows 'Spatial Development can be intimidating, but it doesn't have to be. mrjs enables you to break out from 2D to 3D, using the tools you already know how to use: HTML, CSS, and a little JavaScript.'"></mr-video>
             </mr-panel>
         </mr-app>
     </code>

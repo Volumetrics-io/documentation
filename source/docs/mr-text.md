@@ -105,6 +105,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
             let color = 'hsl(' + hue + ', 100%, 80%)';
             document.querySelector("#panel").style.backgroundColor = color;
             // change the text to show the background color
+            console.log(color_value);
             color_value.textObj.text = color;
             console.log(color);
         }
