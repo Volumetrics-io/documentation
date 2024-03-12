@@ -56,7 +56,7 @@ The `<mr-video>` tag has two required attributes:
         }
     </code>
     <code slot="javascript">
-        let vid = document.querySelector('#video');
+        let vid = document.querySelector('#vid');
         function playVideo() {
             vid.play();
         }
