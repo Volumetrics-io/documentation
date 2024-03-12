@@ -1,26 +1,3 @@
----
-description: "An introduction to the Event system in MRjs"
----
-# MRjs Events
-
-## `enterXR`
-
-Triggered when the XR session is initialized. This is useful when dealing with XR exclusive features, such as hit testing, accessing the scene mesh or planes.
-
-Origin: `mr-app`
-
-## `exitXR`
-
-Triggered when the XR session is ended. This is useful when you'd like to save the XR state, or when application-specific content needs to be reconfigured for a 2D window.
-
-Origin: `mr-app`
-
-## `new-entity`
-
-Triggered whenever an entity is created.
-
-Origin: the created element
-
 # Interaction Events
 
 ## `selectstart`
@@ -56,7 +33,7 @@ Detail:
 - `handedness`: `left` or `right`
 - `position`: a THREE.js Vector3 of the pinch/controller position
 
-## `hover-start`
+## `hoverstart`
 
 Triggered when the cursor or the users' finger begins hovering over an entity.
 
@@ -69,7 +46,7 @@ Detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
-## `hover-end`
+## `hoverend`
 
 Triggered when the cursor or the users' finger stops hovering over an entity.
 
@@ -77,7 +54,7 @@ The `hover` CSS class is removed to the entity when this event is triggered.
 
 Origin: the target element
 
-## `touch-start`
+## `touchstart`
 
 Triggered whenever the controller's trigger button is pushed, a pinch gesture occurs, or the user touches an entity.
 
@@ -98,7 +75,14 @@ Detail:
 - `position`: a THREE.js Vector3 of the local hover position
 - `delta`: a THREE.js Vector3 of the delta between the current local position and the last
 
-## `touch-end`
+??? do we still use this?
+
+## `touchmove`
+
+???
+
+
+## `touchend`
 
 Triggered whenever the controller's trigger button or pinch gesture is released, or when the user stops touching an entity.
 

@@ -6,7 +6,7 @@
 
 Anchoring is achieved using the anchoring component, `data-comp-anchor`, it has 4 attributes:
 
-## `type`
+## `type` 
 
 There are currently three types of anchors:
 

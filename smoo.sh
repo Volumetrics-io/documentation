@@ -18,6 +18,7 @@ assetDir='source/static'
 pagesDir='source/pages'
 docsDir='source/docs'
 attributesDir='source/attributes'
+eventsDir='source/events'
 jsAPIDir='source/js-api'
 jsAPIExtrasDir='source/js-api-extras'
 jsAPIUtilsDir='source/js-api-utils'
@@ -131,6 +132,10 @@ extract_metadata "$pagesDir"
 docsYAML+="docs:\n"
 extract_metadata "$docsDir"
 
+# Process "MRjs Events" pages
+docsYAML+="events:\n"
+extract_metadata "$eventsDir"
+
 # Process "Data attributes" pages
 docsYAML+="attributes:\n"
 extract_metadata "$attributesDir"
@@ -159,6 +164,9 @@ process_markdown "$pagesDir" "pages" ""
 
 # Process doc files
 process_markdown "$docsDir" "docs" "doc"
+
+# Process data events files
+process_markdown "$eventsDir" "events" "events"
 
 # Process data attributes files
 process_markdown "$attributesDir" "attributes" "attributes"
