@@ -27,17 +27,32 @@ The `<mr-video>` tag has two required attributes:
     </code>
     <code slot="css">
         mr-panel {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            height: 100vh;
+          display: block;
+          align-items: center;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
         }
         mr-video {
-            max-width: 300px;
-            border-radius: 30px;
-            object-fit: cover;
+          position: absolute;
+          align-self: center;
+          object-fit: cover;
+        }
+        #tabbar {
+            background-color: #141414;
+            border-radius: 1%;
+            position:fixed;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 1vh;
+            height: fit-content;
+            z-index: 4;
+        }
+        #tabbar * {
+            margin: 0 10px;
         }
     </code>
     <code slot="javascript">
