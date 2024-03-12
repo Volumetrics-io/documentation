@@ -52,3 +52,8 @@ chmod +x "${BIN_DIR}/pandoc"
 
 # Verify Pandoc installation
 pandoc --version
+
+# Run your pre-build script
+echo "Running pre-build script"
+chmod +x ./smoo.sh
+./smoo.sh
