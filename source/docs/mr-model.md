@@ -49,7 +49,7 @@
 
 <inline-repl render-height="300" editor-height="300">
     <code slot="html">
-        <mr-app debug="true">
+        <mr-app>
             <mr-light color="white" intensity="0.5" data-position="0 0.1 0.35"></mr-light>
             <mr-panel>
                 <mr-text>Amet sed pulvinar amet a mi est adipiscing rhoncus enim. Dui in nulla labore quis nibh consectetur tempor vulputate diam. Sed hendrerit risus gravida labore.</mr-text>

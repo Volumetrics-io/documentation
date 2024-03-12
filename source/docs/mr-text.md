@@ -78,7 +78,8 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
                 <mr-text id="color_value">placeholder</mr-text>
             </mr-panel>
         </mr-app>
-    </code slot="css">
+    </code>
+    <code slot="css">
         mr-panel {
             display: flex;
             flex-flow: column nowrap;
@@ -94,6 +95,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
           font-size: 150%;
           border-radius: 20px;
         }
+    </code>
     <code slot="javascript">
         // mr-text entity
         let color_value = document.querySelector('.color_value');
@@ -104,6 +106,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
             document.querySelector("#panel").style.backgroundColor = color;
             // change the text to show the background color
             color_value.textObj.text = color;
+            console.log(color);
         }
         changeColor();
     </code>
