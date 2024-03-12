@@ -10,7 +10,8 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
             <mr-panel class="container">
                 <mr-text>Hello World!</mr-text>
             </mr-panel>
-        </mr-app>   
+        </mr-app>
+    </code>
     <code slot="css">
         mr-panel {
             display: flex;
@@ -110,7 +111,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
                 color: col
             });
             text.textObj.material = material;
-            console.log(text, col);
+            console.log(text, color, col);
         }
         changeColor();
     </code>
