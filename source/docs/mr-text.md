@@ -24,6 +24,10 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
     </code>
 </inline-repl>
 
+## Troika
+
+mr-text is made possible through Troika-Three-Text and can be manipulated with JavaScript like any other THREE.js.
+
 ## Definition and Usage
 
 `<mr-text>` supports custom fonts and has growing support CSS styling:
@@ -63,57 +67,3 @@ Custom fonts are supported but must be loaded manually in css using `@font-face`
 * white-space
 * vertical-align
 * text-align
-
-## Troika
-
-mr-text is made possible through Troika-Three-Text and can be manipulated with JavaScript like any other THREE.js.
-
-### button changing text example
-
-<inline-repl editor-height="280">
-    <code slot="html">
-        <mr-app>
-            <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
-            <mr-panel id="panel">
-                <mr-button onclick="changeColor()">Push</mr-button>
-                <mr-text id="text">Press the above button to change the color!</mr-text>
-            </mr-panel>
-        </mr-app>
-    </code>
-    <code slot="css">
-        mr-panel {
-            display: flex;
-            flex-flow: column nowrap;
-            align-items: center;
-            justify-content: center;
-            width: 100vw;
-            height: 100vh;
-        }
-        mr-button {
-          font-family: system-ui;
-          background-color: white;
-          padding: 8px 16px;
-          font-size: 150%;
-          border-radius: 20px;
-        }
-    </code>
-    <code slot="javascript">
-        function changeColor() {
-            // change the background color
-            let hue = Math.floor(Math.random() * 360);
-            let color = 'hsl(' + hue + ', 100%, 80%)';
-            document.querySelector("#panel").style.backgroundColor = color;
-            // change the text to show the background color
-            let text = document.querySelector("#text");
-            var col = new THREE.Color();
-            // Set all three to 0-1 range: divide hue by 360 and make the others decimal out.
-            col.setHSL(hue/360, 1, 0.8);
-            var material = new THREE.MeshBasicMaterial({
-                color: col
-            });
-            text.textObj.material = material;
-            console.log(text, color, col);
-        }
-        changeColor();
-    </code>
-</inline-repl>
