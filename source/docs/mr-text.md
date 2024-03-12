@@ -106,7 +106,8 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
             // change the text to show the background color
             let text = document.querySelector("#text");
             var col = new THREE.Color();
-            col.setHSL(hue, 100, 80);
+            // Set all three to 0-1 range: divide hue by 360 and make the others decimal out.
+            col.setHSL(hue/360, 1, 0.8);
             var material = new THREE.MeshBasicMaterial({
                 color: col
             });
