@@ -166,10 +166,10 @@ process_markdown "$pagesDir" "pages" ""
 process_markdown "$docsDir" "docs" "doc"
 
 # Process data events files
-process_markdown "$eventsDir" "events" "event"
+process_markdown "$eventsDir" "events" "events"
 
 # Process data attributes files
-process_markdown "$attributesDir" "attributes" "attribute"
+process_markdown "$attributesDir" "attributes" "attributes"
 
 # Process javascript API files
 process_markdown "$jsAPIDir" "js-api" "js-api"
