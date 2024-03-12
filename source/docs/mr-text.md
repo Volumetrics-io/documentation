@@ -98,7 +98,6 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
     </code>
     <code slot="javascript">
         function changeColor() {
-            function changeColor() {
             // change the background color
             let hue = Math.floor(Math.random() * 360);
             let color = 'hsl(' + hue + ', 100%, 80%)';
