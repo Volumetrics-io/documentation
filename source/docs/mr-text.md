@@ -98,6 +98,7 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
     </code>
     <code slot="javascript">
         function changeColor() {
+            function changeColor() {
             // change the background color
             let hue = Math.floor(Math.random() * 360);
             let color = 'hsl(' + hue + ', 100%, 80%)';
@@ -105,14 +106,16 @@ mr-text is made possible through Troika-Three-Text and can be manipulated with J
             // change the text to show the background color
             console.log(color_value);
             // Create a new color object
-            var color = new THREE.Color();
+            var col = new THREE.Color();
             // Set the color using HSL values
             // h, s, and l are expected to be in the range of 0 to 1
-            color.setHSL(hue, 100, 80);
+            col.setHSL(hue, 100, 80);
             // Use the color for a material
-            var material = new THREE.MeshBasicMaterial({ color: color });
+            var material = new THREE.MeshBasicMaterial({
+                color: col
+            });
             text.textObj.material = material;
-            console.log(color);
+            console.log(col);
         }
         changeColor();
     </code>
