@@ -7,7 +7,7 @@
 
 Rotation can be attached to an entity using `data-rotation`, it has a specific 3D value:
 
-## `data-rotation`
+## `data-rotation` 
 
 Sets the rotation of an entity in the 3D space, relative to its parent.
 

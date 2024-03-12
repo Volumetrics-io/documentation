@@ -6,7 +6,7 @@
 
 Positional (aka Spatial) Audio can be attached to an entity using `data-comp-audio`, it has 4 values:
 
-## `src`
+## `src` 
 
 The path to the audio file. 
 

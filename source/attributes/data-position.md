@@ -8,7 +8,7 @@
 Position can be attached to an entity using `data-position`, it has a specific 3D value:
 
 ## `data-position`
-
+ 
 Sets the position of an entity in the 3D space, relative to its parent.
 
 Value: a string of 3 numbers in meters separated by a space.
