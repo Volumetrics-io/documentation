@@ -2,7 +2,7 @@
 
 The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 
-## Example
+## Example 
 
 <inline-repl editor-height="240">
     <code slot="html">

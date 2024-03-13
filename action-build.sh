@@ -5,9 +5,6 @@
 # Stop on the first sign of trouble
 set -e
 
-# Define the Pandoc version
-PANDOC_VERSION="3.1.11"
-
 # Set up directories
 PANDOC_DIR="$HOME/local/pandoc"
 mkdir -p "$PANDOC_DIR"
@@ -15,9 +12,23 @@ BIN_DIR="$HOME/local/bin"
 mkdir -p "$BIN_DIR"
 export PATH="$BIN_DIR:$PATH"
 
+# Get the latest Pandoc version
+PANDOC_REPO="jgm/pandoc"
+PANDOC_API_URL="https://api.github.com/repos/${PANDOC_REPO}/releases/latest"
+
+echo "Fetching latest Pandoc release from GitHub"
+LATEST_RELEASE=$(curl -s $PANDOC_API_URL | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+PANDOC_VERSION=${LATEST_RELEASE}
+
+# Exit if we failed to get the latest version
+if [ -z "$PANDOC_VERSION" ]; then
+    echo "Failed to fetch the latest Pandoc version"
+    exit 1
+fi
+
 # Download Pandoc tarball
-PANDOC_TARBALL="pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz"
-PANDOC_URL="https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/${PANDOC_TARBALL}"
+PANDOC_TARBALL="pandoc-${PANDOC_VERSION#v}-linux-amd64.tar.gz"
+PANDOC_URL="https://github.com/${PANDOC_REPO}/releases/download/${PANDOC_VERSION}/${PANDOC_TARBALL}"
 
 echo "Downloading Pandoc from $PANDOC_URL"
 wget -O "${PANDOC_DIR}/${PANDOC_TARBALL}" "$PANDOC_URL"
