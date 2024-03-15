@@ -23,6 +23,7 @@ attribute for more detailed control.
 * [PhysicsSystem](#PhysicsSystem) ⇐ <code>MRSystem</code>
     * [.PhysicsSystem](#PhysicsSystem+PhysicsSystem)
         * [new exports.PhysicsSystem()](#new_PhysicsSystem+PhysicsSystem_new)
+    * [.eventUpdate()](#PhysicsSystem+eventUpdate)
     * [.update(deltaTime, frame)](#PhysicsSystem+update)
     * [.onNewEntity(entity)](#PhysicsSystem+onNewEntity)
     * [.initPhysicsBody(entity)](#PhysicsSystem+initPhysicsBody)
@@ -44,10 +45,16 @@ attribute for more detailed control.
 #### new exports.PhysicsSystem()
 PhysicsSystem's default constructor - sets up useful world and debug information alongside an initial `Rapier` event queue.
 
+<a name="PhysicsSystem+eventUpdate"></a>
+
+### physicsSystem.eventUpdate()
+The per global scene event update call.  Based on the captured physics events for the frame, handles all items appropriately.
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
 <a name="PhysicsSystem+update"></a>
 
 ### physicsSystem.update(deltaTime, frame)
-The generic system update call. Based on the captured physics events for the frame, handles all items appropriately.
+The per-frame system update call. Based on the captured physics events for the frame, handles all items appropriately.
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
 
@@ -81,7 +88,7 @@ Initializes the rigid body used by the physics part of the entity
 <a name="PhysicsSystem+initUIEntityBody"></a>
 
 ### physicsSystem.initUIEntityBody(entity)
-Initializes the rigid body used by the physics for div or Model entity
+Initializes the rigid body used by the physics for non-nr-model div entities
 
 **Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
 

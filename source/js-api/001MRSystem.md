@@ -16,10 +16,6 @@ The default representation of an MRSystem to be expanded upon by actual details 
         * [new exports.MRSystem(useComponents, frameRate)](#new_MRSystem+MRSystem_new)
     * [.onRegister(app)](#MRSystem+onRegister)
     * [.onUnregister(app)](#MRSystem+onUnregister)
-    * [.alwaysNeedsSystemUpdate()](#MRSystem+alwaysNeedsSystemUpdate) ⇒ <code>boolean</code>
-    * [.alwaysNeedsSystemUpdate()](#MRSystem+alwaysNeedsSystemUpdate)
-    * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#MRSystem+needsSystemUpdate)
     * [._update(deltaTime, frame)](#MRSystem+_update)
     * [.update(deltaTime, frame)](#MRSystem+update)
     * [.eventUpdate()](#MRSystem+eventUpdate)
@@ -68,37 +64,6 @@ Called when the system is registered to an app is added.
 | --- | --- | --- |
 | app | <code>MRApp</code> | the app the system is registered to. |
 
-<a name="MRSystem+alwaysNeedsSystemUpdate"></a>
-
-### mrSystem.alwaysNeedsSystemUpdate() ⇒ <code>boolean</code>
-Checks if the system is setup to always run instead of being in a state that allows for toggling on and off.
-Useful for readability and to not need to check against undefined often.
-
-**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
-**Returns**: <code>boolean</code> - true if the internal _needsSystemUpdate is set to 'undefined', false otherwise.  
-<a name="MRSystem+alwaysNeedsSystemUpdate"></a>
-
-### mrSystem.alwaysNeedsSystemUpdate()
-Sets the system ito always run (true) or to be in a state that allows for toggling on and off (false).
-Useful for readability and to not need to check against undefined often.
-
-**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
-<a name="MRSystem+needsSystemUpdate"></a>
-
-### mrSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run the generic system update call. Default implementation returns true if the needsSystemUpdate flag
-has been set to true or is in the alwaysNeedsSystemUpdate state. Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="MRSystem+needsSystemUpdate"></a>
-
-### mrSystem.needsSystemUpdate()
-Set the needsSystemUpdate parameter.
-undefined - means the system will always update every time the application loops.
-true/false - means the system will only run one iteration when set to true and then reset back to false waiting for the next trigger.
-
-**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 <a name="MRSystem+_update"></a>
 
 ### mrSystem.\_update(deltaTime, frame)
@@ -114,7 +79,7 @@ The actual system update call.
 <a name="MRSystem+update"></a>
 
 ### mrSystem.update(deltaTime, frame)
-The generic system update call.
+The generic system update call per render-frame.
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 
@@ -126,7 +91,8 @@ The generic system update call.
 <a name="MRSystem+eventUpdate"></a>
 
 ### mrSystem.eventUpdate()
-An event triggered update, called when any scene level events occur.
+An event triggered update, called when any global scene level events occur.
+See GLOBAL_UPDATE_EVENTS of MRSystem.js
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 <a name="MRSystem+onNewEntity"></a>

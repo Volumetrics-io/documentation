@@ -15,8 +15,6 @@ Handles specific needs for setting up the masking for all necessary items.
 * [AnimationSystem](#AnimationSystem) ⇐ <code>MRSystem</code>
     * [.AnimationSystem](#AnimationSystem+AnimationSystem)
         * [new exports.AnimationSystem()](#new_AnimationSystem+AnimationSystem_new)
-    * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#AnimationSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#AnimationSystem+update)
 
 <a name="AnimationSystem+AnimationSystem"></a>
@@ -28,22 +26,6 @@ Handles specific needs for setting up the masking for all necessary items.
 #### new exports.AnimationSystem()
 AnimationSystem's default constructor.
 
-<a name="AnimationSystem+needsSystemUpdate"></a>
-
-### animationSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="AnimationSystem+needsSystemUpdate"></a>
-
-### animationSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
 <a name="AnimationSystem+update"></a>
 
 ### animationSystem.update(deltaTime, frame)

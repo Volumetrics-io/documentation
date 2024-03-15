@@ -15,6 +15,8 @@ Handles style updates for all items.
 * [MaterialStyleSystem](#MaterialStyleSystem) ⇐ <code>MRSystem</code>
     * [.MaterialStyleSystem](#MaterialStyleSystem+MaterialStyleSystem)
         * [new exports.MaterialStyleSystem()](#new_MaterialStyleSystem+MaterialStyleSystem_new)
+    * [._updateSpecificEntity()](#MaterialStyleSystem+_updateSpecificEntity)
+    * [.eventUpdate()](#MaterialStyleSystem+eventUpdate)
     * [.update(deltaTime, frame)](#MaterialStyleSystem+update)
     * [.onNewEntity(entity)](#MaterialStyleSystem+onNewEntity)
     * [.setBackground()](#MaterialStyleSystem+setBackground)
@@ -28,10 +30,22 @@ Handles style updates for all items.
 #### new exports.MaterialStyleSystem()
 StyleSystem's default constructor with a starting framerate of 1/30.
 
+<a name="MaterialStyleSystem+_updateSpecificEntity"></a>
+
+### materialStyleSystem.\_updateSpecificEntity()
+The per entity triggered update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+
+**Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
+<a name="MaterialStyleSystem+eventUpdate"></a>
+
+### materialStyleSystem.eventUpdate()
+The per global scene event update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+
+**Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
 <a name="MaterialStyleSystem+update"></a>
 
 ### materialStyleSystem.update(deltaTime, frame)
-The generic system update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+The per-frame system update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
 
 **Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
 

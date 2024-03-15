@@ -19,14 +19,8 @@ The default representation of an MRElement to be expanded upon by actual details
     * [.contentWidth()](#MREntity+contentWidth) ⇒ <code>number</code>
     * [.height()](#MREntity+height) ⇒ <code>number</code>
     * [.contentHeight()](#MREntity+contentHeight) ⇒ <code>number</code>
-    * [.alwaysNeedsGeometryUpdate()](#MREntity+alwaysNeedsGeometryUpdate) ⇒ <code>boolean</code>
-    * [.alwaysNeedsGeometryUpdate()](#MREntity+alwaysNeedsGeometryUpdate)
-    * [.needsGeometryUpdate()](#MREntity+needsGeometryUpdate) ⇒ <code>boolean</code>
-    * [.needsGeometryUpdate()](#MREntity+needsGeometryUpdate)
-    * [.alwaysNeedsStyleUpdate()](#MREntity+alwaysNeedsStyleUpdate) ⇒ <code>boolean</code>
-    * [.alwaysNeedsStyleUpdate()](#MREntity+alwaysNeedsStyleUpdate)
-    * [.needsStyleUpdate()](#MREntity+needsStyleUpdate) ⇒ <code>boolean</code>
-    * [.needsStyleUpdate()](#MREntity+needsStyleUpdate)
+    * [.triggerGeometryStyleUpdate()](#MREntity+triggerGeometryStyleUpdate) ⇒ <code>number</code>
+    * [.triggerMaterialStyleUpdate()](#MREntity+triggerMaterialStyleUpdate) ⇒ <code>number</code>
     * [.updateMaterialStyle()](#MREntity+updateMaterialStyle)
     * [.updateGeometryStyle()](#MREntity+updateGeometryStyle)
     * [.onHover(event)](#MREntity+onHover)
@@ -82,80 +76,34 @@ The actual 3D value of the content's height.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 **Returns**: <code>number</code> - - height of the 3D object.  
-<a name="MREntity+alwaysNeedsGeometryUpdate"></a>
+<a name="MREntity+triggerGeometryStyleUpdate"></a>
 
-### mrEntity.alwaysNeedsGeometryUpdate() ⇒ <code>boolean</code>
-Checks if the system is setup to always run instead of being in a state that allows for toggling on and off.
-Useful for readability and to not need to check against undefined often.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>boolean</code> - true if the internal _needsSystemUpdate is set to 'undefined', false otherwise.  
-<a name="MREntity+alwaysNeedsGeometryUpdate"></a>
-
-### mrEntity.alwaysNeedsGeometryUpdate()
-Sets the system ito always run (true) or to be in a state that allows for toggling on and off (false).
-Useful for readability and to not need to check against undefined often.
+### mrEntity.triggerGeometryStyleUpdate() ⇒ <code>number</code>
+Triggers a system run to update geometry specifically for the entity calling it. Useful when it's not an overall scene event and for cases where 
+relying on an overall scene or all items to update isnt beneficial.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+needsGeometryUpdate"></a>
+**Returns**: <code>number</code> - - height of the 3D object.  
+<a name="MREntity+triggerMaterialStyleUpdate"></a>
 
-### mrEntity.needsGeometryUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need the StyleSystem to run on this entity during the current iteration.
-Default implementation returns true if the needsSystemUpdate flag has been set to true or is in the alwaysNeedsSystemUpdate state.
-Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="MREntity+needsGeometryUpdate"></a>
-
-### mrEntity.needsGeometryUpdate()
-Set the needsStyleUpdate parameter.
-undefined - means the StyleSystem will update this entity's style every time the application loops.
-true/false - means the StyleSystem will update this entity's style only running one iteration when set to true and then reset back to false waiting for the next trigger.
+### mrEntity.triggerMaterialStyleUpdate() ⇒ <code>number</code>
+Triggers a system run to update material specifically for the entity calling it. Useful when it's not an overall scene event and for cases where 
+relying on an overall scene or all items to update isnt beneficial.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+alwaysNeedsStyleUpdate"></a>
-
-### mrEntity.alwaysNeedsStyleUpdate() ⇒ <code>boolean</code>
-Checks if the system is setup to always run instead of being in a state that allows for toggling on and off.
-Useful for readability and to not need to check against undefined often.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>boolean</code> - true if the internal _needsSystemUpdate is set to 'undefined', false otherwise.  
-<a name="MREntity+alwaysNeedsStyleUpdate"></a>
-
-### mrEntity.alwaysNeedsStyleUpdate()
-Sets the system ito always run (true) or to be in a state that allows for toggling on and off (false).
-Useful for readability and to not need to check against undefined often.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-<a name="MREntity+needsStyleUpdate"></a>
-
-### mrEntity.needsStyleUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need the StyleSystem to run on this entity during the current iteration.
-Default implementation returns true if the needsSystemUpdate flag has been set to true or is in the alwaysNeedsSystemUpdate state.
-Allows subclasses to override with their own implementation.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="MREntity+needsStyleUpdate"></a>
-
-### mrEntity.needsStyleUpdate()
-Set the needsStyleUpdate parameter.
-undefined - means the StyleSystem will update this entity's style every time the application loops.
-true/false - means the StyleSystem will update this entity's style only running one iteration when set to true and then reset back to false waiting for the next trigger.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
+**Returns**: <code>number</code> - - height of the 3D object.  
 <a name="MREntity+updateMaterialStyle"></a>
 
 ### mrEntity.updateMaterialStyle()
-Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be overwritten by others when they create new entities
+Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be added to by others when they create new entities.
+These are run after the MaterialStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+updateGeometryStyle"></a>
 
 ### mrEntity.updateGeometryStyle()
-Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be overwritten by others when they create new entities
+Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be added to by others when they create new entities.
+These are run after the GeometryStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+onHover"></a>

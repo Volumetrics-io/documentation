@@ -16,8 +16,6 @@ System that allows for setup and handling of changing layout.
     * [.LayoutSystem](#LayoutSystem+LayoutSystem)
         * [new exports.LayoutSystem()](#new_LayoutSystem+LayoutSystem_new)
     * [.onNewEntity(entity)](#LayoutSystem+onNewEntity)
-    * [.needsSystemUpdate()](#LayoutSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#LayoutSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#LayoutSystem+update)
     * [.setLayoutPosition(entity)](#LayoutSystem+setLayoutPosition)
 
@@ -41,22 +39,6 @@ Called when a new entity is added to this system
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being added. |
 
-<a name="LayoutSystem+needsSystemUpdate"></a>
-
-### layoutSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>LayoutSystem</code>](#LayoutSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="LayoutSystem+needsSystemUpdate"></a>
-
-### layoutSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>LayoutSystem</code>](#LayoutSystem)  
 <a name="LayoutSystem+update"></a>
 
 ### layoutSystem.update(deltaTime, frame)

@@ -16,11 +16,9 @@ This system supports 3D clipping following threejs's clipping planes setup.
 * [ClippingSystem](#ClippingSystem) ⇐ <code>MRSystem</code>
     * [.ClippingSystem](#ClippingSystem+ClippingSystem)
         * [new exports.ClippingSystem()](#new_ClippingSystem+ClippingSystem_new)
-    * [.needsSystemUpdate()](#ClippingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#ClippingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#ClippingSystem+update)
     * [.updatePlanes(entity)](#ClippingSystem+updatePlanes)
-    * [.applyClipping(object, clipping)](#ClippingSystem+applyClipping)
+    * [.applyClipping(entity, clipping)](#ClippingSystem+applyClipping)
     * [.addClippingPlanes(entity)](#ClippingSystem+addClippingPlanes)
     * [.onNewEntity(entity)](#ClippingSystem+onNewEntity)
 
@@ -33,22 +31,6 @@ This system supports 3D clipping following threejs's clipping planes setup.
 #### new exports.ClippingSystem()
 ClippingSystem's default constructor that sets up coplanar points and the default clipping information.
 
-<a name="ClippingSystem+needsSystemUpdate"></a>
-
-### clippingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="ClippingSystem+needsSystemUpdate"></a>
-
-### clippingSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>ClippingSystem</code>](#ClippingSystem)  
 <a name="ClippingSystem+update"></a>
 
 ### clippingSystem.update(deltaTime, frame)
@@ -74,7 +56,7 @@ Updates the stored clipping planes to be based on the passed in entity.
 
 <a name="ClippingSystem+applyClipping"></a>
 
-### clippingSystem.applyClipping(object, clipping)
+### clippingSystem.applyClipping(entity, clipping)
 Helper method for `onNewEntity`. Actually applies the clipping planes to the material setup for rendering.
 Uses threejs in the background following https://threejs.org/docs/?q=material#api/en/materials/Material.clippingPlanes
 
@@ -82,7 +64,7 @@ Uses threejs in the background following https://threejs.org/docs/?q=material#ap
 
 | Param | Type | Description |
 | --- | --- | --- |
-| object | <code>object</code> | the object3D item to be clipped |
+| entity | <code>MREntity</code> | the entity to be clipped |
 | clipping | <code>MRClippingGeometry</code> | the clipping information to be passed to the material |
 
 <a name="ClippingSystem+addClippingPlanes"></a>

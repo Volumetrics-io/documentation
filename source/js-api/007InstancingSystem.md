@@ -15,8 +15,6 @@ System that allows for instancing of meshes based on a given entity where the in
 * [InstancingSystem](#InstancingSystem) ⇐ <code>MRSystem</code>
     * [.InstancingSystem](#InstancingSystem+InstancingSystem)
         * [new exports.InstancingSystem()](#new_InstancingSystem+InstancingSystem_new)
-    * [.needsSystemUpdate()](#InstancingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#InstancingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#InstancingSystem+update)
     * [.attachedComponent(entity)](#InstancingSystem+attachedComponent)
     * [.random(entity)](#InstancingSystem+random)
@@ -30,22 +28,6 @@ System that allows for instancing of meshes based on a given entity where the in
 #### new exports.InstancingSystem()
 InstancingSystem's default constructor that sets up default instancing count, transformations, and mesh information.
 
-<a name="InstancingSystem+needsSystemUpdate"></a>
-
-### instancingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>InstancingSystem</code>](#InstancingSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="InstancingSystem+needsSystemUpdate"></a>
-
-### instancingSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>InstancingSystem</code>](#InstancingSystem)  
 <a name="InstancingSystem+update"></a>
 
 ### instancingSystem.update(deltaTime, frame)

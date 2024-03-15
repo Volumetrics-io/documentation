@@ -34,8 +34,6 @@ Handles specific needs for setting up the masking for all necessary items.
 * [MaskingSystem](#MaskingSystem) ⇐ <code>MRSystem</code>
     * [.MaskingSystem](#MaskingSystem+MaskingSystem)
         * [new exports.MaskingSystem()](#new_MaskingSystem+MaskingSystem_new)
-    * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#MaskingSystem+needsSystemUpdate)
     * [.update(deltaTime, frame)](#MaskingSystem+update)
     * [.sync()](#MaskingSystem+sync)
     * [.onNewEntity(entity)](#MaskingSystem+onNewEntity)
@@ -49,22 +47,6 @@ Handles specific needs for setting up the masking for all necessary items.
 #### new exports.MaskingSystem()
 MaskingSystem's default constructor.
 
-<a name="MaskingSystem+needsSystemUpdate"></a>
-
-### maskingSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run AND the default systemUpdateCheck is true
-(see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="MaskingSystem+needsSystemUpdate"></a>
-
-### maskingSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-Relies on the parent's implementation. (see [MRSystem.needsSystemUpdate](https://docs.mrjs.io/javascript-api/#mrsystem.needssystemupdate) for default).
-
-**Kind**: instance method of [<code>MaskingSystem</code>](#MaskingSystem)  
 <a name="MaskingSystem+update"></a>
 
 ### maskingSystem.update(deltaTime, frame)

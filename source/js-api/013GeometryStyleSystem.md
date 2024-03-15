@@ -15,6 +15,8 @@ Handles geometry updates for all items.
 * [GeometryStyleSystem](#GeometryStyleSystem) ⇐ <code>MRSystem</code>
     * [.GeometryStyleSystem](#GeometryStyleSystem+GeometryStyleSystem)
         * [new exports.GeometryStyleSystem()](#new_GeometryStyleSystem+GeometryStyleSystem_new)
+    * [._updateSpecificEntity()](#GeometryStyleSystem+_updateSpecificEntity)
+    * [.eventUpdate()](#GeometryStyleSystem+eventUpdate)
     * [.update(deltaTime, frame)](#GeometryStyleSystem+update)
     * [.onNewEntity(entity)](#GeometryStyleSystem+onNewEntity)
     * [.setUpdatedBorder()](#GeometryStyleSystem+setUpdatedBorder)
@@ -28,10 +30,22 @@ Handles geometry updates for all items.
 #### new exports.GeometryStyleSystem()
 StyleSystem's default constructor with a starting framerate of 1/30.
 
+<a name="GeometryStyleSystem+_updateSpecificEntity"></a>
+
+### geometryStyleSystem.\_updateSpecificEntity()
+The per entity triggered update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+
+**Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
+<a name="GeometryStyleSystem+eventUpdate"></a>
+
+### geometryStyleSystem.eventUpdate()
+The per global scene event update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+
+**Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
 <a name="GeometryStyleSystem+update"></a>
 
 ### geometryStyleSystem.update(deltaTime, frame)
-The generic system update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+The per-frame system update call.
 
 **Kind**: instance method of [<code>GeometryStyleSystem</code>](#GeometryStyleSystem)  
 

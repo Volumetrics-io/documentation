@@ -16,8 +16,8 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.TextSystem](#TextSystem+TextSystem)
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
-    * [.needsSystemUpdate()](#TextSystem+needsSystemUpdate) ⇒ <code>boolean</code>
-    * [.needsSystemUpdate()](#TextSystem+needsSystemUpdate)
+    * [._updateSpecificEntity()](#TextSystem+_updateSpecificEntity)
+    * [.eventUpdate()](#TextSystem+eventUpdate)
     * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
     * [.addText(entity)](#TextSystem+addText)
@@ -49,28 +49,22 @@ When a new entity is created, adds it to the physics registry and initializes th
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being set up |
 
-<a name="TextSystem+needsSystemUpdate"></a>
+<a name="TextSystem+_updateSpecificEntity"></a>
 
-### textSystem.needsSystemUpdate() ⇒ <code>boolean</code>
-Getter to checks if we need to run this system's update call. Overridden implementation returns true if there are any items in this
-systems registry that need to be run.
+### textSystem.\_updateSpecificEntity()
+The per entity triggered update call.  Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-**Returns**: <code>boolean</code> - true if the system is in a state where this system is needed to update, false otherwise  
-<a name="TextSystem+needsSystemUpdate"></a>
+<a name="TextSystem+eventUpdate"></a>
 
-### textSystem.needsSystemUpdate()
-Since this class overrides the default `get` for the `needsSystemUpdate` call, the `set` pair is needed for javascript to be happy.
-This function does nothing, but is needed for the pairing. TextSystem`s `needsSystemUpdate` solely depends on registry size
-instead of a boolean. This is required s.t. we can monitor and properly update the system when the text content has changed
-and not just the style itself. Since that is a per-entity check, needsSystemUpdate must always run on every entity with
-the needsStyleUpdate being the optimization determiner instead.
+### textSystem.eventUpdate()
+The per global scene event update call. Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 <a name="TextSystem+update"></a>
 
 ### textSystem.update(deltaTime, frame)
-The generic system update call for all text items including updates for style and cleaning of content for special characters.
+The per-frame system update call for all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 
