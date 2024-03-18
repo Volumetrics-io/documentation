@@ -2,7 +2,7 @@
 
 ## What is MRjs
 
-vv the below paragraph needs better more welcoming/less technical wording
+<!-- TODO - vv the below paragraph needs better more welcoming/less technical wording -->
 
 MRjs is a mixed-reality-first, WebXR user interface library meant to bootstrap spatial web development. It implements much of the foundational work so that developers can spend less time on the basics and more time on their app.
 
@@ -57,7 +57,7 @@ Peruse through our Demos and find which may be a good starting point for you.
 -->
 <!-- uncomment the above once we have more onboarding/tutorials -->
 
-## Ending?
+<!-- ## Ending?
 
-VVV need to end with something fun at the bottom here? a call to action?
+VVV need to end with something fun at the bottom here? a call to action? -->
 
