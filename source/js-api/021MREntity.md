@@ -37,6 +37,7 @@ The default representation of an MRElement to be expanded upon by actual details
     * [.add(entity)](#MREntity+add)
     * [.remove(entity)](#MREntity+remove)
     * [.traverse(callBack)](#MREntity+traverse)
+    * [.traverseObjects(callBack)](#MREntity+traverseObjects)
 
 <a name="MREntity+MREntity"></a>
 
@@ -229,6 +230,17 @@ Removing an entity as a sub-object of this entity.
 
 ### mrEntity.traverse(callBack)
 Runs the passed through function on this object and every child of this object.
+
+**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callBack | <code>function</code> | the function to run recursively. |
+
+<a name="MREntity+traverseObjects"></a>
+
+### mrEntity.traverseObjects(callBack)
+Runs the passed through function on the objects associated with this Entity
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 
