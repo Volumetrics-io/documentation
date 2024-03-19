@@ -181,6 +181,8 @@ Enables a visual of a stats counter in the top left corner. The stats counter ca
 ### `preserve-drawing-buffer`
 This enables the common html use-case of 'right-click to save' a png file of what's on the screen.
 
+*Note: Most chromium-based browsers (chrome, duckduckgo, arc, etc...) have this feature by default making the use of this flag unnecessary*
+
 Allowing this as a feature the user toggles manually, because it causes a performance hit and isnt a strong requirement by default for most people who are interacting.
 
 <inline-repl>
