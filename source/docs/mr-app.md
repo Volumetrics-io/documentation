@@ -19,7 +19,7 @@ The `<mr-app>` component serves as the foundational building block of an applica
             <mr-text>This is an mr-app</mr-text>
             <mr-model id="logo" src="/static/sample/logo.glb"></mr-model>
         </mr-panel>
-    </mr-app> 
+    </mr-app>
   </code>
   <code slot="css">
     mr-panel {

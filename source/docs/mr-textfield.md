@@ -47,4 +47,4 @@ The `<mr-textfield>` creates a text input field in the UI of an `<mr-panel>`.
 
 ## Definition and Usage
 
-`<mr-textfield>`Is the simplest way to capture keyboard input, enabling more practical interactions such as form submission or search input, without needing to exit a spatial experience. 
+`<mr-textfield>`Is the simplest way to capture keyboard input, enabling more practical interactions such as form submission or search input, without needing to exit a spatial experience.

@@ -23,7 +23,7 @@
             <mr-panel>
                 <mr-model id="bowtie" src="/static/sample/bowtie.glb"></mr-model>
             </mr-panel>
-        </mr-app> 
+        </mr-app>
     </code>
     <code slot="css">
         mr-panel {

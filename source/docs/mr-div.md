@@ -13,7 +13,7 @@ The `<mr-div>`defines a division or section in an `<mr-panel>`. This is the same
                 <mr-div class="blue"><mr-text>Blue section</mr-text></mr-div>
                 <mr-div class="yellow"><mr-text>Yellow section</mr-text></mr-div>
             </mr-panel>
-        </mr-app> 
+        </mr-app>
     </code>
     <style slot="css">
         .container {
