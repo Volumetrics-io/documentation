@@ -40,7 +40,6 @@ The `<mr-button>` embeds a button in the UI of an `<mr-panel>`.
     </code>
 </inline-repl>
 
-
 ## Definition and Usage
 
 `<mr-button>` has one optional attribute:

@@ -8,7 +8,7 @@ The `<mr-img>` tag is used to embed an image in an MRjs page.
     <code slot="html">
         <mr-app>
             <mr-light color="white" intensity="1" data-position="0 0 0.35"></mr-light>
-            <mr-panel> 
+            <mr-panel>
                 <mr-img src="/static/sample/humpback.jpg" alt="A Humpback whale breaching the water"></mr-img>
                 <mr-text>A Humpback whale breaching the water</mr-text>
             </mr-panel>
@@ -34,7 +34,7 @@ The `<mr-img>` tag is used to embed an image in an MRjs page.
     </code>
 </inline-repl>
 
-## Definition and Usage 
+## Definition and Usage
 
 Images are not technically inserted into a web page; images are linked to web pages. The `<mr-img>` tag creates a holding space for the referenced image.
 

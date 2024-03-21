@@ -2,7 +2,7 @@
 
 The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
 
-## Example 
+## Example
 
 <inline-repl editor-height="240">
     <code slot="html">
@@ -13,7 +13,7 @@ The `<mr-a>`embeds a hyperlink in the UI of an `<mr-panel>`.
                 <mr-a class="big-link" href="https://volumetrics.io/">This is a big purple link</mr-a>
                 <mr-text>This is not a link</mr-text>
             </mr-panel>
-        </mr-app> 
+        </mr-app>
     </code>
     <code slot="css">
         mr-panel {

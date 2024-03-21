@@ -19,7 +19,7 @@ The `<mr-app>` component serves as the foundational building block of an applica
             <mr-text>This is an mr-app</mr-text>
             <mr-model id="logo" src="/static/sample/logo.glb"></mr-model>
         </mr-panel>
-    </mr-app> 
+    </mr-app>
   </code>
   <code slot="css">
     mr-panel {
@@ -181,7 +181,7 @@ Enables a visual of a stats counter in the top left corner. The stats counter ca
 ### `preserve-drawing-buffer`
 This enables the common html use-case of 'right-click to save' a png file of what's on the screen.
 
-*Note: Most chromium-based browsers (chrome, duckduckgo, arc, etc...) have this feature by default making the use of this flag unnecessary*
+_Note: Most chromium-based browsers (chrome, duckduckgo, arc, etc...) have this feature by default making the use of this flag unnecessary_
 
 Allowing this as a feature the user toggles manually, because it causes a performance hit and isnt a strong requirement by default for most people who are interacting.
 
