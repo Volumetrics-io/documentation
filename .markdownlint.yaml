@@ -35,3 +35,7 @@ MD033: False
 
 # MD022/blanks-around-headings/blanks-around-headers
 MD022: False
+
+
+# MD037/no-space-in-emphasis
+MD037: False
