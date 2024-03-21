@@ -29,3 +29,6 @@ MD025: False
 
 # MD036/no-emphasis-as-heading : Emphasis used instead of a heading : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md036.md
 MD036: False
+
+# MD033/no-inline-html: Raw HTML is allowed in Markdown, but this rule is included for those who want their documents to only include "pure" Markdown : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
+MD033: False
