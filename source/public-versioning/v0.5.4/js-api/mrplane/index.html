@@ -1,0 +1,549 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>MRjs ⬥ MRPlane</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+
+    <!-- SEO -->
+    <meta name="description" content="MRjs documentation for MRPlane" />
+
+    <!-- Basic Open Graph -->
+    <meta content="MRPlane" itemProp="name" class="next-head" />
+    <meta content="MRjs documentation for MRPlane" itemProp="description"
+        class="next-head" />
+    <meta content="https://docs.mrjs.io/static/opengraph.jpg" itemProp="image" class="next-head" />
+
+    <!-- Generic Open Graph -->
+    <meta property="og:type" content="article" class="next-head" />
+    <meta content="MRPlane" property="og:title" class="next-head" />
+    <meta content="https://docs.mrjs.io/js-api/mrplane/" property="og:url" class="next-head" />
+    <meta content="https://docs.mrjs.io/static/opengraph.jpg" property="og:image" class="next-head" />
+    <meta content="MRjs documentation for MRPlane" property="og:description"
+        class="next-head" />
+    <meta content="MRjs" property="og:site_name" class="next-head" />
+
+    <!-- Analytics -->
+    <script defer data-domain="docs.mrjs.io" src="https://plausible.io/js/script.js"></script>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    <!-- Inline REPL -->
+    <script src="/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="/static/ace/ext-beautify.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-html.min.js"></script>
+
+    <script type="module" src="/static/inline-repl.js"></script>
+
+    <!-- Sidebar selection -->
+    <style>
+        [data-slug="mrplane"] {
+            background-color: var(--accent) !important;
+            color: var(--paper) !important;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="dim_layer"></div>
+
+    <aside id="sidebar">
+        <a href="/" class="main-logo">
+            <img src="/static/mrjs-logo.svg" alt="The MRjs logo, an indigo and purple bowtie." width="110" height="30" />
+        </a>
+
+        <section>
+            <div class="section-title">General</div>
+                        <a class="sidebar-entry" href='/events-system/' data-slug="events-system">Events System</a>
+                        <a class="sidebar-entry" href='/entity-component-system/' data-slug="entity-component-system">Entity Component System</a>
+                        <a class="sidebar-entry" href='/contribute/' data-slug="contribute">Contribute</a>
+                    </section>
+
+        <section>
+            <div class="section-title">HTML tags</div>
+            <a class="sidebar-entry" href='/doc/mr-a/'
+                data-slug="mr-a">&lt;mr-a&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-app/'
+                data-slug="mr-app">&lt;mr-app&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-button/'
+                data-slug="mr-button">&lt;mr-button&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-div/'
+                data-slug="mr-div">&lt;mr-div&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-entity/'
+                data-slug="mr-entity">&lt;mr-entity&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-img/'
+                data-slug="mr-img">&lt;mr-img&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-light/'
+                data-slug="mr-light">&lt;mr-light&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-model/'
+                data-slug="mr-model">&lt;mr-model&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-panel/'
+                data-slug="mr-panel">&lt;mr-panel&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-skybox/'
+                data-slug="mr-skybox">&lt;mr-skybox&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-text/'
+                data-slug="mr-text">&lt;mr-text&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-textarea/'
+                data-slug="mr-textarea">&lt;mr-textarea&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-textfield/'
+                data-slug="mr-textfield">&lt;mr-textfield&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-volume/'
+                data-slug="mr-volume">&lt;mr-volume&gt;</a>
+            
+        </section>
+
+        <section>
+            <div class="section-title">Data attributes</div>
+            <a class="sidebar-entry" href='/attributes/position-and-rotation/'
+                data-slug="position-and-rotation">Position and rotation</a>
+            <a class="sidebar-entry" href='/attributes/data-comp-anchor/'
+                data-slug="data-comp-anchor">data-comp-anchor</a>
+            <a class="sidebar-entry" href='/attributes/data-comp-audio/'
+                data-slug="data-comp-audio">data-comp-audio</a>
+            
+        </section>
+
+        <section>
+            <details id="js-details">
+                <summary class="section-title">Javascript API</summary>
+                <a class="sidebar-entry" href='/js-api/mrelement/'
+                    data-slug="mrelement">MRElement</a>
+                <a class="sidebar-entry" href='/js-api/mrsystem/'
+                    data-slug="mrsystem">MRSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrtextentity/'
+                    data-slug="mrtextentity">MRTextEntity</a>
+                <a class="sidebar-entry" href='/js-api/mruser/'
+                    data-slug="mruser">MRUser</a>
+                <a class="sidebar-entry" href='/js-api/mrapp/'
+                    data-slug="mrapp">MRApp</a>
+                <a class="sidebar-entry" href='/js-api/mrtextentity/'
+                    data-slug="mrtextentity">MRTextEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrapp/'
+                    data-slug="mrapp">MRApp</a>
+                <a class="sidebar-entry" href='/js-api/mrdiventity/'
+                    data-slug="mrdiventity">MRDivEntity</a>
+                <a class="sidebar-entry" href='/js-api/mruser/'
+                    data-slug="mruser">MRUser</a>
+                <a class="sidebar-entry" href='/js-api/instancingsystem/'
+                    data-slug="instancingsystem">InstancingSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrdiventity/'
+                    data-slug="mrdiventity">MRDivEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrhand/'
+                    data-slug="mrhand">MRHand</a>
+                <a class="sidebar-entry" href='/js-api/mruser/'
+                    data-slug="mruser">MRUser</a>
+                <a class="sidebar-entry" href='/js-api/audiosystem/'
+                    data-slug="audiosystem">AudioSystem</a>
+                <a class="sidebar-entry" href='/js-api/instancingsystem/'
+                    data-slug="instancingsystem">InstancingSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrdiventity/'
+                    data-slug="mrdiventity">MRDivEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrhand/'
+                    data-slug="mrhand">MRHand</a>
+                <a class="sidebar-entry" href='/js-api/audiosystem/'
+                    data-slug="audiosystem">AudioSystem</a>
+                <a class="sidebar-entry" href='/js-api/instancingsystem/'
+                    data-slug="instancingsystem">InstancingSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrdiventity/'
+                    data-slug="mrdiventity">MRDivEntity</a>
+                <a class="sidebar-entry" href='/js-api/skyboxsystem/'
+                    data-slug="skyboxsystem">SkyBoxSystem</a>
+                <a class="sidebar-entry" href='/js-api/audiosystem/'
+                    data-slug="audiosystem">AudioSystem</a>
+                <a class="sidebar-entry" href='/js-api/instancingsystem/'
+                    data-slug="instancingsystem">InstancingSystem</a>
+                <a class="sidebar-entry" href='/js-api/physicssystem/'
+                    data-slug="physicssystem">PhysicsSystem</a>
+                <a class="sidebar-entry" href='/js-api/skyboxsystem/'
+                    data-slug="skyboxsystem">SkyBoxSystem</a>
+                <a class="sidebar-entry" href='/js-api/audiosystem/'
+                    data-slug="audiosystem">AudioSystem</a>
+                <a class="sidebar-entry" href='/js-api/maskingsystem/'
+                    data-slug="maskingsystem">MaskingSystem</a>
+                <a class="sidebar-entry" href='/js-api/physicssystem/'
+                    data-slug="physicssystem">PhysicsSystem</a>
+                <a class="sidebar-entry" href='/js-api/skyboxsystem/'
+                    data-slug="skyboxsystem">SkyBoxSystem</a>
+                <a class="sidebar-entry" href='/js-api/clippingsystem/'
+                    data-slug="clippingsystem">ClippingSystem</a>
+                <a class="sidebar-entry" href='/js-api/maskingsystem/'
+                    data-slug="maskingsystem">MaskingSystem</a>
+                <a class="sidebar-entry" href='/js-api/physicssystem/'
+                    data-slug="physicssystem">PhysicsSystem</a>
+                <a class="sidebar-entry" href='/js-api/skyboxsystem/'
+                    data-slug="skyboxsystem">SkyBoxSystem</a>
+                <a class="sidebar-entry" href='/js-api/clippingsystem/'
+                    data-slug="clippingsystem">ClippingSystem</a>
+                <a class="sidebar-entry" href='/js-api/geometrystylesystem/'
+                    data-slug="geometrystylesystem">GeometryStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/maskingsystem/'
+                    data-slug="maskingsystem">MaskingSystem</a>
+                <a class="sidebar-entry" href='/js-api/physicssystem/'
+                    data-slug="physicssystem">PhysicsSystem</a>
+                <a class="sidebar-entry" href='/js-api/clippingsystem/'
+                    data-slug="clippingsystem">ClippingSystem</a>
+                <a class="sidebar-entry" href='/js-api/geometrystylesystem/'
+                    data-slug="geometrystylesystem">GeometryStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/maskingsystem/'
+                    data-slug="maskingsystem">MaskingSystem</a>
+                <a class="sidebar-entry" href='/js-api/materialstylesystem/'
+                    data-slug="materialstylesystem">MaterialStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/clippingsystem/'
+                    data-slug="clippingsystem">ClippingSystem</a>
+                <a class="sidebar-entry" href='/js-api/geometrystylesystem/'
+                    data-slug="geometrystylesystem">GeometryStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/materialstylesystem/'
+                    data-slug="materialstylesystem">MaterialStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/textsystem/'
+                    data-slug="textsystem">TextSystem</a>
+                <a class="sidebar-entry" href='/js-api/geometrystylesystem/'
+                    data-slug="geometrystylesystem">GeometryStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/layoutsystem/'
+                    data-slug="layoutsystem">LayoutSystem</a>
+                <a class="sidebar-entry" href='/js-api/materialstylesystem/'
+                    data-slug="materialstylesystem">MaterialStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/textsystem/'
+                    data-slug="textsystem">TextSystem</a>
+                <a class="sidebar-entry" href='/js-api/animationsystem/'
+                    data-slug="animationsystem">AnimationSystem</a>
+                <a class="sidebar-entry" href='/js-api/layoutsystem/'
+                    data-slug="layoutsystem">LayoutSystem</a>
+                <a class="sidebar-entry" href='/js-api/materialstylesystem/'
+                    data-slug="materialstylesystem">MaterialStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/textsystem/'
+                    data-slug="textsystem">TextSystem</a>
+                <a class="sidebar-entry" href='/js-api/animationsystem/'
+                    data-slug="animationsystem">AnimationSystem</a>
+                <a class="sidebar-entry" href='/js-api/controlsystem/'
+                    data-slug="controlsystem">ControlSystem</a>
+                <a class="sidebar-entry" href='/js-api/layoutsystem/'
+                    data-slug="layoutsystem">LayoutSystem</a>
+                <a class="sidebar-entry" href='/js-api/textsystem/'
+                    data-slug="textsystem">TextSystem</a>
+                <a class="sidebar-entry" href='/js-api/animationsystem/'
+                    data-slug="animationsystem">AnimationSystem</a>
+                <a class="sidebar-entry" href='/js-api/controlsystem/'
+                    data-slug="controlsystem">ControlSystem</a>
+                <a class="sidebar-entry" href='/js-api/layoutsystem/'
+                    data-slug="layoutsystem">LayoutSystem</a>
+                <a class="sidebar-entry" href='/js-api/panelsystem/'
+                    data-slug="panelsystem">PanelSystem</a>
+                <a class="sidebar-entry" href='/js-api/anchorsystem/'
+                    data-slug="anchorsystem">AnchorSystem</a>
+                <a class="sidebar-entry" href='/js-api/animationsystem/'
+                    data-slug="animationsystem">AnimationSystem</a>
+                <a class="sidebar-entry" href='/js-api/controlsystem/'
+                    data-slug="controlsystem">ControlSystem</a>
+                <a class="sidebar-entry" href='/js-api/panelsystem/'
+                    data-slug="panelsystem">PanelSystem</a>
+                <a class="sidebar-entry" href='/js-api/anchorsystem/'
+                    data-slug="anchorsystem">AnchorSystem</a>
+                <a class="sidebar-entry" href='/js-api/controlsystem/'
+                    data-slug="controlsystem">ControlSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrentity/'
+                    data-slug="mrentity">MREntity</a>
+                <a class="sidebar-entry" href='/js-api/panelsystem/'
+                    data-slug="panelsystem">PanelSystem</a>
+                <a class="sidebar-entry" href='/js-api/anchorsystem/'
+                    data-slug="anchorsystem">AnchorSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrentity/'
+                    data-slug="mrentity">MREntity</a>
+                <a class="sidebar-entry" href='/js-api/mrimage/'
+                    data-slug="mrimage">MRImage</a>
+                <a class="sidebar-entry" href='/js-api/panelsystem/'
+                    data-slug="panelsystem">PanelSystem</a>
+                <a class="sidebar-entry" href='/js-api/anchorsystem/'
+                    data-slug="anchorsystem">AnchorSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrentity/'
+                    data-slug="mrentity">MREntity</a>
+                <a class="sidebar-entry" href='/js-api/mrimage/'
+                    data-slug="mrimage">MRImage</a>
+                <a class="sidebar-entry" href='/js-api/mrpanel/'
+                    data-slug="mrpanel">MRPanel</a>
+                <a class="sidebar-entry" href='/js-api/mrentity/'
+                    data-slug="mrentity">MREntity</a>
+                <a class="sidebar-entry" href='/js-api/mrimage/'
+                    data-slug="mrimage">MRImage</a>
+                <a class="sidebar-entry" href='/js-api/mrpanel/'
+                    data-slug="mrpanel">MRPanel</a>
+                <a class="sidebar-entry" href='/js-api/mrskybox/'
+                    data-slug="mrskybox">MRSkyBox</a>
+                <a class="sidebar-entry" href='/js-api/mrimage/'
+                    data-slug="mrimage">MRImage</a>
+                <a class="sidebar-entry" href='/js-api/mrpanel/'
+                    data-slug="mrpanel">MRPanel</a>
+                <a class="sidebar-entry" href='/js-api/mrskybox/'
+                    data-slug="mrskybox">MRSkyBox</a>
+                <a class="sidebar-entry" href='/js-api/mrtextarea/'
+                    data-slug="mrtextarea">MRTextArea</a>
+                <a class="sidebar-entry" href='/js-api/mrpanel/'
+                    data-slug="mrpanel">MRPanel</a>
+                <a class="sidebar-entry" href='/js-api/mrskybox/'
+                    data-slug="mrskybox">MRSkyBox</a>
+                <a class="sidebar-entry" href='/js-api/mrtextarea/'
+                    data-slug="mrtextarea">MRTextArea</a>
+                <a class="sidebar-entry" href='/js-api/mrtextfield/'
+                    data-slug="mrtextfield">MRTextField</a>
+                <a class="sidebar-entry" href='/js-api/mrmodel/'
+                    data-slug="mrmodel">MRModel</a>
+                <a class="sidebar-entry" href='/js-api/mrskybox/'
+                    data-slug="mrskybox">MRSkyBox</a>
+                <a class="sidebar-entry" href='/js-api/mrtextarea/'
+                    data-slug="mrtextarea">MRTextArea</a>
+                <a class="sidebar-entry" href='/js-api/mrtextfield/'
+                    data-slug="mrtextfield">MRTextField</a>
+                <a class="sidebar-entry" href='/js-api/mrbutton/'
+                    data-slug="mrbutton">MRButton</a>
+                <a class="sidebar-entry" href='/js-api/mrmodel/'
+                    data-slug="mrmodel">MRModel</a>
+                <a class="sidebar-entry" href='/js-api/mrtextarea/'
+                    data-slug="mrtextarea">MRTextArea</a>
+                <a class="sidebar-entry" href='/js-api/mrtextfield/'
+                    data-slug="mrtextfield">MRTextField</a>
+                <a class="sidebar-entry" href='/js-api/mrbutton/'
+                    data-slug="mrbutton">MRButton</a>
+                <a class="sidebar-entry" href='/js-api/mrmodel/'
+                    data-slug="mrmodel">MRModel</a>
+                <a class="sidebar-entry" href='/js-api/mrtextfield/'
+                    data-slug="mrtextfield">MRTextField</a>
+                <a class="sidebar-entry" href='/js-api/mrvolume/'
+                    data-slug="mrvolume">MRVolume</a>
+                <a class="sidebar-entry" href='/js-api/mrbutton/'
+                    data-slug="mrbutton">MRButton</a>
+                <a class="sidebar-entry" href='/js-api/mrhyperlink/'
+                    data-slug="mrhyperlink">MRHyperlink</a>
+                <a class="sidebar-entry" href='/js-api/mrmodel/'
+                    data-slug="mrmodel">MRModel</a>
+                <a class="sidebar-entry" href='/js-api/mrvolume/'
+                    data-slug="mrvolume">MRVolume</a>
+                <a class="sidebar-entry" href='/js-api/mrbutton/'
+                    data-slug="mrbutton">MRButton</a>
+                <a class="sidebar-entry" href='/js-api/mrhyperlink/'
+                    data-slug="mrhyperlink">MRHyperlink</a>
+                <a class="sidebar-entry" href='/js-api/mrlight/'
+                    data-slug="mrlight">MRLight</a>
+                <a class="sidebar-entry" href='/js-api/mrvolume/'
+                    data-slug="mrvolume">MRVolume</a>
+                <a class="sidebar-entry" href='/js-api/mrhyperlink/'
+                    data-slug="mrhyperlink">MRHyperlink</a>
+                <a class="sidebar-entry" href='/js-api/mrlight/'
+                    data-slug="mrlight">MRLight</a>
+                <a class="sidebar-entry" href='/js-api/mrplane/'
+                    data-slug="mrplane">MRPlane</a>
+                <a class="sidebar-entry" href='/js-api/mrvolume/'
+                    data-slug="mrvolume">MRVolume</a>
+                <a class="sidebar-entry" href='/js-api/mrclippinggeometry/'
+                    data-slug="mrclippinggeometry">MRClippingGeometry</a>
+                <a class="sidebar-entry" href='/js-api/mrhyperlink/'
+                    data-slug="mrhyperlink">MRHyperlink</a>
+                <a class="sidebar-entry" href='/js-api/mrlight/'
+                    data-slug="mrlight">MRLight</a>
+                <a class="sidebar-entry" href='/js-api/mrplane/'
+                    data-slug="mrplane">MRPlane</a>
+                <a class="sidebar-entry" href='/js-api/mrclippinggeometry/'
+                    data-slug="mrclippinggeometry">MRClippingGeometry</a>
+                <a class="sidebar-entry" href='/js-api/mrhand/'
+                    data-slug="mrhand">MRHand</a>
+                <a class="sidebar-entry" href='/js-api/mrlight/'
+                    data-slug="mrlight">MRLight</a>
+                <a class="sidebar-entry" href='/js-api/mrplane/'
+                    data-slug="mrplane">MRPlane</a>
+                <a class="sidebar-entry" href='/js-api/mrclippinggeometry/'
+                    data-slug="mrclippinggeometry">MRClippingGeometry</a>
+                <a class="sidebar-entry" href='/js-api/mrhand/'
+                    data-slug="mrhand">MRHand</a>
+                <a class="sidebar-entry" href='/js-api/mrplane/'
+                    data-slug="mrplane">MRPlane</a>
+                <a class="sidebar-entry" href='/js-api/global/'
+                    data-slug="global">global</a>
+                <a class="sidebar-entry" href='/js-api/mrclippinggeometry/'
+                    data-slug="mrclippinggeometry">MRClippingGeometry</a>
+                <a class="sidebar-entry" href='/js-api/mrplanemanager/'
+                    data-slug="mrplanemanager">MRPlaneManager</a>
+                <a class="sidebar-entry" href='/js-api/global/'
+                    data-slug="global">global</a>
+                <a class="sidebar-entry" href='/js-api/mrplanemanager/'
+                    data-slug="mrplanemanager">MRPlaneManager</a>
+                <a class="sidebar-entry" href='/js-api/global/'
+                    data-slug="global">global</a>
+                <a class="sidebar-entry" href='/js-api/mrplanemanager/'
+                    data-slug="mrplanemanager">MRPlaneManager</a>
+                
+
+                <div class="section-title">API Extras</div>
+                <a class="sidebar-entry" href='/js-api-extras/refractor/'
+                    data-slug="refractor">Refractor</a>
+                <a class="sidebar-entry" href='/js-api-extras/water/'
+                    data-slug="water">Water</a>
+                
+
+                <div class="section-title">API Utils</div>
+                <a class="sidebar-entry" href='/js-api-utils/html/'
+                    data-slug="html">HTML</a>
+                <a class="sidebar-entry" href='/js-api-utils/stringutils/'
+                    data-slug="stringutils">StringUtils</a>
+                <a class="sidebar-entry" href='/js-api-utils/xr/'
+                    data-slug="xr">XR</a>
+                <a class="sidebar-entry" href='/js-api-utils/js/'
+                    data-slug="js">JS</a>
+                <a class="sidebar-entry" href='/js-api-utils/display/'
+                    data-slug="display">Display</a>
+                <a class="sidebar-entry" href='/js-api-utils/material/'
+                    data-slug="material">Material</a>
+                <a class="sidebar-entry" href='/js-api-utils/math3d/'
+                    data-slug="math3d">Math3D</a>
+                <a class="sidebar-entry" href='/js-api-utils/mathutils/'
+                    data-slug="mathutils">MathUtils</a>
+                <a class="sidebar-entry" href='/js-api-utils/css/'
+                    data-slug="css">CSS</a>
+                <a class="sidebar-entry" href='/js-api-utils/physics/'
+                    data-slug="physics">Physics</a>
+                <a class="sidebar-entry" href='/js-api-utils/model/'
+                    data-slug="model">Model</a>
+                <a class="sidebar-entry" href='/js-api-utils/app/'
+                    data-slug="app">App</a>
+                <a class="sidebar-entry" href='/js-api-utils/geometry/'
+                    data-slug="geometry">Geometry</a>
+                
+            </details>
+        </section>
+
+    </aside>
+
+    <label id="hamburger">
+        <svg id="hamburgerSVG" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line id="hamburgerLineTop" x1="4" y1="4" x2="20" y2="4" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line id="hamburgerLineBottom" x1="4" y1="20" x2="20" y2="20" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line x1="4" y1="12" x2="20" y2="12" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
+            </line>
+        </svg>
+    </label>
+
+    <main>
+        <div class="markdown">
+            <h1 id="mrplane"><a href="#mrplane" class="anchor" aria-hidden="true"></a>MRPlane</h1>
+            <p><a name="MRPlane"></a></p>
+            <h2 id="mrplane-1"><a href="#mrplane-1" class="anchor" aria-hidden="true"></a>MRPlane</h2>
+            <p>a name space representation of an MR Plane</p>
+            <p><strong>Kind</strong>: global class</p>
+
+            <footer>
+                <p>Found a typo or suggestion for the docs?</p>
+                <p><a href="https://github.com/volumetrics-io/mrjs/edit/main/src/dataTypes/MRPlane.js">Suggest an edit on GitHub</a>
+                </p>
+            </footer>
+        </div>
+
+    </main>
+
+    <script type="text/javascript">
+        let hamburger_button = document.getElementById('hamburger');
+        let sidebar = document.getElementById('sidebar');
+        let dim_layer = document.getElementById('dim_layer');
+        let js_details = document.getElementById('js-details')
+        let isOpened = false;
+
+        const hide_sidebar = () => {
+            sidebar.style.transform = "translateX(0%)";
+            dim_layer.style.opacity = 0;
+            setTimeout(() => {
+                dim_layer.style.display = "none";
+            }, 300);
+            isOpened = false;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_open")
+                .forEach((i) => i.beginElement());
+        };
+
+        const show_sidebar = () => {
+            sidebar.style.transform = "translateX(100%)";
+            dim_layer.style.opacity = 1;
+            dim_layer.style.display = "block";
+            isOpened = true;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_close")
+                .forEach((i) => i.beginElement());
+        };
+
+        dim_layer.addEventListener("click", hide_sidebar);
+        hamburger_button.addEventListener(
+            "click",
+            function () {
+                if (isOpened) {
+                    hide_sidebar();
+                } else {
+                    show_sidebar();
+                }
+                document.getElementById("hamburger").classList.toggle("open");
+            },
+            false
+        );
+        window.addEventListener("resize", () => {
+            if (isOpened) {
+                hide_sidebar();
+            }
+        });
+
+        // Restore the JavaScript API <details> if it was opened
+        console.log(localStorage.getItem("js-details"));
+        if (localStorage.getItem("js-details")) {
+            js_details.setAttribute("open", true);
+        } else {
+            js_details.removeAttribute("open");
+        }
+
+        // Restore the <aside> sidebar scroll position .
+        let scrollTop = localStorage.getItem("sidebar-scroll") || 0;
+        sidebar.scrollTop = parseInt(scrollTop, 10);
+
+        // Store the state before unload
+        window.onbeforeunload = (event) => {
+            localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+            if (js_details.open) {
+                localStorage.setItem("js-details", true);
+            } else {
+                localStorage.removeItem("js-details");
+            }
+
+        };
+    </script>
+
+</body>
+
+</html>
