@@ -32,3 +32,6 @@ MD036: False
 
 # MD033/no-inline-html: Raw HTML is allowed in Markdown, but this rule is included for those who want their documents to only include "pure" Markdown : https://github.com/DavidAnson/markdownlint/blob/v0.32.1/doc/md033.md
 MD033: False
+
+# MD022/blanks-around-headings/blanks-around-headers
+MD022: False
