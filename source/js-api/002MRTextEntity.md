@@ -18,7 +18,6 @@ The text element that is used to represent normal HTML text one would expect in 
     * [.MRTextEntity](#MRTextEntity+MRTextEntity)
         * [new exports.MRTextEntity()](#new_MRTextEntity+MRTextEntity_new)
     * [.connected()](#MRTextEntity+connected)
-    * [.traverse(callBack)](#MRTextEntity+traverse)
     * [.triggerTextStyleUpdate()](#MRTextEntity+triggerTextStyleUpdate) ⇒ <code>number</code>
 
 <a name="MRTextEntity+MRTextEntity"></a>
@@ -38,17 +37,6 @@ Constructor for the MRTextEntity object.
 Callback function of MREntity - sets up the textObject of the text item.
 
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
-<a name="MRTextEntity+traverse"></a>
-
-### mrTextEntity.traverse(callBack)
-Runs the passed through function on this object and every child of this object.
-
-**Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| callBack | <code>function</code> | the function to run recursively. |
-
 <a name="MRTextEntity+triggerTextStyleUpdate"></a>
 
 ### mrTextEntity.triggerTextStyleUpdate() ⇒ <code>number</code>
