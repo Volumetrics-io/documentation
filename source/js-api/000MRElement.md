@@ -17,6 +17,7 @@ The first step in MRjs extending an HTMLElement. Used as a base for both `mr-app
         * [new exports.MRElement()](#new_MRElement+MRElement_new)
     * [.add(entity)](#MRElement+add)
     * [.remove(entity)](#MRElement+remove)
+    * [.getBoundingClientRect()](#MRElement+getBoundingClientRect)
 
 <a name="MRElement+MRElement"></a>
 
@@ -49,3 +50,9 @@ Removing an entity as a sub-object of this entity.
 | --- | --- | --- |
 | entity | <code>object</code> | the entity to be removed. |
 
+<a name="MRElement+getBoundingClientRect"></a>
+
+### mrElement.getBoundingClientRect()
+Overrides getBoundingClientRect() to avoid reflow in sync as optimization
+
+**Kind**: instance method of [<code>MRElement</code>](#MRElement)  
