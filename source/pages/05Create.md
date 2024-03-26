@@ -2,7 +2,7 @@
 description: "A creation sandbox area, playaround and try out mrjs!"
 ---
 
-# Create Sandbox
+# Creation Sandbox
 
 This is a creation sandbox - try out mrjs directly in your browser!
 
