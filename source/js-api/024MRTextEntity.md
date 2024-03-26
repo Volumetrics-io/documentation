@@ -1,6 +1,6 @@
 ---
 title: MRTextEntity
-github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRTextEntity.js
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRTextEntity.js
 ---
 # MRTextEntity
 

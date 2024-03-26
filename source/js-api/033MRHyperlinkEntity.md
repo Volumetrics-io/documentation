@@ -1,13 +1,13 @@
 ---
-title: MRHyperlink
-github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlink.js
+title: MRHyperlinkEntity
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRHyperlinkEntity.js
 ---
-# MRHyperlink
+# MRHyperlinkEntity
 
 ## Classes
 
 <dl>
-<dt><a href="#MRHyperlink">MRHyperlink</a> ⇐ <code>MRTextEntity</code></dt>
+<dt><a href="#MRHyperlinkEntity">MRHyperlinkEntity</a> ⇐ <code>MRTextEntity</code></dt>
 <dd><p>3D representation of a hyperlink. <code>mr-a</code></p>
 </dd>
 </dl>
@@ -19,9 +19,9 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/
 <dd></dd>
 </dl>
 
-<a name="MRHyperlink"></a>
+<a name="MRHyperlinkEntity"></a>
 
-## MRHyperlink ⇐ <code>MRTextEntity</code>
+## MRHyperlinkEntity ⇐ <code>MRTextEntity</code>
 3D representation of a hyperlink. `mr-a`
 
 **Kind**: global class  

@@ -1,6 +1,6 @@
 ---
 title: MRDivEntity
-github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/MRDivEntity.js
+github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRDivEntity.js
 ---
 # MRDivEntity
 
