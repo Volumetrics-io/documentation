@@ -16,6 +16,7 @@ outputDir='public'
 
 assetDir='source/static'
 pagesDir='source/pages'
+ecsDir='source/ecs'
 docsDir='source/docs'
 attributesDir='source/attributes'
 eventsDir='source/events'
@@ -128,6 +129,10 @@ docsYAML="---\n"
 docsYAML+="pages:\n"
 extract_metadata "$pagesDir"
 
+# Process "General" pages
+docsYAML+="ecs:\n"
+extract_metadata "$ecsDir"
+
 # Process "HTML tags" pages
 docsYAML+="docs:\n"
 extract_metadata "$docsDir"
@@ -161,6 +166,9 @@ echo -e "$docsYAML" > "${outputDir}/docs.yaml"
 
 # Process page files
 process_markdown "$pagesDir" "pages" ""
+
+# Process ecs files
+process_markdown "$ecsDir" "ecs" "ecs"
 
 # Process doc files
 process_markdown "$docsDir" "docs" "doc"
