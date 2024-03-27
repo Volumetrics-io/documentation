@@ -1,5 +1,5 @@
-# Entity Component System
-  hi 
+# What is an Entity Component System?
+
 At the heart of MRjs is an architecture known as an Entity Component Systems (ECS). This is an efficient, modular, and scalable architecture popularized by the gaming industry. 
 
 In a single sentence, an Entity is a thing, a Component is an attribute of a thing, and a System acts on all things with its matching Component. 
