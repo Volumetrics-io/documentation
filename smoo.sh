@@ -129,7 +129,7 @@ docsYAML="---\n"
 docsYAML+="pages:\n"
 extract_metadata "$pagesDir"
 
-# Process "General" pages
+# Process "Entity Component System" pages
 docsYAML+="ecs:\n"
 extract_metadata "$ecsDir"
 
@@ -156,6 +156,7 @@ extract_metadata "$jsAPIExtrasDir"
 # Process "JavaScript API Utils" pages
 docsYAML+="js-api-utils:\n"
 extract_metadata "$jsAPIUtilsDir"
+
 
 
 ######################################
