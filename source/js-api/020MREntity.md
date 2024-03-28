@@ -26,9 +26,9 @@ The default representation of an MRElement to be expanded upon by actual details
     * [.onHover(event)](#MREntity+onHover)
     * [.onTouch(event)](#MREntity+onTouch)
     * [.onScroll(event)](#MREntity+onScroll)
-    * [.connectedCallback()](#MREntity+connectedCallback)
     * [.loadAttributes()](#MREntity+loadAttributes)
     * [.connected()](#MREntity+connected)
+    * [.connectedCallback()](#MREntity+connectedCallback)
     * [.disconnected()](#MREntity+disconnected)
     * [.disconnectedCallback()](#MREntity+disconnectedCallback)
     * [.mutated(mutation)](#MREntity+mutated)
@@ -96,14 +96,14 @@ relying on an overall scene or all items to update isnt beneficial.
 <a name="MREntity+updateMaterialStyle"></a>
 
 ### mrEntity.updateMaterialStyle()
-Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be added to by others when they create new entities.
+Inside the MRjs engine's ECS these arent filled in, though theyre still called directly in the system themselves. This allows outside users to add their own additional functionality for the entities.
 These are run after the MaterialStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+updateGeometryStyle"></a>
 
 ### mrEntity.updateGeometryStyle()
-Inside the engine's ECS these arent filled in, theyre directly in the system themselves - but they can be added to by others when they create new entities.
+Inside the MRjs engine's ECS these arent filled in, though theyre still called directly in the system themselves. This allows outside users to add their own additional functionality for the entities.
 These are run after the GeometryStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
@@ -140,12 +140,6 @@ Handles the scroll event
 | --- | --- | --- |
 | event | <code>object</code> | the scroll event |
 
-<a name="MREntity+connectedCallback"></a>
-
-### mrEntity.connectedCallback()
-The connectedCallback function that runs whenever this entity component becomes connected to something else.
-
-**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+loadAttributes"></a>
 
 ### mrEntity.loadAttributes()
@@ -156,6 +150,12 @@ Loads all attributes of this entity's stored dataset including components, attac
 
 ### mrEntity.connected()
 Callback function of MREntity - does nothing. Is called by the connectedCallback.
+
+**Kind**: instance method of [<code>MREntity</code>](#MREntity)  
+<a name="MREntity+connectedCallback"></a>
+
+### mrEntity.connectedCallback()
+The connectedCallback function that runs whenever this entity component becomes connected to something else.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+disconnected"></a>
