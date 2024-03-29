@@ -70,11 +70,32 @@ process_markdown() {
     local source_dir=$1
     local github_path_prefix=$2
     local output_subdir=$3
+    local ignore_list=$4
     # local files=($(ls -f "${source_dir}"/*.md))
     local files=($(find "${source_dir}" -maxdepth 1 -name "*.md" -print | sort))
+    local files_to_ignore
+    IFS=',' read -r -a files_to_ignore <<< "$ignore_list" # make sure ignore list item is just file names and separated by ','
 
     for file in "${files[@]}"
     do
+        # --- do we want to handle this file --- #
+
+        # a file is in a used documentation folder but we dont want it showing up live yet
+        skip_file=false
+        for ignore_file in "${files_to_ignore[@]}"; do
+            if [[ "$file" == "$ignore_file" ]]; then
+                skip_file=true
+                echo "ignoring file as requested:${ignore_file}"
+                break # No need to check other ignore_files once a match is found
+            fi
+        done
+        if [[ "$skip_file" == "true" ]]; then
+            # Skip this iteration of the outer loop
+            continue
+        fi
+
+        # --- handling the file for creation to the public folder --- #
+
         # Extract the file name
         local base_file=$(basename -- "$file")
 
@@ -163,7 +184,7 @@ echo -e "$docsYAML" > "${outputDir}/docs.yaml"
 process_markdown "$pagesDir" "pages" ""
 
 # Process doc files
-process_markdown "$docsDir" "docs" "doc"
+process_markdown "$docsDir" "docs" "doc" "${docsDir}/mr-textarea.md,${docsDir}/mr-textfield.md"
 
 # Process data events files
 process_markdown "$eventsDir" "events" "events"
