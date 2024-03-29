@@ -151,17 +151,20 @@ Orbital Control 3D toggling:
 >
 > Try it out below!
 
-<inline-repl>
-    <code slot="html">
+<inline-repl editor-height="280">
+    <slot slot="html">
         <mr-app orbital="true">
-            <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
-            <mr-panel id="panel">
-                <mr-button onclick="changeColor()">Change color!</mr-button>
+            <mr-panel>
+                <mr-model id="koi" src="/static/sample/koi.glb" data-comp-animation="clip: 0; action: play;" ></mr-model>
+                <!-- Model by https://sketchfab.com/7plus -->
+                <mr-light color="white" intensity="0.1" data-position="0 0.3 0.1"></mr-light>
+                <mr-light color="LightSkyBlue" intensity="0.5" data-position="0 -0.15 0.25"></mr-light>
             </mr-panel>
         </mr-app>
-    </code>
-    <code slot="css">
+    </slot>
+    <slot slot="css">
         mr-panel {
+            background-color: LightSkyBlue;
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
@@ -169,22 +172,11 @@ Orbital Control 3D toggling:
             width: 100vw;
             height: 100vh;
         }
-        mr-button {
-            font-family: system-ui;
-            background-color: white;
-            padding: 8px 16px;
-            font-size: 150%;
-            border-radius: 20px;
+        #koi {
+            scale: 0.05;
+            z-index: 70;
         }
-    </code>
-    <code slot="javascript">
-        function changeColor() {
-            let hue = Math.floor(Math.random() * 360);
-            let color = 'hsl(' +  hue + ', 100%, 80%)';
-            document.querySelector("#panel").style.backgroundColor = color;
-        }
-        changeColor();
-    </code>
+    </slot>
 </inline-repl>
 
 ### `stats`
