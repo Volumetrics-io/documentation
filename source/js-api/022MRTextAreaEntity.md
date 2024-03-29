@@ -6,50 +6,27 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/
 
 <a name="MRTextAreaEntity"></a>
 
-## MRTextAreaEntity ⇐ <code>MRTextEntity</code>
-The text element that is used to represent normal paragraph user-entry text field items one would expect in a web-browser. `mr-textarea`
+## MRTextAreaEntity ⇐ <code>MRTextInputEntity</code>
+The text area element that simulates the behavior of an HTML <textarea> tag,
+           allowing for multiline text input and display. Inherits from MRTextInputEntity, which
+           in turn extends MRTextEntity.
 
 **Kind**: global class  
-**Extends**: <code>MRTextEntity</code>  
+**Extends**: <code>MRTextInputEntity</code>  
 
-* [MRTextAreaEntity](#MRTextAreaEntity) ⇐ <code>MRTextEntity</code>
-    * [.MRTextAreaEntity](#MRTextAreaEntity+MRTextAreaEntity)
-        * [new exports.MRTextAreaEntity()](#new_MRTextAreaEntity+MRTextAreaEntity_new)
+* [MRTextAreaEntity](#MRTextAreaEntity) ⇐ <code>MRTextInputEntity</code>
     * [.connected()](#MRTextAreaEntity+connected)
-    * [.blur()](#MRTextAreaEntity+blur)
-    * [.focus()](#MRTextAreaEntity+focus)
-    * [.updateCursorPosition()](#MRTextAreaEntity+updateCursorPosition)
-
-<a name="MRTextAreaEntity+MRTextAreaEntity"></a>
-
-### mrTextAreaEntity.MRTextAreaEntity
-**Kind**: instance class of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
-<a name="new_MRTextAreaEntity+MRTextAreaEntity_new"></a>
-
-#### new exports.MRTextAreaEntity()
-Constructor for the textArea entity component.
+    * [.handleKeydown()](#MRTextAreaEntity+handleKeydown)
 
 <a name="MRTextAreaEntity+connected"></a>
 
 ### mrTextAreaEntity.connected()
-Callback function of MREntity - handles setting up this textarea once it is connected to run as an entity component.
+Overrides the connected method to include setup for handling multiline text.
 
 **Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
-<a name="MRTextAreaEntity+blur"></a>
+<a name="MRTextAreaEntity+handleKeydown"></a>
 
-### mrTextAreaEntity.blur()
-Blurs the inputted text value and cursor information
-
-**Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
-<a name="MRTextAreaEntity+focus"></a>
-
-### mrTextAreaEntity.focus()
-Focuses the inputted text value and cursor information as if it is selected. Includes showing the cursor item.
-
-**Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
-<a name="MRTextAreaEntity+updateCursorPosition"></a>
-
-### mrTextAreaEntity.updateCursorPosition()
-Updates the cursor position based on click and selection location.
+### mrTextAreaEntity.handleKeydown()
+Handles keydown events for scrolling and cursor navigation.
 
 **Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  

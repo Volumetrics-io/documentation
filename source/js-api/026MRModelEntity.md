@@ -6,13 +6,13 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/
 
 <a name="MRModelEntity"></a>
 
-## MRModelEntity ⇐ <code>MREntity</code>
+## MRModelEntity ⇐ <code>MRDivEntity</code>
 Loads in any supported 3D model type to the requested location. `mr-model`
 
 **Kind**: global class  
-**Extends**: <code>MREntity</code>  
+**Extends**: <code>MRDivEntity</code>  
 
-* [MRModelEntity](#MRModelEntity) ⇐ <code>MREntity</code>
+* [MRModelEntity](#MRModelEntity) ⇐ <code>MRDivEntity</code>
     * [.MRModelEntity](#MRModelEntity+MRModelEntity)
         * [new exports.MRModelEntity()](#new_MRModelEntity+MRModelEntity_new)
     * [.src()](#MRModelEntity+src) ⇒ <code>string</code>

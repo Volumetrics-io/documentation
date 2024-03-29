@@ -6,18 +6,16 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/
 
 <a name="MRTextFieldEntity"></a>
 
-## MRTextFieldEntity ⇐ <code>MRTextEntity</code>
+## MRTextFieldEntity ⇐ <code>MRTextInputEntity</code>
 The text element that is used to represent normal user-entry text field items one would expect in a web-browser. Limits the one-line. `mr-textfield`
 
 **Kind**: global class  
-**Extends**: <code>MRTextEntity</code>  
+**Extends**: <code>MRTextInputEntity</code>  
 
-* [MRTextFieldEntity](#MRTextFieldEntity) ⇐ <code>MRTextEntity</code>
+* [MRTextFieldEntity](#MRTextFieldEntity) ⇐ <code>MRTextInputEntity</code>
     * [.MRTextFieldEntity](#MRTextFieldEntity+MRTextFieldEntity)
         * [new exports.MRTextFieldEntity()](#new_MRTextFieldEntity+MRTextFieldEntity_new)
-    * [.connected()](#MRTextFieldEntity+connected)
-    * [.blur()](#MRTextFieldEntity+blur)
-    * [.focusInput()](#MRTextFieldEntity+focusInput)
+    * [.handleKeydown()](#MRTextFieldEntity+handleKeydown)
     * [.updateCursorPosition()](#MRTextFieldEntity+updateCursorPosition)
 
 <a name="MRTextFieldEntity+MRTextFieldEntity"></a>
@@ -29,22 +27,10 @@ The text element that is used to represent normal user-entry text field items on
 #### new exports.MRTextFieldEntity()
 Constructor for the textField entity component.
 
-<a name="MRTextFieldEntity+connected"></a>
+<a name="MRTextFieldEntity+handleKeydown"></a>
 
-### mrTextFieldEntity.connected()
-Callback function of MREntity - handles setting up this textfield once it is connected to run as an entity component.
-
-**Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
-<a name="MRTextFieldEntity+blur"></a>
-
-### mrTextFieldEntity.blur()
-Blurs the inputted text value and cursor information
-
-**Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
-<a name="MRTextFieldEntity+focusInput"></a>
-
-### mrTextFieldEntity.focusInput()
-Focuses the inputted text value and cursor information as if it is selected. Includes showing the cursor item.
+### mrTextFieldEntity.handleKeydown()
+Handles keydown events for scrolling and cursor navigation.
 
 **Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
 <a name="MRTextFieldEntity+updateCursorPosition"></a>
