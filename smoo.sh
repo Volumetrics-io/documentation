@@ -72,9 +72,11 @@ process_markdown() {
     local output_subdir=$3
     # local files=($(ls -f "${source_dir}"/*.md))
     local files=($(find "${source_dir}" -maxdepth 1 -name "*.md" -print | sort))
-
+    
     for file in "${files[@]}"
     do
+        # --- handling the file for creation to the public folder --- #
+
         # Extract the file name
         local base_file=$(basename -- "$file")
 
