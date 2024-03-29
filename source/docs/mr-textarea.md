@@ -1,4 +1,4 @@
-# &lt;mr-textarea&gt;
+<!-- # &lt;mr-textarea&gt;
 
 The `<mr-textarea>` creates a large text input field in the UI of an `<mr-panel>`. Unlike `<mr-textfield>` It allows for line breaks.
 
@@ -27,3 +27,4 @@ The `<mr-textarea>` creates a large text input field in the UI of an `<mr-panel>
         }
     </code>
 </inline-repl>
+ -->
