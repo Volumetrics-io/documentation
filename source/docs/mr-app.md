@@ -143,7 +143,7 @@ Orbital Control 3D toggling:
 Enables just the use of orbital controls. Though this feature is already enabled as part of `debug=true`, we also allow a specific flag for it for the cases where you just want to look closer at something more easily without all the additional overhead of full debugging.
 
 Orbital Control 3D toggling:
-> When the debug flag is enabled (`<mr-app debug="true">`), you can press and hold the `=+` key on your keyboard to:
+> When the debug flag is enabled (`<mr-app orbital="true">`), you can press and hold the `=+` key on your keyboard to:
 >
 > 1. rotate the scene with left mouse drag
 > 2. pan the scene with right mouse drag
