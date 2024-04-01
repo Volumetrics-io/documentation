@@ -144,9 +144,10 @@ Enables just the use of orbital controls. Though this feature is already enabled
 
 It works without the requirement of the `=+` keypress (unlike the `debug=true` case).
 
-Note if both `orbital` and `debug` are set to `true`, the `orbital` will take priority, meaning you still wont have to use the `=+` keypress for it to work as expected.
+Note if both `orbital` and `debug` are set to `true`, the `orbital` will take priority, meaning you still wont have to use the `=+` keypress for it to work. The rest of `debug` will still work as expected.
 
 Orbital Control 3D toggling:
+>
 > 1. rotate the scene with left mouse drag
 > 2. pan the scene with right mouse drag
 > 3. zoom with the mouse wheel
