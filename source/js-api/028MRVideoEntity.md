@@ -15,7 +15,11 @@ Base html video represented in 3D space. `mr-video`
 * [MRVideoEntity](#MRVideoEntity) ⇐ <code>MRMediaEntity</code>
     * [.MRVideoEntity](#MRVideoEntity+MRVideoEntity)
         * [new exports.MRVideoEntity()](#new_MRVideoEntity+MRVideoEntity_new)
+    * [.mediaWidth()](#MRVideoEntity+mediaWidth) ⇒ <code>number</code>
+    * [.mediaHeight()](#MRVideoEntity+mediaHeight) ⇒ <code>number</code>
+    * [.loadMediaTexture()](#MRVideoEntity+loadMediaTexture)
     * [.connected()](#MRVideoEntity+connected)
+    * [.srcObject(src)](#MRVideoEntity+srcObject)
     * [.play()](#MRVideoEntity+play)
     * [.pause()](#MRVideoEntity+pause)
 
@@ -28,12 +32,43 @@ Base html video represented in 3D space. `mr-video`
 #### new exports.MRVideoEntity()
 Constructs a base video entity using a UIPlane and other 3D elements as necessary.
 
+<a name="MRVideoEntity+mediaWidth"></a>
+
+### mrVideoEntity.mediaWidth() ⇒ <code>number</code>
+Calculates the width of the video based on the video tag itself
+
+**Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
+**Returns**: <code>number</code> - - the resolved width  
+<a name="MRVideoEntity+mediaHeight"></a>
+
+### mrVideoEntity.mediaHeight() ⇒ <code>number</code>
+Calculates the height of the video based on the video tag itself
+
+**Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
+**Returns**: <code>number</code> - - the resolved height  
+<a name="MRVideoEntity+loadMediaTexture"></a>
+
+### mrVideoEntity.loadMediaTexture()
+Loads the associated video into 3D based on its html properties.
+
+**Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
 <a name="MRVideoEntity+connected"></a>
 
 ### mrVideoEntity.connected()
 Callback function of MREntity - handles setting up this video and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
+<a name="MRVideoEntity+srcObject"></a>
+
+### mrVideoEntity.srcObject(src)
+Sets the srcObject of the video media (since it uses 'srcObject' instead of 'src' like other items).
+
+**Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| src | <code>string</code> | the string to the new source object we want |
+
 <a name="MRVideoEntity+play"></a>
 
 ### mrVideoEntity.play()

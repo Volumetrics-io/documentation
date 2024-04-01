@@ -16,8 +16,8 @@ The engine handler for running MRjs as an App. `mr-app`
     * _instance_
         * [.MRApp](#MRApp+MRApp)
             * [new exports.MRApp()](#new_MRApp+MRApp_new)
-        * [.appWidth](#MRApp+appWidth)
-        * [.appHeight](#MRApp+appHeight)
+        * [.appWidth()](#MRApp+appWidth) ⇒ <code>number</code>
+        * [.appHeight()](#MRApp+appHeight) ⇒ <code>number</code>
         * [.mutatedAttribute(mutation)](#MRApp+mutatedAttribute)
         * [.mutatedChildList(mutation)](#MRApp+mutatedChildList)
         * [.mutationCallback(mutationList, observer)](#MRApp+mutationCallback)
@@ -46,12 +46,14 @@ Constructs the base information of the app including system, camera, engine, xr,
 
 <a name="MRApp+appWidth"></a>
 
-### mrApp.appWidth
-**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
+### mrApp.appWidth() ⇒ <code>number</code>
+**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Returns**: <code>number</code> - width in 3d or pixel space (depending on if in xr) of the current open app  
 <a name="MRApp+appHeight"></a>
 
-### mrApp.appHeight
-**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
+### mrApp.appHeight() ⇒ <code>number</code>
+**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Returns**: <code>number</code> - height in 3d or pixel space (depending on if in xr) of the current open app  
 <a name="MRApp+mutatedAttribute"></a>
 
 ### mrApp.mutatedAttribute(mutation)

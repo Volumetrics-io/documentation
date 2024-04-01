@@ -15,7 +15,7 @@ Useful namespace for helping with Materials and threejs utility functions
     * [.getObjectMaterial(parent)](#material.getObjectMaterial) ⇒ <code>object</code>
     * [.setObjectMaterial(parent, material)](#material.setObjectMaterial) ⇒ <code>object</code>
     * [.loadTextureAsync(src)](#material.loadTextureAsync) ⇒ <code>object</code>
-    * [.loadVideoTextureAsync(src)](#material.loadVideoTextureAsync) ⇒ <code>object</code>
+    * [.loadVideoTextureAsync(video)](#material.loadVideoTextureAsync) ⇒ <code>object</code>
 
 <a name="material.getObjectMaterial"></a>
 
@@ -58,7 +58,7 @@ Function to load the texture asynchronously and return a promise
 
 <a name="material.loadVideoTextureAsync"></a>
 
-### material.loadVideoTextureAsync(src) ⇒ <code>object</code>
+### material.loadVideoTextureAsync(video) ⇒ <code>object</code>
 Function to load the texture asynchronously and return a promise
 
 **Kind**: static method of [<code>material</code>](#material)  
@@ -66,5 +66,5 @@ Function to load the texture asynchronously and return a promise
 
 | Param | Type | Description |
 | --- | --- | --- |
-| src | <code>object</code> | the html video element whose src contains the path to the data to be loaded |
+| video | <code>object</code> | the html video element whose src contains the path to the data to be loaded |
 

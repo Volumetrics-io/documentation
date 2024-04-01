@@ -19,8 +19,8 @@ The default representation of an MRElement to be expanded upon by actual details
     * [.contentWidth()](#MREntity+contentWidth) ⇒ <code>number</code>
     * [.height()](#MREntity+height) ⇒ <code>number</code>
     * [.contentHeight()](#MREntity+contentHeight) ⇒ <code>number</code>
-    * [.triggerGeometryStyleUpdate()](#MREntity+triggerGeometryStyleUpdate) ⇒ <code>number</code>
-    * [.triggerMaterialStyleUpdate()](#MREntity+triggerMaterialStyleUpdate) ⇒ <code>number</code>
+    * [.triggerGeometryStyleUpdate()](#MREntity+triggerGeometryStyleUpdate)
+    * [.triggerMaterialStyleUpdate()](#MREntity+triggerMaterialStyleUpdate)
     * [.updateMaterialStyle()](#MREntity+updateMaterialStyle)
     * [.updateGeometryStyle()](#MREntity+updateGeometryStyle)
     * [.onHover(event)](#MREntity+onHover)
@@ -79,32 +79,32 @@ The actual 3D value of the content's height.
 **Returns**: <code>number</code> - - height of the 3D object.  
 <a name="MREntity+triggerGeometryStyleUpdate"></a>
 
-### mrEntity.triggerGeometryStyleUpdate() ⇒ <code>number</code>
-Triggers a system run to update geometry specifically for the entity calling it. Useful when it's not an overall scene event and for cases where 
+### mrEntity.triggerGeometryStyleUpdate()
+Triggers a system run to update geometry specifically for the entity calling it. Useful when it's not an overall scene event and for cases where
 relying on an overall scene or all items to update isnt beneficial.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - height of the 3D object.  
 <a name="MREntity+triggerMaterialStyleUpdate"></a>
 
-### mrEntity.triggerMaterialStyleUpdate() ⇒ <code>number</code>
-Triggers a system run to update material specifically for the entity calling it. Useful when it's not an overall scene event and for cases where 
+### mrEntity.triggerMaterialStyleUpdate()
+Triggers a system run to update material specifically for the entity calling it. Useful when it's not an overall scene event and for cases where
 relying on an overall scene or all items to update isnt beneficial.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
-**Returns**: <code>number</code> - - height of the 3D object.  
 <a name="MREntity+updateMaterialStyle"></a>
 
 ### mrEntity.updateMaterialStyle()
-Inside the MRjs engine's ECS these arent filled in, though theyre still called directly in the system themselves. This allows outside users to add their own additional functionality for the entities.
-These are run after the MaterialStyleSystem does its own update on the entity.
+Directly in MRjs, this function is empty. It is called directly in the
+MaterialStyleSystem. This allows outside users to add their own additional functionality
+for the entities. These are run after the MaterialStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+updateGeometryStyle"></a>
 
 ### mrEntity.updateGeometryStyle()
-Inside the MRjs engine's ECS these arent filled in, though theyre still called directly in the system themselves. This allows outside users to add their own additional functionality for the entities.
-These are run after the GeometryStyleSystem does its own update on the entity.
+Directly in MRjs, this function is empty. It is called directly in the
+GeometryStyleSystem. This allows outside users to add their own additional functionality
+for the entities. These are run after the GeometryStyleSystem does its own update on the entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+onHover"></a>

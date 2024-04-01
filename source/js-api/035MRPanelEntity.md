@@ -15,7 +15,7 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
 * [MRPanelEntity](#MRPanelEntity) ⇐ <code>MRDivEntity</code>
     * [.MRPanelEntity](#MRPanelEntity+MRPanelEntity)
         * [new exports.MRPanelEntity()](#new_MRPanelEntity+MRPanelEntity_new)
-    * [.height](#MRPanelEntity+height)
+    * [.height()](#MRPanelEntity+height) ⇒ <code>number</code>
     * [.connected()](#MRPanelEntity+connected)
     * [.add(entity)](#MRPanelEntity+add)
     * [.remove(entity)](#MRPanelEntity+remove)
@@ -33,8 +33,11 @@ Constructor for the main Panel. Sets up all the relevant object3D and window inf
 
 <a name="MRPanelEntity+height"></a>
 
-### mrPanelEntity.height
-**Kind**: instance property of [<code>MRPanelEntity</code>](#MRPanelEntity)  
+### mrPanelEntity.height() ⇒ <code>number</code>
+Gets the height of the current panel in 2D or 3D space (depending on the xr user state)
+
+**Kind**: instance method of [<code>MRPanelEntity</code>](#MRPanelEntity)  
+**Returns**: <code>number</code> - height - the calcualted height value  
 <a name="MRPanelEntity+connected"></a>
 
 ### mrPanelEntity.connected()

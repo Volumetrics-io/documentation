@@ -48,5 +48,5 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 
 | Param | Type | Description |
 | --- | --- | --- |
-| entity | <code>MREntity</code> | the entity being added. |
+| entity | <code>object</code> | the entity being added. |
 

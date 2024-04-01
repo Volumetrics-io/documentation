@@ -51,7 +51,7 @@ Called when a new entity is added to the scene.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| entity | <code>MREntity</code> | the entity being added. |
+| entity | <code>object</code> | the entity being added. |
 
 <a name="observe"></a>
 
@@ -60,8 +60,8 @@ Observe a target MRDivEntity and make the associated object visible only if it i
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| root | <code>MRDivEntity</code> | 
-| target | <code>MRDivEntity</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| root | <code>MRDivEntity</code> | the root object being compared against |
+| target | <code>MRDivEntity</code> | the target object for which we're determining visiblity. |
 

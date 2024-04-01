@@ -52,13 +52,13 @@ When a new entity is created, adds it to the physics registry and initializes th
 <a name="TextSystem+_updateSpecificEntity"></a>
 
 ### textSystem.\_updateSpecificEntity(entity)
-The per entity triggered update call.  Handles updating all text items including updates for style and cleaning of content for special characters.
+The per entity triggered update call. Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
 
-| Param |
-| --- |
-| entity | 
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the entity that needs to be updated. |
 
 <a name="TextSystem+eventUpdate"></a>
 

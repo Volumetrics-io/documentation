@@ -51,7 +51,7 @@ Called when a new entity is added to the scene
 
 | Param | Type | Description |
 | --- | --- | --- |
-| app | <code>MRApp</code> | the app the system is registered to. |
+| app | <code>object</code> | the app the system is registered to. |
 
 <a name="MRSystem+onUnregister"></a>
 
@@ -62,7 +62,7 @@ Called when the system is registered to an app is added.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| app | <code>MRApp</code> | the app the system is registered to. |
+| app | <code>object</code> | the app the system is registered to. |
 
 <a name="MRSystem+_update"></a>
 

@@ -18,7 +18,8 @@ The text element that is used to represent normal HTML text one would expect in 
     * [.MRTextEntity](#MRTextEntity+MRTextEntity)
         * [new exports.MRTextEntity()](#new_MRTextEntity+MRTextEntity_new)
     * [.connected()](#MRTextEntity+connected)
-    * [.triggerTextStyleUpdate()](#MRTextEntity+triggerTextStyleUpdate) ⇒ <code>number</code>
+    * [.triggerTextStyleUpdate()](#MRTextEntity+triggerTextStyleUpdate)
+    * [.printCurrentTextDebugInfo(textObj)](#MRTextEntity+printCurrentTextDebugInfo)
 
 <a name="MRTextEntity+MRTextEntity"></a>
 
@@ -39,9 +40,17 @@ Callback function of MREntity - sets up the textObject of the text item.
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
 <a name="MRTextEntity+triggerTextStyleUpdate"></a>
 
-### mrTextEntity.triggerTextStyleUpdate() ⇒ <code>number</code>
-Triggers a system run to update text specifically for the entity calling it. Useful when it's not an overall scene event and for cases where 
+### mrTextEntity.triggerTextStyleUpdate()
+Triggers a system run to update text specifically for the entity calling it. Useful when it's not an overall scene event and for cases where
 relying on an overall scene or all items to update isnt beneficial.
 
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
-**Returns**: <code>number</code> - - height of the 3D object.  
+<a name="MRTextEntity+printCurrentTextDebugInfo"></a>
+
+### mrTextEntity.printCurrentTextDebugInfo(textObj)
+**Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| textObj | <code>object</code> | the textobj |
+
