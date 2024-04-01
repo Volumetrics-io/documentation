@@ -30,7 +30,7 @@ attribute for more detailed control.
     * [.initUIEntityBody(entity)](#PhysicsSystem+initUIEntityBody)
     * [.initSimpleBody(entity)](#PhysicsSystem+initSimpleBody)
     * [.initDetailedBody(entity)](#PhysicsSystem+initDetailedBody)
-    * [.initConvexMeshCollider(entity)](#PhysicsSystem+initConvexMeshCollider)
+    * [.initConvexMeshCollider(object3D, scale, entity)](#PhysicsSystem+initConvexMeshCollider)
     * [.updateBody(entity)](#PhysicsSystem+updateBody)
     * [.updateUIBody(entity)](#PhysicsSystem+updateUIBody)
     * [.updateSimpleBody(entity)](#PhysicsSystem+updateSimpleBody)
@@ -121,7 +121,7 @@ NOTE: not currently in use until we can sync it with animations
 
 <a name="PhysicsSystem+initConvexMeshCollider"></a>
 
-### physicsSystem.initConvexMeshCollider(entity)
+### physicsSystem.initConvexMeshCollider(object3D, scale, entity)
 Initializes a convexMesh collider from a THREE.js geometry
 NOTE: not currently in use until we can sync it with animations
 
@@ -129,6 +129,8 @@ NOTE: not currently in use until we can sync it with animations
 
 | Param | Type | Description |
 | --- | --- | --- |
+| object3D |  |  |
+| scale |  |  |
 | entity | <code>MREntity</code> | the entity being updated |
 
 <a name="PhysicsSystem+updateBody"></a>

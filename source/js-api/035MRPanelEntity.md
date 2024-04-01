@@ -15,6 +15,7 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
 * [MRPanelEntity](#MRPanelEntity) ⇐ <code>MRDivEntity</code>
     * [.MRPanelEntity](#MRPanelEntity+MRPanelEntity)
         * [new exports.MRPanelEntity()](#new_MRPanelEntity+MRPanelEntity_new)
+    * [.height](#MRPanelEntity+height)
     * [.connected()](#MRPanelEntity+connected)
     * [.add(entity)](#MRPanelEntity+add)
     * [.remove(entity)](#MRPanelEntity+remove)
@@ -30,6 +31,10 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
 #### new exports.MRPanelEntity()
 Constructor for the main Panel. Sets up all the relevant object3D and window information. Includes information necessary for proper scrolling usage.
 
+<a name="MRPanelEntity+height"></a>
+
+### mrPanelEntity.height
+**Kind**: instance property of [<code>MRPanelEntity</code>](#MRPanelEntity)  
 <a name="MRPanelEntity+connected"></a>
 
 ### mrPanelEntity.connected()

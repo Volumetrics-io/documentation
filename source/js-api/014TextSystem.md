@@ -16,7 +16,7 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.TextSystem](#TextSystem+TextSystem)
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
-    * [._updateSpecificEntity()](#TextSystem+_updateSpecificEntity)
+    * [._updateSpecificEntity(entity)](#TextSystem+_updateSpecificEntity)
     * [.eventUpdate()](#TextSystem+eventUpdate)
     * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
@@ -51,10 +51,15 @@ When a new entity is created, adds it to the physics registry and initializes th
 
 <a name="TextSystem+_updateSpecificEntity"></a>
 
-### textSystem.\_updateSpecificEntity()
+### textSystem.\_updateSpecificEntity(entity)
 The per entity triggered update call.  Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param |
+| --- |
+| entity | 
+
 <a name="TextSystem+eventUpdate"></a>
 
 ### textSystem.eventUpdate()
