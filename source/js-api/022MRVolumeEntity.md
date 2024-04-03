@@ -31,6 +31,6 @@ Creates the volume as a base THREE.js object3D
 <a name="MRVolumeEntity+connected"></a>
 
 ### mrVolumeEntity.connected()
-Callback function of MREntity - handles creating clipping geometry around the entire volume for visible restrictions.
+(async) handles creating clipping geometry around the entire volume for visible restrictions.
 
 **Kind**: instance method of [<code>MRVolumeEntity</code>](#MRVolumeEntity)  

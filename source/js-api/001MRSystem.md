@@ -19,6 +19,7 @@ The default representation of an MRSystem to be expanded upon by actual details 
     * [._update(deltaTime, frame)](#MRSystem+_update)
     * [.update(deltaTime, frame)](#MRSystem+update)
     * [.eventUpdate()](#MRSystem+eventUpdate)
+    * [._onNewEntity(entity)](#MRSystem+_onNewEntity)
     * [.onNewEntity(entity)](#MRSystem+onNewEntity)
     * [.attachedComponent(entity)](#MRSystem+attachedComponent)
     * [.updatedComponent(entity, oldData)](#MRSystem+updatedComponent)
@@ -95,6 +96,17 @@ An event triggered update, called when any global scene level events occur.
 See GLOBAL_UPDATE_EVENTS of MRSystem.js
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+<a name="MRSystem+_onNewEntity"></a>
+
+### mrSystem.\_onNewEntity(entity)
+internal function, called when a new entity is added to the scene
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
 <a name="MRSystem+onNewEntity"></a>
 
 ### mrSystem.onNewEntity(entity)
@@ -109,7 +121,7 @@ Called when a new entity is added to the scene
 <a name="MRSystem+attachedComponent"></a>
 
 ### mrSystem.attachedComponent(entity)
-Called when the entity component is initialized
+(async) Called when the entity component is initialized
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 
@@ -143,7 +155,7 @@ Called when the entity component is removed
 <a name="MRSystem+onAttach"></a>
 
 ### mrSystem.onAttach(event)
-Handles the component and registry aspect of the event when an entity component attaches to this system.
+(async) Handles the component and registry aspect of the event when an entity component attaches to this system.
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
 

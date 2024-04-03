@@ -50,7 +50,7 @@ Updates each animation mixer in the registry. This function should be called
 <a name="AnimationSystem+attachedComponent"></a>
 
 ### animationSystem.attachedComponent(entity)
-Called when the entity component is initialized
+(async) Called when the entity component is initialized
 
 **Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
 

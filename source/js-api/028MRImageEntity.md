@@ -47,7 +47,7 @@ Gets the height of the internal media object
 <a name="MRImageEntity+connected"></a>
 
 ### mrImageEntity.connected()
-Callback function of MREntity - handles setting up this Image and associated 3D geometry style (from css) once it is connected to run as an entity component.
+(async) handles setting up this Image and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRImageEntity</code>](#MRImageEntity)  
 <a name="MRImageEntity+loadMediaTexture"></a>

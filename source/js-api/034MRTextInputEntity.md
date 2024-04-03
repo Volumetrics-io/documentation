@@ -56,7 +56,7 @@ Constructor for the textArea entity component.
 <a name="MRTextInputEntity+connected"></a>
 
 ### mrTextInputEntity.connected()
-Callback function of MREntity - handles setting up this textarea once it is connected to run as an entity component.
+(async) handles setting up this textarea once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
 <a name="MRTextInputEntity+_createCursor"></a>

@@ -16,7 +16,6 @@ Handles style updates for all items.
     * [.MaterialStyleSystem](#MaterialStyleSystem+MaterialStyleSystem)
         * [new exports.MaterialStyleSystem()](#new_MaterialStyleSystem+MaterialStyleSystem_new)
     * [._updateSpecificEntity(entity)](#MaterialStyleSystem+_updateSpecificEntity)
-    * [.eventUpdate()](#MaterialStyleSystem+eventUpdate)
     * [.update(deltaTime, frame)](#MaterialStyleSystem+update)
     * [.onNewEntity(entity)](#MaterialStyleSystem+onNewEntity)
     * [.setBackground(entity)](#MaterialStyleSystem+setBackground)
@@ -42,12 +41,6 @@ The per entity triggered update call. Handles updating all 3D items to match wha
 | --- | --- | --- |
 | entity | <code>object</code> | the MREntity being updated. |
 
-<a name="MaterialStyleSystem+eventUpdate"></a>
-
-### materialStyleSystem.eventUpdate()
-The per global scene event update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
-
-**Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
 <a name="MaterialStyleSystem+update"></a>
 
 ### materialStyleSystem.update(deltaTime, frame)

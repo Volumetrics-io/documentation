@@ -77,6 +77,6 @@ Removing an entity as a sub-object of this panel (for example an mr-model, butto
 <a name="MRDivEntity+connected"></a>
 
 ### mrDivEntity.connected()
-Callback function of MREntity - connects the background geometry of this item to an actual UIPlane geometry.
+(async) connects the background geometry of this item to an actual UIPlane geometry.
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  

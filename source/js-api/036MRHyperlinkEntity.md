@@ -26,7 +26,7 @@ target attributes.</p>
 <dd><p>Sets the href of the link object</p>
 </dd>
 <dt><a href="#connected">connected()</a></dt>
-<dd><p>Callback function of MREntity - makes sure the link object is created and sets up event
+<dd><p>(async) makes sure the link object is created and sets up event
 listeners for touchstart and click.</p>
 </dd>
 </dl>
@@ -66,7 +66,7 @@ Sets the href of the link object
 <a name="connected"></a>
 
 ## connected()
-Callback function of MREntity - makes sure the link object is created and sets up event
+(async) makes sure the link object is created and sets up event
 listeners for touchstart and click.
 
 **Kind**: global function  

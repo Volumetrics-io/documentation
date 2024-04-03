@@ -41,7 +41,7 @@ Gets the height of the current panel in 2D or 3D space (depending on the xr user
 <a name="MRPanelEntity+connected"></a>
 
 ### mrPanelEntity.connected()
-Callback function of MREntity - handles setting up this Panel once it is connected to run as an entity component.
+(async) Callback function of MREntity - handles setting up this Panel once it is connected to run as an entity component.
              Relevant tasks include setting up clipping and setting up for all necessary dispatchEvent connections including mutations and scrolling.
 
 **Kind**: instance method of [<code>MRPanelEntity</code>](#MRPanelEntity)  

@@ -35,7 +35,7 @@ Constructor for the MRTextEntity object.
 <a name="MRTextEntity+connected"></a>
 
 ### mrTextEntity.connected()
-Callback function of MREntity - sets up the textObject of the text item.
+(async) sets up the textObject of the text item.
 
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
 <a name="MRTextEntity+triggerTextStyleUpdate"></a>

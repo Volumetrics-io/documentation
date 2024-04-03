@@ -149,7 +149,7 @@ Loads all attributes of this entity's stored dataset including components, attac
 <a name="MREntity+connected"></a>
 
 ### mrEntity.connected()
-Callback function of MREntity - does nothing. Is called by the connectedCallback.
+(async) does nothing. Is called by the connectedCallback.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  
 <a name="MREntity+connectedCallback"></a>

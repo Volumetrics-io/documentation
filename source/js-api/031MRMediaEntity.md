@@ -84,7 +84,7 @@ by children.
 <a name="MRMediaEntity+connected"></a>
 
 ### mrMediaEntity.connected()
-Callback function of MREntity - handles setting up this media and associated 3D geometry style (from css) once it is connected to run as an entity component.
+(async) handles setting up this media and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRMediaEntity</code>](#MRMediaEntity)  
 <a name="MRMediaEntity+mutated"></a>

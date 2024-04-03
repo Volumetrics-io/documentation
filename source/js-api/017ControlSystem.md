@@ -24,6 +24,7 @@ This system supports interaction event information including mouse and controlle
     * [.hoverStart(collider1, collider2, entity)](#ControlSystem+hoverStart)
     * [.hoverEnd(entity)](#ControlSystem+hoverEnd)
     * [.pointerRay()](#ControlSystem+pointerRay)
+    * [.clearPointer()](#ControlSystem+clearPointer)
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
     * [.onMouseUp(event)](#ControlSystem+onMouseUp)
@@ -138,6 +139,12 @@ Handles the end of hovering over/around a specific entity.
 
 ### controlSystem.pointerRay()
 Fills in the this.origin,direction,ray, and hit values based on the rapier world
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+<a name="ControlSystem+clearPointer"></a>
+
+### controlSystem.clearPointer()
+clears the gaze/pinch pointer from the scene
 
 **Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
 <a name="ControlSystem+mouseOver"></a>

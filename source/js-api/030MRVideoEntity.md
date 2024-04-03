@@ -55,7 +55,7 @@ Loads the associated video into 3D based on its html properties.
 <a name="MRVideoEntity+connected"></a>
 
 ### mrVideoEntity.connected()
-Callback function of MREntity - handles setting up this video and associated 3D geometry style (from css) once it is connected to run as an entity component.
+(async) handles setting up this video and associated 3D geometry style (from css) once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRVideoEntity</code>](#MRVideoEntity)  
 <a name="MRVideoEntity+srcObject"></a>

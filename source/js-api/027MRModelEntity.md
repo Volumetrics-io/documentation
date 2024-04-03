@@ -62,7 +62,7 @@ Async function that fills in this Model object based on src file information
 <a name="MRModelEntity+connected"></a>
 
 ### mrModelEntity.connected()
-Callback function of MREntity - handles setting up this Model once it is connected to run as an entity component.
+(async) Callback function of MREntity - handles setting up this Model once it is connected to run as an entity component.
 Includes loading up the model and associated data.
 
 **Kind**: instance method of [<code>MRModelEntity</code>](#MRModelEntity)  

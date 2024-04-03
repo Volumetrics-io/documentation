@@ -30,13 +30,13 @@ Constructs the base 3D object.
 <a name="MRLightEntity+connected"></a>
 
 ### mrLightEntity.connected()
-Callback function of MREntity - handles setting up this Light once it is connected to run as an entity component.
+(async) handles setting up this Light once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRLightEntity</code>](#MRLightEntity)  
 <a name="MRLightEntity+mutated"></a>
 
 ### mrLightEntity.mutated(mutation)
-Callback function of MREntity - Updates the lights color and intensity as requested.
+(async) Updates the lights color and intensity as requested.
 
 **Kind**: instance method of [<code>MRLightEntity</code>](#MRLightEntity)  
 

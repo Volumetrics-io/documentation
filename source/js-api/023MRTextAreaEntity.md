@@ -38,7 +38,7 @@ The text area element that simulates the behavior of an HTML <textarea> tag,
 <a name="MRTextAreaEntity+connected"></a>
 
 ### mrTextAreaEntity.connected()
-Overrides the connected method to include setup for handling multiline text.
+(async) sets up the textObject of the text item.
 
 **Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
 <a name="MRTextAreaEntity+updateTextDisplay"></a>

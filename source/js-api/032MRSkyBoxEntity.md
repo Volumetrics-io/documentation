@@ -44,7 +44,7 @@ Callback function triggered when the texture is successfully loaded.
 <a name="MRSkyBoxEntity+connected"></a>
 
 ### mrSkyBoxEntity.connected()
-Lifecycle method that is called when the entity is connected.
+(async) Lifecycle method that is called when the entity is connected.
              This method initializes and starts the texture loading process.
 
 **Kind**: instance method of [<code>MRSkyBoxEntity</code>](#MRSkyBoxEntity)  
