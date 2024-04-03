@@ -94,15 +94,3 @@ Detail:
 Triggered whenever the controller's trigger button or pinch gesture is released, or when the user stops touching an entity.
 
 Origin: the target element
-
----
-
-# Supported MouseEvents (in XR and 2D)
-
-These are standard MouseEvents and _should_ behave as they would on any webpage.
-
-## `click`
-
-## `mouseover`
-
-## `mouseout`
