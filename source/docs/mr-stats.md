@@ -8,10 +8,10 @@ Note this is not the same thing that is created when doing `stats=true` in `<mr-
 
 ## Example
 
-<inline-repl editor-height="280">
+<inline-repl>
     <code slot="html">
         <mr-app>
-            <mr-panel class="container">
+            <mr-panel>
                 <mr-stats></mr-stats>
             </mr-panel>
         </mr-app>
@@ -25,5 +25,7 @@ Note this is not the same thing that is created when doing `stats=true` in `<mr-
             width: 100vw;
             height: 100vh;
         }
+    </code>
+    <code slot="javascript">
     </code>
 </inline-repl>
