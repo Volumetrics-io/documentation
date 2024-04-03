@@ -23,6 +23,17 @@ origin: the created element
 
 ---
 
+# Supported MouseEvents (in XR and 2D)
+
+These are standard MouseEvents and _should_ behave as they would on any webpage.
+
+## `click`
+
+## `mouseover`
+
+## `mouseout`
+
+---
 # Interaction Events
 
 ## `selectstart`
@@ -58,7 +69,7 @@ detail:
 - `handedness`: `left` or `right`
 - `position`: a THREE.js Vector3 of the pinch/controller position
 
-## `hover-start`
+## `hoverstart`
 
 Triggered when the cursor or the users finger begins hovering over an entity.
 
@@ -71,7 +82,20 @@ detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
-## `hover-end`
+## `hovermove`
+
+Emitted continuously while a finger is on an element.
+
+origin: the target element
+
+detail:
+
+- `worldPosition`: a THREE.js Vector3 of the hover world position
+- `position`: a THREE.js Vector3 of the local hover position
+- `delta`: a THREE.js Vector3 of the delta between the the current local position and the last
+
+
+## `hoverend`
 
 Triggered when the cursor or the users finger stops hovering over an entity
 
@@ -79,7 +103,7 @@ the `hover` CSS class is removed to the entity when this event is triggered
 
 origin: the target element
 
-## `touch-start`
+## `touchstart`
 
 Triggered whened the controller trigger is pulled, a pinch gesture occurs, or the user touches an entity.
 
@@ -90,7 +114,9 @@ detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
-## `touch`
+## `touchmove`
+
+Emitted continuously while the trigger/pinch or direct touch collision is maintained
 
 origin: the target element
 
@@ -100,7 +126,7 @@ detail:
 - `position`: a THREE.js Vector3 of the local hover position
 - `delta`: a THREE.js Vector3 of the delta between the the current local position and the last
 
-## `touch-end`
+## `touchend`
 
 Triggered whened the controller trigger or pinch is released, or the user stops touching an entity.
 
