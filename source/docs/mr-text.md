@@ -4,22 +4,36 @@ The `<mr-text>`embeds text into an `<mr-panel>`.
 
 ## Example
 
-```html
-<mr-app>
-    <mr-panel class="container">
-        <mr-text>Hello World!</mr-text>
-    </mr-panel>
-</mr-app>
-```
+<inline-repl editor-height="280">
+    <code slot="html">
+        <mr-app>
+            <mr-panel class="container">
+                <mr-text>Hello World!</mr-text>
+            </mr-panel>
+        </mr-app>
+    </code>
+    <code slot="css">
+        mr-panel {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+    </code>
+</inline-repl>
 
-\[TODO: example img\]
+## Troika
+
+mr-text is made possible through Troika-Three-Text and can be manipulated with JavaScript like any other THREE.js.
 
 ## Definition and Usage
 
 `<mr-text>` supports custom fonts and has growing support CSS styling:
 
 ```html
-<mr-text class="title">mr.js</mr-text>
+<mr-text class="title">MRjs</mr-text>
 ```
 
 ```css
@@ -53,36 +67,3 @@ Custom fonts are supported but must be loaded manually in css using `@font-face`
 * white-space
 * vertical-align
 * text-align
-
-## Troika
-
-mr-text is made possible through Troika-Three-Text and can be manipulated with JavaScript like any other THREE.js.
-
-### video texture example
-
-```html
-<video id="video">…</video>
-<mr-app>
-    <mr-panel class="container">
-        <mr-text class="title">mr.js</mr-text>
-    </mr-panel>
-</mr-app>
-```
-
-```javascript
-let video = document.getElementById( 'video' );
-let text = document.querySelector('.title') 
-
-video.play();
-video.addEventListener( 'play', function () {
-    this.currentTime = 3;
-});
-
-let texture = new THREE.VideoTexture( video );
-texture.colorSpace = THREE.SRGBColorSpace
-
-let material = new THREE.MeshLambertMaterial({ color: 0xffffff, 
-                                               map: texture });
-
-text.textObj.material = material
-```

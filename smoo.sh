@@ -9,13 +9,20 @@ else
     base_url="https://docs.mrjs.io"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
-site_name='mrjs'
+site_name='MRjs'
 templateDir='source'
 templateHTML='source/_template.html'
 outputDir='public'
+
 assetDir='source/static'
 pagesDir='source/pages'
 docsDir='source/docs'
+attributesDir='source/attributes'
+eventsDir='source/events'
+jsAPIDir='source/js-api'
+jsAPIExtrasDir='source/js-api-extras'
+jsAPIUtilsDir='source/js-api-utils'
+
 current_year=$(date +"%Y")
 
 #run main action
@@ -45,7 +52,7 @@ extract_metadata() {
         title=$(echo -e "$title" | sed 's/^[0-9]*//')
 
         # Make the slug lowercase
-        local slug=${title,,}
+        local slug=$(echo -e "$title" | tr '[:upper:]' '[:lower:]')
 
         # Replace spaces with "-" in the slug
         slug=${slug// /-}
@@ -65,9 +72,11 @@ process_markdown() {
     local output_subdir=$3
     # local files=($(ls -f "${source_dir}"/*.md))
     local files=($(find "${source_dir}" -maxdepth 1 -name "*.md" -print | sort))
-
+    
     for file in "${files[@]}"
     do
+        # --- handling the file for creation to the public folder --- #
+
         # Extract the file name
         local base_file=$(basename -- "$file")
 
@@ -78,14 +87,14 @@ process_markdown() {
         title=$(echo -e "$title" | sed 's/^[0-9]*//')
 
         # Make the slug lowercase
-        local slug=${title,,}
+        local slug=$(echo -e "$title" | tr '[:upper:]' '[:lower:]')
 
         # Replace spaces with "-" in the slug
         slug=${slug// /-}
 
         # Set path variables and create the folder
         local page_url="${base_url}/${output_subdir}/${slug}/"
-        local github_path="${github_base}/${github_path_prefix}/${base_file}"
+        local github_path_auto="${github_base}/${github_path_prefix}/${base_file}"
         mkdir -p "${outputDir}/${output_subdir}/${slug}"
 
         # Convert the markdown to HTML
@@ -95,7 +104,7 @@ process_markdown() {
             --metadata site-name="$site_name" \
             --metadata page-url="$page_url" \
             --metadata base-url="$base_url" \
-            --metadata github-path="$github_path" \
+            --metadata github-path-auto="$github_path_auto" \
             --metadata title="$title" \
             --metadata slug="$slug" \
             --metadata title-prefix="$site_name" \
@@ -104,7 +113,7 @@ process_markdown() {
             --lua-filter anchorlinks.lua \
             --highlight-style pygments \
             --wrap=none \
-            -f markdown-smart \
+            -f commonmark_x \
             -s -p \
             -o "${outputDir}/${output_subdir}/${slug}/index.html"
 
@@ -113,16 +122,40 @@ process_markdown() {
 }
 
 # Initialize YAML header
-docsYAML="---\npages:\n"
+docsYAML="---\n"
 
-# Process page files
+######################################
+
+# Process "General" pages
+docsYAML+="pages:\n"
 extract_metadata "$pagesDir"
 
-# Add the docs header
+# Process "HTML tags" pages
 docsYAML+="docs:\n"
-
-# Process doc files
 extract_metadata "$docsDir"
+
+# Process "MRjs Events" pages
+docsYAML+="events:\n"
+extract_metadata "$eventsDir"
+
+# Process "Data attributes" pages
+docsYAML+="attributes:\n"
+extract_metadata "$attributesDir"
+
+# Process "JavaScript API" pages
+docsYAML+="js-api:\n"
+extract_metadata "$jsAPIDir"
+
+# Process "JavaScript API Extras" pages
+docsYAML+="js-api-extras:\n"
+extract_metadata "$jsAPIExtrasDir"
+
+# Process "JavaScript API Utils" pages
+docsYAML+="js-api-utils:\n"
+extract_metadata "$jsAPIUtilsDir"
+
+
+######################################
 
 # Finalize and write to file
 docsYAML+="---"
@@ -134,14 +167,26 @@ process_markdown "$pagesDir" "pages" ""
 # Process doc files
 process_markdown "$docsDir" "docs" "doc"
 
+# Process data events files
+process_markdown "$eventsDir" "events" "events"
+
+# Process data attributes files
+process_markdown "$attributesDir" "attributes" "attributes"
+
+# Process javascript API files
+process_markdown "$jsAPIDir" "js-api" "js-api"
+process_markdown "$jsAPIExtrasDir" "js-api-extras" "js-api-extras"
+process_markdown "$jsAPIUtilsDir" "js-api-utils" "js-api-utils"
+
 # --metadata base-url="$base_url" \
+# --metadata github-path="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
 pandoc "${templateDir}/index.md" \
     --template $templateHTML \
     --metadata current-year="$current_year" \
     --metadata site-name="$site_name" \
     --metadata page-url="$base_url" \
     --metadata base-url="$base_url" \
-    --metadata github-path="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
+    --metadata github-path-auto="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
     --metadata title="$site_name" \
     --metadata slug="" \
     --metadata-file="${outputDir}/docs.yaml" \
@@ -149,7 +194,7 @@ pandoc "${templateDir}/index.md" \
     --lua-filter anchorlinks.lua \
     --highlight-style pygments \
     --wrap=none \
-    -f markdown-smart \
+    -f commonmark_x \
     -s -p \
     -o "${outputDir}/index.html"
 
