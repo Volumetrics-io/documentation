@@ -17,6 +17,8 @@ The text element that is used to represent normal HTML text one would expect in 
 * [MRTextEntity](#MRTextEntity) ⇐ <code>MRDivEntity</code>
     * [.MRTextEntity](#MRTextEntity+MRTextEntity)
         * [new exports.MRTextEntity()](#new_MRTextEntity+MRTextEntity_new)
+    * [._textWasManuallyUpdated()](#MRTextEntity+_textWasManuallyUpdated)
+    * [.innerText()](#MRTextEntity+innerText)
     * [.connected()](#MRTextEntity+connected)
     * [.triggerTextStyleUpdate()](#MRTextEntity+triggerTextStyleUpdate)
     * [.printCurrentTextDebugInfo(textObj)](#MRTextEntity+printCurrentTextDebugInfo)
@@ -32,6 +34,19 @@ Constructor for the MRTextEntity object.
              Sets up the 3D aspect of the text, including the object, texture, and update check.
              Additionally, adds an event listener for the text to auto-augment whenever the panel size changes.
 
+<a name="MRTextEntity+_textWasManuallyUpdated"></a>
+
+### mrTextEntity.\_textWasManuallyUpdated()
+Helper for anytime text is manually touched - in connected and by use of `innerText`.
+Handles setting `innerText` like expected, sanitizing it for our use, and also making sure the updates are called.
+
+**Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
+<a name="MRTextEntity+innerText"></a>
+
+### mrTextEntity.innerText()
+setter capture. Handles setting `innerText` like expected by also making sure it's sanitized and the updates are called.
+
+**Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
 <a name="MRTextEntity+connected"></a>
 
 ### mrTextEntity.connected()
