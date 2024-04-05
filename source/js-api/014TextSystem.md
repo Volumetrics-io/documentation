@@ -17,6 +17,8 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
     * [._updateSpecificEntity(entity)](#TextSystem+_updateSpecificEntity)
+    * [.checkIfTextContentChanged(entity)](#TextSystem+checkIfTextContentChanged) ⇒ <code>boolean</code>
+    * [.handleTextContentUpdate(entity)](#TextSystem+handleTextContentUpdate)
     * [.eventUpdate()](#TextSystem+eventUpdate)
     * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
@@ -26,7 +28,6 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.getVerticalAlign(verticalAlign, entity)](#TextSystem+getVerticalAlign) ⇒ <code>string</code>
     * [.getLineHeight(lineHeight, entity)](#TextSystem+getLineHeight) ⇒ <code>number</code>
     * [.getTextAlign(textAlign)](#TextSystem+getTextAlign) ⇒ <code>string</code>
-    * [.setColor(textObj, color)](#TextSystem+setColor)
     * [.parseFontFace(cssString)](#TextSystem+parseFontFace) ⇒ <code>object</code>
 
 <a name="TextSystem+TextSystem"></a>
@@ -59,6 +60,25 @@ The per entity triggered update call. Handles updating all text items including 
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>object</code> | the entity that needs to be updated. |
+
+<a name="TextSystem+checkIfTextContentChanged"></a>
+
+### textSystem.checkIfTextContentChanged(entity) ⇒ <code>boolean</code>
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+**Returns**: <code>boolean</code> - true if the content needed to be updated, false otherwise.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | checks if the content changed and if so, updates it to match. |
+
+<a name="TextSystem+handleTextContentUpdate"></a>
+
+### textSystem.handleTextContentUpdate(entity)
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the entity whose content updated. |
 
 <a name="TextSystem+eventUpdate"></a>
 
@@ -162,18 +182,6 @@ Gets the text alignment string
 | Param | Type | Description |
 | --- | --- | --- |
 | textAlign | <code>string</code> | handles values for `start`, `end`, `left`, and `right`; otherwise, defaults to the same input as `textAlign`. |
-
-<a name="TextSystem+setColor"></a>
-
-### textSystem.setColor(textObj, color)
-Sets the matrial color and opacity based on the css color element
-
-**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| textObj | <code>object</code> | the textObj whose color is being updated |
-| color | <code>object</code> | the representation of color as `rgba(xxx,xxx,xxx)` or as `#xxx` |
 
 <a name="TextSystem+parseFontFace"></a>
 

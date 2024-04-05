@@ -18,10 +18,8 @@ The text area element that simulates the behavior of an HTML <textarea> tag,
     * [.MRTextAreaEntity](#MRTextAreaEntity+MRTextAreaEntity)
     * [.createHiddenInputElement()](#MRTextAreaEntity+createHiddenInputElement)
     * [.fillInHiddenInputElementWithUserData()](#MRTextAreaEntity+fillInHiddenInputElementWithUserData)
-    * [.connected()](#MRTextAreaEntity+connected)
     * [.updateTextDisplay()](#MRTextAreaEntity+updateTextDisplay)
     * [.handleKeydown(event)](#MRTextAreaEntity+handleKeydown)
-    * [.updateCursorPosition()](#MRTextAreaEntity+updateCursorPosition)
 
 <a name="MRTextAreaEntity+MRTextAreaEntity"></a>
 
@@ -35,12 +33,6 @@ The text area element that simulates the behavior of an HTML <textarea> tag,
 
 ### mrTextAreaEntity.fillInHiddenInputElementWithUserData()
 **Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
-<a name="MRTextAreaEntity+connected"></a>
-
-### mrTextAreaEntity.connected()
-(async) sets up the textObject of the text item.
-
-**Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
 <a name="MRTextAreaEntity+updateTextDisplay"></a>
 
 ### mrTextAreaEntity.updateTextDisplay()
@@ -48,7 +40,9 @@ The text area element that simulates the behavior of an HTML <textarea> tag,
 <a name="MRTextAreaEntity+handleKeydown"></a>
 
 ### mrTextAreaEntity.handleKeydown(event)
-Handles keydown events for scrolling and cursor navigation.
+Handles keydown events for scrolling and cursor navigation. Note
+that this is different than an input event which for our purposes,
+handles the non-navigation key-presses.
 
 **Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  
 
@@ -56,7 +50,3 @@ Handles keydown events for scrolling and cursor navigation.
 | --- | --- | --- |
 | event | <code>event</code> | the keydown event |
 
-<a name="MRTextAreaEntity+updateCursorPosition"></a>
-
-### mrTextAreaEntity.updateCursorPosition()
-**Kind**: instance method of [<code>MRTextAreaEntity</code>](#MRTextAreaEntity)  

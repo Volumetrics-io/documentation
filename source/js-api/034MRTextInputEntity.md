@@ -19,13 +19,15 @@ The text element / TODO /
     * [.value](#MRTextInputEntity+value)
     * [.createHiddenInputElement()](#MRTextInputEntity+createHiddenInputElement)
     * [.fillInHiddenInputElementWithUserData()](#MRTextInputEntity+fillInHiddenInputElementWithUserData)
-    * [.connected()](#MRTextInputEntity+connected)
-    * [._createCursor()](#MRTextInputEntity+_createCursor)
-    * [.updateCursorPosition()](#MRTextInputEntity+updateCursorPosition)
-    * [.handleKeydown(event)](#MRTextInputEntity+handleKeydown)
     * [.updateTextDisplay()](#MRTextInputEntity+updateTextDisplay)
-    * [._focus()](#MRTextInputEntity+_focus)
+    * [.connected()](#MRTextInputEntity+connected)
+    * [._createCursorObject()](#MRTextInputEntity+_createCursorObject)
+    * [.handleKeydown(event)](#MRTextInputEntity+handleKeydown)
+    * [.handleMouseClick(event)](#MRTextInputEntity+handleMouseClick)
+    * [.focus(isPureFocusEvent)](#MRTextInputEntity+focus)
+    * [.blur()](#MRTextInputEntity+blur)
     * [.setupEventListeners()](#MRTextInputEntity+setupEventListeners)
+    * [.updateCursorPosition(fromCursorMove, isNewLine)](#MRTextInputEntity+updateCursorPosition)
 
 <a name="MRTextInputEntity+MRTextInputEntity"></a>
 
@@ -53,21 +55,19 @@ Constructor for the textArea entity component.
 
 ### mrTextInputEntity.fillInHiddenInputElementWithUserData()
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+<a name="MRTextInputEntity+updateTextDisplay"></a>
+
+### mrTextInputEntity.updateTextDisplay()
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
 <a name="MRTextInputEntity+connected"></a>
 
 ### mrTextInputEntity.connected()
 (async) handles setting up this textarea once it is connected to run as an entity component.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
-<a name="MRTextInputEntity+_createCursor"></a>
+<a name="MRTextInputEntity+_createCursorObject"></a>
 
-### mrTextInputEntity.\_createCursor()
-**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
-<a name="MRTextInputEntity+updateCursorPosition"></a>
-
-### mrTextInputEntity.updateCursorPosition()
-Updates the cursor position based on click and selection location.
-
+### mrTextInputEntity.\_createCursorObject()
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
 <a name="MRTextInputEntity+handleKeydown"></a>
 
@@ -78,15 +78,41 @@ Updates the cursor position based on click and selection location.
 | --- | --- | --- |
 | event | <code>event</code> | the keydown event |
 
-<a name="MRTextInputEntity+updateTextDisplay"></a>
+<a name="MRTextInputEntity+handleMouseClick"></a>
 
-### mrTextInputEntity.updateTextDisplay()
+### mrTextInputEntity.handleMouseClick(event)
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
-<a name="MRTextInputEntity+_focus"></a>
 
-### mrTextInputEntity.\_focus()
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>event</code> | the keydown event |
+
+<a name="MRTextInputEntity+focus"></a>
+
+### mrTextInputEntity.focus(isPureFocusEvent)
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| isPureFocusEvent | <code>boolean</code> | <code>false</code> | Boolean to allow us to update the cursor position with this function directly. Otherwise, we assume there's other things happening after focus was called as part of the event and that the cursor position will be handled there instead. |
+
+<a name="MRTextInputEntity+blur"></a>
+
+### mrTextInputEntity.blur()
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
 <a name="MRTextInputEntity+setupEventListeners"></a>
 
 ### mrTextInputEntity.setupEventListeners()
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+<a name="MRTextInputEntity+updateCursorPosition"></a>
+
+### mrTextInputEntity.updateCursorPosition(fromCursorMove, isNewLine)
+Updates the cursor position based on click and selection location.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| fromCursorMove | <code>boolean</code> | <code>false</code> | false by default. Used to determine if we need to run based off a text object update sync or we can directly grab information. This requirement occurs because the sync isnt usable if no text content changed. |
+| isNewLine | <code>boolean</code> | <code>false</code> | false by default. Used to determine if the new character added was a newline character to try to augment the cursor position to something the user would recognize since troika places it in a weird spot until the next character is entered. |
+

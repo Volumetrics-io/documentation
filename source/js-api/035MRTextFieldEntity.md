@@ -18,7 +18,6 @@ The text element that is used to represent normal user-entry text field items on
     * [.createHiddenInputElement()](#MRTextFieldEntity+createHiddenInputElement)
     * [.updateTextDisplay()](#MRTextFieldEntity+updateTextDisplay)
     * [.handleKeydown(event)](#MRTextFieldEntity+handleKeydown)
-    * [.updateCursorPosition()](#MRTextFieldEntity+updateCursorPosition)
 
 <a name="MRTextFieldEntity+MRTextFieldEntity"></a>
 
@@ -40,17 +39,13 @@ Constructor for the textField entity component.
 <a name="MRTextFieldEntity+handleKeydown"></a>
 
 ### mrTextFieldEntity.handleKeydown(event)
-Handles keydown events for scrolling and cursor navigation.
+Handles keydown events for scrolling and cursor navigation. Note
+that this is different than an input event which for our purposes,
+handles the non-navigation key-presses.
 
 **Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| event | <code>event</code> | keydown event |
+| event | <code>event</code> | the keydown event |
 
-<a name="MRTextFieldEntity+updateCursorPosition"></a>
-
-### mrTextFieldEntity.updateCursorPosition()
-Updates the cursor position based on click and selection location.
-
-**Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
