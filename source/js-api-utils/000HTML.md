@@ -21,11 +21,11 @@ Useful namespace for helping with html utility functions
 Given the path returns an absolute path resolved so relative linking works as expected.
 
 **Kind**: static method of [<code>html</code>](#html)  
-**Returns**: <code>string</code> - a.href - the absolute path  
+**Returns**: <code>string</code> - a.href - the absolute path (or paths)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| path | <code>string</code> | either a relative or full path inputted to an element. |
+| path | <code>string</code> | either a relative or full path inputted to an element. This can also be a path that has items separated by ',' so that you can resolve multiple items at once, since we allow users to send us multiple files that way. |
 | baseUrl | <code>string</code> | a separate entry for if you want your url to start differently. this defaults to your window.location.origin. Additionally removes all queries from the end of the url, leaving the input as just the origin and its pathname. For ex: 'https://example.com/images/photo.png?version=2' becomes 'https://example.com/images/photo.png' |
 
 <a name="html.removeUrlQueries"></a>
