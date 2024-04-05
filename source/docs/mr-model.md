@@ -40,7 +40,7 @@
 
 ## Supported file types
 
-* Check out the [allowed extensions](https://docs.mrjs.io/javascript-api/#model.loadmodelfilepath-extension-promise.three.mesh) from the Model.loadModel function
+* Check out the [allowed extensions](https://docs.mrjs.io/js-api-utils/model/#modelloadmodelfilepath-extension--promisethreemesh) from the Model.loadModel function
 * The current supported list is: `dae`, `fbx`, `glb`, `obj`, and `stl`
 
 > Note: certain filetypes require additional inputs to 'src' (for ex: 'obj'). Check the [documentation](https://examples.mrjs.io/examples/models.html) if you are unsure.
