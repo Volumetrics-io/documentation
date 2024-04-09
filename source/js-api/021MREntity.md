@@ -35,7 +35,7 @@ The default representation of an MRElement to be expanded upon by actual details
     * [.mutationCallback(mutationList, observer)](#MREntity+mutationCallback)
     * [.componentMutated(mutation)](#MREntity+componentMutated)
     * [.add(entity)](#MREntity+add)
-    * [.remove(entity)](#MREntity+remove)
+    * [.removeEntity(entity)](#MREntity+removeEntity)
     * [.traverse(callBack)](#MREntity+traverse)
     * [.traverseObjects(callBack)](#MREntity+traverseObjects)
 
@@ -215,9 +215,9 @@ Adding an entity as a sub-object of this entity.
 | --- | --- | --- |
 | entity | [<code>MREntity</code>](#MREntity) | the entity to be added. |
 
-<a name="MREntity+remove"></a>
+<a name="MREntity+removeEntity"></a>
 
-### mrEntity.remove(entity)
+### mrEntity.removeEntity(entity)
 Removing an entity as a sub-object of this entity.
 
 **Kind**: instance method of [<code>MREntity</code>](#MREntity)  

@@ -27,6 +27,7 @@ attribute for more detailed control.
     * [.entityEventUpdate(e)](#PhysicsSystem+entityEventUpdate)
     * [.update(deltaTime, frame)](#PhysicsSystem+update)
     * [.onNewEntity(entity)](#PhysicsSystem+onNewEntity)
+    * [.entityRemoved(entity)](#PhysicsSystem+entityRemoved)
     * [.initPhysicsBody(entity)](#PhysicsSystem+initPhysicsBody)
     * [.initUIEntityBody(entity)](#PhysicsSystem+initUIEntityBody)
     * [.initSimpleBody(entity)](#PhysicsSystem+initSimpleBody)
@@ -84,6 +85,17 @@ When a new entity is created, adds it to the physics registry and initializes th
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity being set up |
+
+<a name="PhysicsSystem+entityRemoved"></a>
+
+### physicsSystem.entityRemoved(entity)
+when an entity is removed, remove and destroy it's physics body
+
+**Kind**: instance method of [<code>PhysicsSystem</code>](#PhysicsSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the removed entity |
 
 <a name="PhysicsSystem+initPhysicsBody"></a>
 

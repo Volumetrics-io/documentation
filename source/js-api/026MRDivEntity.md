@@ -19,7 +19,7 @@ The MREntity that is used to solely describe UI Elements. Defaults as the html `
     * [.width()](#MRDivEntity+width) ⇒ <code>number</code>
     * [.borderRadii()](#MRDivEntity+borderRadii) ⇒ <code>number</code>
     * [.add(entity)](#MRDivEntity+add)
-    * [.remove(entity)](#MRDivEntity+remove)
+    * [.removeEntity(entity)](#MRDivEntity+removeEntity)
     * [.connected()](#MRDivEntity+connected)
 
 <a name="MRDivEntity+MRDivEntity"></a>
@@ -63,9 +63,9 @@ Adding an entity as a sub-object of this panel (for example an mr-model, button,
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="MRDivEntity+remove"></a>
+<a name="MRDivEntity+removeEntity"></a>
 
-### mrDivEntity.remove(entity)
+### mrDivEntity.removeEntity(entity)
 Removing an entity as a sub-object of this panel (for example an mr-model, button, etc).
 
 **Kind**: instance method of [<code>MRDivEntity</code>](#MRDivEntity)  

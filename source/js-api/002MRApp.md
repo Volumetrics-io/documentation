@@ -28,7 +28,7 @@ The engine handler for running MRjs as an App. `mr-app`
         * [.registerSystem(system)](#MRApp+registerSystem)
         * [.unregisterSystem(system)](#MRApp+unregisterSystem)
         * [.add(entity)](#MRApp+add)
-        * [.remove(entity)](#MRApp+remove)
+        * [.removeEntity(entity)](#MRApp+removeEntity)
         * [.onWindowResize()](#MRApp+onWindowResize)
         * [.render(timeStamp, frame)](#MRApp+render)
     * _static_
@@ -146,9 +146,9 @@ Adding an entity as an object in this MRApp engine's scene.
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="MRApp+remove"></a>
+<a name="MRApp+removeEntity"></a>
 
-### mrApp.remove(entity)
+### mrApp.removeEntity(entity)
 Removing an entity as an object in this MRApp engine's scene.
 
 **Kind**: instance method of [<code>MRApp</code>](#MRApp)  

@@ -21,6 +21,8 @@ The default representation of an MRSystem to be expanded upon by actual details 
     * [.eventUpdate()](#MRSystem+eventUpdate)
     * [._onNewEntity(entity)](#MRSystem+_onNewEntity)
     * [.onNewEntity(entity)](#MRSystem+onNewEntity)
+    * [._entityRemoved(entity)](#MRSystem+_entityRemoved)
+    * [.entityRemoved(entity)](#MRSystem+entityRemoved)
     * [.attachedComponent(entity)](#MRSystem+attachedComponent)
     * [.updatedComponent(entity, oldData)](#MRSystem+updatedComponent)
     * [.detachedComponent(entity)](#MRSystem+detachedComponent)
@@ -110,6 +112,28 @@ internal function, called when a new entity is added to the scene
 <a name="MRSystem+onNewEntity"></a>
 
 ### mrSystem.onNewEntity(entity)
+Called when a new entity is added to the scene
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+<a name="MRSystem+_entityRemoved"></a>
+
+### mrSystem.\_entityRemoved(entity)
+internal function, called when a new entity is added to the scene
+
+**Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>MREntity</code> | the entity being added. |
+
+<a name="MRSystem+entityRemoved"></a>
+
+### mrSystem.entityRemoved(entity)
 Called when a new entity is added to the scene
 
 **Kind**: instance method of [<code>MRSystem</code>](#MRSystem)  

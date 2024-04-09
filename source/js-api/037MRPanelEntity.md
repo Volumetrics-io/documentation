@@ -18,7 +18,7 @@ The main panel entity DOM used for webpages and UI elements in 3D space. `mr-pan
     * [.height()](#MRPanelEntity+height) ⇒ <code>number</code>
     * [.connected()](#MRPanelEntity+connected)
     * [.add(entity)](#MRPanelEntity+add)
-    * [.remove(entity)](#MRPanelEntity+remove)
+    * [.removeEntity(entity)](#MRPanelEntity+removeEntity)
     * [.onTouch(event)](#MRPanelEntity+onTouch)
     * [.onScroll(event)](#MRPanelEntity+onScroll)
 
@@ -56,9 +56,9 @@ Adding an entity as a sub-object of this entity.
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="MRPanelEntity+remove"></a>
+<a name="MRPanelEntity+removeEntity"></a>
 
-### mrPanelEntity.remove(entity)
+### mrPanelEntity.removeEntity(entity)
 Remove an entity as a sub-object of this entity.
 
 **Kind**: instance method of [<code>MRPanelEntity</code>](#MRPanelEntity)  

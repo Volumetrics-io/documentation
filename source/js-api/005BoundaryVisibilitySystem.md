@@ -15,7 +15,7 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/component
 ## Functions
 
 <dl>
-<dt><a href="#observe">observe(root, target)</a></dt>
+<dt><a href="#observe">observe(root, target)</a> ⇒ <code>IntersectionObserver</code></dt>
 <dd><p>Observe a target MRDivEntity and make the associated object visible only if it is in visible position in a root MRDivEntity</p>
 </dd>
 </dl>
@@ -32,6 +32,7 @@ Makes the entities invisible if they are outside of their parent panels
     * [.BoundaryVisibilitySystem](#BoundaryVisibilitySystem+BoundaryVisibilitySystem)
         * [new exports.BoundaryVisibilitySystem()](#new_BoundaryVisibilitySystem+BoundaryVisibilitySystem_new)
     * [.onNewEntity(entity)](#BoundaryVisibilitySystem+onNewEntity)
+    * [._entityRemoved(entity)](#BoundaryVisibilitySystem+_entityRemoved)
 
 <a name="BoundaryVisibilitySystem+BoundaryVisibilitySystem"></a>
 
@@ -53,12 +54,24 @@ Called when a new entity is added to the scene.
 | --- | --- | --- |
 | entity | <code>object</code> | the entity being added. |
 
+<a name="BoundaryVisibilitySystem+_entityRemoved"></a>
+
+### boundaryVisibilitySystem.\_entityRemoved(entity)
+Called when an entity is removed from the scene.
+
+**Kind**: instance method of [<code>BoundaryVisibilitySystem</code>](#BoundaryVisibilitySystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the entity being added. |
+
 <a name="observe"></a>
 
-## observe(root, target)
+## observe(root, target) ⇒ <code>IntersectionObserver</code>
 Observe a target MRDivEntity and make the associated object visible only if it is in visible position in a root MRDivEntity
 
 **Kind**: global function  
+**Returns**: <code>IntersectionObserver</code> - - an observer for tracking visiblity  
 
 | Param | Type | Description |
 | --- | --- | --- |
