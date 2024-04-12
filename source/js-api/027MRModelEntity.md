@@ -17,6 +17,7 @@ Loads in any supported 3D model type to the requested location. `mr-model`
         * [new exports.MRModelEntity()](#new_MRModelEntity+MRModelEntity_new)
     * [.src()](#MRModelEntity+src) ⇒ <code>string</code>
     * [.src()](#MRModelEntity+src)
+    * [.mutated(mutation)](#MRModelEntity+mutated)
     * [.loadModel()](#MRModelEntity+loadModel)
     * [.connected()](#MRModelEntity+connected)
     * [.onLoad()](#MRModelEntity+onLoad)
@@ -53,6 +54,17 @@ note: we can do this because only htmlimageelement has a `src` property by defau
 and none of the above class extensions for Model have it as a defined property.
 
 **Kind**: instance method of [<code>MRModelEntity</code>](#MRModelEntity)  
+<a name="MRModelEntity+mutated"></a>
+
+### mrModelEntity.mutated(mutation)
+Callback function of MREntity - Updates the media's cover,fill,etc based on the mutation request.
+
+**Kind**: instance method of [<code>MRModelEntity</code>](#MRModelEntity)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| mutation | <code>object</code> | the update/change/mutation to be handled. |
+
 <a name="MRModelEntity+loadModel"></a>
 
 ### mrModelEntity.loadModel()
