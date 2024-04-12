@@ -21,6 +21,12 @@ Triggered whenever an entity is added to the DOM.
 
 Origin: the created entity
 
+## `entityupdated`
+
+Triggered when an entity is updated to the DOM, this excludes component updates and focuses primarily on any update that might effect the geometry or physics colliders of the entity.
+
+Origin: the created entity
+
 ## `entityremoved`
 
 Triggered whenever an entity is removed from the DOM.
