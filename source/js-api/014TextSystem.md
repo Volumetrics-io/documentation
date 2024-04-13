@@ -20,7 +20,6 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.checkIfTextContentChanged(entity)](#TextSystem+checkIfTextContentChanged) ⇒ <code>boolean</code>
     * [.handleTextContentUpdate(entity)](#TextSystem+handleTextContentUpdate)
     * [.eventUpdate()](#TextSystem+eventUpdate)
-    * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
     * [.addText(entity)](#TextSystem+addText)
     * [.parseFontWeight(weight)](#TextSystem+parseFontWeight) ⇒ <code>string</code>
@@ -29,6 +28,7 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.getLineHeight(lineHeight, entity)](#TextSystem+getLineHeight) ⇒ <code>number</code>
     * [.getTextAlign(textAlign)](#TextSystem+getTextAlign) ⇒ <code>string</code>
     * [.parseFontFace(cssString)](#TextSystem+parseFontFace) ⇒ <code>object</code>
+    * [.setTextObject3DColor(object3D, color, default_color)](#TextSystem+setTextObject3DColor)
 
 <a name="TextSystem+TextSystem"></a>
 
@@ -86,18 +86,6 @@ The per entity triggered update call. Handles updating all text items including 
 The per global scene event update call. Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-<a name="TextSystem+update"></a>
-
-### textSystem.update(deltaTime, frame)
-The per-frame system update call for all text items including updates for style and cleaning of content for special characters.
-
-**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
-
 <a name="TextSystem+updateStyle"></a>
 
 ### textSystem.updateStyle(entity)
@@ -195,4 +183,17 @@ Based on the given font-face value in the passed cssString, tries to either use 
 | Param | Type | Description |
 | --- | --- | --- |
 | cssString | <code>string</code> | the css string to be parsed for the font-face css value. |
+
+<a name="TextSystem+setTextObject3DColor"></a>
+
+### textSystem.setTextObject3DColor(object3D, color, default_color)
+Sets the text object3D color.
+
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object3D | <code>object</code> | the threejs object representation of the troika textt to be colored |
+| color | <code>string</code> | the string representation of the color in rgba, hex, or name ('red') form |
+| default_color | <code>string</code> | fallback color used if the system does not understand the color parameter. Defaults to black. |
 

@@ -16,6 +16,7 @@ The text element that is used to represent normal user-entry text field items on
     * [.MRTextFieldEntity](#MRTextFieldEntity+MRTextFieldEntity)
         * [new exports.MRTextFieldEntity()](#new_MRTextFieldEntity+MRTextFieldEntity_new)
     * [.createHiddenInputElement()](#MRTextFieldEntity+createHiddenInputElement)
+    * [.fillInHiddenInputElementWithUserData()](#MRTextFieldEntity+fillInHiddenInputElementWithUserData)
     * [.updateTextDisplay()](#MRTextFieldEntity+updateTextDisplay)
     * [.handleKeydown(event)](#MRTextFieldEntity+handleKeydown)
 
@@ -31,10 +32,22 @@ Constructor for the textField entity component.
 <a name="MRTextFieldEntity+createHiddenInputElement"></a>
 
 ### mrTextFieldEntity.createHiddenInputElement()
+Called by connected to make sure the hiddenInput dom element is created as expected.
+
+**Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
+<a name="MRTextFieldEntity+fillInHiddenInputElementWithUserData"></a>
+
+### mrTextFieldEntity.fillInHiddenInputElementWithUserData()
+Called by connected after createHiddenInputElement to fill
+it in with the user's given attribute information.
+
 **Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
 <a name="MRTextFieldEntity+updateTextDisplay"></a>
 
 ### mrTextFieldEntity.updateTextDisplay()
+Used on event trigger to update the textObj visual based on
+the hiddenInput DOM element.
+
 **Kind**: instance method of [<code>MRTextFieldEntity</code>](#MRTextFieldEntity)  
 <a name="MRTextFieldEntity+handleKeydown"></a>
 

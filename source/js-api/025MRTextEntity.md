@@ -63,9 +63,11 @@ relying on an overall scene or all items to update isnt beneficial.
 <a name="MRTextEntity+printCurrentTextDebugInfo"></a>
 
 ### mrTextEntity.printCurrentTextDebugInfo(textObj)
+Helper method for debugging the textObj visual information
+
 **Kind**: instance method of [<code>MRTextEntity</code>](#MRTextEntity)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| textObj | <code>object</code> | the textobj |
+| textObj | <code>object</code> | the textobj threejs renderable visual. Handled by troika. If no object is passed, defers to the textObj within this entity. |
 
