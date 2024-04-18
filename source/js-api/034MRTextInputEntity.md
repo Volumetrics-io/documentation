@@ -22,6 +22,7 @@ Base text inpu entity represented in 3D space. `mr-text-input`
     * [.updateTextDisplay()](#MRTextInputEntity+updateTextDisplay)
     * [.connected()](#MRTextInputEntity+connected)
     * [._createCursorObject()](#MRTextInputEntity+_createCursorObject)
+    * [._updateCursorSize(newHeight)](#MRTextInputEntity+_updateCursorSize)
     * [.handleKeydown(event)](#MRTextInputEntity+handleKeydown)
     * [.handleMouseClick(event)](#MRTextInputEntity+handleMouseClick)
     * [._focus(isPureFocusEvent)](#MRTextInputEntity+_focus)
@@ -85,9 +86,24 @@ update the textObj visual based on the hiddenInput DOM element.
 
 ### mrTextInputEntity.\_createCursorObject()
 Internal function used to setup the cursor object and associated variables
-needed during runtime.
+needed during runtime. Sets the cursor geometry based on dev updated cursorWidth and
+cursorHeight MRTextInputEntity variables.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+<a name="MRTextInputEntity+_updateCursorSize"></a>
+
+### mrTextInputEntity.\_updateCursorSize(newHeight)
+Internal function used to setup the cursor object and associated variables
+needed during runtime. User can pass in a new height directly or the function checks
+whether cursor height should be updated based on fontSize compared to line height
+and other aspects.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| newHeight | <code>number</code> | an optional parameter to be used as the cursor's new height. |
+
 <a name="MRTextInputEntity+handleKeydown"></a>
 
 ### mrTextInputEntity.handleKeydown(event)
