@@ -19,7 +19,7 @@ Base text inpu entity represented in 3D space. `mr-text-input`
     * [.value()](#MRTextInputEntity+value)
     * [.createHiddenInputElement()](#MRTextInputEntity+createHiddenInputElement)
     * [.fillInHiddenInputElementWithUserData()](#MRTextInputEntity+fillInHiddenInputElementWithUserData)
-    * [.updateTextDisplay()](#MRTextInputEntity+updateTextDisplay)
+    * [.updateTextDisplay(fromCursorMove)](#MRTextInputEntity+updateTextDisplay)
     * [.connected()](#MRTextInputEntity+connected)
     * [._createCursorObject()](#MRTextInputEntity+_createCursorObject)
     * [._updateCursorSize(newHeight)](#MRTextInputEntity+_updateCursorSize)
@@ -27,9 +27,13 @@ Base text inpu entity represented in 3D space. `mr-text-input`
     * [.handleMouseClick(event)](#MRTextInputEntity+handleMouseClick)
     * [._focus(isPureFocusEvent)](#MRTextInputEntity+_focus)
     * [._blur()](#MRTextInputEntity+_blur)
+    * [.hasTextSubsetForVerticalScrolling()](#MRTextInputEntity+hasTextSubsetForVerticalScrolling) ⇒ <code>boolean</code>
+    * [.hasTextSubsetForHorizontalScrolling()](#MRTextInputEntity+hasTextSubsetForHorizontalScrolling) ⇒ <code>boolean</code>
     * [.inputIsDisabled()](#MRTextInputEntity+inputIsDisabled) ⇒ <code>boolean</code>
     * [.inputIsReadOnly()](#MRTextInputEntity+inputIsReadOnly) ⇒ <code>boolean</code>
     * [.setupEventListeners()](#MRTextInputEntity+setupEventListeners)
+    * [._totalLengthUpToLineIndex(lineIndex, allLines)](#MRTextInputEntity+_totalLengthUpToLineIndex) ⇒ <code>number</code>
+    * [._totalLengthBetweenLineIndices(lineIndexStart, lineIndexEnd, allLines)](#MRTextInputEntity+_totalLengthBetweenLineIndices) ⇒ <code>number</code>
     * [.updateCursorPosition(fromCursorMove)](#MRTextInputEntity+updateCursorPosition)
 
 <a name="MRTextInputEntity+MRTextInputEntity"></a>
@@ -71,11 +75,16 @@ attribute information.
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
 <a name="MRTextInputEntity+updateTextDisplay"></a>
 
-### mrTextInputEntity.updateTextDisplay()
+### mrTextInputEntity.updateTextDisplay(fromCursorMove)
 Function to be overwritten by children. Used on event trigger to
 update the textObj visual based on the hiddenInput DOM element.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| fromCursorMove | <code>boolean</code> | <code>false</code> | default set as false if not supplied. See `MRTextArea` and `MRTextField` as examples. This param is helpful for cases where the visible region of text can differ from the full text value. Since cursor movement already handles scrolling for that region change, then we only need to update the new text. Otherwise, we also need to scroll and update the new text. |
+
 <a name="MRTextInputEntity+connected"></a>
 
 ### mrTextInputEntity.connected()
@@ -148,6 +157,20 @@ private version of this function signature to not hit the intersection of the ac
 event naming that we have connected. See 'setupEventListeners()' description for more info.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+<a name="MRTextInputEntity+hasTextSubsetForVerticalScrolling"></a>
+
+### mrTextInputEntity.hasTextSubsetForVerticalScrolling() ⇒ <code>boolean</code>
+Getter for whether this textinput should handle vertical scrolling or not.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+**Returns**: <code>boolean</code> - true if it should be handled, false otherwise  
+<a name="MRTextInputEntity+hasTextSubsetForHorizontalScrolling"></a>
+
+### mrTextInputEntity.hasTextSubsetForHorizontalScrolling() ⇒ <code>boolean</code>
+Getter for whether this textinput should handle horizontal scrolling or not.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+**Returns**: <code>boolean</code> - true if it should be handled, false otherwise  
 <a name="MRTextInputEntity+inputIsDisabled"></a>
 
 ### mrTextInputEntity.inputIsDisabled() ⇒ <code>boolean</code>
@@ -178,6 +201,35 @@ functions; otherwise, theyre not accessible nor implemented
 in the subclasses.
 
 **Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+<a name="MRTextInputEntity+_totalLengthUpToLineIndex"></a>
+
+### mrTextInputEntity.\_totalLengthUpToLineIndex(lineIndex, allLines) ⇒ <code>number</code>
+Helper function for `handleKeyDown` and `updateCursorPosition` when
+handling textObj.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+**Returns**: <code>number</code> - length of summed string.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| lineIndex | <code>number</code> | the ending line index non-inclusive of the summation. |
+| allLines | <code>Array</code> | the array of line strings |
+
+<a name="MRTextInputEntity+_totalLengthBetweenLineIndices"></a>
+
+### mrTextInputEntity.\_totalLengthBetweenLineIndices(lineIndexStart, lineIndexEnd, allLines) ⇒ <code>number</code>
+Helper function for `handleKeyDown` and `updateCursorPosition` when
+handling textObj.
+
+**Kind**: instance method of [<code>MRTextInputEntity</code>](#MRTextInputEntity)  
+**Returns**: <code>number</code> - length of summed string.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| lineIndexStart | <code>number</code> | the starting line index inclusive of the summation. |
+| lineIndexEnd | <code>number</code> | the starting line index non-inclusive of the summation. |
+| allLines | <code>Array</code> | the array of line strings |
+
 <a name="MRTextInputEntity+updateCursorPosition"></a>
 
 ### mrTextInputEntity.updateCursorPosition(fromCursorMove)
@@ -187,5 +239,5 @@ Updates the cursor position based on click and selection location.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| fromCursorMove | <code>boolean</code> | <code>false</code> | false by default. Used to determine if we need to run based off a text object update sync or we can directly grab information. This requirement occurs because the sync isnt usable if no text content changed. |
+| fromCursorMove | <code>boolean</code> | <code>false</code> | false by default. Used to determine if we need to run based off a text object update sync or we can directly grab information. This requirement occurs because the sync isnt usable if no text content changed. Note: this function does not change anything about the this.hiddenInput.selectionStart nor this.hiddenInput.selectionEnd. Those values should be changed prior to this function being called. |
 
