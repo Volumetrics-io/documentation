@@ -1,4 +1,4 @@
-# data-comp-audio
+# data-comp-animation
 
 ```html
 <mr-model src="path/to/file" data-comp-animation="action: play; loop: true"></mr-entity>
