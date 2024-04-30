@@ -38,6 +38,8 @@
 
 * `src`: the path to the target model file
 
+> Note: `data-comp-animation` can be useful here
+
 ## Supported file types
 
 * Check out the [allowed extensions](https://docs.mrjs.io/js-api-utils/model/#modelloadmodelfilepath-extension--promisethreemesh) from the Model.loadModel function
