@@ -19,7 +19,7 @@ This system manages spatial audio in the THREE.js scene.
     * [.attachedComponent(entity)](#AudioSystem+attachedComponent)
     * [.updatedComponent(entity)](#AudioSystem+updatedComponent)
     * [.detachedComponent(entity)](#AudioSystem+detachedComponent)
-    * [.setAudioState(entity, state)](#AudioSystem+setAudioState)
+    * [.setAudioState(entity, comp)](#AudioSystem+setAudioState)
 
 <a name="AudioSystem+AudioSystem"></a>
 
@@ -77,7 +77,7 @@ Called when the entity component is detached
 
 <a name="AudioSystem+setAudioState"></a>
 
-### audioSystem.setAudioState(entity, state)
+### audioSystem.setAudioState(entity, comp)
 Updates the Audio State based on the user passed 'state' variable.
 
 **Kind**: instance method of [<code>AudioSystem</code>](#AudioSystem)  
@@ -85,5 +85,5 @@ Updates the Audio State based on the user passed 'state' variable.
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>object</code> | the entity being updated based on the component being detached. |
-| state | <code>string</code> | represents a parameter for the state of the sound 'play', 'pause', 'stop', etc |
+| comp | <code>object</code> | component that contains the value of 'action' |
 

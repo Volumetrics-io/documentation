@@ -94,12 +94,13 @@ When the system swaps to a new entity, this handles setting up the animations fo
 <a name="AnimationSystem+setAnimation"></a>
 
 ### animationSystem.setAnimation(entity, comp)
-Sets the Animation of the entity object based on the component value associated with it.
+Sets the Animation of the entity object based on the component value associated with it. Otherwise lets those
+be handled by the threejs default setup. (Always looping, always playing based on browser type, etc).
 
 **Kind**: instance method of [<code>AnimationSystem</code>](#AnimationSystem)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | entity | <code>object</code> | the entity being updated based on the component being detached. |
-| comp | <code>object</code> | component that contains a string value of 'play', 'pause', 'stop' |
+| comp | <code>object</code> | component that contains the values of 'action', 'loop', and/or 'loopMode' |
 
