@@ -25,3 +25,11 @@ The format for how the looping should occur. Values are based on threejs default
 Values: `once`, `repeat`, and `pingpong`
 
 > if set to `once`, ignores the `loop` value.
+
+## `clampWhenFinished`
+
+Freezes the animation state to the last frame when stop is called or any looping ends.
+
+Values: `true`, `false`
+
+> if not set, defaults to the threejs internals setup, which is `false`
