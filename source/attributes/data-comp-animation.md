@@ -10,6 +10,14 @@ Handles the animation starting and stopping.
 
 Values: `play`, `pause`, `stop`
 
+## `clip`
+
+Handles if a specific clip will play or all animation clips for the mesh will play.
+
+Values: `1,2,3,...`
+
+> If not set, plays all animation clips in the mesh. Otherwise just plays the specified one.
+
 ## `loop`
 
 Handles how the animation loops for the model file. If set to `true`/`false` ignores the value of `loopMode`, otherwise acts as a numerical looping count.
