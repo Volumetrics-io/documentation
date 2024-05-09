@@ -4,7 +4,7 @@
 <mr-entity data-comp-anchor="type: plane; label: table"></mr-entity>
 ```
 
-Anchoring is achieved using the anchoring component, `data-comp-anchor`, it has 4 attributes:
+Anchoring is achieved using the anchoring component `data-comp-anchor` on any `mr-entity`. It has 4 attributes:
 
 ## `type` 
 
