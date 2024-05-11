@@ -68,10 +68,13 @@ The `<mr-app>` component serves as the foundational building block of an applica
 The `<mr-app>` tag has three optional attributes:
 
 ### `camera`
-Specifies the camera type when viewing on a 2D screen.
+Specifies the camera setup.
 
-- `orthographic` (default)
-- `perspective`
+- `mode`:  type when viewing on a 2D screen.
+  - default: `orthographic` (default)
+  - options: `orthographic`, `perspective`
+- `startPos`: the startingPosition of the camera/user in the 3D scene.
+  - default: `0 0 1`
 
 ### `lighting`
 Specifies the global lighting conditions.
@@ -140,6 +143,13 @@ Orbital Control 3D toggling:
 </inline-repl>
 
 ### `orbital`
+Specifies the orbital setup.
+
+- `mode`:  true/false
+  - default: `false`
+- `targetPos`: the position that the orbital camera/user will rotate around in the 3D scene.
+  - default: `0 0 0`
+
 Enables just the use of orbital controls. Though this feature is already enabled as part of `debug=true`, we also allow a specific flag for it for the cases where you just want to look closer at something more easily without all the additional overhead of full debugging.
 
 It works without the requirement of the `=+` keypress (unlike the `debug=true` case).
@@ -156,7 +166,7 @@ Orbital Control 3D toggling:
 
 <inline-repl editor-height="280">
     <slot slot="html">
-        <mr-app orbital="true">
+        <mr-app orbital="mode:true;">
             <mr-panel>
                 <mr-model id="koi" src="/static/sample/koi.glb" data-comp-animation="clip: 0; action: play;" ></mr-model>
                 <!-- Model by https://sketchfab.com/7plus -->

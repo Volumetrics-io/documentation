@@ -5,7 +5,7 @@
 <mr-light data-position="0 -0.1 0.15" color="white" intensity="0.5"></mr-light>
 ```
 
-Position can be attached to an entity using `data-position`, it has a specific 3D value:
+Position can be attached to an `mr-entity` using `data-position`, it has a specific 3D value:
 
 ## `data-position`
  
