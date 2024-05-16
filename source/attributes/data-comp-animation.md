@@ -4,7 +4,7 @@
 <mr-model src="path/to/file" data-comp-animation="action: play; loop: true"></mr-entity>
 ```
 
-Animation is achieved using the animation component, `data-comp-animation` on any `mr-model`. It has 5 attributes:
+Animation is achieved using the animation component, `data-comp-animation` on any [`mr-model`](/doc/mr-model):
 
 ## `action`
 

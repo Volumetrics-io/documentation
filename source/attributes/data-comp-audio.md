@@ -4,7 +4,7 @@
 <mr-entity data-comp-audio="src: path/to/file.wav; action: play; loop: true; distance: 1"></mr-entity>
 ```
 
-Positional (aka Spatial) Audio can be attached using `data-comp-audio` to any `mr-entity`, it has 4 values:
+Positional (aka Spatial) Audio can be attached using `data-comp-audio` to any [`mr-entity`](/doc/mr-entity):
 
 ## `src` 
 
