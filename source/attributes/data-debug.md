@@ -4,7 +4,7 @@
 <mr-app data-debug="true"> ... </mr-app>
 ```
 
-Debug state can be attached to an [`mr-app`](/docs/mr-app) using `data-debug`.:
+Debug state can be attached to an [`mr-app`](/doc/mr-app) using `data-debug`:
 
 ### `data-debug`
 Enables various debug features such as physics directional lines, some color changes to show certain features being used, and 3D toggling in website mode.

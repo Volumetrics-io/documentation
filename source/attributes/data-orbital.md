@@ -4,7 +4,7 @@
 <mr-app data-orbital="mode:true; targetPos:0 2 3"> ... </mr-app>
 ```
 
-Orbital state can be attached to an [`mr-app`](/docs/mr-app) using `data-orbital`.:
+Orbital state can be attached to an [`mr-app`](/doc/mr-app) using `data-orbital`.:
 
 ### `data-orbital`
 Specifies the orbital setup.

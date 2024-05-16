@@ -4,7 +4,7 @@
 <mr-app data-stats="true"> ... </mr-app>
 ```
 
-Stats can be attached to an [`mr-app`](/docs/mr-app) using `data-stats`:
+Stats can be attached to an [`mr-app`](/doc/mr-app) using `data-stats`:
 
 ### `data-stats`
 Enables a visual of a stats counter in the top left corner. The stats counter can show a few different options, by default it shows 0.

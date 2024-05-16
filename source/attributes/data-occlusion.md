@@ -4,7 +4,7 @@
 <mr-app data-occlusion="..????"> ... </mr-app>
 ```
 
-Occlusion setup can be attached to an [`mr-app`](/docs/mr-app) using `data-occlusion`:
+Occlusion setup can be attached to an [`mr-app`](/doc/mr-app) using `data-occlusion`:
 
 ### `data-occlusion`
 

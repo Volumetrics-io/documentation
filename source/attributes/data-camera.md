@@ -4,7 +4,7 @@
 <mr-app data-camera="mode:perspective; startPos:0 2 3"> ... </mr-app>
 ```
 
-Camera can be attached to an [`mr-app`](/docs/mr-app) using `data-camera`:
+Camera can be attached to an [`mr-app`](/doc/mr-app) using `data-camera`:
 
 ### `data-camera`
 Specifies the camera setup.

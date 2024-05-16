@@ -4,7 +4,7 @@
 <mr-app data-preserve-drawing-buffer="true"> ... </mr-app>
 ```
 
-Preserve-drawing-buffer state can be attached to an [`mr-app`](/docs/mr-app) using `data-preserve-drawing-buffer`:
+Preserve-drawing-buffer state can be attached to an [`mr-app`](/doc/mr-app) using `data-preserve-drawing-buffer`:
 
 ### `preserve-drawing-buffer`
 This enables the common html use-case of 'right-click to save' a png file of what's on the screen.
