@@ -1,6 +1,6 @@
 # How do we use ECS in MRjs?
 
-## Diagram
+<!-- ## Diagram
 
 todotodotodotodotodo
 
@@ -8,7 +8,7 @@ todotodotodotodotodo
 
 todotodotodotodotodo
 
-todotodotodotodotodo
+todotodotodotodotodo -->
 
 ### Entity Component System
 
