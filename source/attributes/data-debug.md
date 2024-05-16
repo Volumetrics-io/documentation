@@ -1,11 +1,10 @@
-# data-position
+# data-debug
 
 ```html
-<mr-entity data-position="0 -1 0.5" data-rotation="90 -30 180"></mr-entity>
-<mr-light data-position="0 -0.1 0.15" color="white" intensity="0.5"></mr-light>
+<mr-app data-debug="true"> ... </mr-app>
 ```
 
-Position can be attached to an `mr-entity` using `data-position`, it has a specific 3D value:
+Debug state can be attached to an [`mr-app`](/docs/mr-app) using `data-debug`.:
 
 ### `data-debug`
 Enables various debug features such as physics directional lines, some color changes to show certain features being used, and 3D toggling in website mode.

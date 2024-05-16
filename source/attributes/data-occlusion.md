@@ -1,11 +1,10 @@
-# data-position
+# data-occlusion
 
 ```html
-<mr-entity data-position="0 -1 0.5" data-rotation="90 -30 180"></mr-entity>
-<mr-light data-position="0 -0.1 0.15" color="white" intensity="0.5"></mr-light>
+<mr-app data-occlusion="..????"> ... </mr-app>
 ```
 
-Position can be attached to an `mr-entity` using `data-position`, it has a specific 3D value:
+Occlusion setup can be attached to an [`mr-app`](/docs/mr-app) using `data-occlusion`:
 
 ### `data-stats`
 Enables a visual of a stats counter in the top left corner. The stats counter can show a few different options, by default it shows 0.

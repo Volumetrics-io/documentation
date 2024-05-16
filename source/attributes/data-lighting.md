@@ -1,11 +1,10 @@
-# data-position
+# data-lighting
 
 ```html
-<mr-entity data-position="0 -1 0.5" data-rotation="90 -30 180"></mr-entity>
-<mr-light data-position="0 -0.1 0.15" color="white" intensity="0.5"></mr-light>
+<mr-app data-lighting="...???true"> ... </mr-app>
 ```
 
-Position can be attached to an `mr-entity` using `data-position`, it has a specific 3D value:
+Lighting state can be attached to an [`mr-app`](/docs/mr-app) using `data-lighting`:
 
 ### `data-lighting`
 Specifies the global lighting conditions.
