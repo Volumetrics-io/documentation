@@ -11,7 +11,7 @@ The `<mr-app>` component serves as the foundational building block of an applica
 The `<mr-app>` tag has optional `data-attributes`:
 
 - [`data-camera`](../attributes/data-camera)
-- [`data-layers`](../attributes/data-layers)
+<!--- [`data-layers`](../attributes/data-layers) we dont use this at the moment so commenting out for now -->
 - [`data-lighting`](../attributes/data-lighting)
 - [`data-debug`](../attributes/data-debug)
 - [`data-occlusion`](../attributes/data-occlusion)
