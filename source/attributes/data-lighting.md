@@ -1,7 +1,7 @@
 # data-lighting
 
 ```html
-<mr-app data-lighting="enabled=true; shadows:true; color:#faa; intensity:0.2; radius:4;"> ... </mr-app>
+<mr-app data-lighting="enabled:true; shadows:true; color:#faa; intensity:0.2; radius:4;"> ... </mr-app>
 ```
 
 Lighting state can be attached to an [`mr-app`](/doc/mr-app) using `data-lighting`:
