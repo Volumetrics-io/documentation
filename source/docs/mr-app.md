@@ -3,21 +3,21 @@
 The `<mr-app>` component serves as the foundational building block of an application using MRjs.
 
 - It initializes the core functionalities like the render loop, physics engine, and other core features such as lighting and controllers/hand-tracking.
-- It acts as the primary container for the entire application. All other custom elements, like for example `<mr-panel>`, `<mr-div>`, `<mr-img>`, or `<mr-button>`, should be nested within this root component to ensure they function correctly.
-- Some data-attributes like `data-camera`, `data-lighting`, or `data-debug` can be set to change various default. More on that [below](#definition-and-usage).
+- It acts as the primary container for the entire application. All other custom elements, for example `<mr-panel>`, `<mr-div>`, `<mr-img>`, or `<mr-button>`, should be nested within this root component to ensure they function correctly.
+- Some data-attributes like `data-camera`, `data-lighting`, or `data-debug` can be set to change various defaults. More on that [below](#definition-and-usage).
 
 ## Definition and Usage
 
 The `<mr-app>` tag has optional `data-attributes`:
 
-- [`data-camera`](../attributes/data-camera)
+- [`data-camera`](/attributes/data-camera)
+- [`data-lighting`](/attributes/data-lighting)
+- [`data-debug`](/attributes/data-debug)
+- [`data-occlusion`](/attributes/data-occlusion)
+- [`data-orbital`](/attributes/data-orbital)
+- [`data-stats`](/attributes/data-stats)
+- [`data-preserve-drawing-buffer`](/attributes/data-preserve-drawing-buffer)
 <!--- [`data-layers`](../attributes/data-layers) we dont use this at the moment so commenting out for now -->
-- [`data-lighting`](../attributes/data-lighting)
-- [`data-debug`](../attributes/data-debug)
-- [`data-occlusion`](../attributes/data-occlusion)
-- [`data-orbital`](../attributes/data-orbital)
-- [`data-stats`](../attributes/data-stats)
-- [`data-preserve-drawing-buffer`](../attributes/data-preserve-drawing-buffer)
 
 ## Example
 
