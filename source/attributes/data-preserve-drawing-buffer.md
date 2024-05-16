@@ -6,16 +6,16 @@
 
 Preserve-drawing-buffer state can be attached to an [`mr-app`](/docs/mr-app) using `data-preserve-drawing-buffer`:
 
-### `data-stats`
-Enables a visual of a stats counter in the top left corner. The stats counter can show a few different options, by default it shows 0.
+### `preserve-drawing-buffer`
+This enables the common html use-case of 'right-click to save' a png file of what's on the screen.
 
-Note this is different than the stats that are enabled by use of the [`<mr-stats>`](https://docs.mrjs.io/doc/mr-stats/) entity being directly added.
+_Note: Most chromium-based browsers (chrome, duckduckgo, arc, etc...) have this feature by default making the use of this flag unnecessary_
 
-This stats toggle is great for use on desktop; however, it can cause performance bottle-necks in headset. We recommend for you to use the `<mr-stats>` tag for headset testing.
+Allowing this as a feature the user toggles manually, because it causes a performance hit and isnt a strong requirement by default for most people who are interacting.
 
 <inline-repl>
     <code slot="html">
-        <mr-app stats="true">
+        <mr-app preserve-drawing-buffer="true">
             <mr-light color="white" intensity="0.5" data-position="0 0 0.25"></mr-light>
             <mr-panel id="panel">
                 <mr-button onclick="changeColor()">Change color!</mr-button>
