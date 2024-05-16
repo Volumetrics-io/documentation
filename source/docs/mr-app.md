@@ -68,10 +68,13 @@ The `<mr-app>` component serves as the foundational building block of an applica
 The `<mr-app>` tag has three optional attributes:
 
 ### `camera`
-Specifies the camera type when viewing on a 2D screen.
+Specifies the camera setup.
 
-- `orthographic` (default)
-- `perspective`
+- `mode`:  type when viewing on a 2D screen.
+  - default: `orthographic` (default)
+  - options: `orthographic`, `perspective`
+- `startPos`: the startingPosition of the camera/user in the 3D scene.
+  - default: `0 0 1`
 
 ### `lighting`
 Specifies the global lighting conditions.
@@ -94,7 +97,7 @@ Enables various debug features such as physics directional lines, some color cha
 Physics directional lines:
 These are red/green/blue axes lines coming out of the origin (center position) of objects. They demonstrate the xyz directions associated with that object.
 
-3D toggling:
+Orbital Control 3D toggling:
 > When the debug flag is enabled (`<mr-app debug="true">`), you can press and hold the `=+` key on your keyboard to:
 >
 > 1. rotate the scene with left mouse drag
@@ -139,8 +142,62 @@ These are red/green/blue axes lines coming out of the origin (center position) o
     </code>
 </inline-repl>
 
+### `orbital`
+Specifies the orbital setup.
+
+- `mode`:  true/false
+  - default: `false`
+- `targetPos`: the position that the orbital camera/user will rotate around in the 3D scene.
+  - default: `0 0 0`
+
+Enables just the use of orbital controls. Though this feature is already enabled as part of `debug=true`, we also allow a specific flag for it for the cases where you just want to look closer at something more easily without all the additional overhead of full debugging.
+
+It works without the requirement of the `=+` keypress (unlike the `debug=true` case).
+
+Note if both `orbital` and `debug` are set to `true`, the `orbital` will take priority, meaning you still wont have to use the `=+` keypress for it to work. The rest of `debug` will still work as expected.
+
+Orbital Control 3D toggling:
+>
+> 1. rotate the scene with left mouse drag
+> 2. pan the scene with right mouse drag
+> 3. zoom with the mouse wheel
+>
+> Try it out below!
+
+<inline-repl editor-height="280">
+    <slot slot="html">
+        <mr-app orbital="mode:true;">
+            <mr-panel>
+                <mr-model id="koi" src="/static/sample/koi.glb" data-comp-animation="clip: 0; action: play;" ></mr-model>
+                <!-- Model by https://sketchfab.com/7plus -->
+                <mr-light color="white" intensity="0.1" data-position="0 0.3 0.1"></mr-light>
+                <mr-light color="LightSkyBlue" intensity="0.5" data-position="0 -0.15 0.25"></mr-light>
+            </mr-panel>
+        </mr-app>
+    </slot>
+    <slot slot="css">
+        mr-panel {
+            background-color: LightSkyBlue;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #koi {
+            scale: 0.05;
+            z-index: 70;
+        }
+    </slot>
+</inline-repl>
+
 ### `stats`
 Enables a visual of a stats counter in the top left corner. The stats counter can show a few different options, by default it shows 0.
+
+Note this is different than the stats that are enabled by use of the [`<mr-stats>`](https://docs.mrjs.io/doc/mr-stats/) entity being directly added.
+
+This stats toggle is great for use on desktop; however, it can cause performance bottle-necks in headset. We recommend for you to use the `<mr-stats>` tag for headset testing.
 
 <inline-repl>
     <code slot="html">

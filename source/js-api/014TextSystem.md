@@ -16,9 +16,10 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.TextSystem](#TextSystem+TextSystem)
         * [new exports.TextSystem()](#new_TextSystem+TextSystem_new)
     * [.onNewEntity(entity)](#TextSystem+onNewEntity)
-    * [._updateSpecificEntity()](#TextSystem+_updateSpecificEntity)
+    * [._updateSpecificEntity(entity)](#TextSystem+_updateSpecificEntity)
+    * [.checkIfTextContentChanged(entity)](#TextSystem+checkIfTextContentChanged) ⇒ <code>boolean</code>
+    * [.handleTextContentUpdate(entity)](#TextSystem+handleTextContentUpdate)
     * [.eventUpdate()](#TextSystem+eventUpdate)
-    * [.update(deltaTime, frame)](#TextSystem+update)
     * [.updateStyle(entity)](#TextSystem+updateStyle)
     * [.addText(entity)](#TextSystem+addText)
     * [.parseFontWeight(weight)](#TextSystem+parseFontWeight) ⇒ <code>string</code>
@@ -26,8 +27,8 @@ Handles text creation and font rendering for `mr-text`, `mr-textfield`, and `mr-
     * [.getVerticalAlign(verticalAlign, entity)](#TextSystem+getVerticalAlign) ⇒ <code>string</code>
     * [.getLineHeight(lineHeight, entity)](#TextSystem+getLineHeight) ⇒ <code>number</code>
     * [.getTextAlign(textAlign)](#TextSystem+getTextAlign) ⇒ <code>string</code>
-    * [.setColor(textObj, color)](#TextSystem+setColor)
     * [.parseFontFace(cssString)](#TextSystem+parseFontFace) ⇒ <code>object</code>
+    * [.setTextObject3DColor(object3D, color, default_color)](#TextSystem+setTextObject3DColor)
 
 <a name="TextSystem+TextSystem"></a>
 
@@ -51,28 +52,40 @@ When a new entity is created, adds it to the physics registry and initializes th
 
 <a name="TextSystem+_updateSpecificEntity"></a>
 
-### textSystem.\_updateSpecificEntity()
-The per entity triggered update call.  Handles updating all text items including updates for style and cleaning of content for special characters.
+### textSystem.\_updateSpecificEntity(entity)
+The per entity triggered update call. Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the entity that needs to be updated. |
+
+<a name="TextSystem+checkIfTextContentChanged"></a>
+
+### textSystem.checkIfTextContentChanged(entity) ⇒ <code>boolean</code>
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+**Returns**: <code>boolean</code> - true if the content needed to be updated, false otherwise.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | checks if the content changed and if so, updates it to match. |
+
+<a name="TextSystem+handleTextContentUpdate"></a>
+
+### textSystem.handleTextContentUpdate(entity)
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the entity whose content updated. |
+
 <a name="TextSystem+eventUpdate"></a>
 
 ### textSystem.eventUpdate()
 The per global scene event update call. Handles updating all text items including updates for style and cleaning of content for special characters.
 
 **Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-<a name="TextSystem+update"></a>
-
-### textSystem.update(deltaTime, frame)
-The per-frame system update call for all text items including updates for style and cleaning of content for special characters.
-
-**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| deltaTime | <code>number</code> | given timestep to be used for any feature changes |
-| frame | <code>object</code> | given frame information to be used for any feature changes |
-
 <a name="TextSystem+updateStyle"></a>
 
 ### textSystem.updateStyle(entity)
@@ -158,18 +171,6 @@ Gets the text alignment string
 | --- | --- | --- |
 | textAlign | <code>string</code> | handles values for `start`, `end`, `left`, and `right`; otherwise, defaults to the same input as `textAlign`. |
 
-<a name="TextSystem+setColor"></a>
-
-### textSystem.setColor(textObj, color)
-Sets the matrial color and opacity based on the css color element
-
-**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| textObj | <code>object</code> | the textObj whose color is being updated |
-| color | <code>object</code> | the representation of color as `rgba(xxx,xxx,xxx)` or as `#xxx` |
-
 <a name="TextSystem+parseFontFace"></a>
 
 ### textSystem.parseFontFace(cssString) ⇒ <code>object</code>
@@ -182,4 +183,17 @@ Based on the given font-face value in the passed cssString, tries to either use 
 | Param | Type | Description |
 | --- | --- | --- |
 | cssString | <code>string</code> | the css string to be parsed for the font-face css value. |
+
+<a name="TextSystem+setTextObject3DColor"></a>
+
+### textSystem.setTextObject3DColor(object3D, color, default_color)
+Sets the text object3D color.
+
+**Kind**: instance method of [<code>TextSystem</code>](#TextSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| object3D | <code>object</code> | the threejs object representation of the troika textt to be colored |
+| color | <code>string</code> | the string representation of the color in rgba, hex, or name ('red') form |
+| default_color | <code>string</code> | fallback color used if the system does not understand the color parameter. Defaults to black. |
 

@@ -46,6 +46,18 @@ Detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
+## `hovermove`
+
+Emitted continuously while a finger is on an element.
+
+Origin: the target element
+
+Detail:
+
+- `worldPosition`: a THREE.js Vector3 of the hover world position
+- `position`: a THREE.js Vector3 of the local hover position
+- `delta`: a THREE.js Vector3 of the delta between the the current local position and the last
+
 ## `hoverend`
 
 Triggered when the cursor or the users' finger stops hovering over an entity.
@@ -65,7 +77,9 @@ Detail:
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
 
-## `touch`
+## `touchmove`
+
+Emitted continuously while the trigger/pinch or direct touch collision is maintained
 
 Origin: the target element
 
@@ -73,14 +87,7 @@ Detail:
 
 - `worldPosition`: a THREE.js Vector3 of the hover world position
 - `position`: a THREE.js Vector3 of the local hover position
-- `delta`: a THREE.js Vector3 of the delta between the current local position and the last
-
-??? do we still use this?
-
-## `touchmove`
-
-???
-
+- `delta`: a THREE.js Vector3 of the delta between the the current local position and the last
 
 ## `touchend`
 

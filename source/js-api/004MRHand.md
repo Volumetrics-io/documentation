@@ -30,8 +30,8 @@ Class describing the MRHand object representing the UX of the hand object for MR
 
 * [MRHand](#MRHand)
     * [.MRHand](#MRHand+MRHand)
-        * [new exports.MRHand(handedness, app)](#new_MRHand+MRHand_new)
-    * [.initPhysicsBodies(scene)](#MRHand+initPhysicsBodies)
+        * [new exports.MRHand(handedness, scene)](#new_MRHand+MRHand_new)
+    * [.initPhysicsBodies()](#MRHand+initPhysicsBodies)
     * [.update()](#MRHand+update)
     * [.pinchMoved()](#MRHand+pinchMoved)
     * [.updatePhysicsBodies()](#MRHand+updatePhysicsBodies)
@@ -47,27 +47,21 @@ Class describing the MRHand object representing the UX of the hand object for MR
 **Kind**: instance class of [<code>MRHand</code>](#MRHand)  
 <a name="new_MRHand+MRHand_new"></a>
 
-#### new exports.MRHand(handedness, app)
+#### new exports.MRHand(handedness, scene)
 Constructor for the MRHand class object. Setups up all attributes for MRHand including physics, mouse/cursor information, hand tracking and state, and model
-information.
 
 
 | Param | Type | Description |
 | --- | --- | --- |
 | handedness | <code>object</code> | enum for the `left`` or `right` hand. |
-| app | <code>object</code> | the current MRApp that contains the scene for the hand. |
+| scene | <code>object</code> | the threejs scene object with information from the MRApp. |
 
 <a name="MRHand+initPhysicsBodies"></a>
 
-### mrHand.initPhysicsBodies(scene)
+### mrHand.initPhysicsBodies()
 Initializes the physics bodies that the hand represents. Useful for collision detection and UX interactions in MR space.
 
 **Kind**: instance method of [<code>MRHand</code>](#MRHand)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| scene | <code>object</code> | the current scene. |
-
 <a name="MRHand+update"></a>
 
 ### mrHand.update()

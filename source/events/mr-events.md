@@ -15,8 +15,24 @@ Triggered when the XR session is ended. This is useful when you'd like to save t
 
 Origin: `mr-app`
 
-## `new-entity`
+## `entityadded`
 
-Triggered whenever an entity is created.
+Triggered whenever an entity is added to the DOM.
 
-Origin: the created element
+Origin: the created entity
+
+## `entityupdated`
+
+Triggered when an entity is updated to the DOM, this excludes component updates and focuses primarily on any update that might effect the geometry or physics colliders of the entity.
+
+Origin: the created entity
+
+## `entityremoved`
+
+Triggered whenever an entity is removed from the DOM.
+
+Origin: document
+
+detail:
+
+- `entity` - the removed entity node

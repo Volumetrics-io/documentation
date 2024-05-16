@@ -87,6 +87,13 @@
         </section>
 
         <section>
+            <div class="section-title">Events</div>
+            $for(events)$<a class="sidebar-entry" href='/events/$events.slug$/'
+                data-slug="$events.slug$">$events.title$</a>
+            $endfor$
+        </section>
+
+        <section>
             <div class="section-title">Data attributes</div>
             $for(attributes)$<a class="sidebar-entry" href='/attributes/$attributes.slug$/'
                 data-slug="$attributes.slug$">$attributes.title$</a>

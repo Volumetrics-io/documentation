@@ -16,8 +16,8 @@ The engine handler for running MRjs as an App. `mr-app`
     * _instance_
         * [.MRApp](#MRApp+MRApp)
             * [new exports.MRApp()](#new_MRApp+MRApp_new)
-        * [.appWidth](#MRApp+appWidth)
-        * [.appHeight](#MRApp+appHeight)
+        * [.appWidth()](#MRApp+appWidth) ⇒ <code>number</code>
+        * [.appHeight()](#MRApp+appHeight) ⇒ <code>number</code>
         * [.mutatedAttribute(mutation)](#MRApp+mutatedAttribute)
         * [.mutatedChildList(mutation)](#MRApp+mutatedChildList)
         * [.mutationCallback(mutationList, observer)](#MRApp+mutationCallback)
@@ -28,7 +28,7 @@ The engine handler for running MRjs as an App. `mr-app`
         * [.registerSystem(system)](#MRApp+registerSystem)
         * [.unregisterSystem(system)](#MRApp+unregisterSystem)
         * [.add(entity)](#MRApp+add)
-        * [.remove(entity)](#MRApp+remove)
+        * [.removeEntity(entity)](#MRApp+removeEntity)
         * [.onWindowResize()](#MRApp+onWindowResize)
         * [.render(timeStamp, frame)](#MRApp+render)
     * _static_
@@ -46,12 +46,14 @@ Constructs the base information of the app including system, camera, engine, xr,
 
 <a name="MRApp+appWidth"></a>
 
-### mrApp.appWidth
-**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
+### mrApp.appWidth() ⇒ <code>number</code>
+**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Returns**: <code>number</code> - width in 3d or pixel space (depending on if in xr) of the current open app  
 <a name="MRApp+appHeight"></a>
 
-### mrApp.appHeight
-**Kind**: instance property of [<code>MRApp</code>](#MRApp)  
+### mrApp.appHeight() ⇒ <code>number</code>
+**Kind**: instance method of [<code>MRApp</code>](#MRApp)  
+**Returns**: <code>number</code> - height in 3d or pixel space (depending on if in xr) of the current open app  
 <a name="MRApp+mutatedAttribute"></a>
 
 ### mrApp.mutatedAttribute(mutation)
@@ -144,9 +146,9 @@ Adding an entity as an object in this MRApp engine's scene.
 | --- | --- | --- |
 | entity | <code>MREntity</code> | the entity to be added. |
 
-<a name="MRApp+remove"></a>
+<a name="MRApp+removeEntity"></a>
 
-### mrApp.remove(entity)
+### mrApp.removeEntity(entity)
 Removing an entity as an object in this MRApp engine's scene.
 
 **Kind**: instance method of [<code>MRApp</code>](#MRApp)  

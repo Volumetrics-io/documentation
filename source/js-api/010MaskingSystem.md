@@ -15,7 +15,7 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/core/component
 ## Functions
 
 <dl>
-<dt><a href="#setupMaskingMaterial">setupMaskingMaterial(material, shiftBit, boolean)</a></dt>
+<dt><a href="#setupMaskingMaterial">setupMaskingMaterial(material, shiftBit, debug)</a></dt>
 <dd><p>Setting up a material for an object that maskes other elements</p>
 </dd>
 <dt><a href="#setupMaskedMaterial">setupMaskedMaterial(material, shiftBit)</a></dt>
@@ -78,16 +78,16 @@ Called when a new entity is added to the scene. Handles masking elements to thei
 
 <a name="setupMaskingMaterial"></a>
 
-## setupMaskingMaterial(material, shiftBit, boolean)
+## setupMaskingMaterial(material, shiftBit, debug)
 Setting up a material for an object that maskes other elements
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| material | <code>THREE.Material</code> | 
-| shiftBit | <code>number</code> | 
-| boolean | <code>debug</code> | 
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| material | <code>THREE.Material</code> |  | the material whose values are augmented to mask as expected. |
+| shiftBit | <code>number</code> |  | used to offset the stencilWriteMask and stencilRef. |
+| debug | <code>boolean</code> | <code>false</code> | true if in debug mode, false otherwise |
 
 <a name="setupMaskedMaterial"></a>
 
@@ -96,8 +96,8 @@ Setting up a material for an object that is masked by another element
 
 **Kind**: global function  
 
-| Param | Type |
-| --- | --- |
-| material | <code>THREE.Material</code> | 
-| shiftBit | <code>number</code> | 
+| Param | Type | Description |
+| --- | --- | --- |
+| material | <code>THREE.Material</code> | the material whose values are augmented to mask as expected. |
+| shiftBit | <code>number</code> | used to offset the stencilWriteMask and stencilRef. |
 

@@ -4,3 +4,16 @@ github-path: https://github.com/volumetrics-io/mrjs/edit/main/src/extras/Refract
 ---
 # Refractor
 
+<a name="Refractor"></a>
+
+## Refractor
+**Kind**: global class  
+<a name="new_Refractor_new"></a>
+
+### new Refractor(geometry, options)
+
+| Param |
+| --- |
+| geometry | 
+| options | 
+

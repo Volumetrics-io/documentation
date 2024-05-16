@@ -16,15 +16,19 @@ This system supports interaction event information including mouse and controlle
     * [.ControlSystem](#ControlSystem+ControlSystem)
         * [new exports.ControlSystem()](#new_ControlSystem+ControlSystem_new)
     * [.update(deltaTime, frame)](#ControlSystem+update)
+    * [.checkCollisions(hand)](#ControlSystem+checkCollisions)
     * [.onContactStart(handle1, handle2)](#ControlSystem+onContactStart)
     * [.onContactEnd(handle1, handle2)](#ControlSystem+onContactEnd)
     * [.touchStart(collider1, collider2, entity)](#ControlSystem+touchStart)
     * [.touchEnd(entity)](#ControlSystem+touchEnd)
     * [.hoverStart(collider1, collider2, entity)](#ControlSystem+hoverStart)
     * [.hoverEnd(entity)](#ControlSystem+hoverEnd)
+    * [.pointerRay()](#ControlSystem+pointerRay)
+    * [.clearPointer()](#ControlSystem+clearPointer)
     * [.mouseOver(event)](#ControlSystem+mouseOver)
     * [.onMouseDown(event)](#ControlSystem+onMouseDown)
     * [.onMouseUp(event)](#ControlSystem+onMouseUp)
+    * [.interact(entity)](#ControlSystem+interact)
     * [.pixelRayCast(event)](#ControlSystem+pixelRayCast) ⇒ <code>object</code>
 
 <a name="ControlSystem+ControlSystem"></a>
@@ -47,6 +51,17 @@ The generic system update call. Updates the meshes and states for both the left 
 | --- | --- | --- |
 | deltaTime | <code>number</code> | given timestep to be used for any feature changes |
 | frame | <code>object</code> | given frame information to be used for any feature changes |
+
+<a name="ControlSystem+checkCollisions"></a>
+
+### controlSystem.checkCollisions(hand)
+Check for any collisions with this MRHand and the rapier physics world.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| hand | <code>object</code> | the MRHand object whose collisions we are checking with this function. |
 
 <a name="ControlSystem+onContactStart"></a>
 
@@ -83,7 +98,7 @@ Handles the start of touch between two different colliders and the current entit
 | --- | --- | --- |
 | collider1 | <code>number</code> | the first collider |
 | collider2 | <code>number</code> | the second collider |
-| entity | <code>MREntity</code> | the current entity |
+| entity | <code>object</code> | the current entity |
 
 <a name="ControlSystem+touchEnd"></a>
 
@@ -94,7 +109,7 @@ Handles the end of touch for the current entity
 
 | Param | Type | Description |
 | --- | --- | --- |
-| entity | <code>MREntity</code> | the current entity |
+| entity | <code>object</code> | the current entity |
 
 <a name="ControlSystem+hoverStart"></a>
 
@@ -107,7 +122,7 @@ Handles the start of hovering over/around a specific entity.
 | --- | --- | --- |
 | collider1 | <code>number</code> | the first collider |
 | collider2 | <code>number</code> | the second collider |
-| entity | <code>MREntity</code> | the current entity |
+| entity | <code>object</code> | the current entity |
 
 <a name="ControlSystem+hoverEnd"></a>
 
@@ -118,8 +133,20 @@ Handles the end of hovering over/around a specific entity.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| entity | <code>MREntity</code> | the current entity |
+| entity | <code>object</code> | the current entity |
 
+<a name="ControlSystem+pointerRay"></a>
+
+### controlSystem.pointerRay()
+Fills in the this.origin,direction,ray, and hit values based on the rapier world
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+<a name="ControlSystem+clearPointer"></a>
+
+### controlSystem.clearPointer()
+clears the gaze/pinch pointer from the scene
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
 <a name="ControlSystem+mouseOver"></a>
 
 ### controlSystem.mouseOver(event)
@@ -152,6 +179,18 @@ Handles the mouse up event
 | Param | Type | Description |
 | --- | --- | --- |
 | event | <code>event</code> | the mouse up event |
+
+<a name="ControlSystem+interact"></a>
+
+### controlSystem.interact(entity)
+Checks what kind of interactions should happen based on the current entity and any events that
+have happened so far.
+
+**Kind**: instance method of [<code>ControlSystem</code>](#ControlSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | checking if there is any interaction required based on current events and this entity. |
 
 <a name="ControlSystem+pixelRayCast"></a>
 

@@ -4,23 +4,15 @@
 <mr-entity data-comp-anchor="type: plane; label: table"></mr-entity>
 ```
 
-Anchoring is achieved using the anchoring component, `data-comp-anchor`, it has 4 attributes:
+Anchoring is achieved using the anchoring component `data-comp-anchor` on any `mr-entity`. It has 4 attributes:
 
 ## `type` 
 
 There are currently three types of anchors:
 
-## `fixed`
-
-Positions the anchored element directly in front of the user whenever an XR session is started.
-
-## `floating`
-
-Allows the user to place the anchored element where they choose, using a look/pinch gesture. The user can place it floating in their space or on the scene mesh.
-
-## `plane`
-
-Anchors the element to the nearest plane that matches the specified label or orientation.
+- `fixed`: Positions the anchored element directly in front of the user whenever an XR session is started.
+- `floating`: Allows the user to place the anchored element where they choose, using a look/pinch gesture. The user can place it floating in their space or on the scene mesh.
+- `plane`: Anchors the element to the nearest plane that matches the specified label or orientation.
 
 If no label or orientation is specified, the element will be anchored to the nearest plane.
 

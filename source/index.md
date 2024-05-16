@@ -2,7 +2,7 @@
 description: "An extendable WebComponents library for the Spatial Web"
 ---
 ![The MRjs logo, an indigo and purple bowtie.](https://docs.mrjs.io/static/mrjs-logo.svg)
- 
+
 An extensible library of Web Components for the spatial web.
 
 [![npm run build](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/build.yml) [![npm run test](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml/badge.svg)](https://github.com/Volumetrics-io/mrjs/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/Volumetrics-io/mrjs/blob/main/LICENSE)
@@ -54,15 +54,33 @@ __*CLONE AND BUILD*__
 
 You will need Node [installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) on your computer
 
-Then, [clone this repository](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories)
+Then, [clone this repository](https://github.com/Volumetrics-io/mrjs) ([github's how-to-clone](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories))
 
-> If you are planning to contribute to this repo instead of just using is as a source you will need its submodules for proper samples and testing `git clone --recurse-submodules the.cloning.url `. If you've already cloned the repo the normal way (`git clone the.cloning.url`) you can update for the submodule as follows:git submodule update --init --recursive`
+```sh
+git clone the.cloning.url
+```
+
+### Submodules
+
+If you are planning to contribute to this repo instead of just using is as a source you will need its submodules for proper samples and testing:
+```sh
+git clone --recurse-submodules the.cloning.url
+```
+
+If you've already cloned the repo the normal way (`git clone the.cloning.url`) you can update for the submodule as follows:
+```sh
+git submodule update --init --recursive
+```
+
+### Node
 
 Next, setup your node environment:
 
 ```sh
 npm install
 ```
+
+### Build
 
 and now build:
 
@@ -217,7 +235,7 @@ When a component is attached to or detached from an entity, it is added or remov
 Example:
 
 ```js
-class OrbitSystem extends System{
+class OrbitSystem extends MRSystem{
     constructor(){
         super()
     }

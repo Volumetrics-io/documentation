@@ -15,11 +15,11 @@ Handles style updates for all items.
 * [MaterialStyleSystem](#MaterialStyleSystem) ⇐ <code>MRSystem</code>
     * [.MaterialStyleSystem](#MaterialStyleSystem+MaterialStyleSystem)
         * [new exports.MaterialStyleSystem()](#new_MaterialStyleSystem+MaterialStyleSystem_new)
-    * [._updateSpecificEntity()](#MaterialStyleSystem+_updateSpecificEntity)
-    * [.eventUpdate()](#MaterialStyleSystem+eventUpdate)
+    * [._updateSpecificEntity(entity)](#MaterialStyleSystem+_updateSpecificEntity)
     * [.update(deltaTime, frame)](#MaterialStyleSystem+update)
     * [.onNewEntity(entity)](#MaterialStyleSystem+onNewEntity)
-    * [.setBackground()](#MaterialStyleSystem+setBackground)
+    * [.setBackground(entity)](#MaterialStyleSystem+setBackground)
+    * [.setVisibility(entity)](#MaterialStyleSystem+setVisibility)
 
 <a name="MaterialStyleSystem+MaterialStyleSystem"></a>
 
@@ -32,16 +32,15 @@ StyleSystem's default constructor with a starting framerate of 1/30.
 
 <a name="MaterialStyleSystem+_updateSpecificEntity"></a>
 
-### materialStyleSystem.\_updateSpecificEntity()
+### materialStyleSystem.\_updateSpecificEntity(entity)
 The per entity triggered update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
 
 **Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
-<a name="MaterialStyleSystem+eventUpdate"></a>
 
-### materialStyleSystem.eventUpdate()
-The per global scene event update call. Handles updating all 3D items to match whatever geometry/style is expected whether that be a 2D setup or a 3D change.
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the MREntity being updated. |
 
-**Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
 <a name="MaterialStyleSystem+update"></a>
 
 ### materialStyleSystem.update(deltaTime, frame)
@@ -63,11 +62,27 @@ Called when a new entity is added to the scene. Adds said new entity to the styl
 
 | Param | Type | Description |
 | --- | --- | --- |
-| entity | <code>MREntity</code> | the entity being added. |
+| entity | <code>object</code> | the MREntity being touched by this function. |
 
 <a name="MaterialStyleSystem+setBackground"></a>
 
-### materialStyleSystem.setBackground()
+### materialStyleSystem.setBackground(entity)
 Sets the background based on compStyle and inputted css elements.
 
 **Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the MREntity being updated. |
+
+<a name="MaterialStyleSystem+setVisibility"></a>
+
+### materialStyleSystem.setVisibility(entity)
+Sets the visibility of the MREntity based on its css 'visibility' property.
+
+**Kind**: instance method of [<code>MaterialStyleSystem</code>](#MaterialStyleSystem)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| entity | <code>object</code> | the MREntity being updated. |
+
