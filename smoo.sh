@@ -3,7 +3,7 @@
 OLDIFS="$IFS"
 IFS=$'\n'
 
-if [ "$LOCAL" = "true" ]; then
+if [ "$LOCAL" == "true" ]; then
     base_url="http://localhost:8000"
 else
     base_url="https://docs.mrjs.io"
