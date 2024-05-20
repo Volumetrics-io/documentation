@@ -3,6 +3,11 @@
 OLDIFS="$IFS"
 IFS=$'\n'
 
+# copy over past versioning to the public directory
+cp -r "source/public-versioning" "public"
+
+# run the newer main setup:
+
 if [ "$LOCAL" == "true" ]; then
     base_url="http://localhost:8000"
 else
@@ -12,7 +17,7 @@ github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
 templateDir='source'
 templateHTML='source/_template.html'
-outputDir='public'
+outputDir='public/main'
 
 assetDir='source/static'
 pagesDir='source/pages'
