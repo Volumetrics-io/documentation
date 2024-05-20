@@ -1,0 +1,479 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title>MRjs ⬥ MRVideoEntity</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+
+    <!-- SEO -->
+    <meta name="description" content="MRjs documentation for MRVideoEntity" />
+
+    <!-- Basic Open Graph -->
+    <meta content="MRVideoEntity" itemProp="name" class="next-head" />
+    <meta content="MRjs documentation for MRVideoEntity" itemProp="description"
+        class="next-head" />
+    <meta content="https://docs.mrjs.io/static/opengraph.jpg" itemProp="image" class="next-head" />
+
+    <!-- Generic Open Graph -->
+    <meta property="og:type" content="article" class="next-head" />
+    <meta content="MRVideoEntity" property="og:title" class="next-head" />
+    <meta content="https://docs.mrjs.io/js-api/mrvideoentity/" property="og:url" class="next-head" />
+    <meta content="https://docs.mrjs.io/static/opengraph.jpg" property="og:image" class="next-head" />
+    <meta content="MRjs documentation for MRVideoEntity" property="og:description"
+        class="next-head" />
+    <meta content="MRjs" property="og:site_name" class="next-head" />
+
+    <!-- Analytics -->
+    <script defer data-domain="docs.mrjs.io" src="https://plausible.io/js/script.js"></script>
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+
+    <!-- Inline REPL -->
+    <script src="/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="/static/ace/ext-beautify.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-html.min.js"></script>
+
+    <script type="module" src="/static/inline-repl.js"></script>
+
+    <!-- Sidebar selection -->
+    <style>
+        [data-slug="mrvideoentity"] {
+            background-color: var(--accent) !important;
+            color: var(--paper) !important;
+            font-weight: 600;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="dim_layer"></div>
+
+    <aside id="sidebar">
+        <a href="/" class="main-logo">
+            <img src="/static/mrjs-logo.svg" alt="The MRjs logo, an indigo and purple bowtie." width="110" height="30" />
+        </a>
+
+        <section>
+            <div class="section-title">General</div>
+                        <a class="sidebar-entry" href='/welcome/' data-slug="welcome">Welcome</a>
+                        <a class="sidebar-entry" href='/debugging/' data-slug="debugging">Debugging</a>
+                        <a class="sidebar-entry" href='/contribute/' data-slug="contribute">Contribute</a>
+                        <a class="sidebar-entry" href='/create/' data-slug="create">Create</a>
+                    </section>
+
+        <section>
+            <div class="section-title">Entity Component System</div>
+            <a class="sidebar-entry" href='/ecs/what-is-it/'
+                data-slug="what-is-it">What is it</a>
+            <a class="sidebar-entry" href='/ecs/how-we-use-it/'
+                data-slug="how-we-use-it">How We Use It</a>
+            
+        </section>
+
+        <section>
+            <div class="section-title">HTML tags</div>
+            <a class="sidebar-entry" href='/doc/mr-a/'
+                data-slug="mr-a">&lt;mr-a&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-app/'
+                data-slug="mr-app">&lt;mr-app&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-button/'
+                data-slug="mr-button">&lt;mr-button&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-div/'
+                data-slug="mr-div">&lt;mr-div&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-entity/'
+                data-slug="mr-entity">&lt;mr-entity&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-img/'
+                data-slug="mr-img">&lt;mr-img&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-light/'
+                data-slug="mr-light">&lt;mr-light&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-model/'
+                data-slug="mr-model">&lt;mr-model&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-panel/'
+                data-slug="mr-panel">&lt;mr-panel&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-skybox/'
+                data-slug="mr-skybox">&lt;mr-skybox&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-stats/'
+                data-slug="mr-stats">&lt;mr-stats&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-text/'
+                data-slug="mr-text">&lt;mr-text&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-video/'
+                data-slug="mr-video">&lt;mr-video&gt;</a>
+            <a class="sidebar-entry" href='/doc/mr-volume/'
+                data-slug="mr-volume">&lt;mr-volume&gt;</a>
+            
+        </section>
+
+        <section>
+            <div class="section-title">Events</div>
+            <a class="sidebar-entry" href='/events/interaction-events/'
+                data-slug="interaction-events">interaction-events</a>
+            <a class="sidebar-entry" href='/events/mr-events/'
+                data-slug="mr-events">mr-events</a>
+            
+        </section>
+
+        <section>
+            <div class="section-title">Data attributes</div>
+            <a class="sidebar-entry" href='/attributes/data-camera/'
+                data-slug="data-camera">data-camera</a>
+            <a class="sidebar-entry" href='/attributes/data-comp-anchor/'
+                data-slug="data-comp-anchor">data-comp-anchor</a>
+            <a class="sidebar-entry" href='/attributes/data-comp-animation/'
+                data-slug="data-comp-animation">data-comp-animation</a>
+            <a class="sidebar-entry" href='/attributes/data-comp-audio/'
+                data-slug="data-comp-audio">data-comp-audio</a>
+            <a class="sidebar-entry" href='/attributes/data-debug/'
+                data-slug="data-debug">data-debug</a>
+            <a class="sidebar-entry" href='/attributes/data-lighting/'
+                data-slug="data-lighting">data-lighting</a>
+            <a class="sidebar-entry" href='/attributes/data-occlusion/'
+                data-slug="data-occlusion">data-occlusion</a>
+            <a class="sidebar-entry" href='/attributes/data-orbital/'
+                data-slug="data-orbital">data-orbital</a>
+            <a class="sidebar-entry" href='/attributes/data-position/'
+                data-slug="data-position">data-position</a>
+            <a class="sidebar-entry" href='/attributes/data-preserve-drawing-buffer/'
+                data-slug="data-preserve-drawing-buffer">data-preserve-drawing-buffer</a>
+            <a class="sidebar-entry" href='/attributes/data-rotation/'
+                data-slug="data-rotation">data-rotation</a>
+            <a class="sidebar-entry" href='/attributes/data-stats/'
+                data-slug="data-stats">data-stats</a>
+            
+        </section>
+
+        <section>
+            <details id="js-details">
+                <summary class="section-title">Javascript API</summary>
+                <a class="sidebar-entry" href='/js-api/mrelement/'
+                    data-slug="mrelement">MRElement</a>
+                <a class="sidebar-entry" href='/js-api/mrsystem/'
+                    data-slug="mrsystem">MRSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrapp/'
+                    data-slug="mrapp">MRApp</a>
+                <a class="sidebar-entry" href='/js-api/mruser/'
+                    data-slug="mruser">MRUser</a>
+                <a class="sidebar-entry" href='/js-api/mrhand/'
+                    data-slug="mrhand">MRHand</a>
+                <a class="sidebar-entry" href='/js-api/boundaryvisibilitysystem/'
+                    data-slug="boundaryvisibilitysystem">BoundaryVisibilitySystem</a>
+                <a class="sidebar-entry" href='/js-api/instancingsystem/'
+                    data-slug="instancingsystem">InstancingSystem</a>
+                <a class="sidebar-entry" href='/js-api/audiosystem/'
+                    data-slug="audiosystem">AudioSystem</a>
+                <a class="sidebar-entry" href='/js-api/skyboxsystem/'
+                    data-slug="skyboxsystem">SkyBoxSystem</a>
+                <a class="sidebar-entry" href='/js-api/physicssystem/'
+                    data-slug="physicssystem">PhysicsSystem</a>
+                <a class="sidebar-entry" href='/js-api/maskingsystem/'
+                    data-slug="maskingsystem">MaskingSystem</a>
+                <a class="sidebar-entry" href='/js-api/clippingsystem/'
+                    data-slug="clippingsystem">ClippingSystem</a>
+                <a class="sidebar-entry" href='/js-api/geometrystylesystem/'
+                    data-slug="geometrystylesystem">GeometryStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/materialstylesystem/'
+                    data-slug="materialstylesystem">MaterialStyleSystem</a>
+                <a class="sidebar-entry" href='/js-api/textsystem/'
+                    data-slug="textsystem">TextSystem</a>
+                <a class="sidebar-entry" href='/js-api/layoutsystem/'
+                    data-slug="layoutsystem">LayoutSystem</a>
+                <a class="sidebar-entry" href='/js-api/animationsystem/'
+                    data-slug="animationsystem">AnimationSystem</a>
+                <a class="sidebar-entry" href='/js-api/controlsystem/'
+                    data-slug="controlsystem">ControlSystem</a>
+                <a class="sidebar-entry" href='/js-api/statssystem/'
+                    data-slug="statssystem">StatsSystem</a>
+                <a class="sidebar-entry" href='/js-api/panelsystem/'
+                    data-slug="panelsystem">PanelSystem</a>
+                <a class="sidebar-entry" href='/js-api/anchorsystem/'
+                    data-slug="anchorsystem">AnchorSystem</a>
+                <a class="sidebar-entry" href='/js-api/mrentity/'
+                    data-slug="mrentity">MREntity</a>
+                <a class="sidebar-entry" href='/js-api/mrvolumeentity/'
+                    data-slug="mrvolumeentity">MRVolumeEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrtextareaentity/'
+                    data-slug="mrtextareaentity">MRTextAreaEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrlightentity/'
+                    data-slug="mrlightentity">MRLightEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrtextentity/'
+                    data-slug="mrtextentity">MRTextEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrdiventity/'
+                    data-slug="mrdiventity">MRDivEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrmodelentity/'
+                    data-slug="mrmodelentity">MRModelEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrimageentity/'
+                    data-slug="mrimageentity">MRImageEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrstatsentity/'
+                    data-slug="mrstatsentity">MRStatsEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrvideoentity/'
+                    data-slug="mrvideoentity">MRVideoEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrmediaentity/'
+                    data-slug="mrmediaentity">MRMediaEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrskyboxentity/'
+                    data-slug="mrskyboxentity">MRSkyBoxEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrbuttonentity/'
+                    data-slug="mrbuttonentity">MRButtonEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrtextinputentity/'
+                    data-slug="mrtextinputentity">MRTextInputEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrtextfieldentity/'
+                    data-slug="mrtextfieldentity">MRTextFieldEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrhyperlinkentity/'
+                    data-slug="mrhyperlinkentity">MRHyperlinkEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrpanelentity/'
+                    data-slug="mrpanelentity">MRPanelEntity</a>
+                <a class="sidebar-entry" href='/js-api/mrplane/'
+                    data-slug="mrplane">MRPlane</a>
+                <a class="sidebar-entry" href='/js-api/mrclippinggeometry/'
+                    data-slug="mrclippinggeometry">MRClippingGeometry</a>
+                <a class="sidebar-entry" href='/js-api/global/'
+                    data-slug="global">global</a>
+                <a class="sidebar-entry" href='/js-api/mrplanemanager/'
+                    data-slug="mrplanemanager">MRPlaneManager</a>
+                
+
+                <div class="section-title">API Extras</div>
+                <a class="sidebar-entry" href='/js-api-extras/refractor/'
+                    data-slug="refractor">Refractor</a>
+                <a class="sidebar-entry" href='/js-api-extras/water/'
+                    data-slug="water">Water</a>
+                
+
+                <div class="section-title">API Utils</div>
+                <a class="sidebar-entry" href='/js-api-utils/html/'
+                    data-slug="html">HTML</a>
+                <a class="sidebar-entry" href='/js-api-utils/xr/'
+                    data-slug="xr">XR</a>
+                <a class="sidebar-entry" href='/js-api-utils/js/'
+                    data-slug="js">JS</a>
+                <a class="sidebar-entry" href='/js-api-utils/display/'
+                    data-slug="display">Display</a>
+                <a class="sidebar-entry" href='/js-api-utils/notify/'
+                    data-slug="notify">Notify</a>
+                <a class="sidebar-entry" href='/js-api-utils/material/'
+                    data-slug="material">Material</a>
+                <a class="sidebar-entry" href='/js-api-utils/color/'
+                    data-slug="color">Color</a>
+                <a class="sidebar-entry" href='/js-api-utils/string/'
+                    data-slug="string">String</a>
+                <a class="sidebar-entry" href='/js-api-utils/math/'
+                    data-slug="math">Math</a>
+                <a class="sidebar-entry" href='/js-api-utils/css/'
+                    data-slug="css">CSS</a>
+                <a class="sidebar-entry" href='/js-api-utils/physics/'
+                    data-slug="physics">Physics</a>
+                <a class="sidebar-entry" href='/js-api-utils/model/'
+                    data-slug="model">Model</a>
+                <a class="sidebar-entry" href='/js-api-utils/app/'
+                    data-slug="app">App</a>
+                <a class="sidebar-entry" href='/js-api-utils/geometry/'
+                    data-slug="geometry">Geometry</a>
+                
+            </details>
+        </section>
+
+    </aside>
+
+    <label id="hamburger">
+        <svg id="hamburgerSVG" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line id="hamburgerLineTop" x1="4" y1="4" x2="20" y2="4" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="4;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;4" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line id="hamburgerLineBottom" x1="4" y1="20" x2="20" y2="20" stroke="var(--ink)" stroke-width="2"
+                stroke-linecap="round">
+                <animate class="anim_close" attributeName="y1" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_close" attributeName="y2" values="20;12" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y1" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+                <animate class="anim_open" attributeName="y2" values="12;20" dur="0.15s" begin="indefinite"
+                    repeatCount="1" fill="freeze"></animate>
+            </line>
+            <line x1="4" y1="12" x2="20" y2="12" stroke="var(--ink)" stroke-width="2" stroke-linecap="round">
+            </line>
+        </svg>
+    </label>
+
+    <main>
+        <div class="markdown">
+            <h1 id="mrvideoentity"><a href="#mrvideoentity" class="anchor" aria-hidden="true"></a>MRVideoEntity</h1>
+            <p><a name="MRVideoEntity"></a></p>
+            <h2 id="mrvideoentity--mrmediaentity"><a href="#mrvideoentity--mrmediaentity" class="anchor" aria-hidden="true"></a>MRVideoEntity ⇐ <code>MRMediaEntity</code></h2>
+            <p>Base html video represented in 3D space. <code>mr-video</code></p>
+            <p><strong>Kind</strong>: global class<br />
+            <strong>Extends</strong>: <code>MRMediaEntity</code></p>
+            <ul>
+            <li><a href="#MRVideoEntity">MRVideoEntity</a> ⇐ <code>MRMediaEntity</code>
+            <ul>
+            <li><a href="#MRVideoEntity+MRVideoEntity">.MRVideoEntity</a>
+            <ul>
+            <li><a href="#new_MRVideoEntity+MRVideoEntity_new">new exports.MRVideoEntity()</a></li>
+            </ul></li>
+            <li><a href="#MRVideoEntity+mediaWidth">.mediaWidth()</a> ⇒ <code>number</code></li>
+            <li><a href="#MRVideoEntity+mediaHeight">.mediaHeight()</a> ⇒ <code>number</code></li>
+            <li><a href="#MRVideoEntity+loadMediaTexture">.loadMediaTexture()</a></li>
+            <li><a href="#MRVideoEntity+connected">.connected()</a></li>
+            <li><a href="#MRVideoEntity+srcObject">.srcObject(src)</a></li>
+            <li><a href="#MRVideoEntity+play">.play()</a></li>
+            <li><a href="#MRVideoEntity+pause">.pause()</a></li>
+            </ul></li>
+            </ul>
+            <p><a name="MRVideoEntity+MRVideoEntity"></a></p>
+            <h3 id="mrvideoentitymrvideoentity"><a href="#mrvideoentitymrvideoentity" class="anchor" aria-hidden="true"></a>mrVideoEntity.MRVideoEntity</h3>
+            <p><strong>Kind</strong>: instance class of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <a name="new_MRVideoEntity+MRVideoEntity_new"></a></p>
+            <h4 id="new-exportsmrvideoentity"><a href="#new-exportsmrvideoentity" class="anchor" aria-hidden="true"></a>new exports.MRVideoEntity()</h4>
+            <p>Constructs a base video entity using a UIPlane and other 3D elements as necessary.</p>
+            <p><a name="MRVideoEntity+mediaWidth"></a></p>
+            <h3 id="mrvideoentitymediawidth--number"><a href="#mrvideoentitymediawidth--number" class="anchor" aria-hidden="true"></a>mrVideoEntity.mediaWidth() ⇒ <code>number</code></h3>
+            <p>Calculates the width of the video based on the video tag itself</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <strong>Returns</strong>: <code>number</code> - - the resolved width<br />
+            <a name="MRVideoEntity+mediaHeight"></a></p>
+            <h3 id="mrvideoentitymediaheight--number"><a href="#mrvideoentitymediaheight--number" class="anchor" aria-hidden="true"></a>mrVideoEntity.mediaHeight() ⇒ <code>number</code></h3>
+            <p>Calculates the height of the video based on the video tag itself</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <strong>Returns</strong>: <code>number</code> - - the resolved height<br />
+            <a name="MRVideoEntity+loadMediaTexture"></a></p>
+            <h3 id="mrvideoentityloadmediatexture"><a href="#mrvideoentityloadmediatexture" class="anchor" aria-hidden="true"></a>mrVideoEntity.loadMediaTexture()</h3>
+            <p>Loads the associated video into 3D based on its html properties.</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <a name="MRVideoEntity+connected"></a></p>
+            <h3 id="mrvideoentityconnected"><a href="#mrvideoentityconnected" class="anchor" aria-hidden="true"></a>mrVideoEntity.connected()</h3>
+            <p>(async) handles setting up this video and associated 3D geometry style (from css) once it is connected to run as an entity component.</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <a name="MRVideoEntity+srcObject"></a></p>
+            <h3 id="mrvideoentitysrcobjectsrc"><a href="#mrvideoentitysrcobjectsrc" class="anchor" aria-hidden="true"></a>mrVideoEntity.srcObject(src)</h3>
+            <p>Sets the srcObject of the video media (since it uses ‘srcObject’ instead of ‘src’ like other items).</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a></p>
+            <table>
+            <thead>
+            <tr class="header">
+            <th>Param</th>
+            <th>Type</th>
+            <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="odd">
+            <td>src</td>
+            <td><code>string</code></td>
+            <td>the string to the new source object we want</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><a name="MRVideoEntity+play"></a></p>
+            <h3 id="mrvideoentityplay"><a href="#mrvideoentityplay" class="anchor" aria-hidden="true"></a>mrVideoEntity.play()</h3>
+            <p>Plays the video in the shadow root</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a><br />
+            <a name="MRVideoEntity+pause"></a></p>
+            <h3 id="mrvideoentitypause"><a href="#mrvideoentitypause" class="anchor" aria-hidden="true"></a>mrVideoEntity.pause()</h3>
+            <p>Pauses the video in the shadow root</p>
+            <p><strong>Kind</strong>: instance method of <a href="#MRVideoEntity"><code>MRVideoEntity</code></a></p>
+
+            <footer>
+                <p>Found a typo or suggestion for the docs?</p>
+                <p><a href="https://github.com/volumetrics-io/mrjs/edit/main/src/core/entities/MRVideoEntity.js">Suggest an edit on GitHub</a>
+                </p>
+            </footer>
+        </div>
+
+    </main>
+
+    <script type="text/javascript">
+        let hamburger_button = document.getElementById('hamburger');
+        let sidebar = document.getElementById('sidebar');
+        let dim_layer = document.getElementById('dim_layer');
+        let js_details = document.getElementById('js-details')
+        let isOpened = false;
+
+        const hide_sidebar = () => {
+            sidebar.style.transform = "translateX(0%)";
+            dim_layer.style.opacity = 0;
+            setTimeout(() => {
+                dim_layer.style.display = "none";
+            }, 300);
+            isOpened = false;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_open")
+                .forEach((i) => i.beginElement());
+        };
+
+        const show_sidebar = () => {
+            sidebar.style.transform = "translateX(100%)";
+            dim_layer.style.opacity = 1;
+            dim_layer.style.display = "block";
+            isOpened = true;
+            document
+                .getElementById("hamburgerSVG")
+                .querySelectorAll(".anim_close")
+                .forEach((i) => i.beginElement());
+        };
+
+        dim_layer.addEventListener("click", hide_sidebar);
+        hamburger_button.addEventListener(
+            "click",
+            function () {
+                if (isOpened) {
+                    hide_sidebar();
+                } else {
+                    show_sidebar();
+                }
+                document.getElementById("hamburger").classList.toggle("open");
+            },
+            false
+        );
+        window.addEventListener("resize", () => {
+            if (isOpened) {
+                hide_sidebar();
+            }
+        });
+
+        // Restore the JavaScript API <details> if it was opened
+        console.log(localStorage.getItem("js-details"));
+        if (localStorage.getItem("js-details")) {
+            js_details.setAttribute("open", true);
+        } else {
+            js_details.removeAttribute("open");
+        }
+
+        // Restore the <aside> sidebar scroll position .
+        let scrollTop = localStorage.getItem("sidebar-scroll") || 0;
+        sidebar.scrollTop = parseInt(scrollTop, 10);
+
+        // Store the state before unload
+        window.onbeforeunload = (event) => {
+            localStorage.setItem("sidebar-scroll", sidebar.scrollTop);
+            if (js_details.open) {
+                localStorage.setItem("js-details", true);
+            } else {
+                localStorage.removeItem("js-details");
+            }
+
+        };
+    </script>
+
+</body>
+
+</html>
