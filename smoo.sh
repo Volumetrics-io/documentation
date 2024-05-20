@@ -4,7 +4,9 @@ OLDIFS="$IFS"
 IFS=$'\n'
 
 # copy over past versioning to the public directory
-cp -r "source/public-versioning" "public"
+rm -rf "public"
+mkdir "public"
+cp -r "source/public-versioning" "public/v"
 
 # run the newer main setup:
 
@@ -17,7 +19,7 @@ github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
 templateDir='source'
 templateHTML='source/_template.html'
-outputDir='public/main'
+outputDir='public/v/main'
 
 assetDir='source/static'
 pagesDir='source/pages'
