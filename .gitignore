@@ -1,4 +1,4 @@
-public
-./public
-./public/*
+# ignore the public folder at the root directory
+/public/
+# ignore for macs
 .DS_Store
