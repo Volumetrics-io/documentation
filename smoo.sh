@@ -12,7 +12,7 @@ else
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
-saved_version_dir="v-saved/all/$version"
+saved_version_dir="v-saved/all-saved/$version"
 sourceDir="$saved_version_dir/source"
 templateHTML="$saved_version_dir/_template.html"
 outputDir="public/v/$version"

@@ -1,93 +1,21 @@
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
-Could not find data file templates/_template.html
+rsync: [Receiver] mkdir "/Users/hbwork-macabanana/Desktop/documentation/v-saved/all/main" failed: No such file or directory (2)
+rsync error: error in file IO (code 11) at main.c(793) [Receiver=3.2.7]
+rsync: [sender] change_dir "/Users/hbwork-macabanana/Desktop/documentation/v-saved/all-saved/main/source" failed: No such file or directory (2)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1356) [sender=3.2.7]
+find: v-saved/all-saved/main/source/pages: No such file or directory
+find: v-saved/all-saved/main/source/ecs: No such file or directory
+find: v-saved/all-saved/main/source/docs: No such file or directory
+find: v-saved/all-saved/main/source/events: No such file or directory
+find: v-saved/all-saved/main/source/attributes: No such file or directory
+find: v-saved/all-saved/main/source/js-api: No such file or directory
+find: v-saved/all-saved/main/source/js-api-extras: No such file or directory
+find: v-saved/all-saved/main/source/js-api-utils: No such file or directory
+find: v-saved/all-saved/main/source/pages: No such file or directory
+find: v-saved/all-saved/main/source/ecs: No such file or directory
+find: v-saved/all-saved/main/source/docs: No such file or directory
+find: v-saved/all-saved/main/source/events: No such file or directory
+find: v-saved/all-saved/main/source/attributes: No such file or directory
+find: v-saved/all-saved/main/source/js-api: No such file or directory
+find: v-saved/all-saved/main/source/js-api-extras: No such file or directory
+find: v-saved/all-saved/main/source/js-api-utils: No such file or directory
 Could not find data file templates/_template.html
