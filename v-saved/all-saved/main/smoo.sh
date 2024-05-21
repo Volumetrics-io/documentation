@@ -211,7 +211,7 @@ process_markdown "$jsAPIUtilsDir" "js-api-utils" "js-api-utils"
 
 # --metadata base-url="$base_url" \
 # --metadata github-path="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
-pandoc "${templateDir}/index.md" \
+pandoc "${sourceDir}/index.md" \
     --template $templateHTML \
     --metadata current-year="$current_year" \
     --metadata site-name="$site_name" \

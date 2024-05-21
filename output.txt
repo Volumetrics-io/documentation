@@ -160,8 +160,8 @@ source/static/sample/logo.glb
 source/static/sample/logo.stl
 source/static/sample/video.mp4
 
-sent 19,873,639 bytes  received 2,819 bytes  39,752,916.00 bytes/sec
-total size is 19,858,274  speedup is 1.00
+sent 19,873,637 bytes  received 2,819 bytes  39,752,912.00 bytes/sec
+total size is 19,858,272  speedup is 1.00
 copied current main documentation to: v-saved/all-saved/main
 
 
