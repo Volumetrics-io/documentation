@@ -2,3 +2,6 @@
 /public/
 # ignore for macs
 .DS_Store
+# for debugging locally
+/output.txt/
+/err.txt/
