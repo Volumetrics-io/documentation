@@ -9,7 +9,7 @@
     <title>$if(title-prefix)$$title-prefix$ ⬥ $endif$$title$</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="$base-url$/static/favicon.svg" />
 
     <!-- SEO -->
     <meta name="description" content="$if(description)$$description$$else$MRjs documentation for $title$$endif$" />
@@ -36,15 +36,15 @@
     <link rel="stylesheet" type="text/css" href="$base-url$/static/style.css" />
 
     <!-- Inline REPL -->
-    <script src="/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="$base-url$/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     <!-- <script src="/static/ace/ext-beautify.js" type="text/javascript" charset="utf-8"></script> -->
-    <script src="/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="$base-url$/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-html.min.js"></script>
 
-    <script type="module" src="/static/inline-repl.js"></script>
+    <script type="module" src="$base-url$/static/inline-repl.js"></script>
 
     <!-- Sidebar selection -->
     <style>
