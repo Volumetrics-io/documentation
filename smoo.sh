@@ -36,7 +36,7 @@ if [ "$version" == "main" ]; then
     echo "removed and recreated: $saved_version_dir"
     # copy everything except the folders .github, public, and v-saved
     # to the /main/ section in v-saved/all
-    rsync -av --exclude='err.txt' --exclude='output.txt' --exclude='.github/' --exclude='.git' --exclude='public/' --exclude='v-saved/' ./ v-saved/all/main/
+    rsync -av --exclude='err.txt' --exclude='output.txt' --exclude='.github/' --exclude='.git' --exclude='public/' --exclude='v-saved/' ./ $saved_version_dir
     echo "copied current main documentation to: $saved_version_dir"
 fi
 
