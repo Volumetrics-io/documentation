@@ -5,16 +5,16 @@ version="v0.6.4"
 OLDIFS="$IFS"
 IFS=$'\n'
 
-if [ "$LOCAL" == "true" ]; then
-    base_url="http://localhost:8000/v/v0.6.4/"
+if [ "$LOCAL" = "true" ]; then
+    base_url="http://localhost:8000/v/$version"
 else
-    base_url="https://docs.mrjs.io/v/v0.6.4/"
+    base_url="https://docs.mrjs.io/v/$version"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
-saved_version_dir="v-saved/all/$version"
+saved_version_dir="v-saved/all-saved/$version"
 sourceDir="$saved_version_dir/source"
-templateHTML="$saved_version_dir/_template.html"
+templateHTML="$sourceDir/_template.html"
 outputDir="public/v/$version"
 
 assetDir="$sourceDir/static"

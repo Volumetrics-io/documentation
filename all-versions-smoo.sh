@@ -1,27 +1,25 @@
 #!/bin/bash
 
-# copy what is in the main source to /main/
-rm -rf "v/main"
-cp -r "source" "v/main"
+# Set the base directory for versions
+versions_dir="./v-saved/all-saved"
 
-# copy what is in the most recent version number to /latest/
-rm -rf "v/latest"
-cp -r "v/$LATESTV" "v/latest"
+latest_v="v0.6.4"
+
+# copy what is in the main source to /main/
+rm -rf "$versions_dir/main"
+cp -r "./source" "$versions_dir/main"
 
 # setup to run all of `smoo.sh`es for each sub-directory:
 # -- for each folder in v, run smoo.sh and pass in the proper
 #    versioning info 'vX.Y.Z' s.t. they go to the right public
 #    folder
 
-# Set the base directory for versions
-version_dir="v"
-
 # Navigate to the version directory
-cd "$version_dir"
+cd "$versions_dir"
 
 # Loop through each version subdirectory and execute smoo.sh
 for dir in */ ; do
-    if [[ -d "$dir" && "$dir" != "main/" && "$dir" != "latest/" ]]; then
+    if [[ -d "$dir" ]]; then
         version=${dir%/}  # Strip trailing slash to get the version name
 
         echo "Processing version $version..."
@@ -29,13 +27,15 @@ for dir in */ ; do
         # Change to the version directory
         cd "$version"
 
+        echo "pwd:" $(pwd)
+
         # Check if smoo.sh exists and is executable
-        if [[ -x "../../smoo.sh" ]]; then
-            # Execute smoo.sh with the version as a parameter
-            ../../smoo.sh "$version"
-        else
-            echo "Error: smoo.sh is not executable or found"
-        fi
+        # if [[ -x "../../smoo.sh" ]]; then
+        #     # Execute smoo.sh with the version as a parameter
+        #     ../../smoo.sh "$version"
+        # else
+        #     echo "Error: smoo.sh is not executable or found"
+        # fi
 
         # Go back to the version directory
         cd ..

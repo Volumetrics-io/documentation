@@ -1,27 +1,30 @@
 #!/bin/bash
 
+version="v0.6.2"
+
 OLDIFS="$IFS"
 IFS=$'\n'
 
 if [ "$LOCAL" = "true" ]; then
-    base_url="http://localhost:8000"
+    base_url="http://localhost:8000/v/$version"
 else
-    base_url="https://docs.mrjs.io"
+    base_url="https://docs.mrjs.io/v/$version"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
-templateDir='source'
-templateHTML='source/_template.html'
-outputDir='public'
+saved_version_dir="v-saved/all-saved/$version"
+sourceDir="$saved_version_dir/source"
+templateHTML="$sourceDir/_template.html"
+outputDir="public/v/$version"
 
-assetDir='source/static'
-pagesDir='source/pages'
-docsDir='source/docs'
-attributesDir='source/attributes'
-eventsDir='source/events'
-jsAPIDir='source/js-api'
-jsAPIExtrasDir='source/js-api-extras'
-jsAPIUtilsDir='source/js-api-utils'
+assetDir="$sourceDir/static"
+pagesDir="$sourceDir/pages"
+docsDir="$sourceDir/docs"
+attributesDir="$sourceDir/attributes"
+eventsDir="$sourceDir/events"
+jsAPIDir="$sourceDir/js-api"
+jsAPIExtrasDir="$sourceDir/js-api-extras"
+jsAPIUtilsDir="$sourceDir/js-api-utils"
 
 current_year=$(date +"%Y")
 

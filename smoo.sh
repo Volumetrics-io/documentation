@@ -6,9 +6,9 @@ OLDIFS="$IFS"
 IFS=$'\n'
 
 if [ "$LOCAL" = "true" ]; then
-    base_url="http://localhost:8000/v/main"
+    base_url="http://localhost:8000/v/$version"
 else
-    base_url="https://docs.mrjs.io/v/main"
+    base_url="https://docs.mrjs.io/v/$version"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
