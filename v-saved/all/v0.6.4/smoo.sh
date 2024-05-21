@@ -1,35 +1,31 @@
 #!/bin/bash
 
+version="v0.6.4"
+
 OLDIFS="$IFS"
 IFS=$'\n'
 
-# copy over past versioning to the public directory
-rm -rf "public"
-mkdir "public"
-cp -r "source/public-versioning" "public/v"
-
-# run the newer main setup:
-
 if [ "$LOCAL" == "true" ]; then
-    base_url="http://localhost:8000"
+    base_url="http://localhost:8000/v/v0.6.4/"
 else
-    base_url="https://docs.mrjs.io"
+    base_url="https://docs.mrjs.io/v/v0.6.4/"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
-templateDir='source'
-templateHTML='source/_template.html'
-outputDir='public/v/main'
+saved_version_dir="v-saved/all/$version"
+sourceDir="$saved_version_dir/source"
+templateHTML="$saved_version_dir/_template.html"
+outputDir="public/v/$version"
 
-assetDir='source/static'
-pagesDir='source/pages'
-ecsDir='source/ecs'
-docsDir='source/docs'
-attributesDir='source/attributes'
-eventsDir='source/events'
-jsAPIDir='source/js-api'
-jsAPIExtrasDir='source/js-api-extras'
-jsAPIUtilsDir='source/js-api-utils'
+assetDir="$sourceDir/static"
+pagesDir="$sourceDir/pages"
+ecsDir="$sourceDir/ecs"
+docsDir="$sourceDir/docs"
+attributesDir="$sourceDir/attributes"
+eventsDir="$sourceDir/events"
+jsAPIDir="$sourceDir/js-api"
+jsAPIExtrasDir="$sourceDir/js-api-extras"
+jsAPIUtilsDir="$sourceDir/js-api-utils"
 
 current_year=$(date +"%Y")
 
@@ -196,7 +192,7 @@ process_markdown "$jsAPIUtilsDir" "js-api-utils" "js-api-utils"
 
 # --metadata base-url="$base_url" \
 # --metadata github-path="https://github.com/Volumetrics-io/mrjs/edit/main/README.md" \
-pandoc "${templateDir}/index.md" \
+pandoc "${sourceDir}/index.md" \
     --template $templateHTML \
     --metadata current-year="$current_year" \
     --metadata site-name="$site_name" \

@@ -1,37 +1,52 @@
 #!/bin/bash
 
+version="main"
+
 OLDIFS="$IFS"
 IFS=$'\n'
 
-# copy over past versioning to the public directory
-rm -rf "public"
-mkdir "public"
-cp -r "source/public-versioning" "public/v"
-
-# run the newer main setup:
-
 if [ "$LOCAL" == "true" ]; then
-    base_url="http://localhost:8000"
+    base_url="http://localhost:8000/v/v0.6.4/"
 else
-    base_url="https://docs.mrjs.io"
+    base_url="https://docs.mrjs.io/v/v0.6.4/"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
-templateDir='source'
-templateHTML='source/_template.html'
-outputDir='public/v/main'
+saved_version_dir="v-saved/all/$version"
+sourceDir="$saved_version_dir/source"
+templateHTML="$saved_version_dir/_template.html"
+outputDir="public/v/$version"
 
-assetDir='source/static'
-pagesDir='source/pages'
-ecsDir='source/ecs'
-docsDir='source/docs'
-attributesDir='source/attributes'
-eventsDir='source/events'
-jsAPIDir='source/js-api'
-jsAPIExtrasDir='source/js-api-extras'
-jsAPIUtilsDir='source/js-api-utils'
+assetDir="$sourceDir/static"
+pagesDir="$sourceDir/pages"
+ecsDir="$sourceDir/ecs"
+docsDir="$sourceDir/docs"
+attributesDir="$sourceDir/attributes"
+eventsDir="$sourceDir/events"
+jsAPIDir="$sourceDir/js-api"
+jsAPIExtrasDir="$sourceDir/js-api-extras"
+jsAPIUtilsDir="$sourceDir/js-api-utils"
+
+# copy items over to run easily based on linking
+
+if [ "$version" == "main" ]; then
+    # cleanout first
+    rm -rf $saved_version_dir
+    mkdir $saved_version_dir
+    echo "removed and recreated: $saved_version_dir"
+    # copy everything except the folders .github, public, and v-saved
+    # to the /main/ section in v-saved/all
+    rsync -av --exclude='err.txt' --exclude='output.txt' --exclude='.github/' --exclude='.git' --exclude='public/' --exclude='v-saved/' ./ v-saved/all/main/
+    echo "copied current main documentation to: $saved_version_dir"
+fi
 
 current_year=$(date +"%Y")
+
+echo ""
+echo ""
+echo "RUNNING MAIN ACTION"
+echo ""
+echo ""
 
 #run main action
 mkdir -p "$outputDir"
