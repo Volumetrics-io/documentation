@@ -46,6 +46,30 @@
 
     <script type="module" src="$base-url$/static/inline-repl.js"></script>
 
+    <script>
+        function changeVersion(version) {
+            var currentUrl = window.location.href;
+
+            // Identify the part of the URL before the version (assumed to end with '/v/')
+            var prefixEndIndex = currentUrl.indexOf('/v/') + 3;
+            var urlPrefix = currentUrl.substring(0, prefixEndIndex);
+            var remainingUrl = currentUrl.substring(prefixEndIndex);
+
+            // Find where the current version info ends (first slash after the version)
+            var versionEndIndex = remainingUrl.indexOf('/');
+            var urlSuffix = '';
+
+            // Check if there is any suffix
+            if (versionEndIndex !== -1) {
+                urlSuffix = remainingUrl.substring(versionEndIndex);
+            }
+            var newUrl = urlPrefix + version + urlSuffix;
+
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        }
+    </script>
+
     <!-- Sidebar selection -->
     <style>
         [data-slug="$slug$"] {
@@ -64,6 +88,15 @@
         <a href="$base-url$/" class="main-logo">
             <img src="$base-url$/static/mrjs-logo.svg" alt="The MRjs logo, an indigo and purple bowtie." width="110" height="30" />
         </a>
+
+        <section>
+            <select id="versionSelect" onchange="changeVersion(this.value)">
+                <option value="main" selected>main</option>
+                <option value="v0.6.4">v0.6.4 - latest</option>
+                <option value="v0.6.3">v0.6.3</option>
+                <option value="v0.6.2">v0.6.2</option>
+            </select>
+        </section>
 
         <section>
             <div class="section-title">General</div>

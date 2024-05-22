@@ -44,7 +44,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-html.min.js"></script>
 
-    <script type="module" src="/static/inline-repl.js"></script>
+    <script type="module" src="$base-url$/static/inline-repl.js"></script>
 
     <!-- Sidebar selection -->
     <style>
@@ -64,6 +64,15 @@
         <a href="$base-url$/" class="main-logo">
             <img src="$base-url$/static/mrjs-logo.svg" alt="The MRjs logo, an indigo and purple bowtie." width="110" height="30" />
         </a>
+
+        <section>
+            <select id="versionSelect" onchange="changeVersion(this.value)">
+                <option value="main">main</option>
+                <option value="v0.6.4">v0.6.4 - latest</option>
+                <option value="v0.6.3">v0.6.3</option>
+                <option value="v0.6.2" selected>v0.6.2</option>
+            </select>
+        </section>
 
         <section>
             <div class="section-title">General</div>
