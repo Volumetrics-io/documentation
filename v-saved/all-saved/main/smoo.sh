@@ -2,6 +2,12 @@
 
 version="main"
 
+echo ""
+echo ""
+echo "SETUP MAIN ACTION for : $version"
+echo ""
+echo ""
+
 OLDIFS="$IFS"
 IFS=$'\n'
 
@@ -12,10 +18,15 @@ else
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
 site_name='MRjs'
+
 saved_version_dir="v-saved/all-saved/$version"
 sourceDir="$saved_version_dir/source"
 templateHTML="$sourceDir/_template.html"
 outputDir="public/v/$version"
+
+echo "saved_version_dir:" $saved_version_dir
+echo "sourceDir:" $sourceDir
+echo "outputDir:" $outputDir
 
 assetDir="$sourceDir/static"
 pagesDir="$sourceDir/pages"
@@ -44,7 +55,7 @@ current_year=$(date +"%Y")
 
 echo ""
 echo ""
-echo "RUNNING MAIN ACTION"
+echo "RUNNING MAIN ACTION for : $version"
 echo ""
 echo ""
 

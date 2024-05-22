@@ -2,12 +2,20 @@
 
 version="v0.6.4"
 
+echo ""
+echo ""
+echo "SETUP MAIN ACTION for : $version"
+echo ""
+echo ""
+
 OLDIFS="$IFS"
 IFS=$'\n'
 
 if [ "$LOCAL" = "true" ]; then
+    echo "LOCAL IS TRUE"
     base_url="http://localhost:8000/v/$version"
 else
+    echo "LOCAL IS NOT TRUE"
     base_url="https://docs.mrjs.io/v/$version"
 fi
 github_base='https://github.com/Volumetrics-io/documentation/edit/main/source'
@@ -16,6 +24,7 @@ saved_version_dir="v-saved/all-saved/$version"
 sourceDir="$saved_version_dir/source"
 templateHTML="$sourceDir/_template.html"
 outputDir="public/v/$version"
+echo "outputDir:" $outputDir
 
 assetDir="$sourceDir/static"
 pagesDir="$sourceDir/pages"
@@ -28,6 +37,12 @@ jsAPIExtrasDir="$sourceDir/js-api-extras"
 jsAPIUtilsDir="$sourceDir/js-api-utils"
 
 current_year=$(date +"%Y")
+
+echo ""
+echo ""
+echo "RUNNING MAIN ACTION for : $version"
+echo ""
+echo ""
 
 #run main action
 mkdir -p "$outputDir"

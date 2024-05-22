@@ -44,7 +44,7 @@ for dir in "${directories[@]}"; do
     # Check if smoo.sh exists and is executable
     if [[ -x "$versions_dir/$version/smoo.sh" ]]; then
         # Execute smoo.sh with the version as a parameter
-        $versions_dir/$version/smoo.sh "$version"
+        $versions_dir/$version/smoo.sh
     else
         echo "Error: smoo.sh is not executable or found"
     fi
