@@ -9,7 +9,7 @@
     <title>$if(title-prefix)$$title-prefix$ ⬥ $endif$$title$</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="$base-url$/static/favicon.svg" />
 
     <!-- SEO -->
     <meta name="description" content="$if(description)$$description$$else$MRjs documentation for $title$$endif$" />
@@ -33,12 +33,12 @@
     <script defer data-domain="docs.mrjs.io" src="https://plausible.io/js/script.js"></script>
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" type="text/css" href="/static/style.css" />
+    <link rel="stylesheet" type="text/css" href="$base-url$/static/style.css" />
 
     <!-- Inline REPL -->
-    <script src="/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="$base-url$/static/ace/ace.js" type="text/javascript" charset="utf-8"></script>
     <!-- <script src="/static/ace/ext-beautify.js" type="text/javascript" charset="utf-8"></script> -->
-    <script src="/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+    <script src="$base-url$/static/ace/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify-css.min.js"></script>
@@ -68,34 +68,34 @@
         <section>
             <div class="section-title">General</div>
             $for(pages)$
-            <a class="sidebar-entry" href='/$pages.slug$/' data-slug="$pages.slug$">$pages.title$</a>
+            <a class="sidebar-entry" href='$base-url$/$pages.slug$/' data-slug="$pages.slug$">$pages.title$</a>
             $endfor$
         </section>
 
         <section>
             <div class="section-title">Entity Component System</div>
-            $for(ecs)$<a class="sidebar-entry" href='/ecs/$ecs.slug$/'
+            $for(ecs)$<a class="sidebar-entry" href='$base-url$/ecs/$ecs.slug$/'
                 data-slug="$ecs.slug$">$ecs.title$</a>
             $endfor$
         </section>
 
         <section>
             <div class="section-title">HTML tags</div>
-            $for(docs)$<a class="sidebar-entry" href='/doc/$docs.slug$/'
+            $for(docs)$<a class="sidebar-entry" href='$base-url$/doc/$docs.slug$/'
                 data-slug="$docs.slug$">&lt;$docs.title$&gt;</a>
             $endfor$
         </section>
 
         <section>
             <div class="section-title">Events</div>
-            $for(events)$<a class="sidebar-entry" href='/events/$events.slug$/'
+            $for(events)$<a class="sidebar-entry" href='$base-url$/events/$events.slug$/'
                 data-slug="$events.slug$">$events.title$</a>
             $endfor$
         </section>
 
         <section>
             <div class="section-title">Data attributes</div>
-            $for(attributes)$<a class="sidebar-entry" href='/attributes/$attributes.slug$/'
+            $for(attributes)$<a class="sidebar-entry" href='$base-url$/attributes/$attributes.slug$/'
                 data-slug="$attributes.slug$">$attributes.title$</a>
             $endfor$
         </section>
@@ -103,17 +103,17 @@
         <section>
             <details id="js-details">
                 <summary class="section-title">Javascript API</summary>
-                $for(js-api)$<a class="sidebar-entry" href='/js-api/$js-api.slug$/'
+                $for(js-api)$<a class="sidebar-entry" href='$base-url$/js-api/$js-api.slug$/'
                     data-slug="$js-api.slug$">$js-api.title$</a>
                 $endfor$
 
                 <div class="section-title">API Extras</div>
-                $for(js-api-extras)$<a class="sidebar-entry" href='/js-api-extras/$js-api-extras.slug$/'
+                $for(js-api-extras)$<a class="sidebar-entry" href='$base-url$/js-api-extras/$js-api-extras.slug$/'
                     data-slug="$js-api-extras.slug$">$js-api-extras.title$</a>
                 $endfor$
 
                 <div class="section-title">API Utils</div>
-                $for(js-api-utils)$<a class="sidebar-entry" href='/js-api-utils/$js-api-utils.slug$/'
+                $for(js-api-utils)$<a class="sidebar-entry" href='$base-url$/js-api-utils/$js-api-utils.slug$/'
                     data-slug="$js-api-utils.slug$">$js-api-utils.title$</a>
                 $endfor$
             </details>
