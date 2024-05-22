@@ -31,31 +31,26 @@ printf "%s\n" "${directories[@]}"
 
 # Example of processing each directory
 for dir in "${directories[@]}"; do
-    echo "hi2.0"
-    echo $dir
-    if [ -d "$dir" ]; then
-        echo "hi2"
-        version=${dir%/}  # Strip trailing slash to get the version name
+    version=${dir%/}  # Strip trailing slash to get the version name
 
-        echo "Processing version $version..."
+    echo "Processing version $version..."
 
-        # Change to the version directory
-        # cd "$version"
+    # Change to the version directory
+    # cd "$version"
 
-        echo "pwd:" $(pwd)
-        echo "smoo.sh is:" "$versions_dir/$version/smoo.sh"
+    echo "pwd:" $(pwd)
+    echo "smoo.sh is:" "$versions_dir/$version/smoo.sh"
 
-        # Check if smoo.sh exists and is executable
-        if [[ -x "$versions_dir/$version/smoo.sh" ]]; then
-            # Execute smoo.sh with the version as a parameter
-            $versions_dir/$version/smoo.sh "$version"
-        else
-            echo "Error: smoo.sh is not executable or found"
-        fi
-
-        # Go back to the version directory
-        # cd ..
+    # Check if smoo.sh exists and is executable
+    if [[ -x "$versions_dir/$version/smoo.sh" ]]; then
+        # Execute smoo.sh with the version as a parameter
+        $versions_dir/$version/smoo.sh "$version"
+    else
+        echo "Error: smoo.sh is not executable or found"
     fi
+
+    # Go back to the version directory
+    # cd ..
 done
 
 # Return to the original directory

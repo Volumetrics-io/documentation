@@ -17,10 +17,6 @@ sourceDir="$saved_version_dir/source"
 templateHTML="$sourceDir/_template.html"
 outputDir="public/v/$version"
 
-if [ "$version" != "main" ]; then
-    outputDir="../../$outputDir"
-fi
-
 assetDir="$sourceDir/static"
 pagesDir="$sourceDir/pages"
 ecsDir="$sourceDir/ecs"
