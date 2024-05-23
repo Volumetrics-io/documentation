@@ -1,7 +1,7 @@
 # data-camera
 
 ```html
-<mr-app data-camera="mode:perspective; startPos:0 2 3"> ... </mr-app>
+<mr-app data-camera="mode:perspective; startPos:0 2 3;"> ... </mr-app>
 ```
 
 Camera can be attached to an [`mr-app`](/doc/mr-app) using `data-camera`:
