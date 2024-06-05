@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="1" height="1" />
+  </defs>
+  <style>
+    :root {
+      --ink: #242424;
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root {
+        --ink: #fff;
+      }
+    }
+  </style>
+  <g style="fill: none; stroke: var(--ink); stroke-width: 2px; stroke-linecap: round;">
+    <path d="M 8.53 11 L 6.29 13.19 C 5.31 14.16 3.73 14.16 2.75 13.19 C 1.78 12.21 1.78 10.63 2.75 9.65 L 4.99 7.47" />
+    <path d="M 6.5 9.49 L 9.49 6.5" />
+    <path d="M 7.46 4.98 L 9.7 2.8 C 10.67 1.82 12.26 1.82 13.23 2.8 C 14.21 3.77 14.21 5.35 13.23 6.33 L 10.99 8.51" />
+  </g>
+</svg>
